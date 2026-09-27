@@ -22,6 +22,7 @@ import emu.grasscutter.net.proto.DetailAbilityInfoOuterClass.DetailAbilityInfo;
 import emu.grasscutter.net.proto.PropChangeDetailInfoOuterClass.PropChangeDetailInfo;
 import emu.grasscutter.server.event.entity.*;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import it.unimi.dsi.fastutil.ints.*;
@@ -44,7 +45,22 @@ import static emu.grasscutter.GameConstants.ENTITY_ID_BIT_SHIFT;
 public abstract class GameEntity {
     @Getter private final Scene scene;
     private boolean restrictedFromHealing = false;
-    private boolean convertToHpDebt = false;
+    /** Heal-to-bond conversion active (may be active with ratio 0 = healing fully negated). */
+    private boolean hpDebtConvertActive = false;
+    /** Portion of incoming healing converted into a bond of life; 0 = heals negated while active. */
+    private float hpDebtConvertRatio = 0f;
+
+    /** Heal tags excluded from bond-of-life conversion (e.g. burst self-heals). */
+    private java.util.Set<String> hpDebtConvertExcludedHealTags = java.util.Set.of();
+
+    // Bond-of-life tag budgets registered by LimitHpDebtsByTagMixin: tag -> total budget,
+    // tag -> budget consumed so far, tag -> registering modifier key.
+    private final Map<String, Float> hpDebtTagLimits =
+            new java.util.concurrent.ConcurrentHashMap<>();
+    private final Map<String, Float> hpDebtTagUsage =
+            new java.util.concurrent.ConcurrentHashMap<>();
+    private final Map<String, String> hpDebtTagLimitKeys =
+            new java.util.concurrent.ConcurrentHashMap<>();
     @Getter @Setter public int id;
     @Getter @Setter private SpawnDataEntry spawnEntry;
     @Setter private PropChangeDetailInfo propChangeDetailInfo;
@@ -92,7 +108,130 @@ public abstract class GameEntity {
         return EntityIdType.toEntityType(this.getId() >> ENTITY_ID_BIT_SHIFT);
     }
     public boolean isConvertToHpDebt() {
-        return convertToHpDebt;
+        return hpDebtConvertActive;
+    }
+
+    public float getHpDebtConvertRatio() {
+        return hpDebtConvertRatio;
+    }
+
+    public java.util.Set<String> getHpDebtConvertExcludedHealTags() {
+        return hpDebtConvertExcludedHealTags;
+    }
+
+    /** Activates heal-to-bond conversion with the given ratio and excluded heal tags.
+     *  Ratio may be 0 (healing fully negated while active, e.g. Arlecchino in combat). */
+    public void setHpDebtConvert(float ratio, java.util.Set<String> excludedHealTags) {
+        this.hpDebtConvertActive = true;
+        this.hpDebtConvertRatio = Math.max(0f, ratio);
+        this.hpDebtConvertExcludedHealTags =
+                excludedHealTags == null || excludedHealTags.isEmpty()
+                        ? java.util.Set.of()
+                        : java.util.Set.copyOf(excludedHealTags);
+    }
+
+    public void clearHpDebtConvert() {
+        if (this.hpDebtConvertActive && Grasscutter.getLogger().isDebugEnabled()) {
+            Grasscutter.getLogger().debug("clearHpDebtConvert: entity={}", this.getId());
+        }
+        this.hpDebtConvertActive = false;
+        this.hpDebtConvertRatio = 0f;
+        this.hpDebtConvertExcludedHealTags = java.util.Set.of();
+    }
+
+    /**
+     * Converts an incoming heal into bond of life (official SwitchHealToHPDebts semantics): HP is
+     * not restored; the bond grows by ratio * healAmount (ratio 0 = healing fully negated).
+     * Returns the bond amount added. No-op returning 0 when conversion is inactive.
+     */
+    public float convertHealToHpDebt(float healAmount) {
+        if (!this.hpDebtConvertActive || healAmount <= 0f) return 0f;
+
+        float add = healAmount * this.hpDebtConvertRatio;
+        float curDebt = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+        float maxDebt = 2f * this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        float newDebt = Math.min(curDebt + add, maxDebt);
+        float added = newDebt - curDebt;
+        if (Grasscutter.getLogger().isDebugEnabled()) {
+            Grasscutter.getLogger().debug(
+                    "convertHealToHpDebt: entity={} heal={} ratio={} debt {}->{}{}",
+                    this.getId(), healAmount, this.hpDebtConvertRatio, curDebt, newDebt,
+                    added <= 0f ? " (negated/capped)" : "");
+        }
+        if (added <= 0f) return 0f;
+
+        this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, newDebt);
+        this.broadcastHpDebtPropUpdate();
+        this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(
+                this,
+                FightProperty.FIGHT_PROP_CUR_HP_DEBTS,
+                added,
+                PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
+                ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY));
+        return added;
+    }
+
+    /** Registers a per-tag bond-of-life budget for {@code LimitHpDebtsByTagMixin}. */
+    public void registerHpDebtTagLimit(String tag, float amount, String key) {
+        if (tag == null || tag.isEmpty() || key == null) return;
+        hpDebtTagLimits.put(tag, amount);
+        hpDebtTagUsage.put(tag, 0f);
+        hpDebtTagLimitKeys.put(tag, key);
+    }
+
+    /** Removes a tag budget if it was registered by {@code key}. */
+    public void unregisterHpDebtTagLimit(String tag, String key) {
+        if (tag == null || key == null) return;
+        if (hpDebtTagLimitKeys.remove(tag, key)) {
+            hpDebtTagLimits.remove(tag);
+            hpDebtTagUsage.remove(tag);
+        }
+    }
+
+    /** Remaining budget for a tag, or MAX_VALUE when no limit is registered. */
+    public float getHpDebtTagRemaining(String tag) {
+        if (tag == null || tag.isEmpty()) return Float.MAX_VALUE;
+        Float limit = hpDebtTagLimits.get(tag);
+        if (limit == null) return Float.MAX_VALUE;
+        float usage = hpDebtTagUsage.getOrDefault(tag, 0f);
+        return Math.max(0f, limit - usage);
+    }
+
+    public void addHpDebtTagUsage(String tag, float amount) {
+        if (tag == null || tag.isEmpty() || amount <= 0f) return;
+        if (!hpDebtTagUsage.containsKey(tag)) return;
+        float usage = hpDebtTagUsage.merge(tag, amount, Float::sum);
+        Float limit = hpDebtTagLimits.get(tag);
+        if (limit != null && usage > limit) hpDebtTagUsage.put(tag, limit);
+    }
+
+    /**
+     * When bond of life decreases, shrink every tag budget proportionally so paid debt frees
+     * the budget it originally consumed.
+     */
+    private void rescaleHpDebtTagUsage(float oldDebt, float newDebt) {
+        if (hpDebtTagUsage.isEmpty() || oldDebt <= 0f || newDebt >= oldDebt) return;
+        float factor = Math.max(0f, newDebt / oldDebt);
+        hpDebtTagUsage.replaceAll((tag, usage) -> usage * factor);
+    }
+
+    /**
+     * Syncs the current bond-of-life value: entity-level update for on-field display plus an
+     * avatar-level update for the owner so off-field team UI stays correct too.
+     */
+    public void broadcastHpDebtPropUpdate() {
+        if (this.getScene() == null) return;
+        this.getScene()
+                .broadcastPacket(
+                        new PacketEntityFightPropUpdateNotify(
+                                this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+        if (this instanceof EntityAvatar avatarEntity && avatarEntity.getPlayer() != null) {
+            avatarEntity.getPlayer()
+                    .sendPacket(
+                            new PacketAvatarFightPropUpdateNotify(
+                                    avatarEntity.getAvatar(),
+                                    FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+        }
     }
 
     public float getNyxValue() {
@@ -102,10 +241,6 @@ public abstract class GameEntity {
             Grasscutter.getLogger().info("NyxValue not found");
             return 0f;
         }
-    }
-
-    public void setConvertToHpDebt(boolean convertToHpDebt) {
-        this.convertToHpDebt = convertToHpDebt;
     }
 
     public abstract int getEntityTypeId();
@@ -135,6 +270,12 @@ public abstract class GameEntity {
     public abstract Position getRotation();
 
     public void setFightProperty(FightProperty prop, float value) {
+        if (prop == FightProperty.FIGHT_PROP_CUR_HP_DEBTS) {
+            float old = this.getFightProperty(prop);
+            this.getFightProperties().put(prop.getId(), value);
+            this.rescaleHpDebtTagUsage(old, value);
+            return;
+        }
         this.getFightProperties().put(prop.getId(), value);
     }
 
@@ -143,6 +284,12 @@ public abstract class GameEntity {
     }
 
     public void addFightProperty(FightProperty prop, float value) {
+        if (prop == FightProperty.FIGHT_PROP_CUR_HP_DEBTS) {
+            float old = this.getFightProperty(prop);
+            this.getFightProperties().put(prop.getId(), old + value);
+            this.rescaleHpDebtTagUsage(old, old + value);
+            return;
+        }
         this.getFightProperties().put(prop.getId(), this.getFightProperty(prop) + value);
     }
 
@@ -318,10 +465,10 @@ public abstract class GameEntity {
             this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
         }
         if (toRepay > 0) {
-            this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+            this.broadcastHpDebtPropUpdate();
 
             if (this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS) > 0) {
-                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, toRepay,
+                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, -toRepay,
                                                         mute
                                                                 ? PropChangeReason.PropChangeReason_PROP_CHANGE_NONE
                                                                 : PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
@@ -329,7 +476,7 @@ public abstract class GameEntity {
                                                         ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY
                 ));
             } else {
-                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, toRepay,
+                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, -toRepay,
                                                         mute
                                                                 ? PropChangeReason.PropChangeReason_PROP_CHANGE_NONE
                                                                 : PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
@@ -469,7 +616,7 @@ public abstract class GameEntity {
             float debt = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
             if (debt >= 0) {
                 this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, 0f);
-                this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+                this.broadcastHpDebtPropUpdate();
                 this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, -debt, PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_CLEAR));
             }
             this.isDead = true;

@@ -377,7 +377,10 @@ public class AbilityModifier implements Serializable {
         public boolean ownerIsTarget;
 
         public boolean isFromOwner;
+        @SerializedName(value = "healTag", alternate = "__exp_healTag")
         public String healTag;
+        @SerializedName(value = "debtTag", alternate = "HDOCNDAFLIJ")
+        public String debtTag;
         public String key;
         public String abilityName;
         public String globalValueKey;

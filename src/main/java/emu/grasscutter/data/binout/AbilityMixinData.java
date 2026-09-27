@@ -122,6 +122,15 @@ public class AbilityMixinData implements Serializable {
     public List<String> entityTypes = new ArrayList<>();
     public List<String> attackTags = new ArrayList<>();
 
+    @SerializedName(value = "tags", alternate = "FCGCFFJHAHM")
+    public List<String> debtTags = new ArrayList<>();
+
+    @SerializedName(value = "maxRatio", alternate = "HPADGKHLLHD")
+    public DynamicFloat debtMaxRatio = DynamicFloat.ZERO;
+
+    @SerializedName(value = "predicates", alternate = "GLCOHEDMLDM")
+    public List<Object> predicates;
+
     @SerializedName("$type")
     public Type type;
 

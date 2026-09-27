@@ -236,26 +236,9 @@ public class EnergyManager extends BasePlayerManager {
 
         if (avatar.getAvatarId() == 10000096) {
             this.player.getAbilityManager().onArlecchinoSkillNotify(skillId);
-            var skillData = GameData.getAvatarSkillDataMap().get(skillId);
-            int energySkillId = avatar.getSkillDepot() != null ? avatar.getSkillDepot().getEnergySkill() : -1;
-            float costElemVal = skillData != null ? skillData.getCostElemVal() : -1f;
-            boolean isBurst = (skillId == energySkillId) || (costElemVal > 0);
-            if (isBurst) {
-                float curDebt = casterEntity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
-                if (curDebt > 0f) {
-                    casterEntity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, 0f);
-                    var scene = this.player.getScene();
-                    scene.broadcastPacket(new PacketEntityFightPropUpdateNotify(casterEntity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
-                    scene.broadcastPacket(new PacketEntityFightPropChangeReasonNotify(
-                        casterEntity,
-                        FightProperty.FIGHT_PROP_CUR_HP_DEBTS,
-                        -curDebt,
-                        PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
-                        ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
-                    ));
-                    Grasscutter.getLogger().info("[BoL] Arlecchino burst: cleared {} BoL", curDebt);
-                }
-            }
+            // Bond is now consumed by the burst heal path (ActionHealHP → queueArlecchinoBurstHeal)
+            // when the burst damage/heal invoke lands, matching official timing. The old
+            // clear-at-cast hook here made the bond vanish the instant Q was pressed.
         }
     }
 

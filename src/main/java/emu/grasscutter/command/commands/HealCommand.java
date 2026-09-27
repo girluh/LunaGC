@@ -29,19 +29,17 @@ public final class HealCommand implements CommandHandler {
                                     FightProperty.FIGHT_PROP_CUR_HP,
                                     entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP));
                                    if (entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS) > 0) {
+                                        float cleared = entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
                                         entity.setFightProperty(
                                             FightProperty.FIGHT_PROP_CUR_HP_DEBTS,
                                             0.0f
-
                                     );
-                                    entity
-                                    .getWorld()
-                                    .broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
-                                    entity.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, 0f, PropChangeReason.PropChangeReason_PROP_CHANGE_NONE,
+                                    entity.broadcastHpDebtPropUpdate();
+                                    entity.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, -cleared, PropChangeReason.PropChangeReason_PROP_CHANGE_NONE,
 
                                     ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
                                    ));
-                                   }
+                                    }
 
                             entity
                                     .getWorld()

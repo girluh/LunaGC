@@ -112,7 +112,17 @@ public final class PlayerBuffManager extends BasePlayerManager {
                                             var amount =
                                                     ability.amount.get() + ability.amountByCasterMaxHPRatio.get() * maxHp;
 
-                                            target.getAsEntity().heal(amount);
+                                            var buffTarget = target.getAsEntity();
+                                            boolean excluded =
+                                                    ability.healTag != null
+                                                            && buffTarget
+                                                                    .getHpDebtConvertExcludedHealTags()
+                                                                    .contains(ability.healTag);
+                                            if (buffTarget.isConvertToHpDebt() && !excluded) {
+                                                buffTarget.convertHealToHpDebt(amount);
+                                            } else {
+                                                buffTarget.heal(amount);
+                                            }
                                             shouldHeal = true;
                                         }
                                     }

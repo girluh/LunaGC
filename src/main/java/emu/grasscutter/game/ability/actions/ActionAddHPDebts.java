@@ -2,19 +2,15 @@ package emu.grasscutter.game.ability.actions;
 
 import com.google.protobuf.ByteString;
 import emu.grasscutter.data.binout.AbilityModifier;
-import emu.grasscutter.data.binout.AbilityMixinData;
 import emu.grasscutter.game.ability.Ability;
-import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityAvatar;
-import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
-import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.EntityWeapon;
+import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.Grasscutter;
+import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 
 @AbilityAction(value = AbilityModifier.AbilityModifierAction.Type.AddHPDebts)
 public final class ActionAddHPDebts extends AbilityActionHandler {
@@ -35,31 +31,51 @@ public final class ActionAddHPDebts extends AbilityActionHandler {
         properties.putAll(ability.getAbilitySpecials());
 
         float debt = action.ratio.get(properties, 0f);
-        Avatar avatar = ability.getPlayerOwner().getCurrentAvatar();
-        float maxValue = action.maxValue.get(ability) * target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        float maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        float maxValue = action.maxValue.get(ability) * maxHp;
 
-            float curDebt = target.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
-            float newDebt = curDebt + debt;
-            if (newDebt < 0) {
-                newDebt = 0;
-            }
-            if (newDebt > 2 * target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)) {
-                Grasscutter.getLogger().warn("[ActionAddHPDebts] bond of life surpassed its limit, setting to max");
-                newDebt = 2 * target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-            }
-            float changeDebt = newDebt - curDebt;
-            target.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, newDebt);
-            target.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(target, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+        float hardCap = 2f * maxHp;
+        if (maxValue > 0f) {
+            hardCap = Math.min(hardCap, maxValue);
+        }
 
-            if (changeDebt != 0) {
-                if (newDebt == 0) {
-                    target.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(target, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, changeDebt, PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH));
-                } else if (changeDebt > 0) {
-                    target.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(target, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, changeDebt, PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY));
-                } else if (changeDebt < 0) {
-                    target.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(target, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, changeDebt, PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY));
-                }
+        String debtTag = action.debtTag;
+        boolean tagged = debtTag != null && !debtTag.isEmpty();
+        if (tagged && debt > 0f) {
+            float remaining = target.getHpDebtTagRemaining(debtTag);
+            if (debt > remaining) {
+                Grasscutter.getLogger().debug(
+                    "[ActionAddHPDebts] tag {} budget exhausted ({}/{}), clamping",
+                    debtTag, remaining, debt);
+                debt = remaining;
             }
+        }
+
+        float curDebt = target.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+        float newDebt = curDebt + debt;
+        if (newDebt < 0) {
+            newDebt = 0;
+        }
+        if (newDebt > hardCap) {
+            Grasscutter.getLogger().warn("[ActionAddHPDebts] bond of life surpassed its limit, clamping to {}", hardCap);
+            newDebt = hardCap;
+        }
+        float changeDebt = newDebt - curDebt;
+        target.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, newDebt);
+        if (tagged && changeDebt > 0f) {
+            target.addHpDebtTagUsage(debtTag, changeDebt);
+        }
+        target.broadcastHpDebtPropUpdate();
+
+        if (changeDebt != 0) {
+            if (newDebt == 0) {
+                target.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(target, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, changeDebt, PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH));
+            } else if (changeDebt > 0) {
+                target.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(target, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, changeDebt, PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY));
+            } else if (changeDebt < 0) {
+                target.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(target, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, changeDebt, PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY));
+            }
+        }
         return true;
     }
 }

@@ -18,6 +18,5 @@ public class HandlerAbilityInvocationsNotify extends PacketHandler {
             player.getAbilityManager().onAbilityInvoke(entry);
             player.getAbilityInvokeHandler().addEntry(entry.getForwardType(), entry);
         }
-        player.getAbilityManager().flushPendingBoL();
     }
 }

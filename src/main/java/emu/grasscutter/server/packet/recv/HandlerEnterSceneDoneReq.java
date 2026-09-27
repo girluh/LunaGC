@@ -7,9 +7,6 @@ import emu.grasscutter.net.proto.EnterSceneDoneReqOuterClass.EnterSceneDoneReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass;
-import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.*;
 
@@ -39,10 +36,21 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
         session.send(new PacketWorldPlayerLocationNotify(player.getWorld()));
         session.send(new PacketScenePlayerLocationNotify(player.getScene()));
         session.send(new PacketWorldPlayerRTTNotify(player.getWorld()));
+        // Sync bond of life so it survives scene changes instead of resetting on the client
         var avatarEntity = player.getTeamManager().getCurrentAvatarEntity();
-        float currentHpDebts = avatarEntity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
-        if (currentHpDebts > 0.0f) {
-            avatarEntity.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(avatarEntity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, currentHpDebts, PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_NONE, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_NONE));
+        if (avatarEntity != null
+                && avatarEntity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS) > 0.0f) {
+            avatarEntity
+                    .getWorld()
+                    .broadcastPacket(
+                            new PacketEntityFightPropUpdateNotify(
+                                    avatarEntity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+            if (avatarEntity.getAvatar() != null) {
+                session.send(
+                        new PacketAvatarFightPropUpdateNotify(
+                                avatarEntity.getAvatar(),
+                                FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+            }
         }
         // spawn NPC
         player.getScene().loadNpcForPlayerEnter(player);

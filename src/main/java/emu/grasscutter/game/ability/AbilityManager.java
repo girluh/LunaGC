@@ -83,6 +83,22 @@ public final class AbilityManager extends BasePlayerManager {
     private long arlecchinoChargedAttackTime = 0L;
     private long arlecchinoESkillTime = 0L;
 
+    private static final java.util.concurrent.ScheduledExecutorService burstHealScheduler =
+        java.util.concurrent.Executors.newSingleThreadScheduledExecutor(
+            r -> {
+                var t = new Thread(r, "burst-heal-timer");
+                t.setDaemon(true);
+                return t;
+            });
+    private static final long ARLECCHINO_BURST_HEAL_TIMEOUT_MS = 500L;
+    private static final long ARLECCHINO_BURST_HEAL_LOOKBACK_MS = 300L;
+
+    private Runnable pendingArlecchinoBurstHeal;
+    private int pendingArlecchinoBurstEntityId;
+    private java.util.concurrent.ScheduledFuture<?> pendingArlecchinoBurstHealTimeout;
+    private long lastCombatHitAtMs;
+    private int lastCombatHitDealerId;
+
     public AbilityManager(Player player) {
         super(player);
         removePendingEnergyClear();
@@ -214,15 +230,10 @@ public final class AbilityManager extends BasePlayerManager {
             }
         }
 
-        if (handler == mixinHandlers.get(AbilityMixinData.Type.SwitchHealToHPDebtsMixin)) {
-
-            if (target instanceof EntityAvatar avatar) {
-
-                if (avatar.getAvatar().getAvatarId() == 10000098 || avatar.getAvatar().getAvatarId() == 10000096)
-                    target.setConvertToHpDebt(true);
-
-            }
-
+        if (mixinData.type == AbilityMixinData.Type.SwitchHealToHPDebtsMixin) {
+            // Client-driven trigger: activate heal-to-bond conversion with the mixin's own
+            // ratio and excluded heal tags instead of hardcoding avatar ids.
+            this.applySwitchHealToHpDebts(ability, target, mixinData);
         }
 
         if (handler == null || ability == null) {
@@ -819,6 +830,12 @@ public final class AbilityManager extends BasePlayerManager {
             entity.applyModifierProperties(
                     head.getInstancedModifierId(), modifierData, instancedAbility);
 
+            // Client-reported modifier attach: register BoL state (heal conversion, tag budgets)
+            var boLModifierName = findModifierName(instancedAbility, modifierData);
+            if (boLModifierName != null) {
+                this.processBoLMixins(entity, instancedAbility, modifierData, boLModifierName);
+            }
+
             if (fromParentName && hasOrchestration && modifierData.onAdded != null) {
                 final var finalAbility = instancedAbility;
                 final var finalEntity = entity;
@@ -827,12 +844,74 @@ public final class AbilityManager extends BasePlayerManager {
                 }
             }
         } else if (modChange.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
+            this.cleanupBoLMixinsOnClientRemoval(entity, invoke, modChange);
             entity.revertModifierProperties(head.getInstancedModifierId());
             entity.getInstancedModifiers().remove(head.getInstancedModifierId());
         } else {
 
             Grasscutter.getLogger().debug("Unknown action");
         }
+    }
+
+    /**
+     * Client-reported modifier removal: resolve the removed modifier and clear the BoL state it
+     * registered so heal-to-bond conversion and tag budgets never outlive their modifier.
+     */
+    private void cleanupBoLMixinsOnClientRemoval(
+            GameEntity entity, AbilityInvokeEntry invoke, AbilityMetaModifierChange modChange) {
+        var head = invoke.getHead();
+
+        // 1) Prefer the controller stored when this modifier was added.
+        AbilityModifier modifierData = null;
+        String modifierName = null;
+        String abilityName = null;
+
+        var controller = entity.getInstancedModifiers().get(head.getInstancedModifierId());
+        if (controller != null && controller.getModifierData() != null) {
+            modifierData = controller.getModifierData();
+            if (controller.getAbility() != null && controller.getAbility().getData() != null) {
+                abilityName = controller.getAbility().getData().abilityName;
+                modifierName = findModifierName(controller.getAbility(), modifierData);
+            }
+        }
+
+        // 2) Fall back to resolving the modifier from the invoke payload (same rules as ADDED).
+        if (modifierData == null || modifierName == null || abilityName == null) {
+            String parentName = null;
+            var parentAbStr = modChange.getParentAbilityName();
+            if (!parentAbStr.getStr().isEmpty()) {
+                parentName = parentAbStr.getStr();
+            } else if (parentAbStr.hasHash()) {
+                parentName = GameData.getAbilityHashes().get(parentAbStr.getHash());
+            }
+
+            AbilityData data = parentName != null ? GameData.getAbilityData(parentName) : null;
+            if (data == null
+                    && head.getInstancedAbilityId() != 0
+                    && head.getInstancedAbilityId() - 1 < entity.getInstancedAbilities().size()) {
+                var instanced = entity.getInstancedAbilities().get(head.getInstancedAbilityId() - 1);
+                if (instanced != null) data = instanced.getData();
+            }
+
+            if (data == null || data.modifiers == null) {
+                Grasscutter.getLogger().trace(
+                    "cleanupBoLMixinsOnClientRemoval: cannot resolve modifier for entity {} localId {}",
+                    entity.getId(), modChange.getModifierLocalId());
+                return;
+            }
+
+            var entries = data.modifiers.entrySet().toArray();
+            int localId = modChange.getModifierLocalId();
+            if (localId < 0 || localId >= entries.length) return;
+            @SuppressWarnings("unchecked")
+            var entry = (java.util.Map.Entry<String, AbilityModifier>) entries[localId];
+            modifierData = entry.getValue();
+            modifierName = entry.getKey();
+            abilityName = data.abilityName;
+        }
+
+        if (modifierData == null || modifierName == null || abilityName == null) return;
+        this.cleanupBoLMixins(entity, modifierData, attachKey(entity, abilityName, modifierName));
     }
 
     private void handleMixinCostStamina(AbilityInvokeEntry invoke)
@@ -909,7 +988,7 @@ public final class AbilityManager extends BasePlayerManager {
         if (change <= 0f) return;
         clorinde.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, newDebt);
         var scene = this.player.getScene();
-        scene.broadcastPacket(new PacketEntityFightPropUpdateNotify(clorinde, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+        clorinde.broadcastHpDebtPropUpdate();
         scene.broadcastPacket(new PacketEntityFightPropChangeReasonNotify(
             clorinde,
             FightProperty.FIGHT_PROP_CUR_HP_DEBTS,
@@ -964,8 +1043,101 @@ public final class AbilityManager extends BasePlayerManager {
         return result[0];
     }
 
-    public void flushPendingBoL() {
+    /** Applies SwitchHealToHPDebtsMixin state (conversion ratio + excluded heal tags). */
+    private void applySwitchHealToHpDebts(Ability ability, GameEntity target, AbilityMixinData mixinData) {
+        if (target == null || ability == null || mixinData == null) return;
+        float ratio = mixinData.ratio != null ? mixinData.ratio.get(ability) : 0f;
+        target.setHpDebtConvert(ratio, parseExcludedHealTags(mixinData.predicates));
+        if (Grasscutter.getLogger().isDebugEnabled()) {
+            Grasscutter.getLogger().debug(
+                "SwitchHealToHPDebts: entity={} ratio={} excluded={}",
+                target.getId(), ratio, target.getHpDebtConvertExcludedHealTags());
+        }
+    }
 
+    /**
+     * Extracts heal tags excluded from conversion: predicates of the form
+     * ByNot { __exp_ByHealTags { __exp_healTags: [...] } } mean those tags are NOT converted.
+     */
+    private static java.util.Set<String> parseExcludedHealTags(java.util.List<Object> predicates) {
+        if (predicates == null || predicates.isEmpty()) return java.util.Set.of();
+        var excluded = new java.util.HashSet<String>();
+        for (Object predicate : predicates) {
+            if (!(predicate instanceof java.util.Map<?, ?> map)) continue;
+            if (!"ByNot".equals(String.valueOf(map.get("$type")))) continue;
+            if (!(map.get("predicates") instanceof java.util.List<?> inner)) continue;
+            for (Object exp : inner) {
+                if (!(exp instanceof java.util.Map<?, ?> expMap)) continue;
+                if (!"__exp_ByHealTags".equals(String.valueOf(expMap.get("$type")))) continue;
+                if (!(expMap.get("__exp_healTags") instanceof java.util.List<?> tags)) continue;
+                for (Object tag : tags) {
+                    if (tag != null && !tag.toString().isEmpty()) excluded.add(tag.toString());
+                }
+            }
+        }
+        return excluded;
+    }
+
+    /** Resolves LimitHpDebtsByTagMixin's budget as maxRatio * target max HP. */
+    private static float resolveDebtTagLimitAmount(Ability ability, GameEntity entity, AbilityMixinData mixin) {
+        float ratio = mixin.debtMaxRatio != null ? mixin.debtMaxRatio.get(ability) : 0f;
+        if (ratio <= 0f) return 0f;
+        float maxHp = entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        return ratio * maxHp;
+    }
+
+    /** Registers BoL-related modifier state (conversion + per-tag debt budgets) on attach. */
+    private void processBoLMixins(GameEntity entity, Ability ability, AbilityModifier modifierData, String modifierName) {
+        if (entity == null || ability == null || modifierData == null || modifierData.modifierMixins == null) return;
+
+        for (var mixin : modifierData.modifierMixins) {
+            if (mixin == null || mixin.type == null) continue;
+            switch (mixin.type) {
+                case SwitchHealToHPDebtsMixin -> this.applySwitchHealToHpDebts(ability, entity, mixin);
+                case LimitHpDebtsByTagMixin -> {
+                    if (mixin.debtTags == null) break;
+                    float amount = resolveDebtTagLimitAmount(ability, entity, mixin);
+                    if (amount <= 0f) {
+                        Grasscutter.getLogger().debug(
+                            "LimitHpDebtsByTagMixin budget unresolved for {}, skipping", modifierName);
+                        break;
+                    }
+                    String key = attachKey(entity, ability, modifierName);
+                    for (String tag : mixin.debtTags) {
+                        if (tag == null || tag.isEmpty()) continue;
+                        entity.registerHpDebtTagLimit(tag, amount, key);
+                        Grasscutter.getLogger().debug(
+                            "Registered bond tag limit {}={} for entity {}", tag, amount, entity.getId());
+                    }
+                }
+                default -> {}
+            }
+        }
+    }
+
+    /** Clears BoL-related modifier state when the modifier is removed. */
+    private void cleanupBoLMixins(GameEntity entity, AbilityModifier modifierData, String attachKeyValue) {
+        if (entity == null || modifierData == null || modifierData.modifierMixins == null) return;
+
+        for (var mixin : modifierData.modifierMixins) {
+            if (mixin == null || mixin.type == null) continue;
+            switch (mixin.type) {
+                case SwitchHealToHPDebtsMixin -> entity.clearHpDebtConvert();
+                case LimitHpDebtsByTagMixin -> {
+                    if (mixin.debtTags == null) break;
+                    for (String tag : mixin.debtTags) entity.unregisterHpDebtTagLimit(tag, attachKeyValue);
+                }
+                default -> {}
+            }
+        }
+    }
+
+    private static String findModifierName(Ability ability, AbilityModifier data) {
+        if (ability == null || ability.getData() == null || ability.getData().modifiers == null) return null;
+        for (var entry : ability.getData().modifiers.entrySet()) {
+            if (entry.getValue() == data) return entry.getKey();
+        }
+        return null;
     }
 
     public void onArlecchinoSkillNotify(int skillId) {
@@ -974,6 +1146,88 @@ public final class AbilityManager extends BasePlayerManager {
         } else if (skillId == 10962) {
             arlecchinoESkillTime = System.currentTimeMillis();
         }
+    }
+
+    /**
+     * Arlecchino burst heal: officially her bond is consumed when the burst damage lands.
+     * Queues the heal until a hit from the same avatar arrives ({@link #onCombatBeingHit}) or a
+     * 0.5s timeout fires (HealDelay duration; covers bursts that hit nothing).
+     */
+    public synchronized void queueArlecchinoBurstHeal(int entityId, Runnable heal) {
+        flushArlecchinoBurstHealLocked("REPLACED");
+        this.pendingArlecchinoBurstHeal = heal;
+        this.pendingArlecchinoBurstEntityId = entityId;
+        // The client sends the damage hit invoke ~7ms BEFORE the HealHP invoke; if the matching
+        // hit already arrived, fire now instead of waiting for a hit that will never come.
+        if (this.lastCombatHitDealerId == entityId
+                && System.currentTimeMillis() - this.lastCombatHitAtMs <= ARLECCHINO_BURST_HEAL_LOOKBACK_MS) {
+            Grasscutter.getLogger()
+                .debug("Arlecchino burst heal queued: entity={} (hit lookback, firing now)", entityId);
+            flushArlecchinoBurstHealLocked("HIT_LOOKBACK");
+            return;
+        }
+        this.pendingArlecchinoBurstHealTimeout =
+            burstHealScheduler.schedule(
+                () -> flushArlecchinoBurstHeal("TIMEOUT"),
+                ARLECCHINO_BURST_HEAL_TIMEOUT_MS,
+                java.util.concurrent.TimeUnit.MILLISECONDS);
+        Grasscutter.getLogger()
+            .debug("Arlecchino burst heal queued: entity={} timeoutMs={}", entityId, ARLECCHINO_BURST_HEAL_TIMEOUT_MS);
+    }
+
+    /** Called on combat being-hit invokes; fires a queued burst heal for the hitting avatar. */
+    public void onCombatBeingHit(int attackerId) {
+        int dealerId = resolveCombatDealer(attackerId);
+        synchronized (this) {
+            this.lastCombatHitAtMs = System.currentTimeMillis();
+            this.lastCombatHitDealerId = dealerId;
+            if (Grasscutter.getLogger().isDebugEnabled()) {
+                Grasscutter.getLogger().debug(
+                    "onCombatBeingHit: attacker={} dealer={} pending={} pendingEntity={}",
+                    attackerId, dealerId, this.pendingArlecchinoBurstHeal != null,
+                    this.pendingArlecchinoBurstEntityId);
+            }
+            if (this.pendingArlecchinoBurstHeal == null || this.pendingArlecchinoBurstEntityId != dealerId) {
+                return;
+            }
+            flushArlecchinoBurstHealLocked("HIT");
+        }
+    }
+
+    /** Q damage can be dealt by a client gadget spawned by the avatar; map it back to the owner. */
+    private int resolveCombatDealer(int attackerId) {
+        try {
+            var scene = getPlayer().getScene();
+            if (scene == null) return attackerId;
+            var e = scene.getEntityById(attackerId);
+            if (e instanceof EntityClientGadget gadget) {
+                int owner = gadget.getOwnerEntityId();
+                if (owner == 0) owner = gadget.getOriginalOwnerEntityId();
+                if (owner != 0) return owner;
+            }
+        } catch (Exception ignored) {
+        }
+        return attackerId;
+    }
+
+    private void flushArlecchinoBurstHeal(String reason) {
+        synchronized (this) {
+            flushArlecchinoBurstHealLocked(reason);
+        }
+    }
+
+    private void flushArlecchinoBurstHealLocked(String reason) {
+        var pending = this.pendingArlecchinoBurstHeal;
+        if (pending == null) return;
+        int entityId = this.pendingArlecchinoBurstEntityId;
+        this.pendingArlecchinoBurstHeal = null;
+        this.pendingArlecchinoBurstEntityId = 0;
+        if (this.pendingArlecchinoBurstHealTimeout != null) {
+            this.pendingArlecchinoBurstHealTimeout.cancel(false);
+            this.pendingArlecchinoBurstHealTimeout = null;
+        }
+        Grasscutter.getLogger().debug("Arlecchino burst heal fired ({}): entity={}", reason, entityId);
+        eventExecutor.submit(pending);
     }
 
     private void applyArlecchinoBoL(EntityAvatar arlecchino, int markLevel) {
@@ -990,7 +1244,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         arlecchino.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, newDebt);
         var scene = this.player.getScene();
-        scene.broadcastPacket(new PacketEntityFightPropUpdateNotify(arlecchino, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+        arlecchino.broadcastHpDebtPropUpdate();
         scene.broadcastPacket(new PacketEntityFightPropChangeReasonNotify(
             arlecchino,
             FightProperty.FIGHT_PROP_CUR_HP_DEBTS,
@@ -1014,7 +1268,11 @@ public final class AbilityManager extends BasePlayerManager {
             java.util.concurrent.ConcurrentHashMap.newKeySet();
 
     private static String attachKey(GameEntity entity, Ability ability, String modifierName) {
-        return entity.getId() + "/" + ability.getData().abilityName + "/" + modifierName;
+        return attachKey(entity, ability.getData().abilityName, modifierName);
+    }
+
+    private static String attachKey(GameEntity entity, String abilityName, String modifierName) {
+        return entity.getId() + "/" + abilityName + "/" + modifierName;
     }
 
     public static int syntheticModifierId(String abilityName, String modifierName) {
@@ -1043,6 +1301,7 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         this.processModifierMixins(entity, ability, modifierData, abilityData, depth);
+        this.processBoLMixins(entity, ability, modifierData, modifierName);
     }
 
     public void detachModifier(GameEntity entity, Ability ability, String modifierName) {
@@ -1050,6 +1309,9 @@ public final class AbilityManager extends BasePlayerManager {
         if (!this.attachedModifiers.remove(attachKey(entity, ability, modifierName))) return;
         entity.revertModifierProperties(
                 syntheticModifierId(ability.getData().abilityName, modifierName));
+        this.cleanupBoLMixins(entity, ability.getData().modifiers != null
+                ? ability.getData().modifiers.get(modifierName)
+                : null, attachKey(entity, ability, modifierName));
     }
 
     private void processModifierMixins(

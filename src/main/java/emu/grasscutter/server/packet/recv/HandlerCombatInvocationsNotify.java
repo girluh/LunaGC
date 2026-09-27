@@ -41,6 +41,10 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                     AttackResult attackResult = hitInfo.getAttackResult();
                     Player player = session.getPlayer();
 
+                    // Must run before the invulnerability short-circuit: her Q may deal damage
+                    // through a client gadget (attackerId != current avatar) while invulnerable.
+                    player.getAbilityManager().onCombatBeingHit(attackResult.getAttackerId());
+
                     if (attackResult.getAttackerId()
                                     != player.getTeamManager().getCurrentAvatarEntity().getId()
                             && player.getAbilityManager().isAbilityInvulnerable()) break;
