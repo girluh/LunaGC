@@ -148,6 +148,9 @@ public final class TeamManager extends BasePlayerDataManager {
     public long getCurrentCharacterGuid() {
         var currentAvatarEntity = this.getCurrentAvatarEntity();
         if (currentAvatarEntity == null){
+            if (this.getPlayer().getMainCharacterId() == 0) {
+                return 0;
+            }
 
             Avatar mainCharacter = new Avatar(this.getPlayer().getMainCharacterId());
             return mainCharacter.getGuid();
@@ -195,6 +198,9 @@ public final class TeamManager extends BasePlayerDataManager {
         if (this.getActiveTeam().isEmpty()) {
 
             this.currentCharacterIndex = 0;
+            if (this.player.getMainCharacterId() == 0) {
+                return null;
+            }
             Avatar mainCharacter = new Avatar(this.player.getMainCharacterId());
             this.avatars.add(mainCharacter.getAsEntity());
             return mainCharacter.getAsEntity();

@@ -80,6 +80,8 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter private String nickname;
     @Getter private String signature;
     @Getter private int headImage;
+    @Getter private int profilePictureId;
+    @Getter @Setter private int profileFrameId;
     @Getter private Map<Integer, Set<Integer>> sceneTags;
     @Getter private int nameCardId = 210001;
     @Getter private Position position;
@@ -106,6 +108,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter private Set<Integer> flyCloakList;
     @Getter private Set<Integer> traceEffectList;
     @Getter private Set<Integer> costumeList;
+    @Getter private Set<Integer> weaponSkinList;
     @Getter private Set<Integer> personalLineList;
     @Getter @Setter private Set<Integer> rewardedLevels;
     @Getter @Setter private Set<Integer> homeRewardedLevels;
@@ -238,6 +241,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.flyCloakList = new HashSet<>();
         this.traceEffectList = new HashSet<>();
         this.costumeList = new HashSet<>();
+        this.weaponSkinList = new HashSet<>();
         this.personalLineList = new HashSet<>();
         this.towerData = new TowerData();
         this.collectionRecordStore = new PlayerCollectionRecords();
@@ -440,6 +444,12 @@ public class Player implements PlayerHook, FieldFetch {
 
     public void setHeadImage(int picture) {
         this.headImage = picture;
+        this.updateProfile();
+        this.save();
+    }
+
+    public void setProfilePictureId(int pictureId) {
+        this.profilePictureId = pictureId;
         this.updateProfile();
         this.save();
     }
@@ -946,6 +956,31 @@ public class Player implements PlayerHook, FieldFetch {
         this.save();
     }
 
+    /** Unlocks a weapon skin (id is the client-side weapon_skin_id, not necessarily the item id). */
+    public boolean addWeaponSkin(int weaponSkinId) {
+        if (weaponSkinId <= 0) return false;
+        if (!this.getWeaponSkinList().add(weaponSkinId)) return false;
+        this.sendPacket(new PacketAvatarWeaponSkinDataNotify(this));
+        this.save();
+        return true;
+    }
+
+    /** Unlocks several weapon skins at once, emitting a single notify. */
+    public boolean addWeaponSkins(java.util.Collection<Integer> weaponSkinIds) {
+        boolean changed = false;
+        for (var id : weaponSkinIds) {
+            if (id != null && id > 0 && this.getWeaponSkinList().add(id)) changed = true;
+        }
+        if (!changed) return false;
+        this.sendPacket(new PacketAvatarWeaponSkinDataNotify(this));
+        this.save();
+        return true;
+    }
+
+    public boolean hasWeaponSkin(int weaponSkinId) {
+        return weaponSkinId <= 0 || this.getWeaponSkinList().contains(weaponSkinId);
+    }
+
     public int getCostumeFrom(int avatarId) {
         var avatars = this.getAvatars();
         avatars.loadFromDatabase();
@@ -1027,6 +1062,20 @@ public class Player implements PlayerHook, FieldFetch {
         this.getSession().send(packet);
     }
 
+    private ProfilePicture.Builder ownProfilePicture() {
+        return ProfilePicture.newBuilder()
+            .setAvatarId(this.getHeadImage())
+            .setProfilePictureId(this.getProfilePictureId())
+            .setUnknownFields(
+                com.google.protobuf.UnknownFieldSet.newBuilder()
+                    .addField(
+                        4,
+                        com.google.protobuf.UnknownFieldSet.Field.newBuilder()
+                            .addVarint(this.getProfileFrameId())
+                            .build())
+                    .build());
+    }
+
     public OnlinePlayerInfo getOnlinePlayerInfo() {
         OnlinePlayerInfo.Builder onlineInfo = OnlinePlayerInfo.newBuilder()
             .setUid(this.getUid())
@@ -1035,7 +1084,7 @@ public class Player implements PlayerHook, FieldFetch {
             .setMpSettingType(this.getMpSetting())
             .setNameCardId(this.getNameCardId())
             .setSignature(this.getSignature())
-            .setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()));
+            .setProfilePicture(ownProfilePicture());
 
         if (this.getWorld() != null) {
             onlineInfo.setCurPlayerNumInWorld(getWorld().getPlayerCount());
@@ -1090,7 +1139,7 @@ public class Player implements PlayerHook, FieldFetch {
 
         return SocialDetail.newBuilder()
             .setUid(this.getUid())
-            .setProfilePicture(ProfilePicture.newBuilder().setAvatarId(this.getHeadImage()))
+            .setProfilePicture(ownProfilePicture())
             .setNickname(this.getNickname())
             .setSignature(this.getSignature())
             .setLevel(this.getLevel())
@@ -1342,8 +1391,11 @@ public class Player implements PlayerHook, FieldFetch {
             this.position.set(pos);
         }
 
-        World world = new World(this);
-        world.addPlayer(this);
+        boolean isNewPlayer = this.getAvatars().getAvatarCount() == 0;
+        if (!isNewPlayer) {
+            World world = new World(this);
+            world.addPlayer(this);
+        }
 
         this.setProperty(PlayerProperty.PROP_PLAYER_MP_SETTING_TYPE, this.getMpSetting().getNumber(), false);
         this.setProperty(PlayerProperty.PROP_IS_MP_MODE_AVAILABLE, 1, false);
@@ -1356,6 +1408,8 @@ public class Player implements PlayerHook, FieldFetch {
         session.send(new PacketStoreWeightLimitNotify());
         session.send(new PacketPlayerStoreNotify(this));
         session.send(new PacketAvatarDataNotify(this));
+        session.send(new PacketAvatarWeaponSkinDataNotify(this));
+        session.send(new PacketIBIBOHHJJJB(this));
 
         this.getProgressManager().onPlayerLogin();
 
@@ -1391,8 +1445,15 @@ public class Player implements PlayerHook, FieldFetch {
 
         this.activityManager = new ActivityManager(this);
 
-        session.send(new PacketPlayerEnterSceneNotify(this));
+        if (!isNewPlayer) {
+            session.send(new PacketPlayerEnterSceneNotify(this));
+        }
         session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));
+
+        if (isNewPlayer) {
+            session.setState(SessionState.PICKING_CHARACTER);
+            return;
+        }
 
         this.hasSentLoginPackets = true;
 

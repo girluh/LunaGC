@@ -18,7 +18,7 @@ public class PacketAvatarEquipChangeNotify extends BasePacket {
                         .setEquipGuid(item.getGuid());
 
         if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
-            proto.setWeapon(item.createSceneWeaponInfo());
+            proto.setWeapon(item.createSceneWeaponInfo(avatar.getWeaponSkinId()));
         } else {
             proto.setReliquary(item.createSceneReliquaryInfo());
         }

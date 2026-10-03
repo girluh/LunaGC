@@ -26,10 +26,10 @@ import it.unimi.dsi.fastutil.ints.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-import org.greenrobot.eventbus.Subscribe;
 
 public class GachaSystem extends BaseGameSystem {
     private static final int starglitterId = 221;
+    private static final int masterlessFateStarId = 104300;
     private static final int stardustId = 222;
     private final Int2ObjectMap<GachaBanner> gachaBanners;
     private WatchService watchService;
@@ -296,7 +296,7 @@ public class GachaSystem extends BaseGameSystem {
         gachaInfo.addTotalPulls(times);
         BannerPools pools = new BannerPools(banner);
         List<GachaItem> list = new ArrayList<>();
-        int stardust = 0, starglitter = 0;
+        int stardust = 0, starglitter = 0, masterlessFateStar = 0;
 
         if (banner.isRemoveC6FromPool()) { // The ultimate form of pity (non-vanilla)
             pools.rateUpItems4 = removeC6FromPool(pools.rateUpItems4, player);
@@ -341,6 +341,15 @@ public class GachaSystem extends BaseGameSystem {
                 default:
                     if (constellation >= 6) { // C6, give consolation starglitter
                         addStarglitter = (itemData.getRankLevel() == 5) ? 25 : 5;
+                        if (itemData.getRankLevel() == 5) {
+                            masterlessFateStar++;
+                            gachaItem.addTransferItems(
+                                    GachaTransferItem.newBuilder()
+                                            .setItem(
+                                                    ItemParam.newBuilder()
+                                                            .setItemId(masterlessFateStarId)
+                                                            .setCount(1)));
+                        }
                     } else { // C0-C5, give constellation item
                         if (banner.isRemoveC6FromPool()
                                 && constellation
@@ -412,6 +421,9 @@ public class GachaSystem extends BaseGameSystem {
         if (starglitter > 0) {
             inventory.addItem(starglitterId, starglitter);
         }
+        if (masterlessFateStar > 0) {
+            inventory.addItem(masterlessFateStarId, masterlessFateStar);
+        }
 
         // Packets
         player.sendPacket(new PacketDoGachaRsp(banner, list, gachaInfo));
@@ -429,6 +441,40 @@ public class GachaSystem extends BaseGameSystem {
                                 watchService,
                                 new WatchEvent.Kind[] {StandardWatchEventKinds.ENTRY_MODIFY},
                                 SensitivityWatchEventModifier.HIGH);
+                Thread watcherThread =
+                        new Thread(
+                                () -> {
+                                    while (!Thread.currentThread().isInterrupted()) {
+                                        try {
+                                            WatchKey watchKey = watchService.take();
+                                            for (WatchEvent<?> event : watchKey.pollEvents()) {
+                                                final Path changed = (Path) event.context();
+                                                if (GAME_OPTIONS.watchGachaConfig
+                                                        && changed != null
+                                                        && changed.endsWith("Banners.json")) {
+                                                    Grasscutter.getLogger()
+                                                            .info(
+                                                                    "Change detected with Banners.json. Reloading gacha config");
+                                                    this.load();
+                                                }
+                                            }
+                                            boolean valid = watchKey.reset();
+                                            if (!valid) {
+                                                Grasscutter.getLogger()
+                                                        .error(
+                                                                "Unable to reset Gacha Manager Watch Key. Auto-reload of banners.json will no longer work.");
+                                            }
+                                        } catch (InterruptedException e) {
+                                            Thread.currentThread().interrupt();
+                                            break;
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                },
+                                "gacha-config-watcher");
+                watcherThread.setDaemon(true);
+                watcherThread.start();
             } catch (Exception e) {
                 Grasscutter.getLogger()
                         .error(
@@ -437,33 +483,6 @@ public class GachaSystem extends BaseGameSystem {
             }
         } else {
             Grasscutter.getLogger().error("Cannot reinitialise watcher ");
-        }
-    }
-
-    @Subscribe
-    public synchronized void watchBannerJson(GameServerTickEvent tickEvent) {
-        if (GAME_OPTIONS.watchGachaConfig) {
-            try {
-                WatchKey watchKey = watchService.take();
-
-                for (WatchEvent<?> event : watchKey.pollEvents()) {
-                    final Path changed = (Path) event.context();
-                    if (changed.endsWith("Banners.json")) {
-                        Grasscutter.getLogger()
-                                .info("Change detected with banners.json. Reloading gacha config");
-                        this.load();
-                    }
-                }
-
-                boolean valid = watchKey.reset();
-                if (!valid) {
-                    Grasscutter.getLogger()
-                            .error(
-                                    "Unable to reset Gacha Manager Watch Key. Auto-reload of banners.json will no longer work.");
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
 

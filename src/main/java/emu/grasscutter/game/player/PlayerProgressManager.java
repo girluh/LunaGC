@@ -224,6 +224,11 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
      ******************************************************************************************************************
      *****************************************************************************************************************/
     private void addStatueQuestsOnLogin() {
+        // Quest start needs a world (game time); new players have none until character creation.
+        if (this.player.getWorld() == null) {
+            return;
+        }
+
         // Get all currently existing subquests for the "unlock all statues" main quest.
         var statueMainQuest = GameData.getMainQuestDataMap().get(303);
         var statueSubQuests = statueMainQuest.getSubQuests();

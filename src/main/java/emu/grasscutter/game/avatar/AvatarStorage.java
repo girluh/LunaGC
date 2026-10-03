@@ -11,8 +11,11 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.server.event.entity.EntityCreationEvent;
 import emu.grasscutter.server.packet.send.PacketAvatarChangeCostumeNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarEquipChangeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFlycloakChangeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarTraceEffectChangeNotify;
+import emu.grasscutter.server.packet.send.PacketAvatarWeaponSkinDataNotify;
+import emu.grasscutter.server.packet.send.PacketSceneEntityUpdateNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
@@ -149,6 +152,46 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
             getPlayer().getWorld().broadcastPacket(new PacketAvatarTraceEffectChangeNotify(entity));
         } 
         return true;
+    }
+
+    /**
+     * Equips a weapon skin on the given avatars (weaponSkinId 0 unequips). The skin must already
+     * be unlocked on the player. Re-sends the avatar entity so the scene re-renders the weapon.
+     */
+    public boolean changeWeaponSkin(List<Long> avatarGuids, int weaponSkinId) {
+        if (avatarGuids == null || avatarGuids.isEmpty()) return false;
+
+        Player player = this.getPlayer();
+        if (!player.hasWeaponSkin(weaponSkinId)) return false;
+
+        boolean found = false;
+        for (long guid : avatarGuids) {
+            Avatar avatar = this.getAvatarByGuid(guid);
+            if (avatar == null) continue;
+            found = true;
+
+            if (avatar.getWeaponSkinId() == weaponSkinId) continue;
+
+            avatar.setWeaponSkinId(weaponSkinId);
+            avatar.save();
+
+            // The world model is refreshed by the weapon equip notify (it carries the skin in
+            // SceneWeaponInfo), SceneEntityUpdateNotify alone is not enough for an instant swap.
+            GameItem weapon = avatar.getWeapon();
+            if (weapon != null) {
+                player.sendPacket(new PacketAvatarEquipChangeNotify(avatar, weapon));
+            }
+
+            EntityAvatar entity = avatar.getAsEntity();
+            if (entity != null && player.getWorld() != null) {
+                player.getWorld().broadcastPacket(new PacketSceneEntityUpdateNotify(entity));
+            }
+        }
+
+        if (found) {
+            player.sendPacket(new PacketAvatarWeaponSkinDataNotify(player));
+        }
+        return found;
     }
 
 

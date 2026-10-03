@@ -214,9 +214,14 @@ public final class DoGachaRspOuterClass {
               leftGachaTimes_ = input.readUInt32();
               break;
             }
-            case 128000: {
+            case 96: {
 
               wishItemId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              wishMaxProgress_ = input.readUInt32();
               break;
             }
             case 576: {
@@ -331,7 +336,7 @@ public final class DoGachaRspOuterClass {
       return costItemId_;
     }
 
-    public static final int WISH_ITEM_ID_FIELD_NUMBER = 16000;
+    public static final int WISH_ITEM_ID_FIELD_NUMBER = 12;
     private int wishItemId_;
 
     @java.lang.Override
@@ -436,7 +441,7 @@ public final class DoGachaRspOuterClass {
       return costItemNum_;
     }
 
-    public static final int WISH_MAX_PROGRESS_FIELD_NUMBER = 16001;
+    public static final int WISH_MAX_PROGRESS_FIELD_NUMBER = 14;
     private int wishMaxProgress_;
 
     @java.lang.Override
@@ -492,7 +497,7 @@ public final class DoGachaRspOuterClass {
         output.writeUInt32(15, newGachaRandom_);
       }
       if (wishMaxProgress_ != 0) {
-        output.writeUInt32(16001, wishMaxProgress_);
+        output.writeUInt32(14, wishMaxProgress_);
       }
       if (wishProgress_ != 0) {
         output.writeUInt32(9, wishProgress_);
@@ -531,7 +536,7 @@ public final class DoGachaRspOuterClass {
         output.writeUInt32(2, leftGachaTimes_);
       }
       if (wishItemId_ != 0) {
-        output.writeUInt32(16000, wishItemId_);
+        output.writeUInt32(12, wishItemId_);
       }
       if (hDGOLIDPBGC_ != false) {
         output.writeBool(72, hDGOLIDPBGC_);
@@ -564,7 +569,7 @@ public final class DoGachaRspOuterClass {
       }
       if (wishMaxProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16001, wishMaxProgress_);
+          .computeUInt32Size(14, wishMaxProgress_);
       }
       if (wishProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -616,7 +621,7 @@ public final class DoGachaRspOuterClass {
       }
       if (wishItemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16000, wishItemId_);
+          .computeUInt32Size(12, wishItemId_);
       }
       if (hDGOLIDPBGC_ != false) {
         size += com.google.protobuf.CodedOutputStream

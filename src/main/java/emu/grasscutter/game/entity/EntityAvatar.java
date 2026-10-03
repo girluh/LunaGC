@@ -1,5 +1,6 @@
 package emu.grasscutter.game.entity;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.avatar.*;
@@ -29,6 +30,7 @@ import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.server.event.player.PlayerMoveEvent;
 import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.utils.ProtoEncode;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
@@ -281,14 +283,22 @@ public class EntityAvatar extends GameEntity {
 
         for (GameItem item : avatar.getEquips().values()) {
             if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
-                avatarInfo.setWeapon(item.createSceneWeaponInfo());
+                avatarInfo.setWeapon(item.createSceneWeaponInfo(avatar.getWeaponSkinId()));
             } else {
                 avatarInfo.addReliquaryList(item.createSceneReliquaryInfo());
             }
             avatarInfo.addEquipIdList(item.getItemId());
         }
 
-        return avatarInfo.build();
+        SceneAvatarInfo built = avatarInfo.build();
+        if (avatar.getWeaponSkinId() == 0) return built;
+        // 7.0.0 SceneAvatarInfo._weapon_skin_id = 24 (absent from the generated 5.x class).
+        try {
+            return SceneAvatarInfo.parseFrom(
+                    ProtoEncode.appendVarint(built.toByteArray(), 24, avatar.getWeaponSkinId()));
+        } catch (InvalidProtocolBufferException e) {
+            throw new IllegalStateException("Failed to encode SceneAvatarInfo", e);
+        }
     }
 
     @Override

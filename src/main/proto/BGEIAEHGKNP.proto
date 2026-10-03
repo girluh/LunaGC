@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message BGEIAEHGKNP {
+	repeated uint32 profile_frame_id_list = 11;
+	repeated uint32 profile_picture_id_list = 6;
+	int32 retcode = 10;
+}
