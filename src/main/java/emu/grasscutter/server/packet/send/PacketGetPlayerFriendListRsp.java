@@ -23,7 +23,11 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
                         .setUid(GameConstants.SERVER_CONSOLE_UID)
                         .setNickname(serverAccount.nickName)
                         .setLevel(serverAccount.adventureRank)
-                        .setProfilePicture(ProfilePicture.newBuilder().setAvatarId(serverAccount.avatarId))
+                        .setProfilePicture(
+                                emu.grasscutter.utils.ProtoEncode.toProfilePicture(
+                                        serverAccount.avatarId,
+                                        serverAccount.profilePictureId,
+                                        serverAccount.profileFrameId))
                         .setWorldLevel(serverAccount.worldLevel)
                         .setSignature(serverAccount.signature)
                         .setLastActiveTime((int) (System.currentTimeMillis() / 1000f))

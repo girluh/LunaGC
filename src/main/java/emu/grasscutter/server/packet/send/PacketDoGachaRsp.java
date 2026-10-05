@@ -7,6 +7,7 @@ import emu.grasscutter.net.proto.DoGachaRspOuterClass.DoGachaRsp;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.utils.ProtoEncode;
 import java.util.List;
 
 public class PacketDoGachaRsp extends BasePacket {
@@ -43,7 +44,9 @@ public class PacketDoGachaRsp extends BasePacket {
                     .setWishMaxProgress(banner.getWishMaxProgress());
         }
 
-        this.setData(rsp.build());
+        this.setData(
+                ProtoEncode.appendBool(
+                        rsp.build().toByteArray(), ProtoEncode.CAPTURING_RADIANCE_FIELD, true));
     }
 
     public PacketDoGachaRsp() {

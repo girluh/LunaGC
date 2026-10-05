@@ -95,7 +95,7 @@ public final class GachaWishRspOuterClass {
               gachaType_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 80: {
 
               wishProgress_ = input.readUInt32();
               break;
@@ -110,7 +110,7 @@ public final class GachaWishRspOuterClass {
               wishItemId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 104: {
 
               wishMaxProgress_ = input.readUInt32();
               break;
@@ -152,7 +152,7 @@ public final class GachaWishRspOuterClass {
               emu.grasscutter.net.proto.GachaWishRspOuterClass.GachaWishRsp.class, emu.grasscutter.net.proto.GachaWishRspOuterClass.GachaWishRsp.Builder.class);
     }
 
-    public static final int WISH_PROGRESS_FIELD_NUMBER = 6;
+    public static final int WISH_PROGRESS_FIELD_NUMBER = 10;
     private int wishProgress_;
 
     @java.lang.Override
@@ -184,7 +184,7 @@ public final class GachaWishRspOuterClass {
       return gachaType_;
     }
 
-    public static final int WISH_MAX_PROGRESS_FIELD_NUMBER = 5;
+    public static final int WISH_MAX_PROGRESS_FIELD_NUMBER = 13;
     private int wishMaxProgress_;
 
     @java.lang.Override
@@ -232,7 +232,7 @@ public final class GachaWishRspOuterClass {
         output.writeUInt32(12, gachaType_);
       }
       if (wishProgress_ != 0) {
-        output.writeUInt32(6, wishProgress_);
+        output.writeUInt32(10, wishProgress_);
       }
       if (gachaScheduleId_ != 0) {
         output.writeUInt32(2, gachaScheduleId_);
@@ -241,7 +241,7 @@ public final class GachaWishRspOuterClass {
         output.writeUInt32(1, wishItemId_);
       }
       if (wishMaxProgress_ != 0) {
-        output.writeUInt32(5, wishMaxProgress_);
+        output.writeUInt32(13, wishMaxProgress_);
       }
       if (tenCostItemId_ != 0) {
         output.writeUInt32(15, tenCostItemId_);
@@ -265,7 +265,7 @@ public final class GachaWishRspOuterClass {
       }
       if (wishProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, wishProgress_);
+          .computeUInt32Size(10, wishProgress_);
       }
       if (gachaScheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -277,7 +277,7 @@ public final class GachaWishRspOuterClass {
       }
       if (wishMaxProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, wishMaxProgress_);
+          .computeUInt32Size(13, wishMaxProgress_);
       }
       if (tenCostItemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

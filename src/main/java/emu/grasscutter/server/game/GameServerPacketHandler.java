@@ -12,6 +12,7 @@ import it.unimi.dsi.fastutil.ints.*;
 public final class GameServerPacketHandler {
 
     private final Int2ObjectMap<PacketHandler> handlers;
+    private final IntSet unknownLogged = new IntOpenHashSet();
 
     public GameServerPacketHandler(Class<? extends PacketHandler> handlerClass) {
         this.handlers = new Int2ObjectOpenHashMap<>();
@@ -70,7 +71,8 @@ public final class GameServerPacketHandler {
                         return;
                     }
                 } else {
-                    if (state != SessionState.ACTIVE) {
+                    if (state != SessionState.PICKING_CHARACTER
+                            && state != SessionState.ACTIVE) {
                         return;
                     }
                 }
@@ -84,6 +86,18 @@ public final class GameServerPacketHandler {
                 ex.printStackTrace();
             }
             return;
+        }
+
+        if (!PacketOpcodesUtils.LOOP_PACKETS.contains(opcode)
+                && !PacketOpcodes.BANNED_PACKETS.contains(opcode)
+                && this.unknownLogged.add(opcode)) {
+            var player = session.getPlayer();
+            Grasscutter.getLogger()
+                    .info(
+                            "No handler for opcode {} (uid={}, payload {} bytes).",
+                            opcode,
+                            player == null ? 0 : player.getUid(),
+                            payload.length);
         }
     }
 

@@ -248,9 +248,9 @@ public final class PacketOpcodes {
     public static final int WidgetCoolDownNotify = 805;
     public static final int AllWidgetDataNotify = 28785;
     public static final int WidgetGadgetDataNotify = 25053;
-    public static final int DoSetPlayerBornDataNotify = 1;
+    public static final int DoSetPlayerBornDataNotify = 21591;
     public static final int SetPlayerBornDataReq = 21146;
-    public static final int SetPlayerBornDataRsp = 1;
+    public static final int SetPlayerBornDataRsp = 21046;
     public static final int ScenePlayerLocationNotify = 427;
     public static final int WorldPlayerLocationNotify = 5072;
     public static final int SetPlayerPropReq = 128;
@@ -285,6 +285,16 @@ public final class PacketOpcodes {
     public static final int WeaponAwakenRsp = 2669;
     public static final int AvatarPromoteReq = 27289;
     public static final int AvatarPromoteRsp = 4534;
+    public static final int CHLFLNMHFIE = 6772;
+    public static final int BDMLMELMAOJ = 25098;
+    // 7.0 profile picture / head frame (obfuscated)
+    public static final int IPMJLKDLPMK = 2896;
+    public static final int MGOEEAHPJFJ = 1626;
+    public static final int BGEIAEHGKNP = 20816;
+    public static final int IBIBOHHJJJB = 22090;
+    public static final int SetPlayerHeadFrameReq = 4161;
+    public static final int SetPlayerHeadFrameRsp = 29314;
+    public static final int AvatarExtraLevelUpgradeRsp = 27534;
     public static final int AvatarPromotionLevelReq = 1;
     public static final int AvatarPromotionLevelRsp = 1;
     public static final int AntiAddictNotify = 24344;

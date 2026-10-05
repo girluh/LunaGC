@@ -1,5 +1,6 @@
 package emu.grasscutter.game.inventory;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import dev.morphia.annotations.*;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
@@ -20,6 +21,7 @@ import emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary;
 import emu.grasscutter.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
 import emu.grasscutter.net.proto.WeaponOuterClass.Weapon;
+import emu.grasscutter.utils.ProtoEncode;
 import emu.grasscutter.utils.objects.WeightedList;
 
 import java.util.*;
@@ -272,6 +274,11 @@ public class GameItem {
     }
 
     public SceneWeaponInfo createSceneWeaponInfo() {
+        return createSceneWeaponInfo(0);
+    }
+
+    /** {@code weaponSkinId} is the avatar's equipped weapon skin (7.0.0 SceneWeaponInfo field 11). */
+    public SceneWeaponInfo createSceneWeaponInfo(int weaponSkinId) {
         var weaponInfo =
                 SceneWeaponInfo.newBuilder()
                         .setEntityId(this.getWeaponEntity() != null ? this.getWeaponEntity().getId() : 0)
@@ -287,7 +294,15 @@ public class GameItem {
             }
         }
 
-        return weaponInfo.build();
+        SceneWeaponInfo built = weaponInfo.build();
+        if (weaponSkinId == 0) return built;
+        // 7.0.0 SceneWeaponInfo._weapon_skin_id = 11 (absent from the generated 5.x class).
+        try {
+            return SceneWeaponInfo.parseFrom(
+                    ProtoEncode.appendVarint(built.toByteArray(), 11, weaponSkinId));
+        } catch (InvalidProtocolBufferException e) {
+            throw new IllegalStateException("Failed to encode SceneWeaponInfo", e);
+        }
     }
 
     public SceneReliquaryInfo createSceneReliquaryInfo() {

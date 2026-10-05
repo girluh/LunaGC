@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message ProfilePicture {
+	uint32 avatar_id = 1;
+	uint32 costume_id = 2;
+	uint32 profile_picture_id = 3;
+	uint32 profile_frame_id = 4;
+}

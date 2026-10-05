@@ -34,6 +34,7 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.game.world.WorldDataSystem;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
+import emu.grasscutter.utils.ProtoEncode;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.server.dispatch.DispatchClient;
 import emu.grasscutter.server.event.game.ServerTickEvent;
@@ -269,7 +270,11 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
             var serverAccount = GAME_INFO.serverAccount;
             return SocialDetail.newBuilder()
                     .setUid(id)
-                    .setProfilePicture(ProfilePicture.newBuilder().setAvatarId(serverAccount.avatarId))
+                    .setProfilePicture(
+                            ProtoEncode.toProfilePicture(
+                                    serverAccount.avatarId,
+                                    serverAccount.profilePictureId,
+                                    serverAccount.profileFrameId))
                     .setNickname(serverAccount.nickName)
                     .setSignature(serverAccount.signature)
                     .setLevel(serverAccount.adventureRank)

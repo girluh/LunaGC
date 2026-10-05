@@ -16,6 +16,7 @@ import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.event.player.PlayerObtainItemEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.WeaponSkinData;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.longs.*;
 import java.util.*;
@@ -286,6 +287,16 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         }
 
         if (data.isUseOnGain()) {
+            // Weapon skins carry ITEM_USE_ADD_WEAPON_SKIN instead of a usable effect, and the
+            // enum constant does not exist in ItemUseOp (Gson -> null), so route them here
+            // instead of useItemDirect, which would silently drop them.
+            var skinIds = WeaponSkinData.skinIdsForItem(item.getItemId());
+            if (!skinIds.isEmpty()) {
+                Grasscutter.getLogger()
+                        .info("WeaponSkin unlock: itemId={} -> skinIds={}", item.getItemId(), skinIds);
+                this.player.addWeaponSkins(skinIds);
+                return null;
+            }
             var params = new UseItemParams(this.player, data.getUseTarget());
             params.usedItemId = data.getId();
             this.player.getServer().getInventorySystem().useItemDirect(data, params);

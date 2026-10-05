@@ -2,6 +2,7 @@ package emu.grasscutter.game.avatar;
 
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
@@ -31,6 +32,7 @@ import emu.grasscutter.net.proto.ShowEquipOuterClass.ShowEquip;
 import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord;
 import emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo;
 import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.utils.ProtoEncode;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
 
@@ -79,6 +81,7 @@ public class Avatar {
 
     @Getter @Setter private int flyCloak;
     @Getter @Setter private int costume;
+    @Getter @Setter private int weaponSkinId; // weapon skin currently worn, 0 = none
     @Getter private int bornTime;
 
     @Getter @Setter private int fetterLevel = 1;
@@ -1123,7 +1126,18 @@ public class Avatar {
                 ProtoHelper.newPropValue(
                         PlayerProperty.PROP_SATIATION_PENALTY_TIME, this.getSatiationPenalty()));
 
-        return avatarInfo.build();
+        // 7.0.0 AvatarInfo._weapon_skin_id = 32 (absent from the generated 5.x class).
+        AvatarInfo built = avatarInfo.build();
+        int weaponSkinId = this.getWeaponSkinId();
+        if (weaponSkinId != 0) {
+            try {
+                return AvatarInfo.parseFrom(
+                        ProtoEncode.appendVarint(built.toByteArray(), 32, weaponSkinId));
+            } catch (InvalidProtocolBufferException e) {
+                throw new IllegalStateException("Failed to encode AvatarInfo", e);
+            }
+        }
+        return built;
     }
 
 
@@ -1143,7 +1157,8 @@ public class Avatar {
                         .putAllSkillLevelMap(this.getSkillLevelMap())
                         .putAllProudSkillExtraLevelMap(this.getProudSkillBonusMap())
                         .setFetterInfo(avatarFetter)
-                        .setCostumeId(this.getCostume());
+                        .setCostumeId(this.getCostume())
+                        .setWeaponSkinId(this.getWeaponSkinId());
 
         showAvatarInfo.putPropMap(
                 PlayerProperty.PROP_LEVEL.getId(),

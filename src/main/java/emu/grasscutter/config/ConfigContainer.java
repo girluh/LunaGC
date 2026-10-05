@@ -380,6 +380,8 @@ public class ConfigContainer {
     public static class ConsoleAccount {
         public int avatarId = 10000007;
         public int nameCardId = 210001;
+        public int profilePictureId = 0;
+        public int profileFrameId = 0;
         public int adventureRank = 1;
         public int worldLevel = 0;
 

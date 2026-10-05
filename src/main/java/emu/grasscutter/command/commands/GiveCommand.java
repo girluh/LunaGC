@@ -219,10 +219,9 @@ public final class GiveCommand implements CommandHandler {
     }
 
     private static void addItemsChunked(Player player, List<GameItem> items, int packetSize) {
-        // Send the items in multiple packets
-        int lastIdx = items.size() - 1;
-        for (int i = 0; i <= lastIdx; i += packetSize) {
-            player.getInventory().addItems(items.subList(i, Math.min(i + packetSize, lastIdx)));
+        // Send the items in multiple packets (subList end is exclusive, so bound by size)
+        for (int i = 0; i < items.size(); i += packetSize) {
+            player.getInventory().addItems(items.subList(i, Math.min(i + packetSize, items.size())));
         }
     }
 

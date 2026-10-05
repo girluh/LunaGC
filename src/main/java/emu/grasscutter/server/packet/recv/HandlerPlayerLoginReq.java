@@ -1,15 +1,10 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.AvatarTypeOuterClass;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.*;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Opcodes(PacketOpcodes.PlayerLoginReq)
 public class HandlerPlayerLoginReq extends PacketHandler {
@@ -24,29 +19,21 @@ public class HandlerPlayerLoginReq extends PacketHandler {
         Player player = session.getPlayer();
 
         if (player.getAvatars().getAvatarCount() == 0) {
-            int avatarId = 10000007;
-            Avatar mainCharacter = new Avatar(avatarId);
-
-            if (!GAME_OPTIONS.questing.enabled) {
-                mainCharacter.setSkillDepotData(
-                    GameData.getAvatarSkillDepotDataMap().get(704));
-            }
-
-            player.addAvatar(mainCharacter, false);
-            player.setMainCharacterId(avatarId);
-            player.setHeadImage(avatarId);
-            player
-                .getTeamManager()
-                .getCurrentSinglePlayerTeamInfo()
-                .getAvatars()
-                .add(mainCharacter.getAvatarId());
-            player.save();
-
+            // Brand new account: let the client run its character creation flow instead of
+            // silently creating a traveler here. onLogin() leaves the session in
+            // PICKING_CHARACTER without a world/scene, then HandlerSetPlayerBornDataReq finishes
+            // the birth. Ordering matches the official flow: notify first, then login response.
             session.getPlayer().onLogin();
-        } else {
-            session.getPlayer().onLogin();
+            session.send(new BasePacket(PacketOpcodes.DoSetPlayerBornDataNotify));
+            session.send(new PacketPlayerLoginRsp(session));
+            return;
         }
 
+        if (player.getMainCharacterId() != 0
+                && GameData.getAvatarDataMap().get(player.getHeadImage()) == null) {
+            player.setHeadImage(player.getMainCharacterId());
+        }
+        session.getPlayer().onLogin();
         session.send(new PacketPlayerLoginRsp(session));
     }
 }
