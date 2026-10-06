@@ -81,7 +81,7 @@ public final class Mail {
                 .setImportance(this.importance)
                 .setIsRead(this.isRead)
                 .setIsAttachmentGot(this.isAttachmentGot)
-                .setCollectState(MailCollectState.MailCollectState_MAIL_NOT_COLLECTIBLE)
+                .setCollectStateValue(this.stateValue)
                 .build();
     }
 

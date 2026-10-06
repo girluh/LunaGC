@@ -52,7 +52,7 @@ public class MailHandler extends BasePlayerManager {
         Mail message = getMailById(mailId);
 
         if (message != null) {
-            this.getMail().remove(mailId);
+            this.getMail().remove(mailId - 1);
             message.expireTime = 0;
             message.save();
 
@@ -79,7 +79,10 @@ public class MailHandler extends BasePlayerManager {
         player.getSession().send(new PacketMailChangeNotify(player, null, deleted));
     }
 
-    public Mail getMailById(int index) {
+    /** Client-facing mail ids start at 1 (index + 1); mail_id 0 is not a valid mail. */
+    public Mail getMailById(int mailId) {
+        int index = mailId - 1;
+        if (index < 0 || index >= this.mail.size()) return null;
         return this.mail.get(index);
     }
 
@@ -87,9 +90,9 @@ public class MailHandler extends BasePlayerManager {
         return this.mail.indexOf(message);
     }
 
-    public boolean replaceMailByIndex(int index, Mail message) {
-        if (getMailById(index) != null) {
-            this.mail.set(index, message);
+    public boolean replaceMailByIndex(int mailId, Mail message) {
+        if (getMailById(mailId) != null) {
+            this.mail.set(mailId - 1, message);
             message.save();
             return true;
         } else {

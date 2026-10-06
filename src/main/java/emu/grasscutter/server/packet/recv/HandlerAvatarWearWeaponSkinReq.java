@@ -16,13 +16,14 @@ public class HandlerAvatarWearWeaponSkinReq extends PacketHandler {
         var guids = req.getAvatarGuidListList();
         int skinId = req.getWeaponSkinId();
 
+        // The client blocks on the Rsp (with no reply, clicking a skin does nothing), so unlike
+        // the (lossy) official capture we must answer.
         boolean success = !guids.isEmpty() && player.hasWeaponSkin(skinId);
         session.send(
                 success
                         ? new PacketAvatarWearWeaponSkinRsp(guids, skinId)
                         : new PacketAvatarWearWeaponSkinRsp());
 
-        // Apply after the Rsp so the client processes the skin state before the entity updates.
         if (success) {
             player.getAvatars().changeWeaponSkin(guids, skinId);
         }

@@ -372,7 +372,7 @@ public final class PacketOpcodes {
     public static final int ReliquaryUpgradeRsp = 28190;
     public static final int SceneAudioNotify = 24761;
     public static final int SceneEntityMoveNotify = 22811;
-    public static final int SceneEntityUpdateNotify = 1;
+    public static final int SceneEntityUpdateNotify = 20664;
     public static final int ScenePlayerSoundNotify = 6096;
     public static final int SceneWeatherForcastReq = 28216;
     public static final int SetCoopChapterViewedRsp = 27740;
@@ -466,6 +466,8 @@ public final class PacketOpcodes {
     public static final int DelBackupAvatarTeamReq = 23640;
     public static final int DelBackupAvatarTeamRsp = 8855;
     public static final int GetAllMailResultNotify = 5076;
+    public static final int GetAllMailRsp = 21948;
+    public static final int GetAllMailReq = 7329;
     public static final int BattlePassAllDataNotify = 27518;
     public static final int TakeBattlePassMissionPointRsp = 22714;
     public static final int EvtBulletHitNotify = 22397;
