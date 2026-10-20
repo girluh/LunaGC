@@ -81,7 +81,7 @@ public final class ProudSkillChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 proudSkillList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -89,7 +89,7 @@ public final class ProudSkillChangeNotifyOuterClass {
               proudSkillList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -102,17 +102,17 @@ public final class ProudSkillChangeNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 24: {
+            case 48: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 32: {
 
               skillDepotId_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 88: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -152,7 +152,7 @@ public final class ProudSkillChangeNotifyOuterClass {
               emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify.class, emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify.Builder.class);
     }
 
-    public static final int PROUD_SKILL_LIST_FIELD_NUMBER = 13;
+    public static final int PROUD_SKILL_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList proudSkillList_;
 
     @java.lang.Override
@@ -170,7 +170,7 @@ public final class ProudSkillChangeNotifyOuterClass {
     }
     private int proudSkillListMemoizedSerializedSize = -1;
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 1;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 11;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -178,7 +178,7 @@ public final class ProudSkillChangeNotifyOuterClass {
       return avatarGuid_;
     }
 
-    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 11;
+    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 4;
     private int skillDepotId_;
 
     @java.lang.Override
@@ -186,7 +186,7 @@ public final class ProudSkillChangeNotifyOuterClass {
       return skillDepotId_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 6;
     private int entityId_;
 
     @java.lang.Override
@@ -210,20 +210,20 @@ public final class ProudSkillChangeNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getProudSkillListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(proudSkillListMemoizedSerializedSize);
       }
       for (int i = 0; i < proudSkillList_.size(); i++) {
         output.writeUInt32NoTag(proudSkillList_.getInt(i));
       }
       if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
+        output.writeUInt32(6, entityId_);
       }
       if (skillDepotId_ != 0) {
-        output.writeUInt32(11, skillDepotId_);
+        output.writeUInt32(4, skillDepotId_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(1, avatarGuid_);
+        output.writeUInt64(11, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -250,15 +250,15 @@ public final class ProudSkillChangeNotifyOuterClass {
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
+          .computeUInt32Size(6, entityId_);
       }
       if (skillDepotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, skillDepotId_);
+          .computeUInt32Size(4, skillDepotId_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, avatarGuid_);
+          .computeUInt64Size(11, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

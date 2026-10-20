@@ -94,7 +94,7 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 42: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -107,12 +107,12 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
 
               break;
             }
-            case 80: {
+            case 112: {
 
               groupId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 48: {
 
               gadgetId_ = input.readUInt32();
               break;
@@ -149,7 +149,7 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
               emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.class, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder.class);
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 12;
+    public static final int GADGET_ID_FIELD_NUMBER = 6;
     private int gadgetId_;
     /**
      * <code>uint32 gadget_id = 14;</code>
@@ -160,7 +160,7 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
       return gadgetId_;
     }
 
-    public static final int POS_FIELD_NUMBER = 15;
+    public static final int POS_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 11;</code>
@@ -186,7 +186,7 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
       return getPos();
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 10;
+    public static final int GROUP_ID_FIELD_NUMBER = 14;
     private int groupId_;
     /**
      * <code>uint32 group_id = 13;</code>
@@ -212,13 +212,13 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pos_ != null) {
-        output.writeMessage(15, getPos());
+        output.writeMessage(5, getPos());
       }
       if (groupId_ != 0) {
-        output.writeUInt32(10, groupId_);
+        output.writeUInt32(14, groupId_);
       }
       if (gadgetId_ != 0) {
-        output.writeUInt32(12, gadgetId_);
+        output.writeUInt32(6, gadgetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -231,15 +231,15 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
       size = 0;
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getPos());
+          .computeMessageSize(5, getPos());
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, groupId_);
+          .computeUInt32Size(14, groupId_);
       }
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, gadgetId_);
+          .computeUInt32Size(6, gadgetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

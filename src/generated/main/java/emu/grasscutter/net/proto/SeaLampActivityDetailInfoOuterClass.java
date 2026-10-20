@@ -123,7 +123,7 @@ public final class SeaLampActivityDetailInfoOuterClass {
               kEDBEMPECOA_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 16: {
 
               progress_ = input.readUInt32();
               break;
@@ -250,7 +250,7 @@ public final class SeaLampActivityDetailInfoOuterClass {
       return eIBAFNPFPPO_;
     }
 
-    public static final int PROGRESS_FIELD_NUMBER = 6;
+    public static final int PROGRESS_FIELD_NUMBER = 2;
     private int progress_;
 
     @java.lang.Override
@@ -294,7 +294,7 @@ public final class SeaLampActivityDetailInfoOuterClass {
         output.writeUInt32(16000, kEDBEMPECOA_);
       }
       if (progress_ != 0) {
-        output.writeUInt32(6, progress_);
+        output.writeUInt32(2, progress_);
       }
       if (getJJEPCGKDLCNList().size() > 0) {
         output.writeUInt32NoTag(114);
@@ -329,7 +329,7 @@ public final class SeaLampActivityDetailInfoOuterClass {
       }
       if (progress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, progress_);
+          .computeUInt32Size(2, progress_);
       }
       {
         int dataSize = 0;

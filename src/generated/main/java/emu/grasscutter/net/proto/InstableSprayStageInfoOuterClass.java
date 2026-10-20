@@ -111,17 +111,17 @@ public final class InstableSprayStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 104: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 96: {
 
               isFinished_ = input.readBool();
               break;
             }
-            case 50: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 teamInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -130,7 +130,7 @@ public final class InstableSprayStageInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.parser(), extensionRegistry));
               break;
             }
-            case 104: {
+            case 120: {
 
               maxScore_ = input.readUInt32();
               break;
@@ -170,7 +170,7 @@ public final class InstableSprayStageInfoOuterClass {
               emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo.class, emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo.Builder.class);
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 13;
+    public static final int MAX_SCORE_FIELD_NUMBER = 15;
     private int maxScore_;
     /**
      * <code>uint32 max_score = 15;</code>
@@ -181,7 +181,7 @@ public final class InstableSprayStageInfoOuterClass {
       return maxScore_;
     }
 
-    public static final int TEAM_INFO_LIST_FIELD_NUMBER = 6;
+    public static final int TEAM_INFO_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> teamInfoList_;
     /**
      * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
@@ -221,7 +221,7 @@ public final class InstableSprayStageInfoOuterClass {
       return teamInfoList_.get(index);
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 4;
+    public static final int IS_FINISHED_FIELD_NUMBER = 12;
     private boolean isFinished_;
     /**
      * <code>bool is_finished = 6;</code>
@@ -232,7 +232,7 @@ public final class InstableSprayStageInfoOuterClass {
       return isFinished_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 9;
+    public static final int STAGE_ID_FIELD_NUMBER = 13;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 3;</code>
@@ -258,16 +258,16 @@ public final class InstableSprayStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(9, stageId_);
+        output.writeUInt32(13, stageId_);
       }
       if (isFinished_ != false) {
-        output.writeBool(4, isFinished_);
+        output.writeBool(12, isFinished_);
       }
       for (int i = 0; i < teamInfoList_.size(); i++) {
-        output.writeMessage(6, teamInfoList_.get(i));
+        output.writeMessage(7, teamInfoList_.get(i));
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(13, maxScore_);
+        output.writeUInt32(15, maxScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -280,19 +280,19 @@ public final class InstableSprayStageInfoOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, stageId_);
+          .computeUInt32Size(13, stageId_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isFinished_);
+          .computeBoolSize(12, isFinished_);
       }
       for (int i = 0; i < teamInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, teamInfoList_.get(i));
+          .computeMessageSize(7, teamInfoList_.get(i));
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, maxScore_);
+          .computeUInt32Size(15, maxScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

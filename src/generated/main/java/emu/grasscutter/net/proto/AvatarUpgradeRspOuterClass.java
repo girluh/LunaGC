@@ -75,22 +75,22 @@ public final class AvatarUpgradeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 120: {
 
               oldLevel_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 56: {
 
               curLevel_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 48: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -127,7 +127,7 @@ public final class AvatarUpgradeRspOuterClass {
               emu.grasscutter.net.proto.AvatarUpgradeRspOuterClass.AvatarUpgradeRsp.class, emu.grasscutter.net.proto.AvatarUpgradeRspOuterClass.AvatarUpgradeRsp.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 15;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 6;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -135,7 +135,7 @@ public final class AvatarUpgradeRspOuterClass {
       return avatarGuid_;
     }
 
-    public static final int OLD_LEVEL_FIELD_NUMBER = 6;
+    public static final int OLD_LEVEL_FIELD_NUMBER = 15;
     private int oldLevel_;
 
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class AvatarUpgradeRspOuterClass {
       return oldLevel_;
     }
 
-    public static final int CUR_LEVEL_FIELD_NUMBER = 3;
+    public static final int CUR_LEVEL_FIELD_NUMBER = 7;
     private int curLevel_;
 
     @java.lang.Override
@@ -151,7 +151,7 @@ public final class AvatarUpgradeRspOuterClass {
       return curLevel_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
 
     @java.lang.Override
@@ -174,16 +174,16 @@ public final class AvatarUpgradeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (oldLevel_ != 0) {
-        output.writeUInt32(6, oldLevel_);
+        output.writeUInt32(15, oldLevel_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(10, retcode_);
       }
       if (curLevel_ != 0) {
-        output.writeUInt32(3, curLevel_);
+        output.writeUInt32(7, curLevel_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(15, avatarGuid_);
+        output.writeUInt64(6, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -196,19 +196,19 @@ public final class AvatarUpgradeRspOuterClass {
       size = 0;
       if (oldLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, oldLevel_);
+          .computeUInt32Size(15, oldLevel_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(10, retcode_);
       }
       if (curLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, curLevel_);
+          .computeUInt32Size(7, curLevel_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(15, avatarGuid_);
+          .computeUInt64Size(6, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

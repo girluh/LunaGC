@@ -118,7 +118,7 @@ public final class ItemAddHintNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint>();
                 mutable_bitField0_ |= 0x00000001;
@@ -127,7 +127,7 @@ public final class ItemAddHintNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.parser(), extensionRegistry));
               break;
             }
-            case 104: {
+            case 128000: {
 
               mKAELJPHKOP_ = input.readBool();
               break;
@@ -137,12 +137,12 @@ public final class ItemAddHintNotifyOuterClass {
               hNBBBHDDNFD_ = input.readBool();
               break;
             }
-            case 48: {
+            case 88: {
 
               reason_ = input.readUInt32();
               break;
             }
-            case 82: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 overflowTransformedItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint>();
                 mutable_bitField0_ |= 0x00000002;
@@ -151,12 +151,12 @@ public final class ItemAddHintNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.parser(), extensionRegistry));
               break;
             }
-            case 72: {
+            case 48: {
 
               questId_ = input.readUInt32();
               break;
             }
-            case 66: {
+            case 42: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (position_ != null) {
                 subBuilder = position_.toBuilder();
@@ -207,7 +207,7 @@ public final class ItemAddHintNotifyOuterClass {
               emu.grasscutter.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify.class, emu.grasscutter.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify.Builder.class);
     }
 
-    public static final int POSITION_FIELD_NUMBER = 8;
+    public static final int POSITION_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector position_;
 
     @java.lang.Override
@@ -225,7 +225,7 @@ public final class ItemAddHintNotifyOuterClass {
       return getPosition();
     }
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 15;
+    public static final int ITEM_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint> itemList_;
 
     @java.lang.Override
@@ -255,7 +255,7 @@ public final class ItemAddHintNotifyOuterClass {
       return itemList_.get(index);
     }
 
-    public static final int OVERFLOW_TRANSFORMED_ITEM_LIST_FIELD_NUMBER = 10;
+    public static final int OVERFLOW_TRANSFORMED_ITEM_LIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint> overflowTransformedItemList_;
 
     @java.lang.Override
@@ -285,7 +285,7 @@ public final class ItemAddHintNotifyOuterClass {
       return overflowTransformedItemList_.get(index);
     }
 
-    public static final int MKAELJPHKOP_FIELD_NUMBER = 13;
+    public static final int MKAELJPHKOP_FIELD_NUMBER = 16000;
     private boolean mKAELJPHKOP_;
     /**
      * <code>bool MKAELJPHKOP = 12;</code>
@@ -307,7 +307,7 @@ public final class ItemAddHintNotifyOuterClass {
       return hNBBBHDDNFD_;
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 9;
+    public static final int QUEST_ID_FIELD_NUMBER = 6;
     private int questId_;
 
     @java.lang.Override
@@ -315,7 +315,7 @@ public final class ItemAddHintNotifyOuterClass {
       return questId_;
     }
 
-    public static final int REASON_FIELD_NUMBER = 6;
+    public static final int REASON_FIELD_NUMBER = 11;
     private int reason_;
 
     @java.lang.Override
@@ -338,25 +338,25 @@ public final class ItemAddHintNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (position_ != null) {
-        output.writeMessage(8, getPosition());
+        output.writeMessage(5, getPosition());
       }
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(15, itemList_.get(i));
+        output.writeMessage(13, itemList_.get(i));
       }
       if (reason_ != 0) {
-        output.writeUInt32(6, reason_);
+        output.writeUInt32(11, reason_);
       }
       if (hNBBBHDDNFD_ != false) {
         output.writeBool(7, hNBBBHDDNFD_);
       }
       for (int i = 0; i < overflowTransformedItemList_.size(); i++) {
-        output.writeMessage(10, overflowTransformedItemList_.get(i));
+        output.writeMessage(12, overflowTransformedItemList_.get(i));
       }
       if (mKAELJPHKOP_ != false) {
-        output.writeBool(13, mKAELJPHKOP_);
+        output.writeBool(16000, mKAELJPHKOP_);
       }
       if (questId_ != 0) {
-        output.writeUInt32(9, questId_);
+        output.writeUInt32(6, questId_);
       }
       unknownFields.writeTo(output);
     }
@@ -369,15 +369,15 @@ public final class ItemAddHintNotifyOuterClass {
       size = 0;
       if (position_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getPosition());
+          .computeMessageSize(5, getPosition());
       }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, itemList_.get(i));
+          .computeMessageSize(13, itemList_.get(i));
       }
       if (reason_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, reason_);
+          .computeUInt32Size(11, reason_);
       }
       if (hNBBBHDDNFD_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -385,15 +385,15 @@ public final class ItemAddHintNotifyOuterClass {
       }
       for (int i = 0; i < overflowTransformedItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, overflowTransformedItemList_.get(i));
+          .computeMessageSize(12, overflowTransformedItemList_.get(i));
       }
       if (mKAELJPHKOP_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, mKAELJPHKOP_);
+          .computeBoolSize(16000, mKAELJPHKOP_);
       }
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, questId_);
+          .computeUInt32Size(6, questId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

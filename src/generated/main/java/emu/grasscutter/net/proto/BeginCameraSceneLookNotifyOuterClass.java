@@ -233,7 +233,7 @@ public final class BeginCameraSceneLookNotifyOuterClass {
 
               break;
             }
-            case 85: {
+            case 21: {
 
               duration_ = input.readFloat();
               break;
@@ -316,7 +316,7 @@ public final class BeginCameraSceneLookNotifyOuterClass {
               eFPNBOJMHOF_ = input.readFloat();
               break;
             }
-            case 6432: {
+            case 15576: {
 
               entityId_ = input.readUInt32();
               break;
@@ -453,7 +453,7 @@ public final class BeginCameraSceneLookNotifyOuterClass {
       return getOCJINDALGCH();
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 804;
+    public static final int ENTITY_ID_FIELD_NUMBER = 1947;
     private int entityId_;
     /**
      * <code>uint32 entity_id = 534;</code>
@@ -486,7 +486,7 @@ public final class BeginCameraSceneLookNotifyOuterClass {
       return fBJIPNLHIJM_;
     }
 
-    public static final int DURATION_FIELD_NUMBER = 10;
+    public static final int DURATION_FIELD_NUMBER = 2;
     private float duration_;
     /**
      * <code>float duration = 2;</code>
@@ -644,7 +644,7 @@ public final class BeginCameraSceneLookNotifyOuterClass {
         output.writeMessage(1, getPKONLLGKBAI());
       }
       if (duration_ != 0F) {
-        output.writeFloat(10, duration_);
+        output.writeFloat(2, duration_);
       }
       if (aGIIGOAJHHO_ != emu.grasscutter.net.proto.KeepRotTypeOuterClass.KeepRotType.KeepRotType_KEEP_ROT_X.getNumber()) {
         output.writeEnum(3, aGIIGOAJHHO_);
@@ -686,7 +686,7 @@ public final class BeginCameraSceneLookNotifyOuterClass {
         output.writeFloat(506, eFPNBOJMHOF_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(804, entityId_);
+        output.writeUInt32(1947, entityId_);
       }
       if (hEKPMBICIPF_ != 0) {
         output.writeUInt32(911, hEKPMBICIPF_);
@@ -709,7 +709,7 @@ public final class BeginCameraSceneLookNotifyOuterClass {
       }
       if (duration_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(10, duration_);
+          .computeFloatSize(2, duration_);
       }
       if (aGIIGOAJHHO_ != emu.grasscutter.net.proto.KeepRotTypeOuterClass.KeepRotType.KeepRotType_KEEP_ROT_X.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -769,7 +769,7 @@ public final class BeginCameraSceneLookNotifyOuterClass {
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(804, entityId_);
+          .computeUInt32Size(1947, entityId_);
       }
       if (hEKPMBICIPF_ != 0) {
         size += com.google.protobuf.CodedOutputStream

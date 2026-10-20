@@ -69,17 +69,17 @@ public final class ChildQuestOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 40: {
 
               questId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 104: {
 
               questConfigId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 24: {
 
               state_ = input.readUInt32();
               break;
@@ -116,7 +116,7 @@ public final class ChildQuestOuterClass {
               emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.class, emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.Builder.class);
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 2;
+    public static final int QUEST_ID_FIELD_NUMBER = 5;
     private int questId_;
 
     @java.lang.Override
@@ -124,7 +124,7 @@ public final class ChildQuestOuterClass {
       return questId_;
     }
 
-    public static final int QUEST_CONFIG_ID_FIELD_NUMBER = 6;
+    public static final int QUEST_CONFIG_ID_FIELD_NUMBER = 13;
     private int questConfigId_;
 
     @java.lang.Override
@@ -132,7 +132,7 @@ public final class ChildQuestOuterClass {
       return questConfigId_;
     }
 
-    public static final int STATE_FIELD_NUMBER = 13;
+    public static final int STATE_FIELD_NUMBER = 3;
     private int state_;
 
     @java.lang.Override
@@ -155,13 +155,13 @@ public final class ChildQuestOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (questId_ != 0) {
-        output.writeUInt32(2, questId_);
+        output.writeUInt32(5, questId_);
       }
       if (questConfigId_ != 0) {
-        output.writeUInt32(6, questConfigId_);
+        output.writeUInt32(13, questConfigId_);
       }
       if (state_ != 0) {
-        output.writeUInt32(13, state_);
+        output.writeUInt32(3, state_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,15 +174,15 @@ public final class ChildQuestOuterClass {
       size = 0;
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, questId_);
+          .computeUInt32Size(5, questId_);
       }
       if (questConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, questConfigId_);
+          .computeUInt32Size(13, questConfigId_);
       }
       if (state_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, state_);
+          .computeUInt32Size(3, state_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

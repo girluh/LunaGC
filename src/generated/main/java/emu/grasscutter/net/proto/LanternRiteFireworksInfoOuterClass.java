@@ -93,7 +93,7 @@ public final class LanternRiteFireworksInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stageInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,7 +137,7 @@ public final class LanternRiteFireworksInfoOuterClass {
               emu.grasscutter.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.class, emu.grasscutter.net.proto.LanternRiteFireworksInfoOuterClass.LanternRiteFireworksInfo.Builder.class);
     }
 
-    public static final int STAGE_INFO_LIST_FIELD_NUMBER = 10;
+    public static final int STAGE_INFO_LIST_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo> stageInfoList_;
     /**
      * <code>repeated .LanternRiteFireworksStageInfo stage_info_list = 4;</code>
@@ -192,7 +192,7 @@ public final class LanternRiteFireworksInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < stageInfoList_.size(); i++) {
-        output.writeMessage(10, stageInfoList_.get(i));
+        output.writeMessage(5, stageInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,7 +205,7 @@ public final class LanternRiteFireworksInfoOuterClass {
       size = 0;
       for (int i = 0; i < stageInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, stageInfoList_.get(i));
+          .computeMessageSize(5, stageInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

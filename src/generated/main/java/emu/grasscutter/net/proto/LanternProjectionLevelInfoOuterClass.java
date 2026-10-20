@@ -97,7 +97,7 @@ public final class LanternProjectionLevelInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 48: {
 
               id_ = input.readUInt32();
               break;
@@ -107,7 +107,7 @@ public final class LanternProjectionLevelInfoOuterClass {
               fBKKFKGPLPP_ = input.readBool();
               break;
             }
-            case 24: {
+            case 72: {
 
               minFinishTime_ = input.readUInt32();
               break;
@@ -117,7 +117,7 @@ public final class LanternProjectionLevelInfoOuterClass {
               jNFKFCEMOFM_ = input.readBool();
               break;
             }
-            case 72: {
+            case 120: {
 
               isFinished_ = input.readBool();
               break;
@@ -154,7 +154,7 @@ public final class LanternProjectionLevelInfoOuterClass {
               emu.grasscutter.net.proto.LanternProjectionLevelInfoOuterClass.LanternProjectionLevelInfo.class, emu.grasscutter.net.proto.LanternProjectionLevelInfoOuterClass.LanternProjectionLevelInfo.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 13;
+    public static final int ID_FIELD_NUMBER = 6;
     private int id_;
     /**
      * <code>uint32 id = 2;</code>
@@ -165,7 +165,7 @@ public final class LanternProjectionLevelInfoOuterClass {
       return id_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 9;
+    public static final int IS_FINISHED_FIELD_NUMBER = 15;
     private boolean isFinished_;
     /**
      * <code>bool is_finished = 14;</code>
@@ -198,7 +198,7 @@ public final class LanternProjectionLevelInfoOuterClass {
       return fBKKFKGPLPP_;
     }
 
-    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 3;
+    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 9;
     private int minFinishTime_;
     /**
      * <code>uint32 min_finish_time = 6;</code>
@@ -224,19 +224,19 @@ public final class LanternProjectionLevelInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0) {
-        output.writeUInt32(13, id_);
+        output.writeUInt32(6, id_);
       }
       if (fBKKFKGPLPP_ != false) {
         output.writeBool(16000, fBKKFKGPLPP_);
       }
       if (minFinishTime_ != 0) {
-        output.writeUInt32(3, minFinishTime_);
+        output.writeUInt32(9, minFinishTime_);
       }
       if (jNFKFCEMOFM_ != false) {
         output.writeBool(7, jNFKFCEMOFM_);
       }
       if (isFinished_ != false) {
-        output.writeBool(9, isFinished_);
+        output.writeBool(15, isFinished_);
       }
       unknownFields.writeTo(output);
     }
@@ -249,7 +249,7 @@ public final class LanternProjectionLevelInfoOuterClass {
       size = 0;
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, id_);
+          .computeUInt32Size(6, id_);
       }
       if (fBKKFKGPLPP_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -257,7 +257,7 @@ public final class LanternProjectionLevelInfoOuterClass {
       }
       if (minFinishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, minFinishTime_);
+          .computeUInt32Size(9, minFinishTime_);
       }
       if (jNFKFCEMOFM_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -265,7 +265,7 @@ public final class LanternProjectionLevelInfoOuterClass {
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isFinished_);
+          .computeBoolSize(15, isFinished_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

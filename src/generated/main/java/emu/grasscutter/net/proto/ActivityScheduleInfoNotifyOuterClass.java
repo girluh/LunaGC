@@ -84,7 +84,7 @@ public final class ActivityScheduleInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 activityScheduleList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -93,7 +93,7 @@ public final class ActivityScheduleInfoNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfo.parser(), extensionRegistry));
               break;
             }
-            case 112: {
+            case 24: {
 
               remainFlySeaLampNum_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class ActivityScheduleInfoNotifyOuterClass {
               emu.grasscutter.net.proto.ActivityScheduleInfoNotifyOuterClass.ActivityScheduleInfoNotify.class, emu.grasscutter.net.proto.ActivityScheduleInfoNotifyOuterClass.ActivityScheduleInfoNotify.Builder.class);
     }
 
-    public static final int ACTIVITY_SCHEDULE_LIST_FIELD_NUMBER = 9;
+    public static final int ACTIVITY_SCHEDULE_LIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfo> activityScheduleList_;
 
     @java.lang.Override
@@ -163,7 +163,7 @@ public final class ActivityScheduleInfoNotifyOuterClass {
       return activityScheduleList_.get(index);
     }
 
-    public static final int REMAIN_FLY_SEA_LAMP_NUM_FIELD_NUMBER = 14;
+    public static final int REMAIN_FLY_SEA_LAMP_NUM_FIELD_NUMBER = 3;
     private int remainFlySeaLampNum_;
 
     @java.lang.Override
@@ -186,10 +186,10 @@ public final class ActivityScheduleInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < activityScheduleList_.size(); i++) {
-        output.writeMessage(9, activityScheduleList_.get(i));
+        output.writeMessage(12, activityScheduleList_.get(i));
       }
       if (remainFlySeaLampNum_ != 0) {
-        output.writeUInt32(14, remainFlySeaLampNum_);
+        output.writeUInt32(3, remainFlySeaLampNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -202,11 +202,11 @@ public final class ActivityScheduleInfoNotifyOuterClass {
       size = 0;
       for (int i = 0; i < activityScheduleList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, activityScheduleList_.get(i));
+          .computeMessageSize(12, activityScheduleList_.get(i));
       }
       if (remainFlySeaLampNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, remainFlySeaLampNum_);
+          .computeUInt32Size(3, remainFlySeaLampNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

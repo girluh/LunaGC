@@ -75,6 +75,22 @@ public final class PropChangeReasonOuterClass {
      * <code>PropChangeReason_PROP_CHANGE_MANUAL_ADJUST_WORLD_LEVEL = 13;</code>
      */
     PropChangeReason_PROP_CHANGE_MANUAL_ADJUST_WORLD_LEVEL(13),
+    /**
+     * <code>PropChangeReason_PROP_CHANGE_BEYOND_DUTY = 14;</code>
+     */
+    PropChangeReason_PROP_CHANGE_BEYOND_DUTY(14),
+    /**
+     * <code>PropChangeReason_PROP_CHANGE_BEYOND_BLUEPRINT = 15;</code>
+     */
+    PropChangeReason_PROP_CHANGE_BEYOND_BLUEPRINT(15),
+    /**
+     * <code>PropChangeReason_PROP_CHANGE_BEYOND_EXP = 16;</code>
+     */
+    PropChangeReason_PROP_CHANGE_BEYOND_EXP(16),
+    /**
+     * <code>PropChangeReason_PROP_CHANGE_OFFERING_LEVEL_UP = 17;</code>
+     */
+    PropChangeReason_PROP_CHANGE_OFFERING_LEVEL_UP(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -134,6 +150,22 @@ public final class PropChangeReasonOuterClass {
      * <code>PropChangeReason_PROP_CHANGE_MANUAL_ADJUST_WORLD_LEVEL = 13;</code>
      */
     public static final int PropChangeReason_PROP_CHANGE_MANUAL_ADJUST_WORLD_LEVEL_VALUE = 13;
+    /**
+     * <code>PropChangeReason_PROP_CHANGE_BEYOND_DUTY = 14;</code>
+     */
+    public static final int PropChangeReason_PROP_CHANGE_BEYOND_DUTY_VALUE = 14;
+    /**
+     * <code>PropChangeReason_PROP_CHANGE_BEYOND_BLUEPRINT = 15;</code>
+     */
+    public static final int PropChangeReason_PROP_CHANGE_BEYOND_BLUEPRINT_VALUE = 15;
+    /**
+     * <code>PropChangeReason_PROP_CHANGE_BEYOND_EXP = 16;</code>
+     */
+    public static final int PropChangeReason_PROP_CHANGE_BEYOND_EXP_VALUE = 16;
+    /**
+     * <code>PropChangeReason_PROP_CHANGE_OFFERING_LEVEL_UP = 17;</code>
+     */
+    public static final int PropChangeReason_PROP_CHANGE_OFFERING_LEVEL_UP_VALUE = 17;
 
 
     public final int getNumber() {
@@ -174,6 +206,10 @@ public final class PropChangeReasonOuterClass {
         case 11: return PropChangeReason_PROP_CHANGE_FINISH_QUEST;
         case 12: return PropChangeReason_PROP_CHANGE_GM;
         case 13: return PropChangeReason_PROP_CHANGE_MANUAL_ADJUST_WORLD_LEVEL;
+        case 14: return PropChangeReason_PROP_CHANGE_BEYOND_DUTY;
+        case 15: return PropChangeReason_PROP_CHANGE_BEYOND_BLUEPRINT;
+        case 16: return PropChangeReason_PROP_CHANGE_BEYOND_EXP;
+        case 17: return PropChangeReason_PROP_CHANGE_OFFERING_LEVEL_UP;
         default: return null;
       }
     }

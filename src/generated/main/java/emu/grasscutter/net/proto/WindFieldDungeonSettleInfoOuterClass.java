@@ -158,7 +158,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 80: {
+            case 56: {
               int rawValue = input.readEnum();
 
               failReason_ = rawValue;
@@ -230,7 +230,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
     }
     private int kDIFMAEJGIOMemoizedSerializedSize = -1;
 
-    public static final int FAIL_REASON_FIELD_NUMBER = 10;
+    public static final int FAIL_REASON_FIELD_NUMBER = 7;
     private int failReason_;
     /**
      * <code>.WindFieldDungeonFailReason fail_reason = 12;</code>
@@ -307,7 +307,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
         output.writeUInt32NoTag(aKDFKBJLGGI_.getInt(i));
       }
       if (failReason_ != emu.grasscutter.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason.WIND_FIELD_DUNGEON_FAIL_NONE.getNumber()) {
-        output.writeEnum(10, failReason_);
+        output.writeEnum(7, failReason_);
       }
       unknownFields.writeTo(output);
     }
@@ -348,7 +348,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
       }
       if (failReason_ != emu.grasscutter.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason.WIND_FIELD_DUNGEON_FAIL_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, failReason_);
+          .computeEnumSize(7, failReason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

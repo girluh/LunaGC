@@ -82,7 +82,7 @@ public final class ServerAnnounceNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 announceDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -126,7 +126,7 @@ public final class ServerAnnounceNotifyOuterClass {
               emu.grasscutter.net.proto.ServerAnnounceNotifyOuterClass.ServerAnnounceNotify.class, emu.grasscutter.net.proto.ServerAnnounceNotifyOuterClass.ServerAnnounceNotify.Builder.class);
     }
 
-    public static final int ANNOUNCE_DATA_LIST_FIELD_NUMBER = 7;
+    public static final int ANNOUNCE_DATA_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData> announceDataList_;
 
     @java.lang.Override
@@ -171,7 +171,7 @@ public final class ServerAnnounceNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < announceDataList_.size(); i++) {
-        output.writeMessage(7, announceDataList_.get(i));
+        output.writeMessage(10, announceDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -184,7 +184,7 @@ public final class ServerAnnounceNotifyOuterClass {
       size = 0;
       for (int i = 0; i < announceDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, announceDataList_.get(i));
+          .computeMessageSize(10, announceDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -109,12 +109,12 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 40: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 16: {
 
               difficultyId_ = input.readUInt32();
               break;
@@ -124,7 +124,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
               eNBKLKPPLHL_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 24: {
 
               isNewRecord_ = input.readBool();
               break;
@@ -134,7 +134,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
               pDKDBGNJPDL_ = input.readBool();
               break;
             }
-            case 120: {
+            case 32: {
 
               finalScore_ = input.readUInt32();
               break;
@@ -187,7 +187,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       return dEJJPIOCJDD_;
     }
 
-    public static final int FINAL_SCORE_FIELD_NUMBER = 15;
+    public static final int FINAL_SCORE_FIELD_NUMBER = 4;
     private int finalScore_;
     /**
      * <code>uint32 final_score = 12;</code>
@@ -198,7 +198,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       return finalScore_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 13;
+    public static final int LEVEL_ID_FIELD_NUMBER = 5;
     private int levelId_;
     /**
      * <code>uint32 level_id = 3;</code>
@@ -220,7 +220,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       return eNBKLKPPLHL_;
     }
 
-    public static final int DIFFICULTY_ID_FIELD_NUMBER = 3;
+    public static final int DIFFICULTY_ID_FIELD_NUMBER = 2;
     private int difficultyId_;
     /**
      * <code>uint32 difficulty_id = 5;</code>
@@ -231,7 +231,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       return difficultyId_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 10;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 3;
     private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 7;</code>
@@ -268,22 +268,22 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (levelId_ != 0) {
-        output.writeUInt32(13, levelId_);
+        output.writeUInt32(5, levelId_);
       }
       if (difficultyId_ != 0) {
-        output.writeUInt32(3, difficultyId_);
+        output.writeUInt32(2, difficultyId_);
       }
       if (eNBKLKPPLHL_ != 0) {
         output.writeUInt32(16001, eNBKLKPPLHL_);
       }
       if (isNewRecord_ != false) {
-        output.writeBool(10, isNewRecord_);
+        output.writeBool(3, isNewRecord_);
       }
       if (pDKDBGNJPDL_ != false) {
         output.writeBool(16002, pDKDBGNJPDL_);
       }
       if (finalScore_ != 0) {
-        output.writeUInt32(15, finalScore_);
+        output.writeUInt32(4, finalScore_);
       }
       if (dEJJPIOCJDD_ != 0) {
         output.writeUInt32(16000, dEJJPIOCJDD_);
@@ -299,11 +299,11 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       size = 0;
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, levelId_);
+          .computeUInt32Size(5, levelId_);
       }
       if (difficultyId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, difficultyId_);
+          .computeUInt32Size(2, difficultyId_);
       }
       if (eNBKLKPPLHL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -311,7 +311,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isNewRecord_);
+          .computeBoolSize(3, isNewRecord_);
       }
       if (pDKDBGNJPDL_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -319,7 +319,7 @@ public final class CrystalLinkDungeonSettleInfoOuterClass {
       }
       if (finalScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, finalScore_);
+          .computeUInt32Size(4, finalScore_);
       }
       if (dEJJPIOCJDD_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -111,12 +111,12 @@ public final class HomeAvatarRewardEventGetRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 104: {
 
               eventId_ = input.readUInt32();
               break;
             }
-            case 58: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -160,7 +160,7 @@ public final class HomeAvatarRewardEventGetRspOuterClass {
               emu.grasscutter.net.proto.HomeAvatarRewardEventGetRspOuterClass.HomeAvatarRewardEventGetRsp.class, emu.grasscutter.net.proto.HomeAvatarRewardEventGetRspOuterClass.HomeAvatarRewardEventGetRsp.Builder.class);
     }
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 7;
+    public static final int ITEM_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
      * <code>repeated .ItemParam item_list = 15;</code>
@@ -211,7 +211,7 @@ public final class HomeAvatarRewardEventGetRspOuterClass {
       return retcode_;
     }
 
-    public static final int EVENT_ID_FIELD_NUMBER = 3;
+    public static final int EVENT_ID_FIELD_NUMBER = 13;
     private int eventId_;
     /**
      * <code>uint32 event_id = 13;</code>
@@ -240,10 +240,10 @@ public final class HomeAvatarRewardEventGetRspOuterClass {
         output.writeInt32(15, retcode_);
       }
       if (eventId_ != 0) {
-        output.writeUInt32(3, eventId_);
+        output.writeUInt32(13, eventId_);
       }
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(7, itemList_.get(i));
+        output.writeMessage(6, itemList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -260,11 +260,11 @@ public final class HomeAvatarRewardEventGetRspOuterClass {
       }
       if (eventId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, eventId_);
+          .computeUInt32Size(13, eventId_);
       }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, itemList_.get(i));
+          .computeMessageSize(6, itemList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -69,7 +69,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 24: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -106,7 +106,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterMpReqOuterClass.PlayerApplyEnterMpReq.class, emu.grasscutter.net.proto.PlayerApplyEnterMpReqOuterClass.PlayerApplyEnterMpReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 8;
+    public static final int TARGET_UID_FIELD_NUMBER = 3;
     private int targetUid_;
     /**
      * <code>uint32 target_uid = 14;</code>
@@ -132,7 +132,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(8, targetUid_);
+        output.writeUInt32(3, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +145,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, targetUid_);
+          .computeUInt32Size(3, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

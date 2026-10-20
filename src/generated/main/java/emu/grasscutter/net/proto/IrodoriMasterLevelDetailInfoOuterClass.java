@@ -91,22 +91,22 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 64: {
 
               diffculty_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 96: {
 
               isHaveTry_ = input.readBool();
               break;
             }
-            case 88: {
+            case 120: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 104: {
+            case 24: {
 
               minFinishTime_ = input.readUInt32();
               break;
@@ -143,7 +143,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
               emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.class, emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.Builder.class);
     }
 
-    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 13;
+    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 3;
     private int minFinishTime_;
     /**
      * <code>uint32 min_finish_time = 15;</code>
@@ -154,7 +154,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       return minFinishTime_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 11;
+    public static final int IS_FINISH_FIELD_NUMBER = 15;
     private boolean isFinish_;
     /**
      * <code>bool is_finish = 12;</code>
@@ -165,7 +165,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       return isFinish_;
     }
 
-    public static final int DIFFCULTY_FIELD_NUMBER = 4;
+    public static final int DIFFCULTY_FIELD_NUMBER = 8;
     private int diffculty_;
     /**
      * <code>uint32 diffculty = 6;</code>
@@ -176,7 +176,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       return diffculty_;
     }
 
-    public static final int IS_HAVE_TRY_FIELD_NUMBER = 14;
+    public static final int IS_HAVE_TRY_FIELD_NUMBER = 12;
     private boolean isHaveTry_;
     /**
      * <code>bool is_have_try = 8;</code>
@@ -202,16 +202,16 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (diffculty_ != 0) {
-        output.writeUInt32(4, diffculty_);
+        output.writeUInt32(8, diffculty_);
       }
       if (isHaveTry_ != false) {
-        output.writeBool(14, isHaveTry_);
+        output.writeBool(12, isHaveTry_);
       }
       if (isFinish_ != false) {
-        output.writeBool(11, isFinish_);
+        output.writeBool(15, isFinish_);
       }
       if (minFinishTime_ != 0) {
-        output.writeUInt32(13, minFinishTime_);
+        output.writeUInt32(3, minFinishTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,19 +224,19 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       size = 0;
       if (diffculty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, diffculty_);
+          .computeUInt32Size(8, diffculty_);
       }
       if (isHaveTry_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isHaveTry_);
+          .computeBoolSize(12, isHaveTry_);
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isFinish_);
+          .computeBoolSize(15, isFinish_);
       }
       if (minFinishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, minFinishTime_);
+          .computeUInt32Size(3, minFinishTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

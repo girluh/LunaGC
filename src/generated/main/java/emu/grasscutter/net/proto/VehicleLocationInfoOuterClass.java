@@ -151,7 +151,7 @@ public final class VehicleLocationInfoOuterClass {
               pCBCDBGOKOK_ = input.readFloat();
               break;
             }
-            case 106: {
+            case 10: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -164,7 +164,7 @@ public final class VehicleLocationInfoOuterClass {
 
               break;
             }
-            case 88: {
+            case 16: {
 
               ownerUid_ = input.readUInt32();
               break;
@@ -174,7 +174,7 @@ public final class VehicleLocationInfoOuterClass {
               fOHOENOKMML_ = input.readFloat();
               break;
             }
-            case 16: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 uidList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -182,7 +182,7 @@ public final class VehicleLocationInfoOuterClass {
               uidList_.addInt(input.readUInt32());
               break;
             }
-            case 18: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -195,12 +195,12 @@ public final class VehicleLocationInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 48: {
+            case 96: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 66: {
+            case 42: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
@@ -213,7 +213,7 @@ public final class VehicleLocationInfoOuterClass {
 
               break;
             }
-            case 8: {
+            case 56: {
 
               gadgetId_ = input.readUInt32();
               break;
@@ -264,7 +264,7 @@ public final class VehicleLocationInfoOuterClass {
       return pCBCDBGOKOK_;
     }
 
-    public static final int UID_LIST_FIELD_NUMBER = 2;
+    public static final int UID_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList uidList_;
     /**
      * <code>repeated uint32 uid_list = 11;</code>
@@ -303,7 +303,7 @@ public final class VehicleLocationInfoOuterClass {
       return fOHOENOKMML_;
     }
 
-    public static final int OWNER_UID_FIELD_NUMBER = 11;
+    public static final int OWNER_UID_FIELD_NUMBER = 2;
     private int ownerUid_;
     /**
      * <code>uint32 owner_uid = 5;</code>
@@ -314,7 +314,7 @@ public final class VehicleLocationInfoOuterClass {
       return ownerUid_;
     }
 
-    public static final int ROT_FIELD_NUMBER = 8;
+    public static final int ROT_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
     /**
      * <code>.Vector rot = 14;</code>
@@ -340,7 +340,7 @@ public final class VehicleLocationInfoOuterClass {
       return getRot();
     }
 
-    public static final int POS_FIELD_NUMBER = 13;
+    public static final int POS_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 4;</code>
@@ -366,7 +366,7 @@ public final class VehicleLocationInfoOuterClass {
       return getPos();
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 6;
+    public static final int ENTITY_ID_FIELD_NUMBER = 12;
     private int entityId_;
     /**
      * <code>uint32 entity_id = 12;</code>
@@ -377,7 +377,7 @@ public final class VehicleLocationInfoOuterClass {
       return entityId_;
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 1;
+    public static final int GADGET_ID_FIELD_NUMBER = 7;
     private int gadgetId_;
     /**
      * <code>uint32 gadget_id = 15;</code>
@@ -407,29 +407,29 @@ public final class VehicleLocationInfoOuterClass {
         output.writeFloat(3, pCBCDBGOKOK_);
       }
       if (pos_ != null) {
-        output.writeMessage(13, getPos());
+        output.writeMessage(1, getPos());
       }
       if (ownerUid_ != 0) {
-        output.writeUInt32(11, ownerUid_);
+        output.writeUInt32(2, ownerUid_);
       }
       if (fOHOENOKMML_ != 0F) {
         output.writeFloat(16000, fOHOENOKMML_);
       }
       if (getUidListList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(uidListMemoizedSerializedSize);
       }
       for (int i = 0; i < uidList_.size(); i++) {
         output.writeUInt32NoTag(uidList_.getInt(i));
       }
       if (entityId_ != 0) {
-        output.writeUInt32(6, entityId_);
+        output.writeUInt32(12, entityId_);
       }
       if (rot_ != null) {
-        output.writeMessage(8, getRot());
+        output.writeMessage(5, getRot());
       }
       if (gadgetId_ != 0) {
-        output.writeUInt32(1, gadgetId_);
+        output.writeUInt32(7, gadgetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -446,11 +446,11 @@ public final class VehicleLocationInfoOuterClass {
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getPos());
+          .computeMessageSize(1, getPos());
       }
       if (ownerUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, ownerUid_);
+          .computeUInt32Size(2, ownerUid_);
       }
       if (fOHOENOKMML_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
@@ -472,15 +472,15 @@ public final class VehicleLocationInfoOuterClass {
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, entityId_);
+          .computeUInt32Size(12, entityId_);
       }
       if (rot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getRot());
+          .computeMessageSize(5, getRot());
       }
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, gadgetId_);
+          .computeUInt32Size(7, gadgetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

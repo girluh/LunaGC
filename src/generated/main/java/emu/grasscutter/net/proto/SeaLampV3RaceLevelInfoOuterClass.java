@@ -90,7 +90,7 @@ public final class SeaLampV3RaceLevelInfoOuterClass {
               maxScore_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 64: {
 
               levelId_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class SeaLampV3RaceLevelInfoOuterClass {
               emu.grasscutter.net.proto.SeaLampV3RaceLevelInfoOuterClass.SeaLampV3RaceLevelInfo.class, emu.grasscutter.net.proto.SeaLampV3RaceLevelInfoOuterClass.SeaLampV3RaceLevelInfo.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 15;
+    public static final int LEVEL_ID_FIELD_NUMBER = 8;
     private int levelId_;
     /**
      * <code>uint32 level_id = 7;</code>
@@ -183,7 +183,7 @@ public final class SeaLampV3RaceLevelInfoOuterClass {
         output.writeUInt32(5, maxScore_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(15, levelId_);
+        output.writeUInt32(8, levelId_);
       }
       if (isOpen_ != false) {
         output.writeBool(10, isOpen_);
@@ -203,7 +203,7 @@ public final class SeaLampV3RaceLevelInfoOuterClass {
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, levelId_);
+          .computeUInt32Size(8, levelId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream

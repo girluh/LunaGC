@@ -83,12 +83,12 @@ public final class ToTheMoonEnterSceneReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 16: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 80: {
 
               version_ = input.readUInt32();
               break;
@@ -135,7 +135,7 @@ public final class ToTheMoonEnterSceneReqOuterClass {
               emu.grasscutter.net.proto.ToTheMoonEnterSceneReqOuterClass.ToTheMoonEnterSceneReq.class, emu.grasscutter.net.proto.ToTheMoonEnterSceneReqOuterClass.ToTheMoonEnterSceneReq.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 11;
+    public static final int SCENE_ID_FIELD_NUMBER = 2;
     private int sceneId_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class ToTheMoonEnterSceneReqOuterClass {
       return jJDKCJNCKEK_;
     }
 
-    public static final int VERSION_FIELD_NUMBER = 3;
+    public static final int VERSION_FIELD_NUMBER = 10;
     private int version_;
 
     @java.lang.Override
@@ -188,10 +188,10 @@ public final class ToTheMoonEnterSceneReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneId_ != 0) {
-        output.writeUInt32(11, sceneId_);
+        output.writeUInt32(2, sceneId_);
       }
       if (version_ != 0) {
-        output.writeUInt32(3, version_);
+        output.writeUInt32(10, version_);
       }
       if (nCBKKEAFGKL_ != 0) {
         output.writeUInt32(14, nCBKKEAFGKL_);
@@ -210,11 +210,11 @@ public final class ToTheMoonEnterSceneReqOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, sceneId_);
+          .computeUInt32Size(2, sceneId_);
       }
       if (version_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, version_);
+          .computeUInt32Size(10, version_);
       }
       if (nCBKKEAFGKL_ != 0) {
         size += com.google.protobuf.CodedOutputStream

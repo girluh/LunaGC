@@ -89,13 +89,13 @@ public final class SetWidgetSlotRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 8: {
               int rawValue = input.readEnum();
 
               op_ = rawValue;
               break;
             }
-            case 112: {
+            case 48: {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tagList_ = new java.util.ArrayList<java.lang.Integer>();
@@ -104,7 +104,7 @@ public final class SetWidgetSlotRspOuterClass {
               tagList_.add(rawValue);
               break;
             }
-            case 114: {
+            case 50: {
               int length = input.readRawVarint32();
               int oldLimit = input.pushLimit(length);
               while(input.getBytesUntilLimit() > 0) {
@@ -118,12 +118,12 @@ public final class SetWidgetSlotRspOuterClass {
               input.popLimit(oldLimit);
               break;
             }
-            case 72: {
+            case 96: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 96: {
+            case 80: {
 
               materialId_ = input.readUInt32();
               break;
@@ -163,7 +163,7 @@ public final class SetWidgetSlotRspOuterClass {
               emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp.class, emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp.Builder.class);
     }
 
-    public static final int TAG_LIST_FIELD_NUMBER = 14;
+    public static final int TAG_LIST_FIELD_NUMBER = 6;
     private java.util.List<java.lang.Integer> tagList_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag> tagList_converter_ =
@@ -204,7 +204,7 @@ public final class SetWidgetSlotRspOuterClass {
     }
     private int tagListMemoizedSerializedSize;
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
 
     @java.lang.Override
@@ -212,7 +212,7 @@ public final class SetWidgetSlotRspOuterClass {
       return retcode_;
     }
 
-    public static final int OP_FIELD_NUMBER = 6;
+    public static final int OP_FIELD_NUMBER = 1;
     private int op_;
 
     @java.lang.Override public int getOpValue() {
@@ -225,7 +225,7 @@ public final class SetWidgetSlotRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.UNRECOGNIZED : result;
     }
 
-    public static final int MATERIAL_ID_FIELD_NUMBER = 12;
+    public static final int MATERIAL_ID_FIELD_NUMBER = 10;
     private int materialId_;
 
     @java.lang.Override
@@ -249,20 +249,20 @@ public final class SetWidgetSlotRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (op_ != emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.WidgetSlotOp_ATTACH.getNumber()) {
-        output.writeEnum(6, op_);
+        output.writeEnum(1, op_);
       }
       if (getTagListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(tagListMemoizedSerializedSize);
       }
       for (int i = 0; i < tagList_.size(); i++) {
         output.writeEnumNoTag(tagList_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(12, retcode_);
       }
       if (materialId_ != 0) {
-        output.writeUInt32(12, materialId_);
+        output.writeUInt32(10, materialId_);
       }
       unknownFields.writeTo(output);
     }
@@ -275,7 +275,7 @@ public final class SetWidgetSlotRspOuterClass {
       size = 0;
       if (op_ != emu.grasscutter.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.WidgetSlotOp_ATTACH.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, op_);
+          .computeEnumSize(1, op_);
       }
       {
         int dataSize = 0;
@@ -291,11 +291,11 @@ public final class SetWidgetSlotRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(12, retcode_);
       }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, materialId_);
+          .computeUInt32Size(10, materialId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

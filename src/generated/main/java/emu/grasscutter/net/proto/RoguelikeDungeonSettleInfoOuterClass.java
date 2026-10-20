@@ -148,17 +148,17 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
               pOLCMMBAENP_ = input.readUInt32();
               break;
             }
-            case 128000: {
+            case 128008: {
 
               fOCELGIAFLM_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 128000: {
 
               pDJEIMCPECJ_ = input.readBool();
               break;
             }
-            case 26: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 finishedChallengeCellNumMap_ = com.google.protobuf.MapField.newMapField(
                     FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
@@ -171,12 +171,12 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
                   finishedChallengeCellNumMap__.getKey(), finishedChallengeCellNumMap__.getValue());
               break;
             }
-            case 16: {
+            case 80: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 16: {
 
               curLevel_ = input.readUInt32();
               break;
@@ -225,7 +225,7 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
               emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.class, emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 2;
+    public static final int STAGE_ID_FIELD_NUMBER = 10;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 12;</code>
@@ -236,7 +236,7 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
       return stageId_;
     }
 
-    public static final int CUR_LEVEL_FIELD_NUMBER = 5;
+    public static final int CUR_LEVEL_FIELD_NUMBER = 2;
     private int curLevel_;
     /**
      * <code>uint32 cur_level = 15;</code>
@@ -258,7 +258,7 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
       return pOLCMMBAENP_;
     }
 
-    public static final int FINISHED_CHALLENGE_CELL_NUM_MAP_FIELD_NUMBER = 3;
+    public static final int FINISHED_CHALLENGE_CELL_NUM_MAP_FIELD_NUMBER = 14;
     private static final class FinishedChallengeCellNumMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> defaultEntry =
@@ -350,7 +350,7 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
       return fNMECPGDCBD_;
     }
 
-    public static final int PDJEIMCPECJ_FIELD_NUMBER = 10;
+    public static final int PDJEIMCPECJ_FIELD_NUMBER = 16000;
     private boolean pDJEIMCPECJ_;
     /**
      * <code>bool PDJEIMCPECJ = 10;</code>
@@ -361,7 +361,7 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
       return pDJEIMCPECJ_;
     }
 
-    public static final int FOCELGIAFLM_FIELD_NUMBER = 16000;
+    public static final int FOCELGIAFLM_FIELD_NUMBER = 16001;
     private int fOCELGIAFLM_;
     /**
      * <code>uint32 FOCELGIAFLM = 9;</code>
@@ -393,22 +393,22 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
         output.writeUInt32(7, pOLCMMBAENP_);
       }
       if (fOCELGIAFLM_ != 0) {
-        output.writeUInt32(16000, fOCELGIAFLM_);
+        output.writeUInt32(16001, fOCELGIAFLM_);
       }
       if (pDJEIMCPECJ_ != false) {
-        output.writeBool(10, pDJEIMCPECJ_);
+        output.writeBool(16000, pDJEIMCPECJ_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetFinishedChallengeCellNumMap(),
           FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry,
-          3);
+          14);
       if (stageId_ != 0) {
-        output.writeUInt32(2, stageId_);
+        output.writeUInt32(10, stageId_);
       }
       if (curLevel_ != 0) {
-        output.writeUInt32(5, curLevel_);
+        output.writeUInt32(2, curLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -429,11 +429,11 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
       }
       if (fOCELGIAFLM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16000, fOCELGIAFLM_);
+          .computeUInt32Size(16001, fOCELGIAFLM_);
       }
       if (pDJEIMCPECJ_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, pDJEIMCPECJ_);
+          .computeBoolSize(16000, pDJEIMCPECJ_);
       }
       for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> entry
            : internalGetFinishedChallengeCellNumMap().getMap().entrySet()) {
@@ -443,15 +443,15 @@ public final class RoguelikeDungeonSettleInfoOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, finishedChallengeCellNumMap__);
+            .computeMessageSize(14, finishedChallengeCellNumMap__);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, stageId_);
+          .computeUInt32Size(10, stageId_);
       }
       if (curLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, curLevel_);
+          .computeUInt32Size(2, curLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

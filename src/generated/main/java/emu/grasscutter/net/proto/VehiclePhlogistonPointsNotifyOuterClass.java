@@ -75,12 +75,12 @@ public final class VehiclePhlogistonPointsNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 120: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 93: {
+            case 109: {
 
               curPhlogiston_ = input.readFloat();
               break;
@@ -117,7 +117,7 @@ public final class VehiclePhlogistonPointsNotifyOuterClass {
               emu.grasscutter.net.proto.VehiclePhlogistonPointsNotifyOuterClass.VehiclePhlogistonPointsNotify.class, emu.grasscutter.net.proto.VehiclePhlogistonPointsNotifyOuterClass.VehiclePhlogistonPointsNotify.Builder.class);
     }
 
-    public static final int CUR_PHLOGISTON_FIELD_NUMBER = 11;
+    public static final int CUR_PHLOGISTON_FIELD_NUMBER = 13;
     private float curPhlogiston_;
     /**
      * <code>float cur_phlogiston = 11;</code>
@@ -128,7 +128,7 @@ public final class VehiclePhlogistonPointsNotifyOuterClass {
       return curPhlogiston_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 2;
+    public static final int ENTITY_ID_FIELD_NUMBER = 15;
     private int entityId_;
     /**
      * <code>uint32 entity_id = 2;</code>
@@ -154,10 +154,10 @@ public final class VehiclePhlogistonPointsNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(2, entityId_);
+        output.writeUInt32(15, entityId_);
       }
       if (curPhlogiston_ != 0F) {
-        output.writeFloat(11, curPhlogiston_);
+        output.writeFloat(13, curPhlogiston_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,11 +170,11 @@ public final class VehiclePhlogistonPointsNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, entityId_);
+          .computeUInt32Size(15, entityId_);
       }
       if (curPhlogiston_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(11, curPhlogiston_);
+          .computeFloatSize(13, curPhlogiston_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

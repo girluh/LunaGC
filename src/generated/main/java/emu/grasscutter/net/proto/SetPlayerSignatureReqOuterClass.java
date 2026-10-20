@@ -73,7 +73,7 @@ public final class SetPlayerSignatureReqOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               signature_ = s;
@@ -111,7 +111,7 @@ public final class SetPlayerSignatureReqOuterClass {
               emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.SetPlayerSignatureReq.class, emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.SetPlayerSignatureReq.Builder.class);
     }
 
-    public static final int SIGNATURE_FIELD_NUMBER = 13;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
     private volatile java.lang.Object signature_;
 
     @java.lang.Override
@@ -158,7 +158,7 @@ public final class SetPlayerSignatureReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, signature_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, signature_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,7 +170,7 @@ public final class SetPlayerSignatureReqOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, signature_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, signature_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

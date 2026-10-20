@@ -82,7 +82,7 @@ public final class GadgetAutoPickDropInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemOuterClass.Item>();
                 mutable_bitField0_ |= 0x00000001;
@@ -126,7 +126,7 @@ public final class GadgetAutoPickDropInfoNotifyOuterClass {
               emu.grasscutter.net.proto.GadgetAutoPickDropInfoNotifyOuterClass.GadgetAutoPickDropInfoNotify.class, emu.grasscutter.net.proto.GadgetAutoPickDropInfoNotifyOuterClass.GadgetAutoPickDropInfoNotify.Builder.class);
     }
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 7;
+    public static final int ITEM_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.ItemOuterClass.Item> itemList_;
 
     @java.lang.Override
@@ -171,7 +171,7 @@ public final class GadgetAutoPickDropInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(7, itemList_.get(i));
+        output.writeMessage(2, itemList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -184,7 +184,7 @@ public final class GadgetAutoPickDropInfoNotifyOuterClass {
       size = 0;
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, itemList_.get(i));
+          .computeMessageSize(2, itemList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

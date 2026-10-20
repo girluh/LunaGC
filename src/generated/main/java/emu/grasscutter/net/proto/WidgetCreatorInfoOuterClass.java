@@ -113,13 +113,13 @@ public final class WidgetCreatorInfoOuterClass {
 
               break;
             }
-            case 88: {
+            case 8: {
               int rawValue = input.readEnum();
 
               opType_ = rawValue;
               break;
             }
-            case 80: {
+            case 104: {
 
               entityId_ = input.readUInt32();
               break;
@@ -156,7 +156,7 @@ public final class WidgetCreatorInfoOuterClass {
               emu.grasscutter.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo.class, emu.grasscutter.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 10;
+    public static final int ENTITY_ID_FIELD_NUMBER = 13;
     private int entityId_;
     /**
      * <code>uint32 entity_id = 15;</code>
@@ -167,7 +167,7 @@ public final class WidgetCreatorInfoOuterClass {
       return entityId_;
     }
 
-    public static final int OP_TYPE_FIELD_NUMBER = 11;
+    public static final int OP_TYPE_FIELD_NUMBER = 1;
     private int opType_;
     /**
      * <code>.WidgetCreatorOpType op_type = 9;</code>
@@ -230,10 +230,10 @@ public final class WidgetCreatorInfoOuterClass {
         output.writeMessage(15, getLocationInfo());
       }
       if (opType_ != emu.grasscutter.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.WIDGET_CREATOR_TYPE_NONE.getNumber()) {
-        output.writeEnum(11, opType_);
+        output.writeEnum(1, opType_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(10, entityId_);
+        output.writeUInt32(13, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -250,11 +250,11 @@ public final class WidgetCreatorInfoOuterClass {
       }
       if (opType_ != emu.grasscutter.net.proto.WidgetCreatorOpTypeOuterClass.WidgetCreatorOpType.WIDGET_CREATOR_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, opType_);
+          .computeEnumSize(1, opType_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, entityId_);
+          .computeUInt32Size(13, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

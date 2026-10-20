@@ -72,7 +72,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 88: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
@@ -110,7 +110,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
               emu.grasscutter.net.proto.TakeMaterialDeleteReturnReqOuterClass.TakeMaterialDeleteReturnReq.class, emu.grasscutter.net.proto.TakeMaterialDeleteReturnReqOuterClass.TakeMaterialDeleteReturnReq.Builder.class);
     }
 
-    public static final int TYPE_FIELD_NUMBER = 10;
+    public static final int TYPE_FIELD_NUMBER = 11;
     private int type_;
 
     @java.lang.Override public int getTypeValue() {
@@ -138,7 +138,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != emu.grasscutter.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.MaterialDeleteReturnType_MATERIAL_DELETE_RETURN_BAG.getNumber()) {
-        output.writeEnum(10, type_);
+        output.writeEnum(11, type_);
       }
       unknownFields.writeTo(output);
     }
@@ -151,7 +151,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
       size = 0;
       if (type_ != emu.grasscutter.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.MaterialDeleteReturnType_MATERIAL_DELETE_RETURN_BAG.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, type_);
+          .computeEnumSize(11, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

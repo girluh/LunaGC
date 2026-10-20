@@ -87,7 +87,7 @@ public final class CutSceneBeginNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 extraParamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -96,12 +96,12 @@ public final class CutSceneBeginNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam.parser(), extensionRegistry));
               break;
             }
-            case 40: {
+            case 48: {
 
               isWaitOthers_ = input.readBool();
               break;
             }
-            case 88: {
+            case 32: {
 
               cutsceneId_ = input.readUInt32();
               break;
@@ -141,7 +141,7 @@ public final class CutSceneBeginNotifyOuterClass {
               emu.grasscutter.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify.class, emu.grasscutter.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify.Builder.class);
     }
 
-    public static final int EXTRA_PARAM_LIST_FIELD_NUMBER = 10;
+    public static final int EXTRA_PARAM_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam> extraParamList_;
 
     @java.lang.Override
@@ -171,7 +171,7 @@ public final class CutSceneBeginNotifyOuterClass {
       return extraParamList_.get(index);
     }
 
-    public static final int CUTSCENE_ID_FIELD_NUMBER = 11;
+    public static final int CUTSCENE_ID_FIELD_NUMBER = 4;
     private int cutsceneId_;
 
     @java.lang.Override
@@ -179,7 +179,7 @@ public final class CutSceneBeginNotifyOuterClass {
       return cutsceneId_;
     }
 
-    public static final int IS_WAIT_OTHERS_FIELD_NUMBER = 5;
+    public static final int IS_WAIT_OTHERS_FIELD_NUMBER = 6;
     private boolean isWaitOthers_;
 
     @java.lang.Override
@@ -202,13 +202,13 @@ public final class CutSceneBeginNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < extraParamList_.size(); i++) {
-        output.writeMessage(10, extraParamList_.get(i));
+        output.writeMessage(7, extraParamList_.get(i));
       }
       if (isWaitOthers_ != false) {
-        output.writeBool(5, isWaitOthers_);
+        output.writeBool(6, isWaitOthers_);
       }
       if (cutsceneId_ != 0) {
-        output.writeUInt32(11, cutsceneId_);
+        output.writeUInt32(4, cutsceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -221,15 +221,15 @@ public final class CutSceneBeginNotifyOuterClass {
       size = 0;
       for (int i = 0; i < extraParamList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, extraParamList_.get(i));
+          .computeMessageSize(7, extraParamList_.get(i));
       }
       if (isWaitOthers_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isWaitOthers_);
+          .computeBoolSize(6, isWaitOthers_);
       }
       if (cutsceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, cutsceneId_);
+          .computeUInt32Size(4, cutsceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

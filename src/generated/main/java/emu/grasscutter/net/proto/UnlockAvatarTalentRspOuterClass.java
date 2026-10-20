@@ -73,17 +73,17 @@ public final class UnlockAvatarTalentRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 64: {
 
               talentId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 8: {
+            case 40: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -120,7 +120,7 @@ public final class UnlockAvatarTalentRspOuterClass {
               emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp.class, emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 1;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 5;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -128,7 +128,7 @@ public final class UnlockAvatarTalentRspOuterClass {
       return avatarGuid_;
     }
 
-    public static final int TALENT_ID_FIELD_NUMBER = 5;
+    public static final int TALENT_ID_FIELD_NUMBER = 8;
     private int talentId_;
 
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class UnlockAvatarTalentRspOuterClass {
       return talentId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
 
     @java.lang.Override
@@ -159,13 +159,13 @@ public final class UnlockAvatarTalentRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(1, avatarGuid_);
+        output.writeUInt64(5, avatarGuid_);
       }
       if (talentId_ != 0) {
-        output.writeUInt32(5, talentId_);
+        output.writeUInt32(8, talentId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(9, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,15 +178,15 @@ public final class UnlockAvatarTalentRspOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, avatarGuid_);
+          .computeUInt64Size(5, avatarGuid_);
       }
       if (talentId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, talentId_);
+          .computeUInt32Size(8, talentId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

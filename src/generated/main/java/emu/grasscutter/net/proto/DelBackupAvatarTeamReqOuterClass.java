@@ -74,7 +74,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 32: {
 
               backupAvatarTeamId_ = input.readUInt32();
               break;
@@ -111,7 +111,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
               emu.grasscutter.net.proto.DelBackupAvatarTeamReqOuterClass.DelBackupAvatarTeamReq.class, emu.grasscutter.net.proto.DelBackupAvatarTeamReqOuterClass.DelBackupAvatarTeamReq.Builder.class);
     }
 
-    public static final int BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER = 9;
+    public static final int BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER = 4;
     private int backupAvatarTeamId_;
     /**
      * <code>uint32 backup_avatar_team_id = 10;</code>
@@ -137,7 +137,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (backupAvatarTeamId_ != 0) {
-        output.writeUInt32(9, backupAvatarTeamId_);
+        output.writeUInt32(4, backupAvatarTeamId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
       size = 0;
       if (backupAvatarTeamId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, backupAvatarTeamId_);
+          .computeUInt32Size(4, backupAvatarTeamId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

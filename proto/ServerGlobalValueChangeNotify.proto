@@ -3,7 +3,7 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 message ServerGlobalValueChangeNotify {
-	uint32 key_hash = 2;
-	uint32 entity_id = 12;
-	float value = 7;
+	uint32 key_hash = 7;
+	uint32 entity_id = 10;
+	float value = 11;
 }

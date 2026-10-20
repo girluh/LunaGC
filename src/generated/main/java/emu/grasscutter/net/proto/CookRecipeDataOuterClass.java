@@ -79,12 +79,12 @@ public final class CookRecipeDataOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 112: {
 
               recipeId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 32: {
 
               proficiency_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class CookRecipeDataOuterClass {
               emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData.class, emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData.Builder.class);
     }
 
-    public static final int RECIPE_ID_FIELD_NUMBER = 1;
+    public static final int RECIPE_ID_FIELD_NUMBER = 14;
     private int recipeId_;
     /**
      * <code>uint32 recipe_id = 5;</code>
@@ -132,7 +132,7 @@ public final class CookRecipeDataOuterClass {
       return recipeId_;
     }
 
-    public static final int PROFICIENCY_FIELD_NUMBER = 15;
+    public static final int PROFICIENCY_FIELD_NUMBER = 4;
     private int proficiency_;
     /**
      * <code>uint32 proficiency = 10;</code>
@@ -158,10 +158,10 @@ public final class CookRecipeDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (recipeId_ != 0) {
-        output.writeUInt32(1, recipeId_);
+        output.writeUInt32(14, recipeId_);
       }
       if (proficiency_ != 0) {
-        output.writeUInt32(15, proficiency_);
+        output.writeUInt32(4, proficiency_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class CookRecipeDataOuterClass {
       size = 0;
       if (recipeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, recipeId_);
+          .computeUInt32Size(14, recipeId_);
       }
       if (proficiency_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, proficiency_);
+          .computeUInt32Size(4, proficiency_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

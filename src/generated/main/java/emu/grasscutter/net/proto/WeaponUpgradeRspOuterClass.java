@@ -90,17 +90,17 @@ public final class WeaponUpgradeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 112: {
 
               oldLevel_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 122: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemParamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -109,7 +109,7 @@ public final class WeaponUpgradeRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 24: {
+            case 80: {
 
               targetWeaponGuid_ = input.readUInt64();
               break;
@@ -154,7 +154,7 @@ public final class WeaponUpgradeRspOuterClass {
               emu.grasscutter.net.proto.WeaponUpgradeRspOuterClass.WeaponUpgradeRsp.class, emu.grasscutter.net.proto.WeaponUpgradeRspOuterClass.WeaponUpgradeRsp.Builder.class);
     }
 
-    public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 15;
+    public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemParamList_;
 
     @java.lang.Override
@@ -184,7 +184,7 @@ public final class WeaponUpgradeRspOuterClass {
       return itemParamList_.get(index);
     }
 
-    public static final int OLD_LEVEL_FIELD_NUMBER = 13;
+    public static final int OLD_LEVEL_FIELD_NUMBER = 14;
     private int oldLevel_;
 
     @java.lang.Override
@@ -200,7 +200,7 @@ public final class WeaponUpgradeRspOuterClass {
       return curLevel_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
 
     @java.lang.Override
@@ -208,7 +208,7 @@ public final class WeaponUpgradeRspOuterClass {
       return retcode_;
     }
 
-    public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 3;
+    public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 10;
     private long targetWeaponGuid_;
 
     @java.lang.Override
@@ -231,19 +231,19 @@ public final class WeaponUpgradeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetWeaponGuid_ != 0L) {
-        output.writeUInt64(3, targetWeaponGuid_);
+        output.writeUInt64(10, targetWeaponGuid_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(9, retcode_);
       }
       for (int i = 0; i < itemParamList_.size(); i++) {
-        output.writeMessage(15, itemParamList_.get(i));
+        output.writeMessage(4, itemParamList_.get(i));
       }
       if (curLevel_ != 0) {
         output.writeUInt32(2, curLevel_);
       }
       if (oldLevel_ != 0) {
-        output.writeUInt32(13, oldLevel_);
+        output.writeUInt32(14, oldLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -256,15 +256,15 @@ public final class WeaponUpgradeRspOuterClass {
       size = 0;
       if (targetWeaponGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, targetWeaponGuid_);
+          .computeUInt64Size(10, targetWeaponGuid_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       for (int i = 0; i < itemParamList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, itemParamList_.get(i));
+          .computeMessageSize(4, itemParamList_.get(i));
       }
       if (curLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -272,7 +272,7 @@ public final class WeaponUpgradeRspOuterClass {
       }
       if (oldLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, oldLevel_);
+          .computeUInt32Size(14, oldLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

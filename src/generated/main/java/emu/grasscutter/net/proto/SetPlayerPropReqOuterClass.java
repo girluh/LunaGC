@@ -94,7 +94,7 @@ public final class SetPlayerPropReqOuterClass {
             case 0:
               done = true;
               break;
-            case 114: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 propList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PropValueOuterClass.PropValue>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,7 +138,7 @@ public final class SetPlayerPropReqOuterClass {
               emu.grasscutter.net.proto.SetPlayerPropReqOuterClass.SetPlayerPropReq.class, emu.grasscutter.net.proto.SetPlayerPropReqOuterClass.SetPlayerPropReq.Builder.class);
     }
 
-    public static final int PROP_LIST_FIELD_NUMBER = 14;
+    public static final int PROP_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.PropValueOuterClass.PropValue> propList_;
     /**
      * <code>repeated .PropValue prop_list = 9;</code>
@@ -193,7 +193,7 @@ public final class SetPlayerPropReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < propList_.size(); i++) {
-        output.writeMessage(14, propList_.get(i));
+        output.writeMessage(15, propList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class SetPlayerPropReqOuterClass {
       size = 0;
       for (int i = 0; i < propList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, propList_.get(i));
+          .computeMessageSize(15, propList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

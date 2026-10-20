@@ -118,7 +118,7 @@ public final class MapLayerInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 unlockedMapLayerFloorIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -126,7 +126,7 @@ public final class MapLayerInfoOuterClass {
               unlockedMapLayerFloorIdList_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -139,7 +139,7 @@ public final class MapLayerInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 72: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 unlockedMapLayerIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -147,7 +147,7 @@ public final class MapLayerInfoOuterClass {
               unlockedMapLayerIdList_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -160,7 +160,7 @@ public final class MapLayerInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 unlockedMapLayerGroupIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -168,7 +168,7 @@ public final class MapLayerInfoOuterClass {
               unlockedMapLayerGroupIdList_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -222,7 +222,7 @@ public final class MapLayerInfoOuterClass {
               emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.class, emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.Builder.class);
     }
 
-    public static final int UNLOCKED_MAP_LAYER_GROUP_ID_LIST_FIELD_NUMBER = 14;
+    public static final int UNLOCKED_MAP_LAYER_GROUP_ID_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList unlockedMapLayerGroupIdList_;
     /**
      * <code>repeated uint32 unlocked_map_layer_group_id_list = 14;</code>
@@ -250,7 +250,7 @@ public final class MapLayerInfoOuterClass {
     }
     private int unlockedMapLayerGroupIdListMemoizedSerializedSize = -1;
 
-    public static final int UNLOCKED_MAP_LAYER_ID_LIST_FIELD_NUMBER = 9;
+    public static final int UNLOCKED_MAP_LAYER_ID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList unlockedMapLayerIdList_;
     /**
      * <code>repeated uint32 unlocked_map_layer_id_list = 9;</code>
@@ -278,7 +278,7 @@ public final class MapLayerInfoOuterClass {
     }
     private int unlockedMapLayerIdListMemoizedSerializedSize = -1;
 
-    public static final int UNLOCKED_MAP_LAYER_FLOOR_ID_LIST_FIELD_NUMBER = 7;
+    public static final int UNLOCKED_MAP_LAYER_FLOOR_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList unlockedMapLayerFloorIdList_;
     /**
      * <code>repeated uint32 unlocked_map_layer_floor_id_list = 7;</code>
@@ -322,21 +322,21 @@ public final class MapLayerInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getUnlockedMapLayerFloorIdListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(unlockedMapLayerFloorIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockedMapLayerFloorIdList_.size(); i++) {
         output.writeUInt32NoTag(unlockedMapLayerFloorIdList_.getInt(i));
       }
       if (getUnlockedMapLayerIdListList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(unlockedMapLayerIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockedMapLayerIdList_.size(); i++) {
         output.writeUInt32NoTag(unlockedMapLayerIdList_.getInt(i));
       }
       if (getUnlockedMapLayerGroupIdListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(unlockedMapLayerGroupIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockedMapLayerGroupIdList_.size(); i++) {

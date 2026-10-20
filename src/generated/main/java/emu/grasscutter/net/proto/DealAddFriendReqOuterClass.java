@@ -74,13 +74,13 @@ public final class DealAddFriendReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 40: {
               int rawValue = input.readEnum();
 
               dealAddFriendResult_ = rawValue;
               break;
             }
-            case 24: {
+            case 16: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -117,7 +117,7 @@ public final class DealAddFriendReqOuterClass {
               emu.grasscutter.net.proto.DealAddFriendReqOuterClass.DealAddFriendReq.class, emu.grasscutter.net.proto.DealAddFriendReqOuterClass.DealAddFriendReq.Builder.class);
     }
 
-    public static final int DEAL_ADD_FRIEND_RESULT_FIELD_NUMBER = 15;
+    public static final int DEAL_ADD_FRIEND_RESULT_FIELD_NUMBER = 5;
     private int dealAddFriendResult_;
 
     @java.lang.Override public int getDealAddFriendResultValue() {
@@ -130,7 +130,7 @@ public final class DealAddFriendReqOuterClass {
       return result == null ? emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType.UNRECOGNIZED : result;
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 3;
+    public static final int TARGET_UID_FIELD_NUMBER = 2;
     private int targetUid_;
 
     @java.lang.Override
@@ -153,10 +153,10 @@ public final class DealAddFriendReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(3, targetUid_);
+        output.writeUInt32(2, targetUid_);
       }
       if (dealAddFriendResult_ != emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType.DealAddFriendResultType_DEAL_ADD_FRIEND_REJECT.getNumber()) {
-        output.writeEnum(15, dealAddFriendResult_);
+        output.writeEnum(5, dealAddFriendResult_);
       }
       unknownFields.writeTo(output);
     }
@@ -169,11 +169,11 @@ public final class DealAddFriendReqOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, targetUid_);
+          .computeUInt32Size(2, targetUid_);
       }
       if (dealAddFriendResult_ != emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType.DealAddFriendResultType_DEAL_ADD_FRIEND_REJECT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(15, dealAddFriendResult_);
+          .computeEnumSize(5, dealAddFriendResult_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

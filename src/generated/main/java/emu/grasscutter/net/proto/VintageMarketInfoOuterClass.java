@@ -316,12 +316,12 @@ public final class VintageMarketInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 112: {
 
               storeRound_ = input.readUInt32();
               break;
             }
-            case 128040: {
+            case 128048: {
 
               iBDPMPBMDOJ_ = input.readBool();
               break;
@@ -347,7 +347,7 @@ public final class VintageMarketInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 18: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 bargainInfoMap_ = com.google.protobuf.MapField.newMapField(
                     BargainInfoMapDefaultEntryHolder.defaultEntry);
@@ -365,7 +365,7 @@ public final class VintageMarketInfoOuterClass {
               pJDGIHDIPFP_ = input.readBool();
               break;
             }
-            case 90: {
+            case 34: {
               emu.grasscutter.net.proto.VintageMarketDealInfoOuterClass.VintageMarketDealInfo.Builder subBuilder = null;
               if (dealInfo_ != null) {
                 subBuilder = dealInfo_.toBuilder();
@@ -409,7 +409,7 @@ public final class VintageMarketInfoOuterClass {
               mHBEIKFONOC_ = input.readUInt32();
               break;
             }
-            case 98: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 openStoreList_ = new java.util.ArrayList<emu.grasscutter.net.proto.VintageMarketStoreInfoOuterClass.VintageMarketStoreInfo>();
                 mutable_bitField0_ |= 0x00000008;
@@ -465,12 +465,12 @@ public final class VintageMarketInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 128040: {
 
               cEFFFAKMCDE_ = input.readBool();
               break;
             }
-            case 120: {
+            case 128056: {
 
               fELLANIIDOF_ = input.readBool();
               break;
@@ -660,7 +660,7 @@ public final class VintageMarketInfoOuterClass {
       return pJDGIHDIPFP_;
     }
 
-    public static final int BARGAIN_INFO_MAP_FIELD_NUMBER = 2;
+    public static final int BARGAIN_INFO_MAP_FIELD_NUMBER = 12;
     private static final class BargainInfoMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Boolean> defaultEntry =
@@ -769,7 +769,7 @@ public final class VintageMarketInfoOuterClass {
     }
     private int nNPCKHPIBECMemoizedSerializedSize = -1;
 
-    public static final int OPEN_STORE_LIST_FIELD_NUMBER = 12;
+    public static final int OPEN_STORE_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.VintageMarketStoreInfoOuterClass.VintageMarketStoreInfo> openStoreList_;
     /**
      * <code>repeated .VintageMarketStoreInfo open_store_list = 10;</code>
@@ -848,7 +848,7 @@ public final class VintageMarketInfoOuterClass {
       return iEPLKANKPPD_;
     }
 
-    public static final int DEAL_INFO_FIELD_NUMBER = 11;
+    public static final int DEAL_INFO_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.VintageMarketDealInfoOuterClass.VintageMarketDealInfo dealInfo_;
     /**
      * <code>.VintageMarketDealInfo deal_info = 6;</code>
@@ -896,7 +896,7 @@ public final class VintageMarketInfoOuterClass {
       return nBHJKLCJFKH_;
     }
 
-    public static final int STORE_ROUND_FIELD_NUMBER = 13;
+    public static final int STORE_ROUND_FIELD_NUMBER = 14;
     private int storeRound_;
     /**
      * <code>uint32 store_round = 1;</code>
@@ -935,7 +935,7 @@ public final class VintageMarketInfoOuterClass {
     }
     private int unlockStrategyListMemoizedSerializedSize = -1;
 
-    public static final int CEFFFAKMCDE_FIELD_NUMBER = 14;
+    public static final int CEFFFAKMCDE_FIELD_NUMBER = 16005;
     private boolean cEFFFAKMCDE_;
     /**
      * <code>bool CEFFFAKMCDE = 14;</code>
@@ -946,7 +946,7 @@ public final class VintageMarketInfoOuterClass {
       return cEFFFAKMCDE_;
     }
 
-    public static final int IBDPMPBMDOJ_FIELD_NUMBER = 16005;
+    public static final int IBDPMPBMDOJ_FIELD_NUMBER = 16006;
     private boolean iBDPMPBMDOJ_;
     /**
      * <code>bool IBDPMPBMDOJ = 2;</code>
@@ -957,7 +957,7 @@ public final class VintageMarketInfoOuterClass {
       return iBDPMPBMDOJ_;
     }
 
-    public static final int FELLANIIDOF_FIELD_NUMBER = 15;
+    public static final int FELLANIIDOF_FIELD_NUMBER = 16007;
     private boolean fELLANIIDOF_;
     /**
      * <code>bool FELLANIIDOF = 15;</code>
@@ -1045,10 +1045,10 @@ public final class VintageMarketInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (storeRound_ != 0) {
-        output.writeUInt32(13, storeRound_);
+        output.writeUInt32(14, storeRound_);
       }
       if (iBDPMPBMDOJ_ != false) {
-        output.writeBool(16005, iBDPMPBMDOJ_);
+        output.writeBool(16006, iBDPMPBMDOJ_);
       }
       if (getAAHAODOBJKMList().size() > 0) {
         output.writeUInt32NoTag(128010);
@@ -1062,12 +1062,12 @@ public final class VintageMarketInfoOuterClass {
           output,
           internalGetBargainInfoMap(),
           BargainInfoMapDefaultEntryHolder.defaultEntry,
-          2);
+          12);
       if (pJDGIHDIPFP_ != false) {
         output.writeBool(5, pJDGIHDIPFP_);
       }
       if (dealInfo_ != null) {
-        output.writeMessage(11, getDealInfo());
+        output.writeMessage(4, getDealInfo());
       }
       if (getBPGHMOFCODIList().size() > 0) {
         output.writeUInt32NoTag(58);
@@ -1083,7 +1083,7 @@ public final class VintageMarketInfoOuterClass {
         output.writeUInt32(16002, mHBEIKFONOC_);
       }
       for (int i = 0; i < openStoreList_.size(); i++) {
-        output.writeMessage(12, openStoreList_.get(i));
+        output.writeMessage(15, openStoreList_.get(i));
       }
       if (gLAMFOFAGHB_ != false) {
         output.writeBool(16000, gLAMFOFAGHB_);
@@ -1103,10 +1103,10 @@ public final class VintageMarketInfoOuterClass {
         output.writeUInt32NoTag(unlockStrategyList_.getInt(i));
       }
       if (cEFFFAKMCDE_ != false) {
-        output.writeBool(14, cEFFFAKMCDE_);
+        output.writeBool(16005, cEFFFAKMCDE_);
       }
       if (fELLANIIDOF_ != false) {
-        output.writeBool(15, fELLANIIDOF_);
+        output.writeBool(16007, fELLANIIDOF_);
       }
       if (aANHIOBNPKF_ != false) {
         output.writeBool(83, aANHIOBNPKF_);
@@ -1144,11 +1144,11 @@ public final class VintageMarketInfoOuterClass {
       size = 0;
       if (storeRound_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, storeRound_);
+          .computeUInt32Size(14, storeRound_);
       }
       if (iBDPMPBMDOJ_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(16005, iBDPMPBMDOJ_);
+          .computeBoolSize(16006, iBDPMPBMDOJ_);
       }
       {
         int dataSize = 0;
@@ -1172,7 +1172,7 @@ public final class VintageMarketInfoOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, bargainInfoMap__);
+            .computeMessageSize(12, bargainInfoMap__);
       }
       if (pJDGIHDIPFP_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1180,7 +1180,7 @@ public final class VintageMarketInfoOuterClass {
       }
       if (dealInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getDealInfo());
+          .computeMessageSize(4, getDealInfo());
       }
       {
         int dataSize = 0;
@@ -1206,7 +1206,7 @@ public final class VintageMarketInfoOuterClass {
       }
       for (int i = 0; i < openStoreList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, openStoreList_.get(i));
+          .computeMessageSize(15, openStoreList_.get(i));
       }
       if (gLAMFOFAGHB_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1242,11 +1242,11 @@ public final class VintageMarketInfoOuterClass {
       }
       if (cEFFFAKMCDE_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, cEFFFAKMCDE_);
+          .computeBoolSize(16005, cEFFFAKMCDE_);
       }
       if (fELLANIIDOF_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, fELLANIIDOF_);
+          .computeBoolSize(16007, fELLANIIDOF_);
       }
       if (aANHIOBNPKF_ != false) {
         size += com.google.protobuf.CodedOutputStream

@@ -100,12 +100,12 @@ public final class ShowCommonTipsNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 64: {
 
               closeTime_ = input.readUInt32();
               break;
             }
-            case 74: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               content_ = s;
@@ -187,7 +187,7 @@ public final class ShowCommonTipsNotifyOuterClass {
       }
     }
 
-    public static final int CLOSE_TIME_FIELD_NUMBER = 10;
+    public static final int CLOSE_TIME_FIELD_NUMBER = 8;
     private int closeTime_;
     /**
      * <code>uint32 close_time = 1;</code>
@@ -198,7 +198,7 @@ public final class ShowCommonTipsNotifyOuterClass {
       return closeTime_;
     }
 
-    public static final int CONTENT_FIELD_NUMBER = 9;
+    public static final int CONTENT_FIELD_NUMBER = 7;
     private volatile java.lang.Object content_;
     /**
      * <code>string content = 7;</code>
@@ -251,10 +251,10 @@ public final class ShowCommonTipsNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (closeTime_ != 0) {
-        output.writeUInt32(10, closeTime_);
+        output.writeUInt32(8, closeTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, content_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, content_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
@@ -270,10 +270,10 @@ public final class ShowCommonTipsNotifyOuterClass {
       size = 0;
       if (closeTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, closeTime_);
+          .computeUInt32Size(8, closeTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, content_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, content_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);

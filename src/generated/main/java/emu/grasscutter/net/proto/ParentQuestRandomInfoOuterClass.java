@@ -98,12 +98,12 @@ public final class ParentQuestRandomInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 88: {
 
               entranceId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 8: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 factorList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -111,7 +111,7 @@ public final class ParentQuestRandomInfoOuterClass {
               factorList_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -124,7 +124,7 @@ public final class ParentQuestRandomInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 104: {
+            case 48: {
 
               templateId_ = input.readUInt32();
               break;
@@ -164,7 +164,7 @@ public final class ParentQuestRandomInfoOuterClass {
               emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.class, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder.class);
     }
 
-    public static final int TEMPLATE_ID_FIELD_NUMBER = 13;
+    public static final int TEMPLATE_ID_FIELD_NUMBER = 6;
     private int templateId_;
     /**
      * <code>uint32 template_id = 10;</code>
@@ -175,7 +175,7 @@ public final class ParentQuestRandomInfoOuterClass {
       return templateId_;
     }
 
-    public static final int FACTOR_LIST_FIELD_NUMBER = 9;
+    public static final int FACTOR_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList factorList_;
     /**
      * <code>repeated uint32 factor_list = 9;</code>
@@ -203,7 +203,7 @@ public final class ParentQuestRandomInfoOuterClass {
     }
     private int factorListMemoizedSerializedSize = -1;
 
-    public static final int ENTRANCE_ID_FIELD_NUMBER = 1;
+    public static final int ENTRANCE_ID_FIELD_NUMBER = 11;
     private int entranceId_;
     /**
      * <code>uint32 entrance_id = 3;</code>
@@ -230,17 +230,17 @@ public final class ParentQuestRandomInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (entranceId_ != 0) {
-        output.writeUInt32(1, entranceId_);
+        output.writeUInt32(11, entranceId_);
       }
       if (getFactorListList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(factorListMemoizedSerializedSize);
       }
       for (int i = 0; i < factorList_.size(); i++) {
         output.writeUInt32NoTag(factorList_.getInt(i));
       }
       if (templateId_ != 0) {
-        output.writeUInt32(13, templateId_);
+        output.writeUInt32(6, templateId_);
       }
       unknownFields.writeTo(output);
     }
@@ -253,7 +253,7 @@ public final class ParentQuestRandomInfoOuterClass {
       size = 0;
       if (entranceId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, entranceId_);
+          .computeUInt32Size(11, entranceId_);
       }
       {
         int dataSize = 0;
@@ -271,7 +271,7 @@ public final class ParentQuestRandomInfoOuterClass {
       }
       if (templateId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, templateId_);
+          .computeUInt32Size(6, templateId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

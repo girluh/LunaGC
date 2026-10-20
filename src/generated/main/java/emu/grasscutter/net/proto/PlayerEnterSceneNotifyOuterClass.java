@@ -190,18 +190,18 @@ public final class PlayerEnterSceneNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 80: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
               break;
             }
-            case 88: {
+            case 112: {
 
               sceneBeginTime_ = input.readUInt64();
               break;
             }
-            case 120: {
+            case 32: {
 
               dungeonId_ = input.readUInt32();
               break;
@@ -219,12 +219,12 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
               break;
             }
-            case 40: {
+            case 56: {
 
               worldLevel_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 96: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -234,12 +234,12 @@ public final class PlayerEnterSceneNotifyOuterClass {
               pDJIGGBOHIB_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 8: {
 
               enterSceneToken_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 72: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -257,7 +257,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
               break;
             }
-            case 8: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sceneTagIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -265,7 +265,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
               sceneTagIdList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -308,12 +308,12 @@ public final class PlayerEnterSceneNotifyOuterClass {
               lBECDJIEPPL_ = input.readUInt32();
               break;
             }
-            case 13352: {
+            case 10944: {
 
               createPlayerUid_ = input.readUInt32();
               break;
             }
-            case 9306: {
+            case 9738: {
               emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.Builder subBuilder = null;
               if (mapLayerInfo_ != null) {
                 subBuilder = mapLayerInfo_.toBuilder();
@@ -331,7 +331,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
               iGJAAJKPDLA_ = input.readUInt32();
               break;
             }
-            case 6058: {
+            case 9986: {
               java.lang.String s = input.readStringRequireUtf8();
 
               sceneTransaction_ = s;
@@ -411,7 +411,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return getKCGDDAFHDCH();
     }
 
-    public static final int SCENE_TRANSACTION_FIELD_NUMBER = 757;
+    public static final int SCENE_TRANSACTION_FIELD_NUMBER = 1248;
     private volatile java.lang.Object sceneTransaction_;
 
     @java.lang.Override
@@ -469,7 +469,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return getBJDMOEPBDIN();
     }
 
-    public static final int SCENE_TAG_ID_LIST_FIELD_NUMBER = 1;
+    public static final int SCENE_TAG_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList sceneTagIdList_;
 
     @java.lang.Override
@@ -505,7 +505,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return getPos();
     }
 
-    public static final int MAP_LAYER_INFO_FIELD_NUMBER = 1163;
+    public static final int MAP_LAYER_INFO_FIELD_NUMBER = 1217;
     private emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo mapLayerInfo_;
 
     @java.lang.Override
@@ -556,7 +556,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return gNKFEDMACEO_;
     }
 
-    public static final int SCENE_BEGIN_TIME_FIELD_NUMBER = 11;
+    public static final int SCENE_BEGIN_TIME_FIELD_NUMBER = 14;
     private long sceneBeginTime_;
 
     @java.lang.Override
@@ -564,7 +564,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return sceneBeginTime_;
     }
 
-    public static final int WORLD_LEVEL_FIELD_NUMBER = 5;
+    public static final int WORLD_LEVEL_FIELD_NUMBER = 7;
     private int worldLevel_;
 
     @java.lang.Override
@@ -572,7 +572,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return worldLevel_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 9;
+    public static final int TYPE_FIELD_NUMBER = 10;
     private int type_;
 
     @java.lang.Override public int getTypeValue() {
@@ -596,7 +596,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return lBECDJIEPPL_;
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 13;
+    public static final int TARGET_UID_FIELD_NUMBER = 12;
     private int targetUid_;
 
     @java.lang.Override
@@ -626,7 +626,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return cKDOHCKCNCD_;
     }
 
-    public static final int CREATE_PLAYER_UID_FIELD_NUMBER = 1669;
+    public static final int CREATE_PLAYER_UID_FIELD_NUMBER = 1368;
     private int createPlayerUid_;
 
     @java.lang.Override
@@ -634,7 +634,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return createPlayerUid_;
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 2;
+    public static final int SCENE_ID_FIELD_NUMBER = 9;
     private int sceneId_;
 
     @java.lang.Override
@@ -653,7 +653,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return pEHLNEHABEC_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 15;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 4;
     private int dungeonId_;
 
     @java.lang.Override
@@ -672,7 +672,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       return pDJIGGBOHIB_;
     }
 
-    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 10;
+    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 1;
     private int enterSceneToken_;
 
     @java.lang.Override
@@ -696,44 +696,44 @@ public final class PlayerEnterSceneNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (enterSceneToken_ != 0) {
-        output.writeUInt32(10, enterSceneToken_);
+        output.writeUInt32(1, enterSceneToken_);
       }
       if (worldLevel_ != 0) {
-        output.writeUInt32(5, worldLevel_);
+        output.writeUInt32(7, worldLevel_);
       }
       if (type_ != emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.EnterType_ENTER_NONE.getNumber()) {
-        output.writeEnum(9, type_);
+        output.writeEnum(10, type_);
       }
       if (pDJIGGBOHIB_ != 0) {
         output.writeUInt32(16002, pDJIGGBOHIB_);
       }
       if (getSceneTagIdListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(sceneTagIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < sceneTagIdList_.size(); i++) {
         output.writeUInt32NoTag(sceneTagIdList_.getInt(i));
       }
       if (sceneBeginTime_ != 0L) {
-        output.writeUInt64(11, sceneBeginTime_);
+        output.writeUInt64(14, sceneBeginTime_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(2, sceneId_);
+        output.writeUInt32(9, sceneId_);
       }
       if (dungeonId_ != 0) {
-        output.writeUInt32(15, dungeonId_);
+        output.writeUInt32(4, dungeonId_);
       }
       if (pos_ != null) {
         output.writeMessage(8, getPos());
       }
       if (targetUid_ != 0) {
-        output.writeUInt32(13, targetUid_);
+        output.writeUInt32(12, targetUid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneTransaction_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 757, sceneTransaction_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1248, sceneTransaction_);
       }
       if (mapLayerInfo_ != null) {
-        output.writeMessage(1163, getMapLayerInfo());
+        output.writeMessage(1217, getMapLayerInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -745,13 +745,13 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
       size = 0;
       if (enterSceneToken_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, enterSceneToken_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, enterSceneToken_);
       }
       if (worldLevel_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, worldLevel_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, worldLevel_);
       }
       if (type_ != emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType.EnterType_ENTER_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, type_);
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, type_);
       }
       if (pDJIGGBOHIB_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeUInt32Size(16002, pDJIGGBOHIB_);
@@ -770,25 +770,25 @@ public final class PlayerEnterSceneNotifyOuterClass {
         sceneTagIdListMemoizedSerializedSize = dataSize;
       }
       if (sceneBeginTime_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream.computeUInt64Size(11, sceneBeginTime_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt64Size(14, sceneBeginTime_);
       }
       if (sceneId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, sceneId_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, sceneId_);
       }
       if (dungeonId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, dungeonId_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, dungeonId_);
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPos());
       }
       if (targetUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, targetUid_);
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, targetUid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneTransaction_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(757, sceneTransaction_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1248, sceneTransaction_);
       }
       if (mapLayerInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1163, getMapLayerInfo());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1217, getMapLayerInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

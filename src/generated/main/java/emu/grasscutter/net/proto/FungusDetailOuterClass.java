@@ -97,17 +97,17 @@ public final class FungusDetailOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 112: {
 
               nameId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 56: {
 
               fungusId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 64: {
 
               isCultivate_ = input.readBool();
               break;
@@ -154,7 +154,7 @@ public final class FungusDetailOuterClass {
               emu.grasscutter.net.proto.FungusDetailOuterClass.FungusDetail.class, emu.grasscutter.net.proto.FungusDetailOuterClass.FungusDetail.Builder.class);
     }
 
-    public static final int FUNGUS_ID_FIELD_NUMBER = 13;
+    public static final int FUNGUS_ID_FIELD_NUMBER = 7;
     private int fungusId_;
     /**
      * <code>uint32 fungus_id = 6;</code>
@@ -176,7 +176,7 @@ public final class FungusDetailOuterClass {
       return pOHAEGNNKFE_;
     }
 
-    public static final int IS_CULTIVATE_FIELD_NUMBER = 15;
+    public static final int IS_CULTIVATE_FIELD_NUMBER = 8;
     private boolean isCultivate_;
     /**
      * <code>bool is_cultivate = 7;</code>
@@ -187,7 +187,7 @@ public final class FungusDetailOuterClass {
       return isCultivate_;
     }
 
-    public static final int NAME_ID_FIELD_NUMBER = 5;
+    public static final int NAME_ID_FIELD_NUMBER = 14;
     private int nameId_;
     /**
      * <code>uint32 name_id = 3;</code>
@@ -224,13 +224,13 @@ public final class FungusDetailOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (nameId_ != 0) {
-        output.writeUInt32(5, nameId_);
+        output.writeUInt32(14, nameId_);
       }
       if (fungusId_ != 0) {
-        output.writeUInt32(13, fungusId_);
+        output.writeUInt32(7, fungusId_);
       }
       if (isCultivate_ != false) {
-        output.writeBool(15, isCultivate_);
+        output.writeBool(8, isCultivate_);
       }
       if (ePEECFNCAJE_ != 0) {
         output.writeUInt32(9, ePEECFNCAJE_);
@@ -249,15 +249,15 @@ public final class FungusDetailOuterClass {
       size = 0;
       if (nameId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, nameId_);
+          .computeUInt32Size(14, nameId_);
       }
       if (fungusId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, fungusId_);
+          .computeUInt32Size(7, fungusId_);
       }
       if (isCultivate_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isCultivate_);
+          .computeBoolSize(8, isCultivate_);
       }
       if (ePEECFNCAJE_ != 0) {
         size += com.google.protobuf.CodedOutputStream

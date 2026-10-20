@@ -119,7 +119,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 playerLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -128,7 +128,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
               break;
             }
-            case 74: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 playerWorldLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -175,7 +175,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
               emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify.class, emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify.Builder.class);
     }
 
-    public static final int PLAYER_WORLD_LOC_LIST_FIELD_NUMBER = 9;
+    public static final int PLAYER_WORLD_LOC_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> playerWorldLocList_;
     /**
      * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 10;</code>
@@ -215,7 +215,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
       return playerWorldLocList_.get(index);
     }
 
-    public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 11;
+    public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_;
     /**
      * <code>repeated .PlayerLocationInfo player_loc_list = 1;</code>
@@ -270,10 +270,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < playerLocList_.size(); i++) {
-        output.writeMessage(11, playerLocList_.get(i));
+        output.writeMessage(14, playerLocList_.get(i));
       }
       for (int i = 0; i < playerWorldLocList_.size(); i++) {
-        output.writeMessage(9, playerWorldLocList_.get(i));
+        output.writeMessage(2, playerWorldLocList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -286,11 +286,11 @@ public final class WorldPlayerLocationNotifyOuterClass {
       size = 0;
       for (int i = 0; i < playerLocList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, playerLocList_.get(i));
+          .computeMessageSize(14, playerLocList_.get(i));
       }
       for (int i = 0; i < playerWorldLocList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, playerWorldLocList_.get(i));
+          .computeMessageSize(2, playerWorldLocList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

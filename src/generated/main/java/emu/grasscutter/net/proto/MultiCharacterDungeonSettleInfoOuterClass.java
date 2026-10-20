@@ -135,7 +135,7 @@ public final class MultiCharacterDungeonSettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 teamInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.IEDLOHFOJJBOuterClass.IEDLOHFOJJB>();
                 mutable_bitField0_ |= 0x00000002;
@@ -144,17 +144,17 @@ public final class MultiCharacterDungeonSettleInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.IEDLOHFOJJBOuterClass.IEDLOHFOJJB.parser(), extensionRegistry));
               break;
             }
-            case 24: {
+            case 8: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 80: {
 
               difficulty_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 56: {
 
               isNewRecord_ = input.readBool();
               break;
@@ -251,7 +251,7 @@ public final class MultiCharacterDungeonSettleInfoOuterClass {
     }
     private int aJFIDJINPLLMemoizedSerializedSize = -1;
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 14;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 7;
     private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 12;</code>
@@ -273,7 +273,7 @@ public final class MultiCharacterDungeonSettleInfoOuterClass {
       return stageId_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 3;
+    public static final int LEVEL_ID_FIELD_NUMBER = 1;
     private int levelId_;
     /**
      * <code>uint32 level_id = 4;</code>
@@ -284,7 +284,7 @@ public final class MultiCharacterDungeonSettleInfoOuterClass {
       return levelId_;
     }
 
-    public static final int DIFFICULTY_FIELD_NUMBER = 9;
+    public static final int DIFFICULTY_FIELD_NUMBER = 10;
     private int difficulty_;
     /**
      * <code>uint32 difficulty = 7;</code>
@@ -295,7 +295,7 @@ public final class MultiCharacterDungeonSettleInfoOuterClass {
       return difficulty_;
     }
 
-    public static final int TEAM_INFO_LIST_FIELD_NUMBER = 7;
+    public static final int TEAM_INFO_LIST_FIELD_NUMBER = 11;
     private java.util.List<emu.grasscutter.net.proto.IEDLOHFOJJBOuterClass.IEDLOHFOJJB> teamInfoList_;
     /**
      * <code>repeated .IEDLOHFOJJB team_info_list = 2;</code>
@@ -351,16 +351,16 @@ public final class MultiCharacterDungeonSettleInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       for (int i = 0; i < teamInfoList_.size(); i++) {
-        output.writeMessage(7, teamInfoList_.get(i));
+        output.writeMessage(11, teamInfoList_.get(i));
       }
       if (levelId_ != 0) {
-        output.writeUInt32(3, levelId_);
+        output.writeUInt32(1, levelId_);
       }
       if (difficulty_ != 0) {
-        output.writeUInt32(9, difficulty_);
+        output.writeUInt32(10, difficulty_);
       }
       if (isNewRecord_ != false) {
-        output.writeBool(14, isNewRecord_);
+        output.writeBool(7, isNewRecord_);
       }
       if (stageId_ != 0) {
         output.writeUInt32(4, stageId_);
@@ -383,19 +383,19 @@ public final class MultiCharacterDungeonSettleInfoOuterClass {
       size = 0;
       for (int i = 0; i < teamInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, teamInfoList_.get(i));
+          .computeMessageSize(11, teamInfoList_.get(i));
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, levelId_);
+          .computeUInt32Size(1, levelId_);
       }
       if (difficulty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, difficulty_);
+          .computeUInt32Size(10, difficulty_);
       }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isNewRecord_);
+          .computeBoolSize(7, isNewRecord_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -91,22 +91,22 @@ public final class SeaLampV3CampStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 8: {
 
               isFinished_ = input.readBool();
               break;
             }
-            case 120: {
+            case 16: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 80: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 88: {
 
               isOpen_ = input.readBool();
               break;
@@ -143,7 +143,7 @@ public final class SeaLampV3CampStageInfoOuterClass {
               emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.class, emu.grasscutter.net.proto.SeaLampV3CampStageInfoOuterClass.SeaLampV3CampStageInfo.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 12;
+    public static final int LEVEL_ID_FIELD_NUMBER = 10;
     private int levelId_;
     /**
      * <code>uint32 level_id = 5;</code>
@@ -154,7 +154,7 @@ public final class SeaLampV3CampStageInfoOuterClass {
       return levelId_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 15;
+    public static final int STAGE_ID_FIELD_NUMBER = 2;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 4;</code>
@@ -165,7 +165,7 @@ public final class SeaLampV3CampStageInfoOuterClass {
       return stageId_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 6;
+    public static final int IS_OPEN_FIELD_NUMBER = 11;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 8;</code>
@@ -176,7 +176,7 @@ public final class SeaLampV3CampStageInfoOuterClass {
       return isOpen_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 8;
+    public static final int IS_FINISHED_FIELD_NUMBER = 1;
     private boolean isFinished_;
     /**
      * <code>bool is_finished = 2;</code>
@@ -202,16 +202,16 @@ public final class SeaLampV3CampStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isFinished_ != false) {
-        output.writeBool(8, isFinished_);
+        output.writeBool(1, isFinished_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(15, stageId_);
+        output.writeUInt32(2, stageId_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(12, levelId_);
+        output.writeUInt32(10, levelId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(6, isOpen_);
+        output.writeBool(11, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,19 +224,19 @@ public final class SeaLampV3CampStageInfoOuterClass {
       size = 0;
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isFinished_);
+          .computeBoolSize(1, isFinished_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, stageId_);
+          .computeUInt32Size(2, stageId_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, levelId_);
+          .computeUInt32Size(10, levelId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isOpen_);
+          .computeBoolSize(11, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

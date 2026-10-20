@@ -75,7 +75,7 @@ public final class AbilityChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 106: {
               emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder subBuilder = null;
               if (abilityControlBlock_ != null) {
                 subBuilder = abilityControlBlock_.toBuilder();
@@ -88,7 +88,7 @@ public final class AbilityChangeNotifyOuterClass {
 
               break;
             }
-            case 32: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -125,7 +125,7 @@ public final class AbilityChangeNotifyOuterClass {
               emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify.class, emu.grasscutter.net.proto.AbilityChangeNotifyOuterClass.AbilityChangeNotify.Builder.class);
     }
 
-    public static final int ABILITY_CONTROL_BLOCK_FIELD_NUMBER = 3;
+    public static final int ABILITY_CONTROL_BLOCK_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock abilityControlBlock_;
 
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class AbilityChangeNotifyOuterClass {
       return getAbilityControlBlock();
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 4;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
 
     @java.lang.Override
@@ -166,10 +166,10 @@ public final class AbilityChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (abilityControlBlock_ != null) {
-        output.writeMessage(3, getAbilityControlBlock());
+        output.writeMessage(13, getAbilityControlBlock());
       }
       if (entityId_ != 0) {
-        output.writeUInt32(4, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -182,11 +182,11 @@ public final class AbilityChangeNotifyOuterClass {
       size = 0;
       if (abilityControlBlock_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getAbilityControlBlock());
+          .computeMessageSize(13, getAbilityControlBlock());
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

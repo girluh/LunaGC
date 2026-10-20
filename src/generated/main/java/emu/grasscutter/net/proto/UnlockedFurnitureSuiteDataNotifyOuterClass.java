@@ -93,12 +93,12 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
 
               isAll_ = input.readBool();
               break;
             }
-            case 56: {
+            case 72: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 furnitureSuiteIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
               furnitureSuiteIdList_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 74: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -154,7 +154,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
               emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify.class, emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify.Builder.class);
     }
 
-    public static final int FURNITURE_SUITE_ID_LIST_FIELD_NUMBER = 7;
+    public static final int FURNITURE_SUITE_ID_LIST_FIELD_NUMBER = 9;
     private com.google.protobuf.Internal.IntList furnitureSuiteIdList_;
     /**
      * <code>repeated uint32 furniture_suite_id_list = 8;</code>
@@ -182,7 +182,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
     }
     private int furnitureSuiteIdListMemoizedSerializedSize = -1;
 
-    public static final int IS_ALL_FIELD_NUMBER = 4;
+    public static final int IS_ALL_FIELD_NUMBER = 5;
     private boolean isAll_;
     /**
      * <code>bool is_all = 7;</code>
@@ -209,10 +209,10 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (isAll_ != false) {
-        output.writeBool(4, isAll_);
+        output.writeBool(5, isAll_);
       }
       if (getFurnitureSuiteIdListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(74);
         output.writeUInt32NoTag(furnitureSuiteIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < furnitureSuiteIdList_.size(); i++) {
@@ -229,7 +229,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
       size = 0;
       if (isAll_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isAll_);
+          .computeBoolSize(5, isAll_);
       }
       {
         int dataSize = 0;

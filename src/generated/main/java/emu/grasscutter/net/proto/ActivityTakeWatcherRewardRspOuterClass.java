@@ -91,12 +91,12 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
               watcherId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 32: {
 
               activityId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
@@ -144,7 +144,7 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
       return watcherId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
@@ -155,7 +155,7 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
       return retcode_;
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 14;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 4;
     private int activityId_;
     /**
      * <code>uint32 activity_id = 9;</code>
@@ -184,10 +184,10 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
         output.writeUInt32(8, watcherId_);
       }
       if (activityId_ != 0) {
-        output.writeUInt32(14, activityId_);
+        output.writeUInt32(4, activityId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -204,11 +204,11 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
       }
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, activityId_);
+          .computeUInt32Size(4, activityId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

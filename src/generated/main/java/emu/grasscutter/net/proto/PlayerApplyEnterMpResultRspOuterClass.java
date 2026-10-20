@@ -86,12 +86,12 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 88: {
+            case 16: {
 
               applyUid_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 8: {
 
               isAgreed_ = input.readBool();
               break;
@@ -128,7 +128,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.class, emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.Builder.class);
     }
 
-    public static final int APPLY_UID_FIELD_NUMBER = 11;
+    public static final int APPLY_UID_FIELD_NUMBER = 2;
     private int applyUid_;
 
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       return retcode_;
     }
 
-    public static final int IS_AGREED_FIELD_NUMBER = 6;
+    public static final int IS_AGREED_FIELD_NUMBER = 1;
     private boolean isAgreed_;
     /**
      * <code>bool is_agreed = 13;</code>
@@ -176,10 +176,10 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         output.writeInt32(15, retcode_);
       }
       if (applyUid_ != 0) {
-        output.writeUInt32(11, applyUid_);
+        output.writeUInt32(2, applyUid_);
       }
       if (isAgreed_ != false) {
-        output.writeBool(6, isAgreed_);
+        output.writeBool(1, isAgreed_);
       }
       unknownFields.writeTo(output);
     }
@@ -196,11 +196,11 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
       }
       if (applyUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, applyUid_);
+          .computeUInt32Size(2, applyUid_);
       }
       if (isAgreed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isAgreed_);
+          .computeBoolSize(1, isAgreed_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

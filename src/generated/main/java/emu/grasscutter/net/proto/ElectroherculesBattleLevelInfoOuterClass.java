@@ -85,17 +85,17 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 80: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 104: {
+            case 112: {
 
               minFinishTime_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 56: {
 
               levelId_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
               emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo.class, emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo.Builder.class);
     }
 
-    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 13;
+    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 14;
     private int minFinishTime_;
     /**
      * <code>uint32 min_finish_time = 10;</code>
@@ -143,7 +143,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
       return minFinishTime_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 5;
+    public static final int IS_FINISH_FIELD_NUMBER = 10;
     private boolean isFinish_;
     /**
      * <code>bool is_finish = 8;</code>
@@ -154,7 +154,7 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
       return isFinish_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 11;
+    public static final int LEVEL_ID_FIELD_NUMBER = 7;
     private int levelId_;
     /**
      * <code>uint32 level_id = 12;</code>
@@ -180,13 +180,13 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isFinish_ != false) {
-        output.writeBool(5, isFinish_);
+        output.writeBool(10, isFinish_);
       }
       if (minFinishTime_ != 0) {
-        output.writeUInt32(13, minFinishTime_);
+        output.writeUInt32(14, minFinishTime_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(11, levelId_);
+        output.writeUInt32(7, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class ElectroherculesBattleLevelInfoOuterClass {
       size = 0;
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isFinish_);
+          .computeBoolSize(10, isFinish_);
       }
       if (minFinishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, minFinishTime_);
+          .computeUInt32Size(14, minFinishTime_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, levelId_);
+          .computeUInt32Size(7, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -92,12 +92,12 @@ public final class WidgetGadgetDataOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 104: {
 
               gadgetId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 gadgetEntityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -105,7 +105,7 @@ public final class WidgetGadgetDataOuterClass {
               gadgetEntityIdList_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -153,7 +153,7 @@ public final class WidgetGadgetDataOuterClass {
               emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.class, emu.grasscutter.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.Builder.class);
     }
 
-    public static final int GADGET_ENTITY_ID_LIST_FIELD_NUMBER = 9;
+    public static final int GADGET_ENTITY_ID_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList gadgetEntityIdList_;
     /**
      * <code>repeated uint32 gadget_entity_id_list = 4;</code>
@@ -181,7 +181,7 @@ public final class WidgetGadgetDataOuterClass {
     }
     private int gadgetEntityIdListMemoizedSerializedSize = -1;
 
-    public static final int GADGET_ID_FIELD_NUMBER = 14;
+    public static final int GADGET_ID_FIELD_NUMBER = 13;
     private int gadgetId_;
     /**
      * <code>uint32 gadget_id = 3;</code>
@@ -208,10 +208,10 @@ public final class WidgetGadgetDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (gadgetId_ != 0) {
-        output.writeUInt32(14, gadgetId_);
+        output.writeUInt32(13, gadgetId_);
       }
       if (getGadgetEntityIdListList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(gadgetEntityIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < gadgetEntityIdList_.size(); i++) {
@@ -228,7 +228,7 @@ public final class WidgetGadgetDataOuterClass {
       size = 0;
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, gadgetId_);
+          .computeUInt32Size(13, gadgetId_);
       }
       {
         int dataSize = 0;

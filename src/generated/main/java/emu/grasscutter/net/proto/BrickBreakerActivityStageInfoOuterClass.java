@@ -90,7 +90,7 @@ public final class BrickBreakerActivityStageInfoOuterClass {
               mHDFOPDMOBC_ = input.readBool();
               break;
             }
-            case 32: {
+            case 72: {
 
               stageId_ = input.readUInt32();
               break;
@@ -154,7 +154,7 @@ public final class BrickBreakerActivityStageInfoOuterClass {
       return mHDFOPDMOBC_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 4;
+    public static final int STAGE_ID_FIELD_NUMBER = 9;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 10;</code>
@@ -183,7 +183,7 @@ public final class BrickBreakerActivityStageInfoOuterClass {
         output.writeBool(6, mHDFOPDMOBC_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(4, stageId_);
+        output.writeUInt32(9, stageId_);
       }
       if (hIAOPLJIBNL_ != false) {
         output.writeBool(16000, hIAOPLJIBNL_);
@@ -203,7 +203,7 @@ public final class BrickBreakerActivityStageInfoOuterClass {
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, stageId_);
+          .computeUInt32Size(9, stageId_);
       }
       if (hIAOPLJIBNL_ != false) {
         size += com.google.protobuf.CodedOutputStream

@@ -80,12 +80,12 @@ public final class AvatarPromoteRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 120: {
 
               guid_ = input.readUInt64();
               break;
@@ -122,7 +122,7 @@ public final class AvatarPromoteRspOuterClass {
               emu.grasscutter.net.proto.AvatarPromoteRspOuterClass.AvatarPromoteRsp.class, emu.grasscutter.net.proto.AvatarPromoteRspOuterClass.AvatarPromoteRsp.Builder.class);
     }
 
-    public static final int GUID_FIELD_NUMBER = 13;
+    public static final int GUID_FIELD_NUMBER = 15;
     private long guid_;
     /**
      * <code>uint64 guid = 7;</code>
@@ -133,7 +133,7 @@ public final class AvatarPromoteRspOuterClass {
       return guid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
      * <code>int32 retcode = 12;</code>
@@ -159,10 +159,10 @@ public final class AvatarPromoteRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(8, retcode_);
       }
       if (guid_ != 0L) {
-        output.writeUInt64(13, guid_);
+        output.writeUInt64(15, guid_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class AvatarPromoteRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       if (guid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, guid_);
+          .computeUInt64Size(15, guid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

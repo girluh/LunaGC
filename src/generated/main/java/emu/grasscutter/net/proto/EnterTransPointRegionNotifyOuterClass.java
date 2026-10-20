@@ -75,12 +75,12 @@ public final class EnterTransPointRegionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 96: {
 
               pointId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 16: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -117,7 +117,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
               emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.class, emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.Builder.class);
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 3;
+    public static final int POINT_ID_FIELD_NUMBER = 12;
     private int pointId_;
 
     @java.lang.Override
@@ -125,7 +125,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
       return pointId_;
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 12;
+    public static final int SCENE_ID_FIELD_NUMBER = 2;
     private int sceneId_;
     /**
      * <code>uint32 scene_id = 10;</code>
@@ -151,10 +151,10 @@ public final class EnterTransPointRegionNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(3, pointId_);
+        output.writeUInt32(12, pointId_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(12, sceneId_);
+        output.writeUInt32(2, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -167,11 +167,11 @@ public final class EnterTransPointRegionNotifyOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, pointId_);
+          .computeUInt32Size(12, pointId_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, sceneId_);
+          .computeUInt32Size(2, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

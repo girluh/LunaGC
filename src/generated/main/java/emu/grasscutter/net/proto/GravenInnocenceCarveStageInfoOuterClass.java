@@ -79,12 +79,12 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 56: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 24: {
+            case 8: {
 
               stageId_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
               emu.grasscutter.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.class, emu.grasscutter.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 13;
+    public static final int IS_OPEN_FIELD_NUMBER = 7;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 3;</code>
@@ -132,7 +132,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
       return isOpen_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 3;
+    public static final int STAGE_ID_FIELD_NUMBER = 1;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 14;</code>
@@ -158,10 +158,10 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOpen_ != false) {
-        output.writeBool(13, isOpen_);
+        output.writeBool(7, isOpen_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(3, stageId_);
+        output.writeUInt32(1, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
       size = 0;
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isOpen_);
+          .computeBoolSize(7, isOpen_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, stageId_);
+          .computeUInt32Size(1, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

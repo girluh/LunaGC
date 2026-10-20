@@ -99,7 +99,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 114: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 detailInfo_ = new java.util.ArrayList<emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -108,7 +108,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.parser(), extensionRegistry));
               break;
             }
-            case 32: {
+            case 8: {
 
               levelId_ = input.readUInt32();
               break;
@@ -148,7 +148,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
               emu.grasscutter.net.proto.IrodoriMasterLevelInfoOuterClass.IrodoriMasterLevelInfo.class, emu.grasscutter.net.proto.IrodoriMasterLevelInfoOuterClass.IrodoriMasterLevelInfo.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 4;
+    public static final int LEVEL_ID_FIELD_NUMBER = 1;
     private int levelId_;
     /**
      * <code>uint32 level_id = 10;</code>
@@ -159,7 +159,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
       return levelId_;
     }
 
-    public static final int DETAIL_INFO_FIELD_NUMBER = 14;
+    public static final int DETAIL_INFO_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo> detailInfo_;
     /**
      * <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 1;</code>
@@ -214,10 +214,10 @@ public final class IrodoriMasterLevelInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < detailInfo_.size(); i++) {
-        output.writeMessage(14, detailInfo_.get(i));
+        output.writeMessage(7, detailInfo_.get(i));
       }
       if (levelId_ != 0) {
-        output.writeUInt32(4, levelId_);
+        output.writeUInt32(1, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -230,11 +230,11 @@ public final class IrodoriMasterLevelInfoOuterClass {
       size = 0;
       for (int i = 0; i < detailInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, detailInfo_.get(i));
+          .computeMessageSize(7, detailInfo_.get(i));
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, levelId_);
+          .computeUInt32Size(1, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

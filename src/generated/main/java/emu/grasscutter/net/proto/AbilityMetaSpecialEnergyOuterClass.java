@@ -69,7 +69,7 @@ public final class AbilityMetaSpecialEnergyOuterClass {
             case 0:
               done = true;
               break;
-            case 93: {
+            case 53: {
 
               value_ = input.readFloat();
               break;
@@ -106,7 +106,7 @@ public final class AbilityMetaSpecialEnergyOuterClass {
               emu.grasscutter.net.proto.AbilityMetaSpecialEnergyOuterClass.AbilityMetaSpecialEnergy.class, emu.grasscutter.net.proto.AbilityMetaSpecialEnergyOuterClass.AbilityMetaSpecialEnergy.Builder.class);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 11;
+    public static final int VALUE_FIELD_NUMBER = 6;
     private float value_;
     /**
      * <code>float value = 11;</code>
@@ -132,7 +132,7 @@ public final class AbilityMetaSpecialEnergyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (value_ != 0F) {
-        output.writeFloat(11, value_);
+        output.writeFloat(6, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +145,7 @@ public final class AbilityMetaSpecialEnergyOuterClass {
       size = 0;
       if (value_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(11, value_);
+          .computeFloatSize(6, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -109,37 +109,37 @@ public final class ForgeQueueDataOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 80: {
 
               finishCount_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 56: {
 
               nextFinishTimestamp_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 16: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 24: {
 
               unfinishCount_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 104: {
 
               totalFinishTimestamp_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 72: {
 
               queueId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 8: {
 
               forgeId_ = input.readUInt32();
               break;
@@ -176,7 +176,7 @@ public final class ForgeQueueDataOuterClass {
               emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.class, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.Builder.class);
     }
 
-    public static final int TOTAL_FINISH_TIMESTAMP_FIELD_NUMBER = 2;
+    public static final int TOTAL_FINISH_TIMESTAMP_FIELD_NUMBER = 13;
     private int totalFinishTimestamp_;
     /**
      * <code>uint32 total_finish_timestamp = 13;</code>
@@ -187,7 +187,7 @@ public final class ForgeQueueDataOuterClass {
       return totalFinishTimestamp_;
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 14;
+    public static final int AVATAR_ID_FIELD_NUMBER = 2;
     private int avatarId_;
     /**
      * <code>uint32 avatar_id = 8;</code>
@@ -198,7 +198,7 @@ public final class ForgeQueueDataOuterClass {
       return avatarId_;
     }
 
-    public static final int FINISH_COUNT_FIELD_NUMBER = 6;
+    public static final int FINISH_COUNT_FIELD_NUMBER = 10;
     private int finishCount_;
     /**
      * <code>uint32 finish_count = 3;</code>
@@ -209,7 +209,7 @@ public final class ForgeQueueDataOuterClass {
       return finishCount_;
     }
 
-    public static final int QUEUEID_FIELD_NUMBER = 7;
+    public static final int QUEUEID_FIELD_NUMBER = 9;
     private int queueId_;
     /**
      * <code>uint32 queueId = 14;</code>
@@ -220,7 +220,7 @@ public final class ForgeQueueDataOuterClass {
       return queueId_;
     }
 
-    public static final int UNFINISHCOUNT_FIELD_NUMBER = 9;
+    public static final int UNFINISHCOUNT_FIELD_NUMBER = 3;
     private int unfinishCount_;
     /**
      * <code>uint32 unfinishCount = 11;</code>
@@ -231,7 +231,7 @@ public final class ForgeQueueDataOuterClass {
       return unfinishCount_;
     }
 
-    public static final int NEXT_FINISH_TIMESTAMP_FIELD_NUMBER = 5;
+    public static final int NEXT_FINISH_TIMESTAMP_FIELD_NUMBER = 7;
     private int nextFinishTimestamp_;
     /**
      * <code>uint32 next_finish_timestamp = 4;</code>
@@ -242,7 +242,7 @@ public final class ForgeQueueDataOuterClass {
       return nextFinishTimestamp_;
     }
 
-    public static final int FORGE_ID_FIELD_NUMBER = 4;
+    public static final int FORGE_ID_FIELD_NUMBER = 1;
     private int forgeId_;
     /**
      * <code>uint32 forge_id = 15;</code>
@@ -268,25 +268,25 @@ public final class ForgeQueueDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (finishCount_ != 0) {
-        output.writeUInt32(6, finishCount_);
+        output.writeUInt32(10, finishCount_);
       }
       if (nextFinishTimestamp_ != 0) {
-        output.writeUInt32(5, nextFinishTimestamp_);
+        output.writeUInt32(7, nextFinishTimestamp_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(14, avatarId_);
+        output.writeUInt32(2, avatarId_);
       }
       if (unfinishCount_ != 0) {
-        output.writeUInt32(9, unfinishCount_);
+        output.writeUInt32(3, unfinishCount_);
       }
       if (totalFinishTimestamp_ != 0) {
-        output.writeUInt32(2, totalFinishTimestamp_);
+        output.writeUInt32(13, totalFinishTimestamp_);
       }
       if (queueId_ != 0) {
-        output.writeUInt32(7, queueId_);
+        output.writeUInt32(9, queueId_);
       }
       if (forgeId_ != 0) {
-        output.writeUInt32(4, forgeId_);
+        output.writeUInt32(1, forgeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -299,31 +299,31 @@ public final class ForgeQueueDataOuterClass {
       size = 0;
       if (finishCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, finishCount_);
+          .computeUInt32Size(10, finishCount_);
       }
       if (nextFinishTimestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, nextFinishTimestamp_);
+          .computeUInt32Size(7, nextFinishTimestamp_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, avatarId_);
+          .computeUInt32Size(2, avatarId_);
       }
       if (unfinishCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, unfinishCount_);
+          .computeUInt32Size(3, unfinishCount_);
       }
       if (totalFinishTimestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, totalFinishTimestamp_);
+          .computeUInt32Size(13, totalFinishTimestamp_);
       }
       if (queueId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, queueId_);
+          .computeUInt32Size(9, queueId_);
       }
       if (forgeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, forgeId_);
+          .computeUInt32Size(1, forgeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

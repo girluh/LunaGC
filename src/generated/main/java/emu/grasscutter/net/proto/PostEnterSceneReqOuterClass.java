@@ -71,7 +71,7 @@ public final class PostEnterSceneReqOuterClass {
             case 0:
               done = true;
               break;
-            case 49: {
+            case 9: {
 
               totalTickTime_ = input.readDouble();
               break;
@@ -121,7 +121,7 @@ public final class PostEnterSceneReqOuterClass {
       return enterSceneToken_;
     }
 
-    public static final int TOTAL_TICK_TIME_FIELD_NUMBER = 6;
+    public static final int TOTAL_TICK_TIME_FIELD_NUMBER = 1;
     private double totalTickTime_;
 
     @java.lang.Override
@@ -144,7 +144,7 @@ public final class PostEnterSceneReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (totalTickTime_ != 0D) {
-        output.writeDouble(6, totalTickTime_);
+        output.writeDouble(1, totalTickTime_);
       }
       if (enterSceneToken_ != 0) {
         output.writeUInt32(8, enterSceneToken_);
@@ -160,7 +160,7 @@ public final class PostEnterSceneReqOuterClass {
       size = 0;
       if (totalTickTime_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, totalTickTime_);
+          .computeDoubleSize(1, totalTickTime_);
       }
       if (enterSceneToken_ != 0) {
         size += com.google.protobuf.CodedOutputStream

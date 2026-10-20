@@ -80,7 +80,7 @@ public final class PullPrivateChatRspOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 chatInfo_ = new java.util.ArrayList<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -89,7 +89,7 @@ public final class PullPrivateChatRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.parser(), extensionRegistry));
               break;
             }
-            case 32: {
+            case 24: {
 
               retcode_ = input.readInt32();
               break;
@@ -129,7 +129,7 @@ public final class PullPrivateChatRspOuterClass {
               emu.grasscutter.net.proto.PullPrivateChatRspOuterClass.PullPrivateChatRsp.class, emu.grasscutter.net.proto.PullPrivateChatRspOuterClass.PullPrivateChatRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
 
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PullPrivateChatRspOuterClass {
       return retcode_;
     }
 
-    public static final int CHAT_INFO_FIELD_NUMBER = 7;
+    public static final int CHAT_INFO_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo> chatInfo_;
 
     @java.lang.Override
@@ -182,10 +182,10 @@ public final class PullPrivateChatRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < chatInfo_.size(); i++) {
-        output.writeMessage(7, chatInfo_.get(i));
+        output.writeMessage(4, chatInfo_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(3, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,11 +198,11 @@ public final class PullPrivateChatRspOuterClass {
       size = 0;
       for (int i = 0; i < chatInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, chatInfo_.get(i));
+          .computeMessageSize(4, chatInfo_.get(i));
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
+          .computeInt32Size(3, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

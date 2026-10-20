@@ -98,7 +98,7 @@ public final class MarkNewNotifyOuterClass {
               markNewType_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 idList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class MarkNewNotifyOuterClass {
               idList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -165,7 +165,7 @@ public final class MarkNewNotifyOuterClass {
       return markNewType_;
     }
 
-    public static final int ID_LIST_FIELD_NUMBER = 3;
+    public static final int ID_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList idList_;
     /**
      * <code>repeated uint32 id_list = 11;</code>
@@ -212,7 +212,7 @@ public final class MarkNewNotifyOuterClass {
         output.writeUInt32(7, markNewType_);
       }
       if (getIdListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(idListMemoizedSerializedSize);
       }
       for (int i = 0; i < idList_.size(); i++) {

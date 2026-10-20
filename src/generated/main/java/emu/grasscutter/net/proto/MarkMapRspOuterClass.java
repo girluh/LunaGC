@@ -100,7 +100,7 @@ public final class MarkMapRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
@@ -149,7 +149,7 @@ public final class MarkMapRspOuterClass {
               emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp.class, emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
      * <code>int32 retcode = 7;</code>
@@ -215,7 +215,7 @@ public final class MarkMapRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(7, retcode_);
       }
       for (int i = 0; i < markList_.size(); i++) {
         output.writeMessage(4, markList_.get(i));
@@ -231,7 +231,7 @@ public final class MarkMapRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       for (int i = 0; i < markList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream

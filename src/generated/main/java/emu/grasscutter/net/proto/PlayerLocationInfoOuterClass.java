@@ -107,7 +107,7 @@ public final class PlayerLocationInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 98: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
@@ -146,7 +146,7 @@ public final class PlayerLocationInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 34: {
+            case 58: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -194,7 +194,7 @@ public final class PlayerLocationInfoOuterClass {
               emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.class, emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder.class);
     }
 
-    public static final int POS_FIELD_NUMBER = 4;
+    public static final int POS_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 7;</code>
@@ -238,7 +238,7 @@ public final class PlayerLocationInfoOuterClass {
     }
     private int pFLKBEAJNIJMemoizedSerializedSize = -1;
 
-    public static final int ROT_FIELD_NUMBER = 9;
+    public static final int ROT_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
     /**
      * <code>.Vector rot = 1;</code>
@@ -291,7 +291,7 @@ public final class PlayerLocationInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (rot_ != null) {
-        output.writeMessage(9, getRot());
+        output.writeMessage(12, getRot());
       }
       if (uid_ != 0) {
         output.writeUInt32(11, uid_);
@@ -304,7 +304,7 @@ public final class PlayerLocationInfoOuterClass {
         output.writeUInt32NoTag(pFLKBEAJNIJ_.getInt(i));
       }
       if (pos_ != null) {
-        output.writeMessage(4, getPos());
+        output.writeMessage(7, getPos());
       }
       unknownFields.writeTo(output);
     }
@@ -317,7 +317,7 @@ public final class PlayerLocationInfoOuterClass {
       size = 0;
       if (rot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getRot());
+          .computeMessageSize(12, getRot());
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -339,7 +339,7 @@ public final class PlayerLocationInfoOuterClass {
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getPos());
+          .computeMessageSize(7, getPos());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -91,7 +91,7 @@ public final class PlayerEnterDungeonRspOuterClass {
               pointId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
@@ -155,7 +155,7 @@ public final class PlayerEnterDungeonRspOuterClass {
       return dungeonId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
      * <code>int32 retcode = 2;</code>
@@ -184,7 +184,7 @@ public final class PlayerEnterDungeonRspOuterClass {
         output.writeUInt32(15, pointId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(6, retcode_);
       }
       if (dungeonId_ != 0) {
         output.writeUInt32(2, dungeonId_);
@@ -204,7 +204,7 @@ public final class PlayerEnterDungeonRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -73,7 +73,7 @@ public final class SkyCrystalDetectorDataUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 26: {
               emu.grasscutter.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder subBuilder = null;
               if (skyCrystalDetectorData_ != null) {
                 subBuilder = skyCrystalDetectorData_.toBuilder();
@@ -118,7 +118,7 @@ public final class SkyCrystalDetectorDataUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.SkyCrystalDetectorDataUpdateNotifyOuterClass.SkyCrystalDetectorDataUpdateNotify.class, emu.grasscutter.net.proto.SkyCrystalDetectorDataUpdateNotifyOuterClass.SkyCrystalDetectorDataUpdateNotify.Builder.class);
     }
 
-    public static final int SKY_CRYSTAL_DETECTOR_DATA_FIELD_NUMBER = 12;
+    public static final int SKY_CRYSTAL_DETECTOR_DATA_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData skyCrystalDetectorData_;
 
     @java.lang.Override
@@ -151,7 +151,7 @@ public final class SkyCrystalDetectorDataUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (skyCrystalDetectorData_ != null) {
-        output.writeMessage(12, getSkyCrystalDetectorData());
+        output.writeMessage(3, getSkyCrystalDetectorData());
       }
       unknownFields.writeTo(output);
     }
@@ -164,7 +164,7 @@ public final class SkyCrystalDetectorDataUpdateNotifyOuterClass {
       size = 0;
       if (skyCrystalDetectorData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getSkyCrystalDetectorData());
+          .computeMessageSize(3, getSkyCrystalDetectorData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -77,7 +77,7 @@ public final class AvatarSkillUpgradeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 72: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -87,17 +87,17 @@ public final class AvatarSkillUpgradeRspOuterClass {
               avatarSkillId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 64: {
 
               curLevel_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 16: {
 
               oldLevel_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
@@ -134,7 +134,7 @@ public final class AvatarSkillUpgradeRspOuterClass {
               emu.grasscutter.net.proto.AvatarSkillUpgradeRspOuterClass.AvatarSkillUpgradeRsp.class, emu.grasscutter.net.proto.AvatarSkillUpgradeRspOuterClass.AvatarSkillUpgradeRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
 
     @java.lang.Override
@@ -150,7 +150,7 @@ public final class AvatarSkillUpgradeRspOuterClass {
       return avatarSkillId_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 9;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -158,7 +158,7 @@ public final class AvatarSkillUpgradeRspOuterClass {
       return avatarGuid_;
     }
 
-    public static final int CUR_LEVEL_FIELD_NUMBER = 6;
+    public static final int CUR_LEVEL_FIELD_NUMBER = 8;
     private int curLevel_;
 
     @java.lang.Override
@@ -166,7 +166,7 @@ public final class AvatarSkillUpgradeRspOuterClass {
       return curLevel_;
     }
 
-    public static final int OLD_LEVEL_FIELD_NUMBER = 4;
+    public static final int OLD_LEVEL_FIELD_NUMBER = 2;
     private int oldLevel_;
 
     @java.lang.Override
@@ -189,19 +189,19 @@ public final class AvatarSkillUpgradeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(2, avatarGuid_);
+        output.writeUInt64(9, avatarGuid_);
       }
       if (curLevel_ != 0) {
-        output.writeUInt32(6, curLevel_);
+        output.writeUInt32(8, curLevel_);
       }
       if (avatarSkillId_ != 0) {
         output.writeUInt32(15, avatarSkillId_);
       }
       if (oldLevel_ != 0) {
-        output.writeUInt32(4, oldLevel_);
+        output.writeUInt32(2, oldLevel_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -214,11 +214,11 @@ public final class AvatarSkillUpgradeRspOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, avatarGuid_);
+          .computeUInt64Size(9, avatarGuid_);
       }
       if (curLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, curLevel_);
+          .computeUInt32Size(8, curLevel_);
       }
       if (avatarSkillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -226,11 +226,11 @@ public final class AvatarSkillUpgradeRspOuterClass {
       }
       if (oldLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, oldLevel_);
+          .computeUInt32Size(2, oldLevel_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

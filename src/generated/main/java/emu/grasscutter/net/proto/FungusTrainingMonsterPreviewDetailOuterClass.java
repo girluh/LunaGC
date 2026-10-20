@@ -98,12 +98,12 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 80: {
 
               level_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 120: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 affixList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -111,7 +111,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
               affixList_.addInt(input.readUInt32());
               break;
             }
-            case 90: {
+            case 122: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -124,7 +124,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 24: {
+            case 88: {
 
               monsterId_ = input.readUInt32();
               break;
@@ -164,7 +164,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
               emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail.class, emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail.Builder.class);
     }
 
-    public static final int MONSTER_ID_FIELD_NUMBER = 3;
+    public static final int MONSTER_ID_FIELD_NUMBER = 11;
     private int monsterId_;
     /**
      * <code>uint32 monster_id = 15;</code>
@@ -175,7 +175,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       return monsterId_;
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 13;
+    public static final int LEVEL_FIELD_NUMBER = 10;
     private int level_;
     /**
      * <code>uint32 level = 6;</code>
@@ -186,7 +186,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       return level_;
     }
 
-    public static final int AFFIX_LIST_FIELD_NUMBER = 11;
+    public static final int AFFIX_LIST_FIELD_NUMBER = 15;
     private com.google.protobuf.Internal.IntList affixList_;
     /**
      * <code>repeated uint32 affix_list = 11;</code>
@@ -230,17 +230,17 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (level_ != 0) {
-        output.writeUInt32(13, level_);
+        output.writeUInt32(10, level_);
       }
       if (getAffixListList().size() > 0) {
-        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(affixListMemoizedSerializedSize);
       }
       for (int i = 0; i < affixList_.size(); i++) {
         output.writeUInt32NoTag(affixList_.getInt(i));
       }
       if (monsterId_ != 0) {
-        output.writeUInt32(3, monsterId_);
+        output.writeUInt32(11, monsterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -253,7 +253,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       size = 0;
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, level_);
+          .computeUInt32Size(10, level_);
       }
       {
         int dataSize = 0;
@@ -271,7 +271,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       }
       if (monsterId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, monsterId_);
+          .computeUInt32Size(11, monsterId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

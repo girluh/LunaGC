@@ -78,7 +78,7 @@ public final class UgcMusicTrackOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 musicNoteList_ = new java.util.ArrayList<emu.grasscutter.net.proto.UgcMusicNoteOuterClass.UgcMusicNote>();
                 mutable_bitField0_ |= 0x00000001;
@@ -122,7 +122,7 @@ public final class UgcMusicTrackOuterClass {
               emu.grasscutter.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack.class, emu.grasscutter.net.proto.UgcMusicTrackOuterClass.UgcMusicTrack.Builder.class);
     }
 
-    public static final int MUSIC_NOTE_LIST_FIELD_NUMBER = 13;
+    public static final int MUSIC_NOTE_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.UgcMusicNoteOuterClass.UgcMusicNote> musicNoteList_;
 
     @java.lang.Override
@@ -167,7 +167,7 @@ public final class UgcMusicTrackOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < musicNoteList_.size(); i++) {
-        output.writeMessage(13, musicNoteList_.get(i));
+        output.writeMessage(7, musicNoteList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -180,7 +180,7 @@ public final class UgcMusicTrackOuterClass {
       size = 0;
       for (int i = 0; i < musicNoteList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, musicNoteList_.get(i));
+          .computeMessageSize(7, musicNoteList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

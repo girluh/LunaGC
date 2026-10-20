@@ -69,7 +69,7 @@ public final class GetShopReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 112: {
 
               shopType_ = input.readUInt32();
               break;
@@ -106,7 +106,7 @@ public final class GetShopReqOuterClass {
               emu.grasscutter.net.proto.GetShopReqOuterClass.GetShopReq.class, emu.grasscutter.net.proto.GetShopReqOuterClass.GetShopReq.Builder.class);
     }
 
-    public static final int SHOP_TYPE_FIELD_NUMBER = 10;
+    public static final int SHOP_TYPE_FIELD_NUMBER = 14;
     private int shopType_;
 
     @java.lang.Override
@@ -129,7 +129,7 @@ public final class GetShopReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (shopType_ != 0) {
-        output.writeUInt32(10, shopType_);
+        output.writeUInt32(14, shopType_);
       }
       unknownFields.writeTo(output);
     }
@@ -142,7 +142,7 @@ public final class GetShopReqOuterClass {
       size = 0;
       if (shopType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, shopType_);
+          .computeUInt32Size(14, shopType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

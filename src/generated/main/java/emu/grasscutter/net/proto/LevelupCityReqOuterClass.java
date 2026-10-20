@@ -86,17 +86,17 @@ public final class LevelupCityReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 8: {
 
               itemNum_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 64: {
 
               areaId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 40: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class LevelupCityReqOuterClass {
               emu.grasscutter.net.proto.LevelupCityReqOuterClass.LevelupCityReq.class, emu.grasscutter.net.proto.LevelupCityReqOuterClass.LevelupCityReq.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 3;
+    public static final int SCENE_ID_FIELD_NUMBER = 5;
     private int sceneId_;
     /**
      * <code>uint32 scene_id = 11;</code>
@@ -144,7 +144,7 @@ public final class LevelupCityReqOuterClass {
       return sceneId_;
     }
 
-    public static final int AREA_ID_FIELD_NUMBER = 4;
+    public static final int AREA_ID_FIELD_NUMBER = 8;
     private int areaId_;
     /**
      * <code>uint32 area_id = 3;</code>
@@ -155,7 +155,7 @@ public final class LevelupCityReqOuterClass {
       return areaId_;
     }
 
-    public static final int ITEM_NUM_FIELD_NUMBER = 11;
+    public static final int ITEM_NUM_FIELD_NUMBER = 1;
     private int itemNum_;
     /**
      * <code>uint32 item_num = 1;</code>
@@ -181,13 +181,13 @@ public final class LevelupCityReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (itemNum_ != 0) {
-        output.writeUInt32(11, itemNum_);
+        output.writeUInt32(1, itemNum_);
       }
       if (areaId_ != 0) {
-        output.writeUInt32(4, areaId_);
+        output.writeUInt32(8, areaId_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(3, sceneId_);
+        output.writeUInt32(5, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class LevelupCityReqOuterClass {
       size = 0;
       if (itemNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, itemNum_);
+          .computeUInt32Size(1, itemNum_);
       }
       if (areaId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, areaId_);
+          .computeUInt32Size(8, areaId_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, sceneId_);
+          .computeUInt32Size(5, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

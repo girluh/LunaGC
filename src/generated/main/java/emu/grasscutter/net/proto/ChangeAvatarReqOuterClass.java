@@ -91,12 +91,12 @@ public final class ChangeAvatarReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 72: {
 
               skillId_ = input.readUInt32();
               break;
             }
-            case 26: {
+            case 66: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (movePos_ != null) {
                 subBuilder = movePos_.toBuilder();
@@ -119,7 +119,7 @@ public final class ChangeAvatarReqOuterClass {
               guid_ = input.readUInt64();
               break;
             }
-            case 104: {
+            case 24: {
 
               isMove_ = input.readBool();
               break;
@@ -161,7 +161,7 @@ public final class ChangeAvatarReqOuterClass {
               emu.grasscutter.net.proto.ChangeAvatarReqOuterClass.ChangeAvatarReq.class, emu.grasscutter.net.proto.ChangeAvatarReqOuterClass.ChangeAvatarReq.Builder.class);
     }
 
-    public static final int MOVE_POS_FIELD_NUMBER = 3;
+    public static final int MOVE_POS_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector movePos_;
 
     @java.lang.Override
@@ -179,7 +179,7 @@ public final class ChangeAvatarReqOuterClass {
       return getMovePos();
     }
 
-    public static final int SKILL_ID_FIELD_NUMBER = 8;
+    public static final int SKILL_ID_FIELD_NUMBER = 9;
     private int skillId_;
 
     @java.lang.Override
@@ -217,7 +217,7 @@ public final class ChangeAvatarReqOuterClass {
       return guid_;
     }
 
-    public static final int IS_MOVE_FIELD_NUMBER = 13;
+    public static final int IS_MOVE_FIELD_NUMBER = 3;
     private boolean isMove_;
 
     @java.lang.Override
@@ -240,7 +240,7 @@ public final class ChangeAvatarReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (skillId_ != 0) {
-        output.writeUInt32(8, skillId_);
+        output.writeUInt32(9, skillId_);
       }
       if (iECPBGINIBL_ != false) {
         output.writeBool(4, iECPBGINIBL_);
@@ -249,10 +249,10 @@ public final class ChangeAvatarReqOuterClass {
         output.writeUInt64(5, guid_);
       }
       if (isMove_ != false) {
-        output.writeBool(13, isMove_);
+        output.writeBool(3, isMove_);
       }
       if (movePos_ != null) {
-        output.writeMessage(3, getMovePos());
+        output.writeMessage(8, getMovePos());
       }
       if (dBNDIOAOJHP_ != false) {
         output.writeBool(14, dBNDIOAOJHP_);
@@ -268,7 +268,7 @@ public final class ChangeAvatarReqOuterClass {
       size = 0;
       if (skillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, skillId_);
+          .computeUInt32Size(9, skillId_);
       }
       if (iECPBGINIBL_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -280,11 +280,11 @@ public final class ChangeAvatarReqOuterClass {
       }
       if (isMove_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isMove_);
+          .computeBoolSize(3, isMove_);
       }
       if (movePos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getMovePos());
+          .computeMessageSize(8, getMovePos());
       }
       if (dBNDIOAOJHP_ != false) {
         size += com.google.protobuf.CodedOutputStream

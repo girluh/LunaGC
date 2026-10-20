@@ -106,7 +106,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.IHMEPOBHBNDOuterClass.IHMEPOBHBND.parser(), extensionRegistry));
               break;
             }
-            case 40: {
+            case 64: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -191,7 +191,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
       return lGIIAMBMLKC_.get(index);
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 5;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 8;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -228,7 +228,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
         output.writeMessage(12, lGIIAMBMLKC_.get(i));
       }
       if (isContentClosed_ != false) {
-        output.writeBool(5, isContentClosed_);
+        output.writeBool(8, isContentClosed_);
       }
       if (dELEOLGNEDK_ != 0) {
         output.writeUInt32(15, dELEOLGNEDK_);
@@ -248,7 +248,7 @@ public final class TreasureSeelieActivityDetailInfoOuterClass {
       }
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isContentClosed_);
+          .computeBoolSize(8, isContentClosed_);
       }
       if (dELEOLGNEDK_ != 0) {
         size += com.google.protobuf.CodedOutputStream

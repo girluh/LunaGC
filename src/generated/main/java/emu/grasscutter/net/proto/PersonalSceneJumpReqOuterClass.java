@@ -69,7 +69,7 @@ public final class PersonalSceneJumpReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 88: {
 
               pointId_ = input.readUInt32();
               break;
@@ -106,7 +106,7 @@ public final class PersonalSceneJumpReqOuterClass {
               emu.grasscutter.net.proto.PersonalSceneJumpReqOuterClass.PersonalSceneJumpReq.class, emu.grasscutter.net.proto.PersonalSceneJumpReqOuterClass.PersonalSceneJumpReq.Builder.class);
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 5;
+    public static final int POINT_ID_FIELD_NUMBER = 11;
     private int pointId_;
 
     @java.lang.Override
@@ -129,7 +129,7 @@ public final class PersonalSceneJumpReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(5, pointId_);
+        output.writeUInt32(11, pointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -142,7 +142,7 @@ public final class PersonalSceneJumpReqOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, pointId_);
+          .computeUInt32Size(11, pointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

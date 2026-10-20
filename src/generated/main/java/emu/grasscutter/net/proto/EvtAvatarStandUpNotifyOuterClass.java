@@ -75,22 +75,22 @@ public final class EvtAvatarStandUpNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 96: {
 
               chairId_ = input.readUInt64();
               break;
             }
-            case 64: {
+            case 16: {
 
               direction_ = input.readInt32();
               break;
             }
-            case 8: {
+            case 64: {
 
               performId_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -127,7 +127,7 @@ public final class EvtAvatarStandUpNotifyOuterClass {
               emu.grasscutter.net.proto.EvtAvatarStandUpNotifyOuterClass.EvtAvatarStandUpNotify.class, emu.grasscutter.net.proto.EvtAvatarStandUpNotifyOuterClass.EvtAvatarStandUpNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
 
     @java.lang.Override
@@ -135,7 +135,7 @@ public final class EvtAvatarStandUpNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int PERFORM_ID_FIELD_NUMBER = 1;
+    public static final int PERFORM_ID_FIELD_NUMBER = 8;
     private int performId_;
     /**
      * <code>int32 perform_id = 11;</code>
@@ -146,7 +146,7 @@ public final class EvtAvatarStandUpNotifyOuterClass {
       return performId_;
     }
 
-    public static final int CHAIR_ID_FIELD_NUMBER = 7;
+    public static final int CHAIR_ID_FIELD_NUMBER = 12;
     private long chairId_;
 
     @java.lang.Override
@@ -154,7 +154,7 @@ public final class EvtAvatarStandUpNotifyOuterClass {
       return chairId_;
     }
 
-    public static final int DIRECTION_FIELD_NUMBER = 8;
+    public static final int DIRECTION_FIELD_NUMBER = 2;
     private int direction_;
 
     @java.lang.Override
@@ -177,16 +177,16 @@ public final class EvtAvatarStandUpNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (chairId_ != 0L) {
-        output.writeUInt64(7, chairId_);
+        output.writeUInt64(12, chairId_);
       }
       if (direction_ != 0) {
-        output.writeInt32(8, direction_);
+        output.writeInt32(2, direction_);
       }
       if (performId_ != 0) {
-        output.writeInt32(1, performId_);
+        output.writeInt32(8, performId_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,19 +199,19 @@ public final class EvtAvatarStandUpNotifyOuterClass {
       size = 0;
       if (chairId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, chairId_);
+          .computeUInt64Size(12, chairId_);
       }
       if (direction_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, direction_);
+          .computeInt32Size(2, direction_);
       }
       if (performId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, performId_);
+          .computeInt32Size(8, performId_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -78,23 +78,23 @@ public final class VehicleInteractReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 120: {
 
               pos_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 56: {
               int rawValue = input.readEnum();
 
               interactType_ = rawValue;
               break;
             }
-            case 32: {
+            case 16: {
 
               isNeedDestroy_ = input.readBool();
               break;
             }
-            case 40: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -131,7 +131,7 @@ public final class VehicleInteractReqOuterClass {
               emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq.class, emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 5;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
 
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class VehicleInteractReqOuterClass {
       return entityId_;
     }
 
-    public static final int POS_FIELD_NUMBER = 1;
+    public static final int POS_FIELD_NUMBER = 15;
     private int pos_;
 
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class VehicleInteractReqOuterClass {
       return pos_;
     }
 
-    public static final int INTERACT_TYPE_FIELD_NUMBER = 3;
+    public static final int INTERACT_TYPE_FIELD_NUMBER = 7;
     private int interactType_;
 
     @java.lang.Override public int getInteractTypeValue() {
@@ -160,7 +160,7 @@ public final class VehicleInteractReqOuterClass {
       return result == null ? emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.UNRECOGNIZED : result;
     }
 
-    public static final int IS_NEED_DESTROY_FIELD_NUMBER = 4;
+    public static final int IS_NEED_DESTROY_FIELD_NUMBER = 2;
     private boolean isNeedDestroy_;
 
     @java.lang.Override
@@ -183,16 +183,16 @@ public final class VehicleInteractReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isNeedDestroy_ != false) {
-        output.writeBool(4, isNeedDestroy_);
+        output.writeBool(2, isNeedDestroy_);
       }
       if (interactType_ != emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.VehicleInteractType_VEHICLE_INTERACT_NONE.getNumber()) {
-        output.writeEnum(3, interactType_);
+        output.writeEnum(7, interactType_);
       }
       if (pos_ != 0) {
-        output.writeUInt32(1, pos_);
+        output.writeUInt32(15, pos_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(5, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -205,19 +205,19 @@ public final class VehicleInteractReqOuterClass {
       size = 0;
       if (isNeedDestroy_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isNeedDestroy_);
+          .computeBoolSize(2, isNeedDestroy_);
       }
       if (interactType_ != emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.VehicleInteractType_VEHICLE_INTERACT_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, interactType_);
+          .computeEnumSize(7, interactType_);
       }
       if (pos_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, pos_);
+          .computeUInt32Size(15, pos_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

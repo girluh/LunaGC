@@ -90,7 +90,7 @@ public final class PlayerOfferingRspOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 58: {
               emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder subBuilder = null;
               if (offeringData_ != null) {
                 subBuilder = offeringData_.toBuilder();
@@ -103,12 +103,12 @@ public final class PlayerOfferingRspOuterClass {
 
               break;
             }
-            case 112: {
+            case 32: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 82: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -152,7 +152,7 @@ public final class PlayerOfferingRspOuterClass {
               emu.grasscutter.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp.class, emu.grasscutter.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp.Builder.class);
     }
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 10;
+    public static final int ITEM_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
 
     @java.lang.Override
@@ -182,7 +182,7 @@ public final class PlayerOfferingRspOuterClass {
       return itemList_.get(index);
     }
 
-    public static final int OFFERING_DATA_FIELD_NUMBER = 13;
+    public static final int OFFERING_DATA_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData offeringData_;
 
     @java.lang.Override
@@ -200,7 +200,7 @@ public final class PlayerOfferingRspOuterClass {
       return getOfferingData();
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
 
     @java.lang.Override
@@ -223,13 +223,13 @@ public final class PlayerOfferingRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (offeringData_ != null) {
-        output.writeMessage(13, getOfferingData());
+        output.writeMessage(7, getOfferingData());
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(4, retcode_);
       }
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(10, itemList_.get(i));
+        output.writeMessage(14, itemList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -242,15 +242,15 @@ public final class PlayerOfferingRspOuterClass {
       size = 0;
       if (offeringData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getOfferingData());
+          .computeMessageSize(7, getOfferingData());
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(4, retcode_);
       }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, itemList_.get(i));
+          .computeMessageSize(14, itemList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

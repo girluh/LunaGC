@@ -80,28 +80,28 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 48: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 85: {
+            case 93: {
 
               curValue_ = input.readFloat();
               break;
             }
-            case 24: {
+            case 104: {
 
               propType_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 32: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
               break;
             }
-            case 53: {
+            case 29: {
 
               oldValue_ = input.readFloat();
               break;
@@ -138,7 +138,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify.class, emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify.Builder.class);
     }
 
-    public static final int CUR_VALUE_FIELD_NUMBER = 10;
+    public static final int CUR_VALUE_FIELD_NUMBER = 11;
     private float curValue_;
 
     @java.lang.Override
@@ -146,7 +146,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       return curValue_;
     }
 
-    public static final int OLD_VALUE_FIELD_NUMBER = 6;
+    public static final int OLD_VALUE_FIELD_NUMBER = 3;
     private float oldValue_;
 
     @java.lang.Override
@@ -154,7 +154,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       return oldValue_;
     }
 
-    public static final int PROP_TYPE_FIELD_NUMBER = 3;
+    public static final int PROP_TYPE_FIELD_NUMBER = 13;
     private int propType_;
 
     @java.lang.Override
@@ -162,7 +162,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       return propType_;
     }
 
-    public static final int REASON_FIELD_NUMBER = 1;
+    public static final int REASON_FIELD_NUMBER = 4;
     private int reason_;
 
     @java.lang.Override public int getReasonValue() {
@@ -175,7 +175,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 12;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 6;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -198,19 +198,19 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(12, avatarGuid_);
+        output.writeUInt64(6, avatarGuid_);
       }
       if (curValue_ != 0F) {
-        output.writeFloat(10, curValue_);
+        output.writeFloat(11, curValue_);
       }
       if (propType_ != 0) {
-        output.writeUInt32(3, propType_);
+        output.writeUInt32(13, propType_);
       }
       if (reason_ != emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_NONE.getNumber()) {
-        output.writeEnum(1, reason_);
+        output.writeEnum(4, reason_);
       }
       if (oldValue_ != 0F) {
-        output.writeFloat(6, oldValue_);
+        output.writeFloat(3, oldValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -223,23 +223,23 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(12, avatarGuid_);
+          .computeUInt64Size(6, avatarGuid_);
       }
       if (curValue_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(10, curValue_);
+          .computeFloatSize(11, curValue_);
       }
       if (propType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, propType_);
+          .computeUInt32Size(13, propType_);
       }
       if (reason_ != emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, reason_);
+          .computeEnumSize(4, reason_);
       }
       if (oldValue_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(6, oldValue_);
+          .computeFloatSize(3, oldValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

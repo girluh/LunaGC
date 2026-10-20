@@ -91,7 +91,7 @@ public final class PhotoActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 8: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -180,7 +180,7 @@ public final class PhotoActivityDetailInfoOuterClass {
       return aBOMJJKGODK_.get(index);
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 9;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 1;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -203,7 +203,7 @@ public final class PhotoActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isContentClosed_ != false) {
-        output.writeBool(9, isContentClosed_);
+        output.writeBool(1, isContentClosed_);
       }
       for (int i = 0; i < aBOMJJKGODK_.size(); i++) {
         output.writeMessage(12, aBOMJJKGODK_.get(i));
@@ -219,7 +219,7 @@ public final class PhotoActivityDetailInfoOuterClass {
       size = 0;
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isContentClosed_);
+          .computeBoolSize(1, isContentClosed_);
       }
       for (int i = 0; i < aBOMJJKGODK_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream

@@ -93,7 +93,7 @@ public final class BounceConjuringActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -107,7 +107,7 @@ public final class BounceConjuringActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.JFPNONKHGAAOuterClass.JFPNONKHGAA.parser(), extensionRegistry));
               break;
             }
-            case 48: {
+            case 120: {
 
               contentCloseTime_ = input.readUInt32();
               break;
@@ -187,7 +187,7 @@ public final class BounceConjuringActivityDetailInfoOuterClass {
       return aEPAJCHDHED_.get(index);
     }
 
-    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 6;
+    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 15;
     private int contentCloseTime_;
 
     @java.lang.Override
@@ -195,7 +195,7 @@ public final class BounceConjuringActivityDetailInfoOuterClass {
       return contentCloseTime_;
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 3;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 6;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -218,13 +218,13 @@ public final class BounceConjuringActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isContentClosed_ != false) {
-        output.writeBool(3, isContentClosed_);
+        output.writeBool(6, isContentClosed_);
       }
       for (int i = 0; i < aEPAJCHDHED_.size(); i++) {
         output.writeMessage(5, aEPAJCHDHED_.get(i));
       }
       if (contentCloseTime_ != 0) {
-        output.writeUInt32(6, contentCloseTime_);
+        output.writeUInt32(15, contentCloseTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -237,7 +237,7 @@ public final class BounceConjuringActivityDetailInfoOuterClass {
       size = 0;
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isContentClosed_);
+          .computeBoolSize(6, isContentClosed_);
       }
       for (int i = 0; i < aEPAJCHDHED_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -245,7 +245,7 @@ public final class BounceConjuringActivityDetailInfoOuterClass {
       }
       if (contentCloseTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, contentCloseTime_);
+          .computeUInt32Size(15, contentCloseTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

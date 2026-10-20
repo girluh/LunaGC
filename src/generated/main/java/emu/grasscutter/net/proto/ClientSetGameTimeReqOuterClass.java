@@ -25,13 +25,13 @@ public final class ClientSetGameTimeReqOuterClass {
     int getGameTime();
 
     /**
-     * <code>uint32 client_game_time = 12;</code>
+     * <code>uint32 client_game_time = 7;</code>
      * @return The clientGameTime.
      */
     int getClientGameTime();
 
     /**
-     * <code>bool is_force_set = 15;</code>
+     * <code>bool is_force_set = 12;</code>
      * @return The isForceSet.
      */
     boolean getIsForceSet();
@@ -86,12 +86,12 @@ public final class ClientSetGameTimeReqOuterClass {
               gameTime_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 56: {
 
               clientGameTime_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 96: {
 
               isForceSet_ = input.readBool();
               break;
@@ -139,10 +139,10 @@ public final class ClientSetGameTimeReqOuterClass {
       return gameTime_;
     }
 
-    public static final int CLIENT_GAME_TIME_FIELD_NUMBER = 12;
+    public static final int CLIENT_GAME_TIME_FIELD_NUMBER = 7;
     private int clientGameTime_;
     /**
-     * <code>uint32 client_game_time = 12;</code>
+     * <code>uint32 client_game_time = 7;</code>
      * @return The clientGameTime.
      */
     @java.lang.Override
@@ -150,10 +150,10 @@ public final class ClientSetGameTimeReqOuterClass {
       return clientGameTime_;
     }
 
-    public static final int IS_FORCE_SET_FIELD_NUMBER = 15;
+    public static final int IS_FORCE_SET_FIELD_NUMBER = 12;
     private boolean isForceSet_;
     /**
-     * <code>bool is_force_set = 15;</code>
+     * <code>bool is_force_set = 12;</code>
      * @return The isForceSet.
      */
     @java.lang.Override
@@ -179,10 +179,10 @@ public final class ClientSetGameTimeReqOuterClass {
         output.writeUInt32(5, gameTime_);
       }
       if (clientGameTime_ != 0) {
-        output.writeUInt32(12, clientGameTime_);
+        output.writeUInt32(7, clientGameTime_);
       }
       if (isForceSet_ != false) {
-        output.writeBool(15, isForceSet_);
+        output.writeBool(12, isForceSet_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,11 +199,11 @@ public final class ClientSetGameTimeReqOuterClass {
       }
       if (clientGameTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, clientGameTime_);
+          .computeUInt32Size(7, clientGameTime_);
       }
       if (isForceSet_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isForceSet_);
+          .computeBoolSize(12, isForceSet_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -531,7 +531,7 @@ public final class ClientSetGameTimeReqOuterClass {
 
       private int clientGameTime_ ;
       /**
-       * <code>uint32 client_game_time = 12;</code>
+       * <code>uint32 client_game_time = 7;</code>
        * @return The clientGameTime.
        */
       @java.lang.Override
@@ -539,7 +539,7 @@ public final class ClientSetGameTimeReqOuterClass {
         return clientGameTime_;
       }
       /**
-       * <code>uint32 client_game_time = 12;</code>
+       * <code>uint32 client_game_time = 7;</code>
        * @param value The clientGameTime to set.
        * @return This builder for chaining.
        */
@@ -550,7 +550,7 @@ public final class ClientSetGameTimeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 client_game_time = 12;</code>
+       * <code>uint32 client_game_time = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientGameTime() {
@@ -562,7 +562,7 @@ public final class ClientSetGameTimeReqOuterClass {
 
       private boolean isForceSet_ ;
       /**
-       * <code>bool is_force_set = 15;</code>
+       * <code>bool is_force_set = 12;</code>
        * @return The isForceSet.
        */
       @java.lang.Override
@@ -570,7 +570,7 @@ public final class ClientSetGameTimeReqOuterClass {
         return isForceSet_;
       }
       /**
-       * <code>bool is_force_set = 15;</code>
+       * <code>bool is_force_set = 12;</code>
        * @param value The isForceSet to set.
        * @return This builder for chaining.
        */
@@ -581,7 +581,7 @@ public final class ClientSetGameTimeReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_force_set = 15;</code>
+       * <code>bool is_force_set = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsForceSet() {
@@ -659,7 +659,7 @@ public final class ClientSetGameTimeReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032ClientSetGameTimeReq.proto\"Y\n\024ClientSe" +
       "tGameTimeReq\022\021\n\tgame_time\030\005 \001(\r\022\030\n\020clien" +
-      "t_game_time\030\014 \001(\r\022\024\n\014is_force_set\030\017 \001(\010B" +
+      "t_game_time\030\007 \001(\r\022\024\n\014is_force_set\030\014 \001(\010B" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

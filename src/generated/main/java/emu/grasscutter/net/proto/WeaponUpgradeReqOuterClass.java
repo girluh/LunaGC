@@ -100,7 +100,7 @@ public final class WeaponUpgradeReqOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 16: {
+            case 120: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 foodWeaponGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -108,7 +108,7 @@ public final class WeaponUpgradeReqOuterClass {
               foodWeaponGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 18: {
+            case 122: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -121,7 +121,7 @@ public final class WeaponUpgradeReqOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 48: {
+            case 40: {
 
               targetWeaponGuid_ = input.readUInt64();
               break;
@@ -164,7 +164,7 @@ public final class WeaponUpgradeReqOuterClass {
               emu.grasscutter.net.proto.WeaponUpgradeReqOuterClass.WeaponUpgradeReq.class, emu.grasscutter.net.proto.WeaponUpgradeReqOuterClass.WeaponUpgradeReq.Builder.class);
     }
 
-    public static final int FOOD_WEAPON_GUID_LIST_FIELD_NUMBER = 2;
+    public static final int FOOD_WEAPON_GUID_LIST_FIELD_NUMBER = 15;
     private com.google.protobuf.Internal.LongList foodWeaponGuidList_;
 
     @java.lang.Override
@@ -212,7 +212,7 @@ public final class WeaponUpgradeReqOuterClass {
       return itemParamList_.get(index);
     }
 
-    public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 6;
+    public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 5;
     private long targetWeaponGuid_;
 
     @java.lang.Override
@@ -239,14 +239,14 @@ public final class WeaponUpgradeReqOuterClass {
         output.writeMessage(8, itemParamList_.get(i));
       }
       if (getFoodWeaponGuidListList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(foodWeaponGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < foodWeaponGuidList_.size(); i++) {
         output.writeUInt64NoTag(foodWeaponGuidList_.getLong(i));
       }
       if (targetWeaponGuid_ != 0L) {
-        output.writeUInt64(6, targetWeaponGuid_);
+        output.writeUInt64(5, targetWeaponGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -277,7 +277,7 @@ public final class WeaponUpgradeReqOuterClass {
       }
       if (targetWeaponGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, targetWeaponGuid_);
+          .computeUInt64Size(5, targetWeaponGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

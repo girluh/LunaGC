@@ -158,12 +158,12 @@ public final class VehicleInteractRspOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 96: {
 
               vehicleType_ = input.readUInt32();
               break;
             }
-            case 42: {
+            case 50: {
               emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember.Builder subBuilder = null;
               if (member_ != null) {
                 subBuilder = member_.toBuilder();
@@ -176,12 +176,12 @@ public final class VehicleInteractRspOuterClass {
 
               break;
             }
-            case 96: {
+            case 104: {
 
               gadgetId_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 66: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (vehiclePos_ != null) {
                 subBuilder = vehiclePos_.toBuilder();
@@ -200,17 +200,17 @@ public final class VehicleInteractRspOuterClass {
               interactReason_ = rawValue;
               break;
             }
-            case 104: {
+            case 72: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 10: {
+            case 42: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (vehicleRot_ != null) {
                 subBuilder = vehicleRot_.toBuilder();
@@ -223,7 +223,7 @@ public final class VehicleInteractRspOuterClass {
 
               break;
             }
-            case 24: {
+            case 120: {
               int rawValue = input.readEnum();
 
               interactType_ = rawValue;
@@ -287,7 +287,7 @@ public final class VehicleInteractRspOuterClass {
               emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp.class, emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp.Builder.class);
     }
 
-    public static final int MEMBER_FIELD_NUMBER = 5;
+    public static final int MEMBER_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember member_;
 
     @java.lang.Override
@@ -305,7 +305,7 @@ public final class VehicleInteractRspOuterClass {
       return getMember();
     }
 
-    public static final int VEHICLE_POS_FIELD_NUMBER = 14;
+    public static final int VEHICLE_POS_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector vehiclePos_;
     /**
      * <code>.Vector vehicle_pos = 6;</code>
@@ -331,7 +331,7 @@ public final class VehicleInteractRspOuterClass {
       return getVehiclePos();
     }
 
-    public static final int VEHICLE_ROT_FIELD_NUMBER = 1;
+    public static final int VEHICLE_ROT_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector vehicleRot_;
     /**
      * <code>.Vector vehicle_rot = 14;</code>
@@ -409,7 +409,7 @@ public final class VehicleInteractRspOuterClass {
       return getEnterPos();
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
 
     @java.lang.Override
@@ -417,7 +417,7 @@ public final class VehicleInteractRspOuterClass {
       return retcode_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 13;
+    public static final int ENTITY_ID_FIELD_NUMBER = 9;
     private int entityId_;
 
     @java.lang.Override
@@ -444,7 +444,7 @@ public final class VehicleInteractRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.VehicleInteractReasonOuterClass.VehicleInteractReason.UNRECOGNIZED : result;
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 12;
+    public static final int GADGET_ID_FIELD_NUMBER = 13;
     private int gadgetId_;
 
     @java.lang.Override
@@ -452,7 +452,7 @@ public final class VehicleInteractRspOuterClass {
       return gadgetId_;
     }
 
-    public static final int INTERACT_TYPE_FIELD_NUMBER = 3;
+    public static final int INTERACT_TYPE_FIELD_NUMBER = 15;
     private int interactType_;
 
     @java.lang.Override public int getInteractTypeValue() {
@@ -465,7 +465,7 @@ public final class VehicleInteractRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.UNRECOGNIZED : result;
     }
 
-    public static final int VEHICLE_TYPE_FIELD_NUMBER = 8;
+    public static final int VEHICLE_TYPE_FIELD_NUMBER = 12;
     private int vehicleType_;
 
     @java.lang.Override
@@ -488,31 +488,31 @@ public final class VehicleInteractRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (vehicleType_ != 0) {
-        output.writeUInt32(8, vehicleType_);
+        output.writeUInt32(12, vehicleType_);
       }
       if (member_ != null) {
-        output.writeMessage(5, getMember());
+        output.writeMessage(6, getMember());
       }
       if (gadgetId_ != 0) {
-        output.writeUInt32(12, gadgetId_);
+        output.writeUInt32(13, gadgetId_);
       }
       if (vehiclePos_ != null) {
-        output.writeMessage(14, getVehiclePos());
+        output.writeMessage(8, getVehiclePos());
       }
       if (interactReason_ != emu.grasscutter.net.proto.VehicleInteractReasonOuterClass.VehicleInteractReason.VehicleInteractReason_NONE.getNumber()) {
         output.writeEnum(16000, interactReason_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(13, entityId_);
+        output.writeUInt32(9, entityId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(7, retcode_);
       }
       if (vehicleRot_ != null) {
-        output.writeMessage(1, getVehicleRot());
+        output.writeMessage(5, getVehicleRot());
       }
       if (interactType_ != emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.VehicleInteractType_VEHICLE_INTERACT_NONE.getNumber()) {
-        output.writeEnum(3, interactType_);
+        output.writeEnum(15, interactType_);
       }
       if (enterPos_ != null) {
         output.writeMessage(2124, getEnterPos());
@@ -531,19 +531,19 @@ public final class VehicleInteractRspOuterClass {
       size = 0;
       if (vehicleType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, vehicleType_);
+          .computeUInt32Size(12, vehicleType_);
       }
       if (member_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getMember());
+          .computeMessageSize(6, getMember());
       }
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, gadgetId_);
+          .computeUInt32Size(13, gadgetId_);
       }
       if (vehiclePos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getVehiclePos());
+          .computeMessageSize(8, getVehiclePos());
       }
       if (interactReason_ != emu.grasscutter.net.proto.VehicleInteractReasonOuterClass.VehicleInteractReason.VehicleInteractReason_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -551,19 +551,19 @@ public final class VehicleInteractRspOuterClass {
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, entityId_);
+          .computeUInt32Size(9, entityId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       if (vehicleRot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getVehicleRot());
+          .computeMessageSize(5, getVehicleRot());
       }
       if (interactType_ != emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType.VehicleInteractType_VEHICLE_INTERACT_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, interactType_);
+          .computeEnumSize(15, interactType_);
       }
       if (enterPos_ != null) {
         size += com.google.protobuf.CodedOutputStream

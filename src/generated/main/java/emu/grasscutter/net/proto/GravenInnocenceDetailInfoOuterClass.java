@@ -151,7 +151,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
 
               break;
             }
-            case 8: {
+            case 56: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -318,7 +318,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
       return getMAGHEHENLEM();
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 1;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 7;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -347,7 +347,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
         output.writeMessage(3, getLACBCLHDFCF());
       }
       if (isContentClosed_ != false) {
-        output.writeBool(1, isContentClosed_);
+        output.writeBool(7, isContentClosed_);
       }
       if (pJMONLKHJNH_ != null) {
         output.writeMessage(11, getPJMONLKHJNH());
@@ -374,7 +374,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
       }
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isContentClosed_);
+          .computeBoolSize(7, isContentClosed_);
       }
       if (pJMONLKHJNH_ != null) {
         size += com.google.protobuf.CodedOutputStream

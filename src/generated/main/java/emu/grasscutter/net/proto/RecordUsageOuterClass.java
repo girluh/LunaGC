@@ -43,6 +43,10 @@ public final class RecordUsageOuterClass {
      * <code>UGC_RECORD_USAGE_COMPARE = 4;</code>
      */
     UGC_RECORD_USAGE_COMPARE(4),
+    /**
+     * <code>UGC_RECORD_USAGE_PVP = 5;</code>
+     */
+    UGC_RECORD_USAGE_PVP(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -66,6 +70,10 @@ public final class RecordUsageOuterClass {
      * <code>UGC_RECORD_USAGE_COMPARE = 4;</code>
      */
     public static final int UGC_RECORD_USAGE_COMPARE_VALUE = 4;
+    /**
+     * <code>UGC_RECORD_USAGE_PVP = 5;</code>
+     */
+    public static final int UGC_RECORD_USAGE_PVP_VALUE = 5;
 
 
     public final int getNumber() {
@@ -97,6 +105,7 @@ public final class RecordUsageOuterClass {
         case 2: return UGC_RECORD_USAGE_PLAY;
         case 3: return UGC_RECORD_USAGE_TRIAL;
         case 4: return UGC_RECORD_USAGE_COMPARE;
+        case 5: return UGC_RECORD_USAGE_PVP;
         default: return null;
       }
     }

@@ -63,12 +63,12 @@ public final class SetOpenStateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 56: {
 
               key_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 112: {
 
               value_ = input.readUInt32();
               break;
@@ -105,7 +105,7 @@ public final class SetOpenStateReqOuterClass {
               emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq.class, emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq.Builder.class);
     }
 
-    public static final int KEY_FIELD_NUMBER = 3;
+    public static final int KEY_FIELD_NUMBER = 7;
     private int key_;
 
     @java.lang.Override
@@ -113,7 +113,7 @@ public final class SetOpenStateReqOuterClass {
       return key_;
     }
 
-    public static final int VALUE_FIELD_NUMBER = 2;
+    public static final int VALUE_FIELD_NUMBER = 14;
     private int value_;
 
     @java.lang.Override
@@ -136,10 +136,10 @@ public final class SetOpenStateReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (key_ != 0) {
-        output.writeUInt32(3, key_);
+        output.writeUInt32(7, key_);
       }
       if (value_ != 0) {
-        output.writeUInt32(2, value_);
+        output.writeUInt32(14, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,11 +152,11 @@ public final class SetOpenStateReqOuterClass {
       size = 0;
       if (key_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, key_);
+          .computeUInt32Size(7, key_);
       }
       if (value_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, value_);
+          .computeUInt32Size(14, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

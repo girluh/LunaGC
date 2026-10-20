@@ -75,13 +75,13 @@ public final class SetPlayerBornDataReqOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               nickName_ = s;
               break;
             }
-            case 88: {
+            case 16: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -118,7 +118,7 @@ public final class SetPlayerBornDataReqOuterClass {
               emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.class, emu.grasscutter.net.proto.SetPlayerBornDataReqOuterClass.SetPlayerBornDataReq.Builder.class);
     }
 
-    public static final int NICK_NAME_FIELD_NUMBER = 13;
+    public static final int NICK_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object nickName_;
 
     @java.lang.Override
@@ -150,7 +150,7 @@ public final class SetPlayerBornDataReqOuterClass {
       }
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 11;
+    public static final int AVATAR_ID_FIELD_NUMBER = 2;
     private int avatarId_;
 
     @java.lang.Override
@@ -173,10 +173,10 @@ public final class SetPlayerBornDataReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nickName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nickName_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(11, avatarId_);
+        output.writeUInt32(2, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -188,11 +188,11 @@ public final class SetPlayerBornDataReqOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nickName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, nickName_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, avatarId_);
+          .computeUInt32Size(2, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

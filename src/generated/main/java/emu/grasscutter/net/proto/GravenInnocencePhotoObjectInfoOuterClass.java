@@ -85,17 +85,17 @@ public final class GravenInnocencePhotoObjectInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
 
               param_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 96: {
 
               finishTime_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 72: {
 
               objectId_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class GravenInnocencePhotoObjectInfoOuterClass {
               emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.class, emu.grasscutter.net.proto.GravenInnocencePhotoObjectInfoOuterClass.GravenInnocencePhotoObjectInfo.Builder.class);
     }
 
-    public static final int PARAM_FIELD_NUMBER = 5;
+    public static final int PARAM_FIELD_NUMBER = 2;
     private int param_;
     /**
      * <code>uint32 param = 11;</code>
@@ -143,7 +143,7 @@ public final class GravenInnocencePhotoObjectInfoOuterClass {
       return param_;
     }
 
-    public static final int FINISH_TIME_FIELD_NUMBER = 14;
+    public static final int FINISH_TIME_FIELD_NUMBER = 12;
     private int finishTime_;
     /**
      * <code>uint32 finish_time = 12;</code>
@@ -154,7 +154,7 @@ public final class GravenInnocencePhotoObjectInfoOuterClass {
       return finishTime_;
     }
 
-    public static final int OBJECT_ID_FIELD_NUMBER = 4;
+    public static final int OBJECT_ID_FIELD_NUMBER = 9;
     private int objectId_;
     /**
      * <code>uint32 object_id = 14;</code>
@@ -180,13 +180,13 @@ public final class GravenInnocencePhotoObjectInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (param_ != 0) {
-        output.writeUInt32(5, param_);
+        output.writeUInt32(2, param_);
       }
       if (finishTime_ != 0) {
-        output.writeUInt32(14, finishTime_);
+        output.writeUInt32(12, finishTime_);
       }
       if (objectId_ != 0) {
-        output.writeUInt32(4, objectId_);
+        output.writeUInt32(9, objectId_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class GravenInnocencePhotoObjectInfoOuterClass {
       size = 0;
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, param_);
+          .computeUInt32Size(2, param_);
       }
       if (finishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, finishTime_);
+          .computeUInt32Size(12, finishTime_);
       }
       if (objectId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, objectId_);
+          .computeUInt32Size(9, objectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -71,12 +71,12 @@ public final class PullRecentChatReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 104: {
 
               beginSequence_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 88: {
 
               pullNum_ = input.readUInt32();
               break;
@@ -113,7 +113,7 @@ public final class PullRecentChatReqOuterClass {
               emu.grasscutter.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq.class, emu.grasscutter.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq.Builder.class);
     }
 
-    public static final int BEGIN_SEQUENCE_FIELD_NUMBER = 15;
+    public static final int BEGIN_SEQUENCE_FIELD_NUMBER = 13;
     private int beginSequence_;
 
     @java.lang.Override
@@ -121,7 +121,7 @@ public final class PullRecentChatReqOuterClass {
       return beginSequence_;
     }
 
-    public static final int PULL_NUM_FIELD_NUMBER = 12;
+    public static final int PULL_NUM_FIELD_NUMBER = 11;
     private int pullNum_;
 
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class PullRecentChatReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pullNum_ != 0) {
-        output.writeUInt32(12, pullNum_);
+        output.writeUInt32(11, pullNum_);
       }
       if (beginSequence_ != 0) {
-        output.writeUInt32(15, beginSequence_);
+        output.writeUInt32(13, beginSequence_);
       }
       unknownFields.writeTo(output);
     }
@@ -160,11 +160,11 @@ public final class PullRecentChatReqOuterClass {
       size = 0;
       if (pullNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, pullNum_);
+          .computeUInt32Size(11, pullNum_);
       }
       if (beginSequence_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, beginSequence_);
+          .computeUInt32Size(13, beginSequence_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

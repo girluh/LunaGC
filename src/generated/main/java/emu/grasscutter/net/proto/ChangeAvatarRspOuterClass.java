@@ -73,12 +73,12 @@ public final class ChangeAvatarRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 32: {
 
               skillId_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -128,7 +128,7 @@ public final class ChangeAvatarRspOuterClass {
       return curGuid_;
     }
 
-    public static final int SKILL_ID_FIELD_NUMBER = 1;
+    public static final int SKILL_ID_FIELD_NUMBER = 4;
     private int skillId_;
 
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class ChangeAvatarRspOuterClass {
       return skillId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
 
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class ChangeAvatarRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (skillId_ != 0) {
-        output.writeUInt32(1, skillId_);
+        output.writeUInt32(4, skillId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
+        output.writeInt32(14, retcode_);
       }
       if (curGuid_ != 0L) {
         output.writeUInt64(5, curGuid_);
@@ -178,11 +178,11 @@ public final class ChangeAvatarRspOuterClass {
       size = 0;
       if (skillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, skillId_);
+          .computeUInt32Size(4, skillId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       if (curGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream

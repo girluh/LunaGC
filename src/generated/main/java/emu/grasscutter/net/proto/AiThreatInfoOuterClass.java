@@ -85,7 +85,7 @@ public final class AiThreatInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 aiThreatMap_ = com.google.protobuf.MapField.newMapField(
                     AiThreatMapDefaultEntryHolder.defaultEntry);
@@ -142,7 +142,7 @@ public final class AiThreatInfoOuterClass {
               emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo.class, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo.Builder.class);
     }
 
-    public static final int AI_THREAT_MAP_FIELD_NUMBER = 1;
+    public static final int AI_THREAT_MAP_FIELD_NUMBER = 6;
     private static final class AiThreatMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -233,7 +233,7 @@ public final class AiThreatInfoOuterClass {
           output,
           internalGetAiThreatMap(),
           AiThreatMapDefaultEntryHolder.defaultEntry,
-          1);
+          6);
       unknownFields.writeTo(output);
     }
 
@@ -251,7 +251,7 @@ public final class AiThreatInfoOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, aiThreatMap__);
+            .computeMessageSize(6, aiThreatMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

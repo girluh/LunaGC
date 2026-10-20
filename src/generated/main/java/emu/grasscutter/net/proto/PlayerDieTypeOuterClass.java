@@ -67,6 +67,18 @@ public final class PlayerDieTypeOuterClass {
      * <code>PlayerDieType_PLAYER_DIE_LEVEL_FORCE_DIE = 11;</code>
      */
     PlayerDieType_PLAYER_DIE_LEVEL_FORCE_DIE(11),
+    /**
+     * <code>PlayerDieType_PLAYER_DIE_HEART_BLOOD_USED_OUT = 12;</code>
+     */
+    PlayerDieType_PLAYER_DIE_HEART_BLOOD_USED_OUT(12),
+    /**
+     * <code>PlayerDieType_PLAYER_DIE_BEYOND_BLUEPRINT = 13;</code>
+     */
+    PlayerDieType_PLAYER_DIE_BEYOND_BLUEPRINT(13),
+    /**
+     * <code>PlayerDieType_PLAYER_DIE_THE_GREY = 14;</code>
+     */
+    PlayerDieType_PLAYER_DIE_THE_GREY(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -118,6 +130,18 @@ public final class PlayerDieTypeOuterClass {
      * <code>PlayerDieType_PLAYER_DIE_LEVEL_FORCE_DIE = 11;</code>
      */
     public static final int PlayerDieType_PLAYER_DIE_LEVEL_FORCE_DIE_VALUE = 11;
+    /**
+     * <code>PlayerDieType_PLAYER_DIE_HEART_BLOOD_USED_OUT = 12;</code>
+     */
+    public static final int PlayerDieType_PLAYER_DIE_HEART_BLOOD_USED_OUT_VALUE = 12;
+    /**
+     * <code>PlayerDieType_PLAYER_DIE_BEYOND_BLUEPRINT = 13;</code>
+     */
+    public static final int PlayerDieType_PLAYER_DIE_BEYOND_BLUEPRINT_VALUE = 13;
+    /**
+     * <code>PlayerDieType_PLAYER_DIE_THE_GREY = 14;</code>
+     */
+    public static final int PlayerDieType_PLAYER_DIE_THE_GREY_VALUE = 14;
 
 
     public final int getNumber() {
@@ -156,6 +180,9 @@ public final class PlayerDieTypeOuterClass {
         case 9: return PlayerDieType_PLAYER_DIE_DIRTY_WATER_EROSION;
         case 10: return PlayerDieType_PLAYER_DIE_LIQUID_PHLOGISTON;
         case 11: return PlayerDieType_PLAYER_DIE_LEVEL_FORCE_DIE;
+        case 12: return PlayerDieType_PLAYER_DIE_HEART_BLOOD_USED_OUT;
+        case 13: return PlayerDieType_PLAYER_DIE_BEYOND_BLUEPRINT;
+        case 14: return PlayerDieType_PLAYER_DIE_THE_GREY;
         default: return null;
       }
     }

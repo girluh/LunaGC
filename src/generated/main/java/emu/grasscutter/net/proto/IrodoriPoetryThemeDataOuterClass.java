@@ -139,7 +139,7 @@ public final class IrodoriPoetryThemeDataOuterClass {
               bAEKFBCJFJK_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 32: {
 
               progress_ = input.readUInt32();
               break;
@@ -339,7 +339,7 @@ public final class IrodoriPoetryThemeDataOuterClass {
     }
     private int bNGOJINJALAMemoizedSerializedSize = -1;
 
-    public static final int PROGRESS_FIELD_NUMBER = 13;
+    public static final int PROGRESS_FIELD_NUMBER = 4;
     private int progress_;
     /**
      * <code>uint32 progress = 5;</code>
@@ -369,7 +369,7 @@ public final class IrodoriPoetryThemeDataOuterClass {
         output.writeUInt32(3, bAEKFBCJFJK_);
       }
       if (progress_ != 0) {
-        output.writeUInt32(13, progress_);
+        output.writeUInt32(4, progress_);
       }
       if (lNHHEKIDIAG_ != 0) {
         output.writeUInt32(6, lNHHEKIDIAG_);
@@ -409,7 +409,7 @@ public final class IrodoriPoetryThemeDataOuterClass {
       }
       if (progress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, progress_);
+          .computeUInt32Size(4, progress_);
       }
       if (lNHHEKIDIAG_ != 0) {
         size += com.google.protobuf.CodedOutputStream

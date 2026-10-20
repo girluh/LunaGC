@@ -7,9 +7,9 @@ import java.io.ByteArrayOutputStream;
 
 public class PacketSetOpenStateRsp extends BasePacket {
 
-    private static final int F_RETCODE = 12;
-    private static final int F_VALUE   = 3;
-    private static final int F_KEY     = 10;
+    private static final int F_RETCODE = 2;
+    private static final int F_VALUE   = 4;
+    private static final int F_KEY     = 14;
 
     public PacketSetOpenStateRsp(int openState, int value) {
         super(PacketOpcodes.SetOpenStateRsp);

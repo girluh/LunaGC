@@ -91,22 +91,22 @@ public final class BargainSnapshotOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 104: {
 
               bALOPACHCDB_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 24: {
 
               curMood_ = input.readInt32();
               break;
             }
-            case 96: {
+            case 112: {
 
               iOCNPJJNHLD_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 8: {
 
               bargainId_ = input.readUInt32();
               break;
@@ -143,7 +143,7 @@ public final class BargainSnapshotOuterClass {
               emu.grasscutter.net.proto.BargainSnapshotOuterClass.BargainSnapshot.class, emu.grasscutter.net.proto.BargainSnapshotOuterClass.BargainSnapshot.Builder.class);
     }
 
-    public static final int IOCNPJJNHLD_FIELD_NUMBER = 12;
+    public static final int IOCNPJJNHLD_FIELD_NUMBER = 14;
     private int iOCNPJJNHLD_;
     /**
      * <code>uint32 IOCNPJJNHLD = 12;</code>
@@ -154,7 +154,7 @@ public final class BargainSnapshotOuterClass {
       return iOCNPJJNHLD_;
     }
 
-    public static final int BALOPACHCDB_FIELD_NUMBER = 2;
+    public static final int BALOPACHCDB_FIELD_NUMBER = 13;
     private int bALOPACHCDB_;
     /**
      * <code>uint32 BALOPACHCDB = 2;</code>
@@ -165,7 +165,7 @@ public final class BargainSnapshotOuterClass {
       return bALOPACHCDB_;
     }
 
-    public static final int CUR_MOOD_FIELD_NUMBER = 14;
+    public static final int CUR_MOOD_FIELD_NUMBER = 3;
     private int curMood_;
     /**
      * <code>int32 cur_mood = 9;</code>
@@ -176,7 +176,7 @@ public final class BargainSnapshotOuterClass {
       return curMood_;
     }
 
-    public static final int BARGAIN_ID_FIELD_NUMBER = 10;
+    public static final int BARGAIN_ID_FIELD_NUMBER = 1;
     private int bargainId_;
     /**
      * <code>uint32 bargain_id = 15;</code>
@@ -202,16 +202,16 @@ public final class BargainSnapshotOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bALOPACHCDB_ != 0) {
-        output.writeUInt32(2, bALOPACHCDB_);
+        output.writeUInt32(13, bALOPACHCDB_);
       }
       if (curMood_ != 0) {
-        output.writeInt32(14, curMood_);
+        output.writeInt32(3, curMood_);
       }
       if (iOCNPJJNHLD_ != 0) {
-        output.writeUInt32(12, iOCNPJJNHLD_);
+        output.writeUInt32(14, iOCNPJJNHLD_);
       }
       if (bargainId_ != 0) {
-        output.writeUInt32(10, bargainId_);
+        output.writeUInt32(1, bargainId_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,19 +224,19 @@ public final class BargainSnapshotOuterClass {
       size = 0;
       if (bALOPACHCDB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, bALOPACHCDB_);
+          .computeUInt32Size(13, bALOPACHCDB_);
       }
       if (curMood_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, curMood_);
+          .computeInt32Size(3, curMood_);
       }
       if (iOCNPJJNHLD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, iOCNPJJNHLD_);
+          .computeUInt32Size(14, iOCNPJJNHLD_);
       }
       if (bargainId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, bargainId_);
+          .computeUInt32Size(1, bargainId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

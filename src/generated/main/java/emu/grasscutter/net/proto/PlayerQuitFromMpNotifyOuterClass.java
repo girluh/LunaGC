@@ -79,7 +79,7 @@ public final class PlayerQuitFromMpNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 96: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
@@ -117,7 +117,7 @@ public final class PlayerQuitFromMpNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerQuitFromMpNotifyOuterClass.PlayerQuitFromMpNotify.class, emu.grasscutter.net.proto.PlayerQuitFromMpNotifyOuterClass.PlayerQuitFromMpNotify.Builder.class);
     }
 
-    public static final int REASON_FIELD_NUMBER = 3;
+    public static final int REASON_FIELD_NUMBER = 12;
     private int reason_;
     /**
      * <code>.QuitReason reason = 15;</code>
@@ -151,7 +151,7 @@ public final class PlayerQuitFromMpNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (reason_ != emu.grasscutter.net.proto.QuitReasonOuterClass.QuitReason.QuitReason_INVALID.getNumber()) {
-        output.writeEnum(3, reason_);
+        output.writeEnum(12, reason_);
       }
       unknownFields.writeTo(output);
     }
@@ -164,7 +164,7 @@ public final class PlayerQuitFromMpNotifyOuterClass {
       size = 0;
       if (reason_ != emu.grasscutter.net.proto.QuitReasonOuterClass.QuitReason.QuitReason_INVALID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, reason_);
+          .computeEnumSize(12, reason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

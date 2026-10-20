@@ -91,22 +91,22 @@ public final class HachiStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 96: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 40: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 104: {
+            case 56: {
 
               openTime_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 48: {
 
               isFinished_ = input.readBool();
               break;
@@ -143,7 +143,7 @@ public final class HachiStageInfoOuterClass {
               emu.grasscutter.net.proto.HachiStageInfoOuterClass.HachiStageInfo.class, emu.grasscutter.net.proto.HachiStageInfoOuterClass.HachiStageInfo.Builder.class);
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 13;
+    public static final int OPEN_TIME_FIELD_NUMBER = 7;
     private int openTime_;
     /**
      * <code>uint32 open_time = 9;</code>
@@ -154,7 +154,7 @@ public final class HachiStageInfoOuterClass {
       return openTime_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 12;
+    public static final int IS_OPEN_FIELD_NUMBER = 5;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 6;</code>
@@ -165,7 +165,7 @@ public final class HachiStageInfoOuterClass {
       return isOpen_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 8;
+    public static final int STAGE_ID_FIELD_NUMBER = 12;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 3;</code>
@@ -176,7 +176,7 @@ public final class HachiStageInfoOuterClass {
       return stageId_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 10;
+    public static final int IS_FINISHED_FIELD_NUMBER = 6;
     private boolean isFinished_;
     /**
      * <code>bool is_finished = 14;</code>
@@ -202,16 +202,16 @@ public final class HachiStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(8, stageId_);
+        output.writeUInt32(12, stageId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(12, isOpen_);
+        output.writeBool(5, isOpen_);
       }
       if (openTime_ != 0) {
-        output.writeUInt32(13, openTime_);
+        output.writeUInt32(7, openTime_);
       }
       if (isFinished_ != false) {
-        output.writeBool(10, isFinished_);
+        output.writeBool(6, isFinished_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,19 +224,19 @@ public final class HachiStageInfoOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, stageId_);
+          .computeUInt32Size(12, stageId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isOpen_);
+          .computeBoolSize(5, isOpen_);
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, openTime_);
+          .computeUInt32Size(7, openTime_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isFinished_);
+          .computeBoolSize(6, isFinished_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

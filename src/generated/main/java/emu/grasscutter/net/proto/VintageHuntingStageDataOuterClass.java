@@ -97,27 +97,27 @@ public final class VintageHuntingStageDataOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 40: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 72: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 48: {
+            case 64: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 72: {
+            case 128000: {
 
               hKIIFCMCGCL_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 120: {
 
               openTime_ = input.readUInt32();
               break;
@@ -154,7 +154,7 @@ public final class VintageHuntingStageDataOuterClass {
               emu.grasscutter.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData.class, emu.grasscutter.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 12;
+    public static final int STAGE_ID_FIELD_NUMBER = 5;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 2;</code>
@@ -165,7 +165,7 @@ public final class VintageHuntingStageDataOuterClass {
       return stageId_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 8;
+    public static final int IS_FINISH_FIELD_NUMBER = 9;
     private boolean isFinish_;
     /**
      * <code>bool is_finish = 4;</code>
@@ -176,7 +176,7 @@ public final class VintageHuntingStageDataOuterClass {
       return isFinish_;
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 11;
+    public static final int OPEN_TIME_FIELD_NUMBER = 15;
     private int openTime_;
     /**
      * <code>uint32 open_time = 12;</code>
@@ -187,7 +187,7 @@ public final class VintageHuntingStageDataOuterClass {
       return openTime_;
     }
 
-    public static final int HKIIFCMCGCL_FIELD_NUMBER = 9;
+    public static final int HKIIFCMCGCL_FIELD_NUMBER = 16000;
     private int hKIIFCMCGCL_;
     /**
      * <code>uint32 HKIIFCMCGCL = 9;</code>
@@ -198,7 +198,7 @@ public final class VintageHuntingStageDataOuterClass {
       return hKIIFCMCGCL_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 6;
+    public static final int IS_OPEN_FIELD_NUMBER = 8;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 8;</code>
@@ -224,19 +224,19 @@ public final class VintageHuntingStageDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(12, stageId_);
+        output.writeUInt32(5, stageId_);
       }
       if (isFinish_ != false) {
-        output.writeBool(8, isFinish_);
+        output.writeBool(9, isFinish_);
       }
       if (isOpen_ != false) {
-        output.writeBool(6, isOpen_);
+        output.writeBool(8, isOpen_);
       }
       if (hKIIFCMCGCL_ != 0) {
-        output.writeUInt32(9, hKIIFCMCGCL_);
+        output.writeUInt32(16000, hKIIFCMCGCL_);
       }
       if (openTime_ != 0) {
-        output.writeUInt32(11, openTime_);
+        output.writeUInt32(15, openTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -249,23 +249,23 @@ public final class VintageHuntingStageDataOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, stageId_);
+          .computeUInt32Size(5, stageId_);
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isFinish_);
+          .computeBoolSize(9, isFinish_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isOpen_);
+          .computeBoolSize(8, isOpen_);
       }
       if (hKIIFCMCGCL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, hKIIFCMCGCL_);
+          .computeUInt32Size(16000, hKIIFCMCGCL_);
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, openTime_);
+          .computeUInt32Size(15, openTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

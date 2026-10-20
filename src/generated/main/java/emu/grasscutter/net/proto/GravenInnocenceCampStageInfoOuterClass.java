@@ -91,17 +91,17 @@ public final class GravenInnocenceCampStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 48: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 96: {
 
               isFinished_ = input.readBool();
               break;
             }
-            case 40: {
+            case 56: {
 
               isOpen_ = input.readBool();
               break;
@@ -143,7 +143,7 @@ public final class GravenInnocenceCampStageInfoOuterClass {
               emu.grasscutter.net.proto.GravenInnocenceCampStageInfoOuterClass.GravenInnocenceCampStageInfo.class, emu.grasscutter.net.proto.GravenInnocenceCampStageInfoOuterClass.GravenInnocenceCampStageInfo.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 2;
+    public static final int STAGE_ID_FIELD_NUMBER = 6;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 6;</code>
@@ -154,7 +154,7 @@ public final class GravenInnocenceCampStageInfoOuterClass {
       return stageId_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 5;
+    public static final int IS_OPEN_FIELD_NUMBER = 7;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 12;</code>
@@ -165,7 +165,7 @@ public final class GravenInnocenceCampStageInfoOuterClass {
       return isOpen_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 10;
+    public static final int IS_FINISHED_FIELD_NUMBER = 12;
     private boolean isFinished_;
     /**
      * <code>bool is_finished = 11;</code>
@@ -202,13 +202,13 @@ public final class GravenInnocenceCampStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(2, stageId_);
+        output.writeUInt32(6, stageId_);
       }
       if (isFinished_ != false) {
-        output.writeBool(10, isFinished_);
+        output.writeBool(12, isFinished_);
       }
       if (isOpen_ != false) {
-        output.writeBool(5, isOpen_);
+        output.writeBool(7, isOpen_);
       }
       if (levelId_ != 0) {
         output.writeUInt32(1, levelId_);
@@ -224,15 +224,15 @@ public final class GravenInnocenceCampStageInfoOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, stageId_);
+          .computeUInt32Size(6, stageId_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isFinished_);
+          .computeBoolSize(12, isFinished_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isOpen_);
+          .computeBoolSize(7, isOpen_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

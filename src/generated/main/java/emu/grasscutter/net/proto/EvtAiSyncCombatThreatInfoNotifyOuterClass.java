@@ -85,7 +85,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 combatThreatInfoMap_ = com.google.protobuf.MapField.newMapField(
                     CombatThreatInfoMapDefaultEntryHolder.defaultEntry);
@@ -142,7 +142,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
               emu.grasscutter.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify.class, emu.grasscutter.net.proto.EvtAiSyncCombatThreatInfoNotifyOuterClass.EvtAiSyncCombatThreatInfoNotify.Builder.class);
     }
 
-    public static final int COMBAT_THREAT_INFO_MAP_FIELD_NUMBER = 15;
+    public static final int COMBAT_THREAT_INFO_MAP_FIELD_NUMBER = 8;
     private static final class CombatThreatInfoMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo> defaultEntry =
@@ -233,7 +233,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
           output,
           internalGetCombatThreatInfoMap(),
           CombatThreatInfoMapDefaultEntryHolder.defaultEntry,
-          15);
+          8);
       unknownFields.writeTo(output);
     }
 
@@ -251,7 +251,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(15, combatThreatInfoMap__);
+            .computeMessageSize(8, combatThreatInfoMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

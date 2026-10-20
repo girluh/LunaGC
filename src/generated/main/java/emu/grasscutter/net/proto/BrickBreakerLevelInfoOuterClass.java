@@ -149,7 +149,7 @@ public final class BrickBreakerLevelInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 40: {
+            case 24: {
 
               levelId_ = input.readUInt32();
               break;
@@ -159,17 +159,17 @@ public final class BrickBreakerLevelInfoOuterClass {
               jNFKFCEMOFM_ = input.readBool();
               break;
             }
-            case 56: {
+            case 40: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 80: {
+            case 56: {
 
               maxScore_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 chosenSkillList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -177,7 +177,7 @@ public final class BrickBreakerLevelInfoOuterClass {
               chosenSkillList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -228,7 +228,7 @@ public final class BrickBreakerLevelInfoOuterClass {
               emu.grasscutter.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo.class, emu.grasscutter.net.proto.BrickBreakerLevelInfoOuterClass.BrickBreakerLevelInfo.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 5;
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
     private int levelId_;
     /**
      * <code>uint32 level_id = 3;</code>
@@ -267,7 +267,7 @@ public final class BrickBreakerLevelInfoOuterClass {
     }
     private int chosenAvatarListMemoizedSerializedSize = -1;
 
-    public static final int CHOSEN_SKILL_LIST_FIELD_NUMBER = 13;
+    public static final int CHOSEN_SKILL_LIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList chosenSkillList_;
     /**
      * <code>repeated uint32 chosen_skill_list = 13;</code>
@@ -295,7 +295,7 @@ public final class BrickBreakerLevelInfoOuterClass {
     }
     private int chosenSkillListMemoizedSerializedSize = -1;
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 10;
+    public static final int MAX_SCORE_FIELD_NUMBER = 7;
     private int maxScore_;
     /**
      * <code>uint32 max_score = 12;</code>
@@ -306,7 +306,7 @@ public final class BrickBreakerLevelInfoOuterClass {
       return maxScore_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 7;
+    public static final int IS_FINISH_FIELD_NUMBER = 5;
     private boolean isFinish_;
     /**
      * <code>bool is_finish = 11;</code>
@@ -351,19 +351,19 @@ public final class BrickBreakerLevelInfoOuterClass {
         output.writeUInt32NoTag(chosenAvatarList_.getInt(i));
       }
       if (levelId_ != 0) {
-        output.writeUInt32(5, levelId_);
+        output.writeUInt32(3, levelId_);
       }
       if (jNFKFCEMOFM_ != false) {
         output.writeBool(8, jNFKFCEMOFM_);
       }
       if (isFinish_ != false) {
-        output.writeBool(7, isFinish_);
+        output.writeBool(5, isFinish_);
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(10, maxScore_);
+        output.writeUInt32(7, maxScore_);
       }
       if (getChosenSkillListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(chosenSkillListMemoizedSerializedSize);
       }
       for (int i = 0; i < chosenSkillList_.size(); i++) {
@@ -394,7 +394,7 @@ public final class BrickBreakerLevelInfoOuterClass {
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, levelId_);
+          .computeUInt32Size(3, levelId_);
       }
       if (jNFKFCEMOFM_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -402,11 +402,11 @@ public final class BrickBreakerLevelInfoOuterClass {
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isFinish_);
+          .computeBoolSize(5, isFinish_);
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, maxScore_);
+          .computeUInt32Size(7, maxScore_);
       }
       {
         int dataSize = 0;

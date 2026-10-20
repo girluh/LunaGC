@@ -150,7 +150,7 @@ public final class PotionStageDataOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData.parser(), extensionRegistry));
               break;
             }
-            case 112: {
+            case 16: {
 
               stageId_ = input.readUInt32();
               break;
@@ -197,7 +197,7 @@ public final class PotionStageDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 64: {
+            case 48: {
 
               isOpen_ = input.readBool();
               break;
@@ -339,7 +339,7 @@ public final class PotionStageDataOuterClass {
     }
     private int iIKPFIBACDJMemoizedSerializedSize = -1;
 
-    public static final int IS_OPEN_FIELD_NUMBER = 8;
+    public static final int IS_OPEN_FIELD_NUMBER = 6;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 15;</code>
@@ -350,7 +350,7 @@ public final class PotionStageDataOuterClass {
       return isOpen_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 14;
+    public static final int STAGE_ID_FIELD_NUMBER = 2;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 5;</code>
@@ -380,7 +380,7 @@ public final class PotionStageDataOuterClass {
         output.writeMessage(10, levelList_.get(i));
       }
       if (stageId_ != 0) {
-        output.writeUInt32(14, stageId_);
+        output.writeUInt32(2, stageId_);
       }
       if (getENGEPPAPLGCList().size() > 0) {
         output.writeUInt32NoTag(128002);
@@ -397,7 +397,7 @@ public final class PotionStageDataOuterClass {
         output.writeUInt32NoTag(iIKPFIBACDJ_.getInt(i));
       }
       if (isOpen_ != false) {
-        output.writeBool(8, isOpen_);
+        output.writeBool(6, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -414,7 +414,7 @@ public final class PotionStageDataOuterClass {
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, stageId_);
+          .computeUInt32Size(2, stageId_);
       }
       {
         int dataSize = 0;
@@ -446,7 +446,7 @@ public final class PotionStageDataOuterClass {
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isOpen_);
+          .computeBoolSize(6, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

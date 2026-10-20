@@ -86,7 +86,7 @@ public final class AbilityActionCreateGadgetOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 58: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
@@ -99,12 +99,12 @@ public final class AbilityActionCreateGadgetOuterClass {
 
               break;
             }
-            case 32: {
+            case 112: {
 
               roomId_ = input.readUInt32();
               break;
             }
-            case 106: {
+            case 74: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -149,7 +149,7 @@ public final class AbilityActionCreateGadgetOuterClass {
               emu.grasscutter.net.proto.AbilityActionCreateGadgetOuterClass.AbilityActionCreateGadget.class, emu.grasscutter.net.proto.AbilityActionCreateGadgetOuterClass.AbilityActionCreateGadget.Builder.class);
     }
 
-    public static final int ROT_FIELD_NUMBER = 11;
+    public static final int ROT_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
 
     @java.lang.Override
@@ -167,7 +167,7 @@ public final class AbilityActionCreateGadgetOuterClass {
       return getRot();
     }
 
-    public static final int POS_FIELD_NUMBER = 13;
+    public static final int POS_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 13;</code>
@@ -193,7 +193,7 @@ public final class AbilityActionCreateGadgetOuterClass {
       return getPos();
     }
 
-    public static final int ROOM_ID_FIELD_NUMBER = 4;
+    public static final int ROOM_ID_FIELD_NUMBER = 14;
     private int roomId_;
 
     @java.lang.Override
@@ -216,13 +216,13 @@ public final class AbilityActionCreateGadgetOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rot_ != null) {
-        output.writeMessage(11, getRot());
+        output.writeMessage(7, getRot());
       }
       if (roomId_ != 0) {
-        output.writeUInt32(4, roomId_);
+        output.writeUInt32(14, roomId_);
       }
       if (pos_ != null) {
-        output.writeMessage(13, getPos());
+        output.writeMessage(9, getPos());
       }
       unknownFields.writeTo(output);
     }
@@ -235,15 +235,15 @@ public final class AbilityActionCreateGadgetOuterClass {
       size = 0;
       if (rot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getRot());
+          .computeMessageSize(7, getRot());
       }
       if (roomId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, roomId_);
+          .computeUInt32Size(14, roomId_);
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getPos());
+          .computeMessageSize(9, getPos());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -138,7 +138,7 @@ public final class BlessingActivityDetailInfoOuterClass {
               eGBKCDHJCCL_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 128008: {
 
               mAKGFHFHLME_ = input.readUInt32();
               break;
@@ -148,7 +148,7 @@ public final class BlessingActivityDetailInfoOuterClass {
               pPBCHANJKNF_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 104: {
 
               nextRefreshTime_ = input.readUInt32();
               break;
@@ -158,7 +158,7 @@ public final class BlessingActivityDetailInfoOuterClass {
               dHEGCNBIKIO_ = input.readBool();
               break;
             }
-            case 112: {
+            case 64: {
 
               contentCloseTime_ = input.readUInt32();
               break;
@@ -312,7 +312,7 @@ public final class BlessingActivityDetailInfoOuterClass {
       return eGBKCDHJCCL_;
     }
 
-    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 14;
+    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 8;
     private int contentCloseTime_;
 
     @java.lang.Override
@@ -320,7 +320,7 @@ public final class BlessingActivityDetailInfoOuterClass {
       return contentCloseTime_;
     }
 
-    public static final int MAKGFHFHLME_FIELD_NUMBER = 8;
+    public static final int MAKGFHFHLME_FIELD_NUMBER = 16001;
     private int mAKGFHFHLME_;
     /**
      * <code>uint32 MAKGFHFHLME = 8;</code>
@@ -331,7 +331,7 @@ public final class BlessingActivityDetailInfoOuterClass {
       return mAKGFHFHLME_;
     }
 
-    public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 7;
+    public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 13;
     private int nextRefreshTime_;
 
     @java.lang.Override
@@ -390,19 +390,19 @@ public final class BlessingActivityDetailInfoOuterClass {
         output.writeUInt32(16000, eGBKCDHJCCL_);
       }
       if (mAKGFHFHLME_ != 0) {
-        output.writeUInt32(8, mAKGFHFHLME_);
+        output.writeUInt32(16001, mAKGFHFHLME_);
       }
       if (pPBCHANJKNF_ != 0) {
         output.writeUInt32(9, pPBCHANJKNF_);
       }
       if (nextRefreshTime_ != 0) {
-        output.writeUInt32(7, nextRefreshTime_);
+        output.writeUInt32(13, nextRefreshTime_);
       }
       if (dHEGCNBIKIO_ != false) {
         output.writeBool(12, dHEGCNBIKIO_);
       }
       if (contentCloseTime_ != 0) {
-        output.writeUInt32(14, contentCloseTime_);
+        output.writeUInt32(8, contentCloseTime_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
@@ -429,7 +429,7 @@ public final class BlessingActivityDetailInfoOuterClass {
       }
       if (mAKGFHFHLME_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, mAKGFHFHLME_);
+          .computeUInt32Size(16001, mAKGFHFHLME_);
       }
       if (pPBCHANJKNF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -437,7 +437,7 @@ public final class BlessingActivityDetailInfoOuterClass {
       }
       if (nextRefreshTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, nextRefreshTime_);
+          .computeUInt32Size(13, nextRefreshTime_);
       }
       if (dHEGCNBIKIO_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -445,7 +445,7 @@ public final class BlessingActivityDetailInfoOuterClass {
       }
       if (contentCloseTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, contentCloseTime_);
+          .computeUInt32Size(8, contentCloseTime_);
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetFHPCJDBDAPC().getMap().entrySet()) {

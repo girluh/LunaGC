@@ -152,7 +152,7 @@ public final class SeaLampActivityInfoOuterClass {
               bMLIGIIELDE_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 24: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -162,7 +162,7 @@ public final class SeaLampActivityInfoOuterClass {
               gBNHBMOBHNH_ = input.readBool();
               break;
             }
-            case 80: {
+            case 48: {
 
               firstDayStartTime_ = input.readUInt32();
               break;
@@ -264,7 +264,7 @@ public final class SeaLampActivityInfoOuterClass {
       return bMLIGIIELDE_;
     }
 
-    public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 10;
+    public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 6;
     private int firstDayStartTime_;
 
     @java.lang.Override
@@ -305,7 +305,7 @@ public final class SeaLampActivityInfoOuterClass {
       return gBNHBMOBHNH_;
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 9;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 3;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -343,13 +343,13 @@ public final class SeaLampActivityInfoOuterClass {
         output.writeUInt32(16000, bMLIGIIELDE_);
       }
       if (isContentClosed_ != false) {
-        output.writeBool(9, isContentClosed_);
+        output.writeBool(3, isContentClosed_);
       }
       if (gBNHBMOBHNH_ != false) {
         output.writeBool(13, gBNHBMOBHNH_);
       }
       if (firstDayStartTime_ != 0) {
-        output.writeUInt32(10, firstDayStartTime_);
+        output.writeUInt32(6, firstDayStartTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -382,7 +382,7 @@ public final class SeaLampActivityInfoOuterClass {
       }
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isContentClosed_);
+          .computeBoolSize(3, isContentClosed_);
       }
       if (gBNHBMOBHNH_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -390,7 +390,7 @@ public final class SeaLampActivityInfoOuterClass {
       }
       if (firstDayStartTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, firstDayStartTime_);
+          .computeUInt32Size(6, firstDayStartTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -65,17 +65,17 @@ public final class AvatarSatiationDataOuterClass {
             case 0:
               done = true;
               break;
-            case 101: {
+            case 53: {
 
               penaltyFinishTime_ = input.readFloat();
               break;
             }
-            case 80: {
+            case 16: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 77: {
+            case 93: {
 
               finishTime_ = input.readFloat();
               break;
@@ -112,7 +112,7 @@ public final class AvatarSatiationDataOuterClass {
               emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.class, emu.grasscutter.net.proto.AvatarSatiationDataOuterClass.AvatarSatiationData.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 10;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -120,7 +120,7 @@ public final class AvatarSatiationDataOuterClass {
       return avatarGuid_;
     }
 
-    public static final int PENALTY_FINISH_TIME_FIELD_NUMBER = 12;
+    public static final int PENALTY_FINISH_TIME_FIELD_NUMBER = 6;
     private float penaltyFinishTime_;
 
     @java.lang.Override
@@ -128,7 +128,7 @@ public final class AvatarSatiationDataOuterClass {
       return penaltyFinishTime_;
     }
 
-    public static final int FINISH_TIME_FIELD_NUMBER = 9;
+    public static final int FINISH_TIME_FIELD_NUMBER = 11;
     private float finishTime_;
 
     @java.lang.Override
@@ -151,13 +151,13 @@ public final class AvatarSatiationDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (penaltyFinishTime_ != 0F) {
-        output.writeFloat(12, penaltyFinishTime_);
+        output.writeFloat(6, penaltyFinishTime_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(10, avatarGuid_);
+        output.writeUInt64(2, avatarGuid_);
       }
       if (finishTime_ != 0F) {
-        output.writeFloat(9, finishTime_);
+        output.writeFloat(11, finishTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,15 +170,15 @@ public final class AvatarSatiationDataOuterClass {
       size = 0;
       if (penaltyFinishTime_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(12, penaltyFinishTime_);
+          .computeFloatSize(6, penaltyFinishTime_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, avatarGuid_);
+          .computeUInt64Size(2, avatarGuid_);
       }
       if (finishTime_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(9, finishTime_);
+          .computeFloatSize(11, finishTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

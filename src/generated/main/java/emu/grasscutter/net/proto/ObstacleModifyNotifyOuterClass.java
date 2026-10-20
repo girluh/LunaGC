@@ -109,12 +109,12 @@ public final class ObstacleModifyNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 80: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 removeObstacleIds_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -122,7 +122,7 @@ public final class ObstacleModifyNotifyOuterClass {
               removeObstacleIds_.addInt(input.readInt32());
               break;
             }
-            case 114: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -156,7 +156,7 @@ public final class ObstacleModifyNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 10: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 addObstacles_ = new java.util.ArrayList<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -206,7 +206,7 @@ public final class ObstacleModifyNotifyOuterClass {
               emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify.class, emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotify.Builder.class);
     }
 
-    public static final int REMOVE_OBSTACLE_IDS_FIELD_NUMBER = 14;
+    public static final int REMOVE_OBSTACLE_IDS_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList removeObstacleIds_;
 
     @java.lang.Override
@@ -224,7 +224,7 @@ public final class ObstacleModifyNotifyOuterClass {
     }
     private int removeObstacleIdsMemoizedSerializedSize = -1;
 
-    public static final int ADD_OBSTACLES_FIELD_NUMBER = 1;
+    public static final int ADD_OBSTACLES_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.ObstacleInfoOuterClass.ObstacleInfo> addObstacles_;
 
     @java.lang.Override
@@ -282,7 +282,7 @@ public final class ObstacleModifyNotifyOuterClass {
     }
     private int eFBNDPGCKBAMemoizedSerializedSize = -1;
 
-    public static final int SCENE_ID_FIELD_NUMBER = 9;
+    public static final int SCENE_ID_FIELD_NUMBER = 10;
     private int sceneId_;
 
     @java.lang.Override
@@ -306,10 +306,10 @@ public final class ObstacleModifyNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (sceneId_ != 0) {
-        output.writeUInt32(9, sceneId_);
+        output.writeUInt32(10, sceneId_);
       }
       if (getRemoveObstacleIdsList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(removeObstacleIdsMemoizedSerializedSize);
       }
       for (int i = 0; i < removeObstacleIds_.size(); i++) {
@@ -323,7 +323,7 @@ public final class ObstacleModifyNotifyOuterClass {
         output.writeInt32NoTag(eFBNDPGCKBA_.getInt(i));
       }
       for (int i = 0; i < addObstacles_.size(); i++) {
-        output.writeMessage(1, addObstacles_.get(i));
+        output.writeMessage(13, addObstacles_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -336,7 +336,7 @@ public final class ObstacleModifyNotifyOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, sceneId_);
+          .computeUInt32Size(10, sceneId_);
       }
       {
         int dataSize = 0;
@@ -368,7 +368,7 @@ public final class ObstacleModifyNotifyOuterClass {
       }
       for (int i = 0; i < addObstacles_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, addObstacles_.get(i));
+          .computeMessageSize(13, addObstacles_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

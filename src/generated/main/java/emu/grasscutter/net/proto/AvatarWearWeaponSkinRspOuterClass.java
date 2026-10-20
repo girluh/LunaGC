@@ -99,7 +99,7 @@ public final class AvatarWearWeaponSkinRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 88: {
 
               weaponSkinId_ = input.readUInt32();
               break;
@@ -125,7 +125,7 @@ public final class AvatarWearWeaponSkinRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 24: {
+            case 96: {
 
               retcode_ = input.readInt32();
               break;
@@ -193,7 +193,7 @@ public final class AvatarWearWeaponSkinRspOuterClass {
     }
     private int avatarGuidListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
      * <code>int32 retcode = 11;</code>
@@ -204,7 +204,7 @@ public final class AvatarWearWeaponSkinRspOuterClass {
       return retcode_;
     }
 
-    public static final int WEAPON_SKIN_ID_FIELD_NUMBER = 2;
+    public static final int WEAPON_SKIN_ID_FIELD_NUMBER = 11;
     private int weaponSkinId_;
     /**
      * <code>uint32 weapon_skin_id = 1;</code>
@@ -231,7 +231,7 @@ public final class AvatarWearWeaponSkinRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (weaponSkinId_ != 0) {
-        output.writeUInt32(2, weaponSkinId_);
+        output.writeUInt32(11, weaponSkinId_);
       }
       if (getAvatarGuidListList().size() > 0) {
         output.writeUInt32NoTag(58);
@@ -241,7 +241,7 @@ public final class AvatarWearWeaponSkinRspOuterClass {
         output.writeUInt64NoTag(avatarGuidList_.getLong(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+        output.writeInt32(12, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -254,7 +254,7 @@ public final class AvatarWearWeaponSkinRspOuterClass {
       size = 0;
       if (weaponSkinId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, weaponSkinId_);
+          .computeUInt32Size(11, weaponSkinId_);
       }
       {
         int dataSize = 0;
@@ -272,7 +272,7 @@ public final class AvatarWearWeaponSkinRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeInt32Size(12, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

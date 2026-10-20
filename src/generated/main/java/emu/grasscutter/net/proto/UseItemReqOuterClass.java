@@ -96,17 +96,17 @@ public final class UseItemReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 112: {
 
               targetGuid_ = input.readUInt64();
               break;
             }
-            case 64: {
+            case 8: {
 
               isEnterMpDungeonTeam_ = input.readBool();
               break;
             }
-            case 8: {
+            case 120: {
 
               optionIdx_ = input.readUInt32();
               break;
@@ -132,12 +132,12 @@ public final class UseItemReqOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 56: {
+            case 24: {
 
               guid_ = input.readUInt64();
               break;
             }
-            case 32: {
+            case 72: {
 
               count_ = input.readUInt32();
               break;
@@ -205,7 +205,7 @@ public final class UseItemReqOuterClass {
     }
     private int aPAANIAIJFIMemoizedSerializedSize = -1;
 
-    public static final int GUID_FIELD_NUMBER = 7;
+    public static final int GUID_FIELD_NUMBER = 3;
     private long guid_;
 
     @java.lang.Override
@@ -213,7 +213,7 @@ public final class UseItemReqOuterClass {
       return guid_;
     }
 
-    public static final int IS_ENTER_MP_DUNGEON_TEAM_FIELD_NUMBER = 8;
+    public static final int IS_ENTER_MP_DUNGEON_TEAM_FIELD_NUMBER = 1;
     private boolean isEnterMpDungeonTeam_;
 
     @java.lang.Override
@@ -221,7 +221,7 @@ public final class UseItemReqOuterClass {
       return isEnterMpDungeonTeam_;
     }
 
-    public static final int OPTION_IDX_FIELD_NUMBER = 1;
+    public static final int OPTION_IDX_FIELD_NUMBER = 15;
     private int optionIdx_;
 
     @java.lang.Override
@@ -229,7 +229,7 @@ public final class UseItemReqOuterClass {
       return optionIdx_;
     }
 
-    public static final int COUNT_FIELD_NUMBER = 4;
+    public static final int COUNT_FIELD_NUMBER = 9;
     private int count_;
 
     @java.lang.Override
@@ -237,7 +237,7 @@ public final class UseItemReqOuterClass {
       return count_;
     }
 
-    public static final int TARGET_GUID_FIELD_NUMBER = 6;
+    public static final int TARGET_GUID_FIELD_NUMBER = 14;
     private long targetGuid_;
 
     @java.lang.Override
@@ -261,10 +261,10 @@ public final class UseItemReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (targetGuid_ != 0L) {
-        output.writeUInt64(6, targetGuid_);
+        output.writeUInt64(14, targetGuid_);
       }
       if (count_ != 0) {
-        output.writeUInt32(4, count_);
+        output.writeUInt32(9, count_);
       }
       if (getAPAANIAIJFIList().size() > 0) {
         output.writeUInt32NoTag(128002);
@@ -274,13 +274,13 @@ public final class UseItemReqOuterClass {
         output.writeUInt32NoTag(aPAANIAIJFI_.getInt(i));
       }
       if (isEnterMpDungeonTeam_ != false) {
-        output.writeBool(8, isEnterMpDungeonTeam_);
+        output.writeBool(1, isEnterMpDungeonTeam_);
       }
       if (guid_ != 0L) {
-        output.writeUInt64(7, guid_);
+        output.writeUInt64(3, guid_);
       }
       if (optionIdx_ != 0) {
-        output.writeUInt32(1, optionIdx_);
+        output.writeUInt32(15, optionIdx_);
       }
       unknownFields.writeTo(output);
     }
@@ -293,11 +293,11 @@ public final class UseItemReqOuterClass {
       size = 0;
       if (targetGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, targetGuid_);
+          .computeUInt64Size(14, targetGuid_);
       }
       if (count_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, count_);
+          .computeUInt32Size(9, count_);
       }
       {
         int dataSize = 0;
@@ -315,15 +315,15 @@ public final class UseItemReqOuterClass {
       }
       if (isEnterMpDungeonTeam_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isEnterMpDungeonTeam_);
+          .computeBoolSize(1, isEnterMpDungeonTeam_);
       }
       if (guid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, guid_);
+          .computeUInt64Size(3, guid_);
       }
       if (optionIdx_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, optionIdx_);
+          .computeUInt32Size(15, optionIdx_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

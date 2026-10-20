@@ -73,7 +73,7 @@ public final class PrivateChatNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 66: {
               emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder subBuilder = null;
               if (chatInfo_ != null) {
                 subBuilder = chatInfo_.toBuilder();
@@ -118,7 +118,7 @@ public final class PrivateChatNotifyOuterClass {
               emu.grasscutter.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify.class, emu.grasscutter.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify.Builder.class);
     }
 
-    public static final int CHAT_INFO_FIELD_NUMBER = 6;
+    public static final int CHAT_INFO_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo chatInfo_;
 
     @java.lang.Override
@@ -151,7 +151,7 @@ public final class PrivateChatNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (chatInfo_ != null) {
-        output.writeMessage(6, getChatInfo());
+        output.writeMessage(8, getChatInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -164,7 +164,7 @@ public final class PrivateChatNotifyOuterClass {
       size = 0;
       if (chatInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getChatInfo());
+          .computeMessageSize(8, getChatInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -85,17 +85,17 @@ public final class HomeResourceOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 120: {
 
               storeLimit_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 64: {
 
               storeValue_ = input.readUInt32();
               break;
             }
-            case 69: {
+            case 61: {
 
               nextRefreshTime_ = input.readFixed32();
               break;
@@ -132,7 +132,7 @@ public final class HomeResourceOuterClass {
               emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource.class, emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource.Builder.class);
     }
 
-    public static final int STORE_LIMIT_FIELD_NUMBER = 4;
+    public static final int STORE_LIMIT_FIELD_NUMBER = 15;
     private int storeLimit_;
     /**
      * <code>uint32 store_limit = 1;</code>
@@ -143,7 +143,7 @@ public final class HomeResourceOuterClass {
       return storeLimit_;
     }
 
-    public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 8;
+    public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 7;
     private int nextRefreshTime_;
     /**
      * <code>fixed32 next_refresh_time = 5;</code>
@@ -154,7 +154,7 @@ public final class HomeResourceOuterClass {
       return nextRefreshTime_;
     }
 
-    public static final int STORE_VALUE_FIELD_NUMBER = 3;
+    public static final int STORE_VALUE_FIELD_NUMBER = 8;
     private int storeValue_;
     /**
      * <code>uint32 store_value = 3;</code>
@@ -180,13 +180,13 @@ public final class HomeResourceOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (storeLimit_ != 0) {
-        output.writeUInt32(4, storeLimit_);
+        output.writeUInt32(15, storeLimit_);
       }
       if (storeValue_ != 0) {
-        output.writeUInt32(3, storeValue_);
+        output.writeUInt32(8, storeValue_);
       }
       if (nextRefreshTime_ != 0) {
-        output.writeFixed32(8, nextRefreshTime_);
+        output.writeFixed32(7, nextRefreshTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class HomeResourceOuterClass {
       size = 0;
       if (storeLimit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, storeLimit_);
+          .computeUInt32Size(15, storeLimit_);
       }
       if (storeValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, storeValue_);
+          .computeUInt32Size(8, storeValue_);
       }
       if (nextRefreshTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(8, nextRefreshTime_);
+          .computeFixed32Size(7, nextRefreshTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

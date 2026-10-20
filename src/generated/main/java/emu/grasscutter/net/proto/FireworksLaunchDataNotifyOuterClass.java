@@ -100,7 +100,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 schemeDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -109,7 +109,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.parser(), extensionRegistry));
               break;
             }
-            case 40: {
+            case 112: {
 
               lastUseSchemeId_ = input.readUInt32();
               break;
@@ -149,7 +149,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
               emu.grasscutter.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify.class, emu.grasscutter.net.proto.FireworksLaunchDataNotifyOuterClass.FireworksLaunchDataNotify.Builder.class);
     }
 
-    public static final int SCHEME_DATA_LIST_FIELD_NUMBER = 12;
+    public static final int SCHEME_DATA_LIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData> schemeDataList_;
     /**
      * <code>repeated .FireworksLaunchSchemeData scheme_data_list = 2;</code>
@@ -189,7 +189,7 @@ public final class FireworksLaunchDataNotifyOuterClass {
       return schemeDataList_.get(index);
     }
 
-    public static final int LAST_USE_SCHEME_ID_FIELD_NUMBER = 5;
+    public static final int LAST_USE_SCHEME_ID_FIELD_NUMBER = 14;
     private int lastUseSchemeId_;
     /**
      * <code>uint32 last_use_scheme_id = 9;</code>
@@ -215,10 +215,10 @@ public final class FireworksLaunchDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < schemeDataList_.size(); i++) {
-        output.writeMessage(12, schemeDataList_.get(i));
+        output.writeMessage(3, schemeDataList_.get(i));
       }
       if (lastUseSchemeId_ != 0) {
-        output.writeUInt32(5, lastUseSchemeId_);
+        output.writeUInt32(14, lastUseSchemeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -231,11 +231,11 @@ public final class FireworksLaunchDataNotifyOuterClass {
       size = 0;
       for (int i = 0; i < schemeDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, schemeDataList_.get(i));
+          .computeMessageSize(3, schemeDataList_.get(i));
       }
       if (lastUseSchemeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, lastUseSchemeId_);
+          .computeUInt32Size(14, lastUseSchemeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

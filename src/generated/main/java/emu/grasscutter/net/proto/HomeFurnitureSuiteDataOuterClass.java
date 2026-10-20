@@ -119,7 +119,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 includedFurnitureIndexList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -127,7 +127,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
               includedFurnitureIndexList_.addInt(input.readInt32());
               break;
             }
-            case 66: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -145,7 +145,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
               isAllowSummon_ = input.readBool();
               break;
             }
-            case 16: {
+            case 88: {
 
               suiteId_ = input.readUInt32();
               break;
@@ -155,7 +155,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
               guid_ = input.readUInt32();
               break;
             }
-            case 122: {
+            case 58: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (spawnPos_ != null) {
                 subBuilder = spawnPos_.toBuilder();
@@ -203,7 +203,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
               emu.grasscutter.net.proto.HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData.class, emu.grasscutter.net.proto.HomeFurnitureSuiteDataOuterClass.HomeFurnitureSuiteData.Builder.class);
     }
 
-    public static final int SPAWN_POS_FIELD_NUMBER = 15;
+    public static final int SPAWN_POS_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector spawnPos_;
     /**
      * <code>.Vector spawn_pos = 14;</code>
@@ -240,7 +240,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
       return guid_;
     }
 
-    public static final int SUITE_ID_FIELD_NUMBER = 2;
+    public static final int SUITE_ID_FIELD_NUMBER = 11;
     private int suiteId_;
     /**
      * <code>uint32 suite_id = 8;</code>
@@ -251,7 +251,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
       return suiteId_;
     }
 
-    public static final int INCLUDED_FURNITURE_INDEX_LIST_FIELD_NUMBER = 8;
+    public static final int INCLUDED_FURNITURE_INDEX_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList includedFurnitureIndexList_;
     /**
      * <code>repeated int32 included_furniture_index_list = 3;</code>
@@ -306,7 +306,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getIncludedFurnitureIndexListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(includedFurnitureIndexListMemoizedSerializedSize);
       }
       for (int i = 0; i < includedFurnitureIndexList_.size(); i++) {
@@ -316,13 +316,13 @@ public final class HomeFurnitureSuiteDataOuterClass {
         output.writeBool(4, isAllowSummon_);
       }
       if (suiteId_ != 0) {
-        output.writeUInt32(2, suiteId_);
+        output.writeUInt32(11, suiteId_);
       }
       if (guid_ != 0) {
         output.writeUInt32(14, guid_);
       }
       if (spawnPos_ != null) {
-        output.writeMessage(15, getSpawnPos());
+        output.writeMessage(7, getSpawnPos());
       }
       unknownFields.writeTo(output);
     }
@@ -353,7 +353,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
       }
       if (suiteId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, suiteId_);
+          .computeUInt32Size(11, suiteId_);
       }
       if (guid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -361,7 +361,7 @@ public final class HomeFurnitureSuiteDataOuterClass {
       }
       if (spawnPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getSpawnPos());
+          .computeMessageSize(7, getSpawnPos());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -94,7 +94,7 @@ public final class DestroyMaterialReqOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 materialList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,7 +138,7 @@ public final class DestroyMaterialReqOuterClass {
               emu.grasscutter.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq.class, emu.grasscutter.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq.Builder.class);
     }
 
-    public static final int MATERIAL_LIST_FIELD_NUMBER = 3;
+    public static final int MATERIAL_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo> materialList_;
     /**
      * <code>repeated .MaterialInfo material_list = 9;</code>
@@ -193,7 +193,7 @@ public final class DestroyMaterialReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < materialList_.size(); i++) {
-        output.writeMessage(3, materialList_.get(i));
+        output.writeMessage(13, materialList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class DestroyMaterialReqOuterClass {
       size = 0;
       for (int i = 0; i < materialList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, materialList_.get(i));
+          .computeMessageSize(13, materialList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

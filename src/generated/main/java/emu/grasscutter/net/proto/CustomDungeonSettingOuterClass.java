@@ -137,7 +137,7 @@ public final class CustomDungeonSettingOuterClass {
               kADOPMBDBPG_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 openRoomList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -145,7 +145,7 @@ public final class CustomDungeonSettingOuterClass {
               openRoomList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -163,12 +163,12 @@ public final class CustomDungeonSettingOuterClass {
               hPFNIKCNFEE_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 120: {
 
               isForbidSkill_ = input.readBool();
               break;
             }
-            case 56: {
+            case 16: {
 
               isArriveFinish_ = input.readBool();
               break;
@@ -208,7 +208,7 @@ public final class CustomDungeonSettingOuterClass {
               emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.class, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder.class);
     }
 
-    public static final int IS_FORBID_SKILL_FIELD_NUMBER = 9;
+    public static final int IS_FORBID_SKILL_FIELD_NUMBER = 15;
     private boolean isForbidSkill_;
     /**
      * <code>bool is_forbid_skill = 8;</code>
@@ -263,7 +263,7 @@ public final class CustomDungeonSettingOuterClass {
       return hPFNIKCNFEE_;
     }
 
-    public static final int OPEN_ROOM_LIST_FIELD_NUMBER = 8;
+    public static final int OPEN_ROOM_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList openRoomList_;
     /**
      * <code>repeated uint32 open_room_list = 6;</code>
@@ -291,7 +291,7 @@ public final class CustomDungeonSettingOuterClass {
     }
     private int openRoomListMemoizedSerializedSize = -1;
 
-    public static final int IS_ARRIVE_FINISH_FIELD_NUMBER = 7;
+    public static final int IS_ARRIVE_FINISH_FIELD_NUMBER = 2;
     private boolean isArriveFinish_;
     /**
      * <code>bool is_arrive_finish = 10;</code>
@@ -327,7 +327,7 @@ public final class CustomDungeonSettingOuterClass {
         output.writeUInt32(5, kADOPMBDBPG_);
       }
       if (getOpenRoomListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(openRoomListMemoizedSerializedSize);
       }
       for (int i = 0; i < openRoomList_.size(); i++) {
@@ -337,10 +337,10 @@ public final class CustomDungeonSettingOuterClass {
         output.writeUInt32(16000, hPFNIKCNFEE_);
       }
       if (isForbidSkill_ != false) {
-        output.writeBool(9, isForbidSkill_);
+        output.writeBool(15, isForbidSkill_);
       }
       if (isArriveFinish_ != false) {
-        output.writeBool(7, isArriveFinish_);
+        output.writeBool(2, isArriveFinish_);
       }
       unknownFields.writeTo(output);
     }
@@ -383,11 +383,11 @@ public final class CustomDungeonSettingOuterClass {
       }
       if (isForbidSkill_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isForbidSkill_);
+          .computeBoolSize(15, isForbidSkill_);
       }
       if (isArriveFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isArriveFinish_);
+          .computeBoolSize(2, isArriveFinish_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

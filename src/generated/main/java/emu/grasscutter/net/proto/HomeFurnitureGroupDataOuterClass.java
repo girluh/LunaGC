@@ -99,12 +99,12 @@ public final class HomeFurnitureGroupDataOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 56: {
 
               groupFurnitureIndex_ = input.readUInt32();
               break;
             }
-            case 10: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 virtualFurniureList_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -148,7 +148,7 @@ public final class HomeFurnitureGroupDataOuterClass {
               emu.grasscutter.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData.class, emu.grasscutter.net.proto.HomeFurnitureGroupDataOuterClass.HomeFurnitureGroupData.Builder.class);
     }
 
-    public static final int GROUP_FURNITURE_INDEX_FIELD_NUMBER = 9;
+    public static final int GROUP_FURNITURE_INDEX_FIELD_NUMBER = 7;
     private int groupFurnitureIndex_;
     /**
      * <code>uint32 group_furniture_index = 9;</code>
@@ -159,7 +159,7 @@ public final class HomeFurnitureGroupDataOuterClass {
       return groupFurnitureIndex_;
     }
 
-    public static final int VIRTUAL_FURNIURE_LIST_FIELD_NUMBER = 1;
+    public static final int VIRTUAL_FURNIURE_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> virtualFurniureList_;
     /**
      * <code>repeated .HomeFurnitureData virtual_furniure_list = 15;</code>
@@ -214,10 +214,10 @@ public final class HomeFurnitureGroupDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (groupFurnitureIndex_ != 0) {
-        output.writeUInt32(9, groupFurnitureIndex_);
+        output.writeUInt32(7, groupFurnitureIndex_);
       }
       for (int i = 0; i < virtualFurniureList_.size(); i++) {
-        output.writeMessage(1, virtualFurniureList_.get(i));
+        output.writeMessage(6, virtualFurniureList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -230,11 +230,11 @@ public final class HomeFurnitureGroupDataOuterClass {
       size = 0;
       if (groupFurnitureIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, groupFurnitureIndex_);
+          .computeUInt32Size(7, groupFurnitureIndex_);
       }
       for (int i = 0; i < virtualFurniureList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, virtualFurniureList_.get(i));
+          .computeMessageSize(6, virtualFurniureList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

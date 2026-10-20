@@ -97,7 +97,7 @@ public final class WidgetCreateLocationInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 98: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
@@ -110,7 +110,7 @@ public final class WidgetCreateLocationInfoOuterClass {
 
               break;
             }
-            case 114: {
+            case 18: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -155,7 +155,7 @@ public final class WidgetCreateLocationInfoOuterClass {
               emu.grasscutter.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.class, emu.grasscutter.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder.class);
     }
 
-    public static final int ROT_FIELD_NUMBER = 11;
+    public static final int ROT_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
     /**
      * <code>.Vector rot = 3;</code>
@@ -181,7 +181,7 @@ public final class WidgetCreateLocationInfoOuterClass {
       return getRot();
     }
 
-    public static final int POS_FIELD_NUMBER = 14;
+    public static final int POS_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 6;</code>
@@ -222,10 +222,10 @@ public final class WidgetCreateLocationInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rot_ != null) {
-        output.writeMessage(11, getRot());
+        output.writeMessage(12, getRot());
       }
       if (pos_ != null) {
-        output.writeMessage(14, getPos());
+        output.writeMessage(2, getPos());
       }
       unknownFields.writeTo(output);
     }
@@ -238,11 +238,11 @@ public final class WidgetCreateLocationInfoOuterClass {
       size = 0;
       if (rot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getRot());
+          .computeMessageSize(12, getRot());
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getPos());
+          .computeMessageSize(2, getPos());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

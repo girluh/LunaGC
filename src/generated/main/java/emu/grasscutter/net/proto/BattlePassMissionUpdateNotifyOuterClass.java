@@ -82,7 +82,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 missionList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission>();
                 mutable_bitField0_ |= 0x00000001;
@@ -126,7 +126,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.BattlePassMissionUpdateNotifyOuterClass.BattlePassMissionUpdateNotify.class, emu.grasscutter.net.proto.BattlePassMissionUpdateNotifyOuterClass.BattlePassMissionUpdateNotify.Builder.class);
     }
 
-    public static final int MISSION_LIST_FIELD_NUMBER = 4;
+    public static final int MISSION_LIST_FIELD_NUMBER = 11;
     private java.util.List<emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission> missionList_;
 
     @java.lang.Override
@@ -171,7 +171,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < missionList_.size(); i++) {
-        output.writeMessage(4, missionList_.get(i));
+        output.writeMessage(11, missionList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -184,7 +184,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
       size = 0;
       for (int i = 0; i < missionList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, missionList_.get(i));
+          .computeMessageSize(11, missionList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -138,17 +138,17 @@ public final class GivingRecordOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               configId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 80: {
 
               givingId_ = input.readUInt32();
               break;
             }
-            case 74: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 materialCntMap_ = com.google.protobuf.MapField.newMapField(
                     MaterialCntMapDefaultEntryHolder.defaultEntry);
@@ -161,7 +161,7 @@ public final class GivingRecordOuterClass {
                   materialCntMap__.getKey(), materialCntMap__.getValue());
               break;
             }
-            case 32: {
+            case 112: {
 
               groupId_ = input.readUInt32();
               break;
@@ -171,12 +171,12 @@ public final class GivingRecordOuterClass {
               isFinished_ = input.readBool();
               break;
             }
-            case 64: {
+            case 48: {
 
               lastGroupId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 72: {
 
               isGadgetGiving_ = input.readBool();
               break;
@@ -225,7 +225,7 @@ public final class GivingRecordOuterClass {
               emu.grasscutter.net.proto.GivingRecordOuterClass.GivingRecord.class, emu.grasscutter.net.proto.GivingRecordOuterClass.GivingRecord.Builder.class);
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 1;
+    public static final int CONFIG_ID_FIELD_NUMBER = 2;
     private int configId_;
     /**
      * <code>uint32 config_id = 2;</code>
@@ -236,7 +236,7 @@ public final class GivingRecordOuterClass {
       return configId_;
     }
 
-    public static final int IS_GADGET_GIVING_FIELD_NUMBER = 15;
+    public static final int IS_GADGET_GIVING_FIELD_NUMBER = 9;
     private boolean isGadgetGiving_;
     /**
      * <code>bool is_gadget_giving = 15;</code>
@@ -247,7 +247,7 @@ public final class GivingRecordOuterClass {
       return isGadgetGiving_;
     }
 
-    public static final int LAST_GROUP_ID_FIELD_NUMBER = 8;
+    public static final int LAST_GROUP_ID_FIELD_NUMBER = 6;
     private int lastGroupId_;
     /**
      * <code>uint32 last_group_id = 14;</code>
@@ -258,7 +258,7 @@ public final class GivingRecordOuterClass {
       return lastGroupId_;
     }
 
-    public static final int GIVING_ID_FIELD_NUMBER = 14;
+    public static final int GIVING_ID_FIELD_NUMBER = 10;
     private int givingId_;
     /**
      * <code>uint32 giving_id = 3;</code>
@@ -280,7 +280,7 @@ public final class GivingRecordOuterClass {
       return isFinished_;
     }
 
-    public static final int MATERIAL_CNT_MAP_FIELD_NUMBER = 9;
+    public static final int MATERIAL_CNT_MAP_FIELD_NUMBER = 1;
     private static final class MaterialCntMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -361,7 +361,7 @@ public final class GivingRecordOuterClass {
       return map.get(key);
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 4;
+    public static final int GROUP_ID_FIELD_NUMBER = 14;
     private int groupId_;
     /**
      * <code>uint32 group_id = 5;</code>
@@ -387,28 +387,28 @@ public final class GivingRecordOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (configId_ != 0) {
-        output.writeUInt32(1, configId_);
+        output.writeUInt32(2, configId_);
       }
       if (givingId_ != 0) {
-        output.writeUInt32(14, givingId_);
+        output.writeUInt32(10, givingId_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetMaterialCntMap(),
           MaterialCntMapDefaultEntryHolder.defaultEntry,
-          9);
+          1);
       if (groupId_ != 0) {
-        output.writeUInt32(4, groupId_);
+        output.writeUInt32(14, groupId_);
       }
       if (isFinished_ != false) {
         output.writeBool(7, isFinished_);
       }
       if (lastGroupId_ != 0) {
-        output.writeUInt32(8, lastGroupId_);
+        output.writeUInt32(6, lastGroupId_);
       }
       if (isGadgetGiving_ != false) {
-        output.writeBool(15, isGadgetGiving_);
+        output.writeBool(9, isGadgetGiving_);
       }
       unknownFields.writeTo(output);
     }
@@ -421,11 +421,11 @@ public final class GivingRecordOuterClass {
       size = 0;
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, configId_);
+          .computeUInt32Size(2, configId_);
       }
       if (givingId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, givingId_);
+          .computeUInt32Size(10, givingId_);
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetMaterialCntMap().getMap().entrySet()) {
@@ -435,11 +435,11 @@ public final class GivingRecordOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(9, materialCntMap__);
+            .computeMessageSize(1, materialCntMap__);
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, groupId_);
+          .computeUInt32Size(14, groupId_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -447,11 +447,11 @@ public final class GivingRecordOuterClass {
       }
       if (lastGroupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, lastGroupId_);
+          .computeUInt32Size(6, lastGroupId_);
       }
       if (isGadgetGiving_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isGadgetGiving_);
+          .computeBoolSize(9, isGadgetGiving_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

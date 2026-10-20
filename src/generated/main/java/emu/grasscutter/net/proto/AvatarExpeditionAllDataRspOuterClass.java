@@ -100,7 +100,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 expeditionInfoMap_ = com.google.protobuf.MapField.newMapField(
                     ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
@@ -113,7 +113,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                   expeditionInfoMap__.getKey(), expeditionInfoMap__.getValue());
               break;
             }
-            case 96: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
@@ -123,7 +123,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
               expeditionCountLimit_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 openExpeditionList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -131,7 +131,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
               openExpeditionList_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -191,7 +191,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
               emu.grasscutter.net.proto.AvatarExpeditionAllDataRspOuterClass.AvatarExpeditionAllDataRsp.class, emu.grasscutter.net.proto.AvatarExpeditionAllDataRspOuterClass.AvatarExpeditionAllDataRsp.Builder.class);
     }
 
-    public static final int OPEN_EXPEDITION_LIST_FIELD_NUMBER = 14;
+    public static final int OPEN_EXPEDITION_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList openExpeditionList_;
 
     @java.lang.Override
@@ -209,7 +209,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
     }
     private int openExpeditionListMemoizedSerializedSize = -1;
 
-    public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 11;
+    public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 9;
     private static final class ExpeditionInfoMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Long, emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry =
@@ -281,7 +281,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
       return map.get(key);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
 
     @java.lang.Override
@@ -317,15 +317,15 @@ public final class AvatarExpeditionAllDataRspOuterClass {
           output,
           internalGetExpeditionInfoMap(),
           ExpeditionInfoMapDefaultEntryHolder.defaultEntry,
-          11);
+          9);
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(8, retcode_);
       }
       if (expeditionCountLimit_ != 0) {
         output.writeUInt32(4, expeditionCountLimit_);
       }
       if (getOpenExpeditionListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(openExpeditionListMemoizedSerializedSize);
       }
       for (int i = 0; i < openExpeditionList_.size(); i++) {
@@ -348,11 +348,11 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(11, expeditionInfoMap__);
+            .computeMessageSize(9, expeditionInfoMap__);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       if (expeditionCountLimit_ != 0) {
         size += com.google.protobuf.CodedOutputStream

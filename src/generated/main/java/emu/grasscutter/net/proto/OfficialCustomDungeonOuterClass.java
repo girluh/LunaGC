@@ -84,7 +84,7 @@ public final class OfficialCustomDungeonOuterClass {
               winTimes_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 96: {
 
               dungeonId_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class OfficialCustomDungeonOuterClass {
               emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.class, emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder.class);
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 1;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 12;
     private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 9;</code>
@@ -161,7 +161,7 @@ public final class OfficialCustomDungeonOuterClass {
         output.writeUInt32(11, winTimes_);
       }
       if (dungeonId_ != 0) {
-        output.writeUInt32(1, dungeonId_);
+        output.writeUInt32(12, dungeonId_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,7 +178,7 @@ public final class OfficialCustomDungeonOuterClass {
       }
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, dungeonId_);
+          .computeUInt32Size(12, dungeonId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

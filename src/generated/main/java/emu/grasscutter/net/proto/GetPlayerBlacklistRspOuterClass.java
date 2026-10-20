@@ -84,12 +84,12 @@ public final class GetPlayerBlacklistRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 114: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 blacklist_ = new java.util.ArrayList<emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,7 +133,7 @@ public final class GetPlayerBlacklistRspOuterClass {
               emu.grasscutter.net.proto.GetPlayerBlacklistRspOuterClass.GetPlayerBlacklistRsp.class, emu.grasscutter.net.proto.GetPlayerBlacklistRspOuterClass.GetPlayerBlacklistRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
@@ -144,7 +144,7 @@ public final class GetPlayerBlacklistRspOuterClass {
       return retcode_;
     }
 
-    public static final int BLACKLIST_FIELD_NUMBER = 14;
+    public static final int BLACKLIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief> blacklist_;
 
     @java.lang.Override
@@ -189,10 +189,10 @@ public final class GetPlayerBlacklistRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(10, retcode_);
       }
       for (int i = 0; i < blacklist_.size(); i++) {
-        output.writeMessage(14, blacklist_.get(i));
+        output.writeMessage(12, blacklist_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,11 +205,11 @@ public final class GetPlayerBlacklistRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(10, retcode_);
       }
       for (int i = 0; i < blacklist_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, blacklist_.get(i));
+          .computeMessageSize(12, blacklist_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

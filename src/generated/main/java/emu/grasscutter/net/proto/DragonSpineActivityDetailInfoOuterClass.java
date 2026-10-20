@@ -120,17 +120,17 @@ public final class DragonSpineActivityDetailInfoOuterClass {
               dNODGCMPOAN_ = input.readUInt32();
               break;
             }
-            case 128000: {
+            case 128008: {
 
               mDHGPIPFBOJ_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 72: {
 
               isContentClosed_ = input.readBool();
               break;
             }
-            case 74: {
+            case 128002: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 aEPAJCHDHED_ = new java.util.ArrayList<emu.grasscutter.net.proto.GFKOHEPPBBNOuterClass.GFKOHEPPBBN>();
                 mutable_bitField0_ |= 0x00000001;
@@ -184,7 +184,7 @@ public final class DragonSpineActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.DragonSpineActivityDetailInfoOuterClass.DragonSpineActivityDetailInfo.class, emu.grasscutter.net.proto.DragonSpineActivityDetailInfoOuterClass.DragonSpineActivityDetailInfo.Builder.class);
     }
 
-    public static final int AEPAJCHDHED_FIELD_NUMBER = 9;
+    public static final int AEPAJCHDHED_FIELD_NUMBER = 16000;
     private java.util.List<emu.grasscutter.net.proto.GFKOHEPPBBNOuterClass.GFKOHEPPBBN> aEPAJCHDHED_;
     /**
      * <code>repeated .GFKOHEPPBBN AEPAJCHDHED = 9;</code>
@@ -224,7 +224,7 @@ public final class DragonSpineActivityDetailInfoOuterClass {
       return aEPAJCHDHED_.get(index);
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 7;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 9;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -265,7 +265,7 @@ public final class DragonSpineActivityDetailInfoOuterClass {
       return mPBNAFAJHOD_;
     }
 
-    public static final int MDHGPIPFBOJ_FIELD_NUMBER = 16000;
+    public static final int MDHGPIPFBOJ_FIELD_NUMBER = 16001;
     private int mDHGPIPFBOJ_;
     /**
      * <code>uint32 MDHGPIPFBOJ = 6;</code>
@@ -294,13 +294,13 @@ public final class DragonSpineActivityDetailInfoOuterClass {
         output.writeUInt32(4, dNODGCMPOAN_);
       }
       if (mDHGPIPFBOJ_ != 0) {
-        output.writeUInt32(16000, mDHGPIPFBOJ_);
+        output.writeUInt32(16001, mDHGPIPFBOJ_);
       }
       if (isContentClosed_ != false) {
-        output.writeBool(7, isContentClosed_);
+        output.writeBool(9, isContentClosed_);
       }
       for (int i = 0; i < aEPAJCHDHED_.size(); i++) {
-        output.writeMessage(9, aEPAJCHDHED_.get(i));
+        output.writeMessage(16000, aEPAJCHDHED_.get(i));
       }
       if (mPBNAFAJHOD_ != 0) {
         output.writeUInt32(12, mPBNAFAJHOD_);
@@ -323,15 +323,15 @@ public final class DragonSpineActivityDetailInfoOuterClass {
       }
       if (mDHGPIPFBOJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16000, mDHGPIPFBOJ_);
+          .computeUInt32Size(16001, mDHGPIPFBOJ_);
       }
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isContentClosed_);
+          .computeBoolSize(9, isContentClosed_);
       }
       for (int i = 0; i < aEPAJCHDHED_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, aEPAJCHDHED_.get(i));
+          .computeMessageSize(16000, aEPAJCHDHED_.get(i));
       }
       if (mPBNAFAJHOD_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -84,7 +84,7 @@ public final class PlayerRTTInfoOuterClass {
               uid_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 8: {
 
               rtt_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class PlayerRTTInfoOuterClass {
               emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo.class, emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo.Builder.class);
     }
 
-    public static final int RTT_FIELD_NUMBER = 3;
+    public static final int RTT_FIELD_NUMBER = 1;
     private int rtt_;
     /**
      * <code>uint32 rtt = 2;</code>
@@ -161,7 +161,7 @@ public final class PlayerRTTInfoOuterClass {
         output.writeUInt32(11, uid_);
       }
       if (rtt_ != 0) {
-        output.writeUInt32(3, rtt_);
+        output.writeUInt32(1, rtt_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,7 +178,7 @@ public final class PlayerRTTInfoOuterClass {
       }
       if (rtt_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, rtt_);
+          .computeUInt32Size(1, rtt_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

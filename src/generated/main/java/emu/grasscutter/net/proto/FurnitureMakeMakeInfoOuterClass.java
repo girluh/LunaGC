@@ -79,12 +79,12 @@ public final class FurnitureMakeMakeInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 120: {
 
               makeCount_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 24: {
 
               furnitureId_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class FurnitureMakeMakeInfoOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo.class, emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo.Builder.class);
     }
 
-    public static final int FURNITURE_ID_FIELD_NUMBER = 6;
+    public static final int FURNITURE_ID_FIELD_NUMBER = 3;
     private int furnitureId_;
     /**
      * <code>uint32 furniture_id = 8;</code>
@@ -132,7 +132,7 @@ public final class FurnitureMakeMakeInfoOuterClass {
       return furnitureId_;
     }
 
-    public static final int MAKE_COUNT_FIELD_NUMBER = 7;
+    public static final int MAKE_COUNT_FIELD_NUMBER = 15;
     private int makeCount_;
     /**
      * <code>uint32 make_count = 5;</code>
@@ -158,10 +158,10 @@ public final class FurnitureMakeMakeInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (makeCount_ != 0) {
-        output.writeUInt32(7, makeCount_);
+        output.writeUInt32(15, makeCount_);
       }
       if (furnitureId_ != 0) {
-        output.writeUInt32(6, furnitureId_);
+        output.writeUInt32(3, furnitureId_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class FurnitureMakeMakeInfoOuterClass {
       size = 0;
       if (makeCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, makeCount_);
+          .computeUInt32Size(15, makeCount_);
       }
       if (furnitureId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, furnitureId_);
+          .computeUInt32Size(3, furnitureId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

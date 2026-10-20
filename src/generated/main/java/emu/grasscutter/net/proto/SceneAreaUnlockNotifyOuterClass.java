@@ -77,12 +77,12 @@ public final class SceneAreaUnlockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 80: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 120: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 areaList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +90,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
               areaList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 122: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,7 +138,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
               emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify.class, emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify.Builder.class);
     }
 
-    public static final int AREA_LIST_FIELD_NUMBER = 1;
+    public static final int AREA_LIST_FIELD_NUMBER = 15;
     private com.google.protobuf.Internal.IntList areaList_;
 
     @java.lang.Override
@@ -156,7 +156,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
     }
     private int areaListMemoizedSerializedSize = -1;
 
-    public static final int SCENE_ID_FIELD_NUMBER = 3;
+    public static final int SCENE_ID_FIELD_NUMBER = 10;
     private int sceneId_;
 
     @java.lang.Override
@@ -180,10 +180,10 @@ public final class SceneAreaUnlockNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (sceneId_ != 0) {
-        output.writeUInt32(3, sceneId_);
+        output.writeUInt32(10, sceneId_);
       }
       if (getAreaListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(areaListMemoizedSerializedSize);
       }
       for (int i = 0; i < areaList_.size(); i++) {
@@ -200,7 +200,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, sceneId_);
+          .computeUInt32Size(10, sceneId_);
       }
       {
         int dataSize = 0;

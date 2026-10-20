@@ -73,7 +73,7 @@ public final class AsterLittleInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 34: {
               emu.grasscutter.net.proto.AsterLittleDetailInfoOuterClass.AsterLittleDetailInfo.Builder subBuilder = null;
               if (info_ != null) {
                 subBuilder = info_.toBuilder();
@@ -118,7 +118,7 @@ public final class AsterLittleInfoNotifyOuterClass {
               emu.grasscutter.net.proto.AsterLittleInfoNotifyOuterClass.AsterLittleInfoNotify.class, emu.grasscutter.net.proto.AsterLittleInfoNotifyOuterClass.AsterLittleInfoNotify.Builder.class);
     }
 
-    public static final int INFO_FIELD_NUMBER = 7;
+    public static final int INFO_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.AsterLittleDetailInfoOuterClass.AsterLittleDetailInfo info_;
 
     @java.lang.Override
@@ -151,7 +151,7 @@ public final class AsterLittleInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (info_ != null) {
-        output.writeMessage(7, getInfo());
+        output.writeMessage(4, getInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -164,7 +164,7 @@ public final class AsterLittleInfoNotifyOuterClass {
       size = 0;
       if (info_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getInfo());
+          .computeMessageSize(4, getInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

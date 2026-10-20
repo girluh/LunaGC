@@ -81,18 +81,18 @@ public final class AntiAddictNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 88: {
 
               msgType_ = input.readInt32();
               break;
             }
-            case 82: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
               break;
             }
-            case 122: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               level_ = s;
@@ -130,7 +130,7 @@ public final class AntiAddictNotifyOuterClass {
               emu.grasscutter.net.proto.AntiAddictNotifyOuterClass.AntiAddictNotify.class, emu.grasscutter.net.proto.AntiAddictNotifyOuterClass.AntiAddictNotify.Builder.class);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 15;
+    public static final int LEVEL_FIELD_NUMBER = 1;
     private volatile java.lang.Object level_;
 
     @java.lang.Override
@@ -162,7 +162,7 @@ public final class AntiAddictNotifyOuterClass {
       }
     }
 
-    public static final int MSG_FIELD_NUMBER = 10;
+    public static final int MSG_FIELD_NUMBER = 8;
     private volatile java.lang.Object msg_;
 
     @java.lang.Override
@@ -194,7 +194,7 @@ public final class AntiAddictNotifyOuterClass {
       }
     }
 
-    public static final int MSG_TYPE_FIELD_NUMBER = 8;
+    public static final int MSG_TYPE_FIELD_NUMBER = 11;
     private int msgType_;
 
     @java.lang.Override
@@ -217,13 +217,13 @@ public final class AntiAddictNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (msgType_ != 0) {
-        output.writeInt32(8, msgType_);
+        output.writeInt32(11, msgType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, msg_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, msg_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(level_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, level_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, level_);
       }
       unknownFields.writeTo(output);
     }
@@ -236,13 +236,13 @@ public final class AntiAddictNotifyOuterClass {
       size = 0;
       if (msgType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, msgType_);
+          .computeInt32Size(11, msgType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, msg_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, msg_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(level_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, level_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, level_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -99,12 +99,12 @@ public final class FireworksReformDataOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 96: {
 
               id_ = input.readUInt32();
               break;
             }
-            case 10: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 reformParamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.FireworksReformParamOuterClass.FireworksReformParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -148,7 +148,7 @@ public final class FireworksReformDataOuterClass {
               emu.grasscutter.net.proto.FireworksReformDataOuterClass.FireworksReformData.class, emu.grasscutter.net.proto.FireworksReformDataOuterClass.FireworksReformData.Builder.class);
     }
 
-    public static final int REFORM_PARAM_LIST_FIELD_NUMBER = 1;
+    public static final int REFORM_PARAM_LIST_FIELD_NUMBER = 11;
     private java.util.List<emu.grasscutter.net.proto.FireworksReformParamOuterClass.FireworksReformParam> reformParamList_;
     /**
      * <code>repeated .FireworksReformParam reform_param_list = 9;</code>
@@ -188,7 +188,7 @@ public final class FireworksReformDataOuterClass {
       return reformParamList_.get(index);
     }
 
-    public static final int ID_FIELD_NUMBER = 13;
+    public static final int ID_FIELD_NUMBER = 12;
     private int id_;
     /**
      * <code>uint32 id = 4;</code>
@@ -214,10 +214,10 @@ public final class FireworksReformDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0) {
-        output.writeUInt32(13, id_);
+        output.writeUInt32(12, id_);
       }
       for (int i = 0; i < reformParamList_.size(); i++) {
-        output.writeMessage(1, reformParamList_.get(i));
+        output.writeMessage(11, reformParamList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -230,11 +230,11 @@ public final class FireworksReformDataOuterClass {
       size = 0;
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, id_);
+          .computeUInt32Size(12, id_);
       }
       for (int i = 0; i < reformParamList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, reformParamList_.get(i));
+          .computeMessageSize(11, reformParamList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

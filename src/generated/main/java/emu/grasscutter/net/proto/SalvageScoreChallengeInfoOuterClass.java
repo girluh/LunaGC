@@ -79,12 +79,12 @@ public final class SalvageScoreChallengeInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 8: {
 
               salvageChallengeId_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 24: {
 
               maxScore_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
               emu.grasscutter.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.class, emu.grasscutter.net.proto.SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.Builder.class);
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 1;
+    public static final int MAX_SCORE_FIELD_NUMBER = 3;
     private int maxScore_;
     /**
      * <code>uint32 max_score = 15;</code>
@@ -132,7 +132,7 @@ public final class SalvageScoreChallengeInfoOuterClass {
       return maxScore_;
     }
 
-    public static final int SALVAGE_CHALLENGE_ID_FIELD_NUMBER = 7;
+    public static final int SALVAGE_CHALLENGE_ID_FIELD_NUMBER = 1;
     private int salvageChallengeId_;
     /**
      * <code>uint32 salvage_challenge_id = 5;</code>
@@ -158,10 +158,10 @@ public final class SalvageScoreChallengeInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (salvageChallengeId_ != 0) {
-        output.writeUInt32(7, salvageChallengeId_);
+        output.writeUInt32(1, salvageChallengeId_);
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(1, maxScore_);
+        output.writeUInt32(3, maxScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class SalvageScoreChallengeInfoOuterClass {
       size = 0;
       if (salvageChallengeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, salvageChallengeId_);
+          .computeUInt32Size(1, salvageChallengeId_);
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, maxScore_);
+          .computeUInt32Size(3, maxScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

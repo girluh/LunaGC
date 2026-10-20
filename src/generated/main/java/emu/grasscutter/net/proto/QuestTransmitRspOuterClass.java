@@ -86,17 +86,17 @@ public final class QuestTransmitRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 96: {
+            case 32: {
 
               pointId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 88: {
 
               questId_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class QuestTransmitRspOuterClass {
               emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp.class, emu.grasscutter.net.proto.QuestTransmitRspOuterClass.QuestTransmitRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
      * <code>int32 retcode = 5;</code>
@@ -144,7 +144,7 @@ public final class QuestTransmitRspOuterClass {
       return retcode_;
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 12;
+    public static final int POINT_ID_FIELD_NUMBER = 4;
     private int pointId_;
     /**
      * <code>uint32 point_id = 9;</code>
@@ -155,7 +155,7 @@ public final class QuestTransmitRspOuterClass {
       return pointId_;
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 3;
+    public static final int QUEST_ID_FIELD_NUMBER = 11;
     private int questId_;
     /**
      * <code>uint32 quest_id = 14;</code>
@@ -181,13 +181,13 @@ public final class QuestTransmitRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
+        output.writeInt32(1, retcode_);
       }
       if (pointId_ != 0) {
-        output.writeUInt32(12, pointId_);
+        output.writeUInt32(4, pointId_);
       }
       if (questId_ != 0) {
-        output.writeUInt32(3, questId_);
+        output.writeUInt32(11, questId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class QuestTransmitRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
+          .computeInt32Size(1, retcode_);
       }
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, pointId_);
+          .computeUInt32Size(4, pointId_);
       }
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, questId_);
+          .computeUInt32Size(11, questId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

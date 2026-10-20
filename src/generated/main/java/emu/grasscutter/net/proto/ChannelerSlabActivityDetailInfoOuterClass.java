@@ -114,7 +114,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stageList_ = new java.util.ArrayList<emu.grasscutter.net.proto.JMGBKLMOLLGOuterClass.JMGBKLMOLLG>();
                 mutable_bitField0_ |= 0x00000001;
@@ -141,7 +141,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
               cMBOIEKLEFH_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 128002: {
               emu.grasscutter.net.proto.JJNLNIMPOMHOuterClass.JJNLNIMPOMH.Builder subBuilder = null;
               if (pPMGBOFJMBE_ != null) {
                 subBuilder = pPMGBOFJMBE_.toBuilder();
@@ -189,7 +189,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo.class, emu.grasscutter.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo.Builder.class);
     }
 
-    public static final int STAGE_LIST_FIELD_NUMBER = 2;
+    public static final int STAGE_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.JMGBKLMOLLGOuterClass.JMGBKLMOLLG> stageList_;
 
     @java.lang.Override
@@ -245,7 +245,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       return getKDHJKPMJILH();
     }
 
-    public static final int PPMGBOFJMBE_FIELD_NUMBER = 14;
+    public static final int PPMGBOFJMBE_FIELD_NUMBER = 16000;
     private emu.grasscutter.net.proto.JJNLNIMPOMHOuterClass.JJNLNIMPOMH pPMGBOFJMBE_;
     /**
      * <code>.JJNLNIMPOMH PPMGBOFJMBE = 14;</code>
@@ -297,7 +297,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < stageList_.size(); i++) {
-        output.writeMessage(2, stageList_.get(i));
+        output.writeMessage(14, stageList_.get(i));
       }
       if (kDHJKPMJILH_ != null) {
         output.writeMessage(6, getKDHJKPMJILH());
@@ -306,7 +306,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
         output.writeUInt32(13, cMBOIEKLEFH_);
       }
       if (pPMGBOFJMBE_ != null) {
-        output.writeMessage(14, getPPMGBOFJMBE());
+        output.writeMessage(16000, getPPMGBOFJMBE());
       }
       unknownFields.writeTo(output);
     }
@@ -319,7 +319,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       size = 0;
       for (int i = 0; i < stageList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, stageList_.get(i));
+          .computeMessageSize(14, stageList_.get(i));
       }
       if (kDHJKPMJILH_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -331,7 +331,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       }
       if (pPMGBOFJMBE_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getPPMGBOFJMBE());
+          .computeMessageSize(16000, getPPMGBOFJMBE());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

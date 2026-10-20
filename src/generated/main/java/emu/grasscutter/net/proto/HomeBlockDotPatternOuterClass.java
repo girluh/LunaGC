@@ -70,17 +70,17 @@ public final class HomeBlockDotPatternOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               height_ = input.readUInt32();
               break;
             }
-            case 90: {
+            case 58: {
 
               data_ = input.readBytes();
               break;
             }
-            case 104: {
+            case 48: {
 
               width_ = input.readUInt32();
               break;
@@ -117,7 +117,7 @@ public final class HomeBlockDotPatternOuterClass {
               emu.grasscutter.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern.class, emu.grasscutter.net.proto.HomeBlockDotPatternOuterClass.HomeBlockDotPattern.Builder.class);
     }
 
-    public static final int DATA_FIELD_NUMBER = 11;
+    public static final int DATA_FIELD_NUMBER = 7;
     private com.google.protobuf.ByteString data_;
 
     @java.lang.Override
@@ -125,7 +125,7 @@ public final class HomeBlockDotPatternOuterClass {
       return data_;
     }
 
-    public static final int WIDTH_FIELD_NUMBER = 13;
+    public static final int WIDTH_FIELD_NUMBER = 6;
     private int width_;
 
     @java.lang.Override
@@ -133,7 +133,7 @@ public final class HomeBlockDotPatternOuterClass {
       return width_;
     }
 
-    public static final int HEIGHT_FIELD_NUMBER = 1;
+    public static final int HEIGHT_FIELD_NUMBER = 2;
     private int height_;
 
     @java.lang.Override
@@ -156,13 +156,13 @@ public final class HomeBlockDotPatternOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (height_ != 0) {
-        output.writeUInt32(1, height_);
+        output.writeUInt32(2, height_);
       }
       if (!data_.isEmpty()) {
-        output.writeBytes(11, data_);
+        output.writeBytes(7, data_);
       }
       if (width_ != 0) {
-        output.writeUInt32(13, width_);
+        output.writeUInt32(6, width_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,15 +175,15 @@ public final class HomeBlockDotPatternOuterClass {
       size = 0;
       if (height_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, height_);
+          .computeUInt32Size(2, height_);
       }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, data_);
+          .computeBytesSize(7, data_);
       }
       if (width_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, width_);
+          .computeUInt32Size(6, width_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

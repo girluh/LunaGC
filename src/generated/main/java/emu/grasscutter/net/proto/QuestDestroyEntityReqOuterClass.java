@@ -65,17 +65,17 @@ public final class QuestDestroyEntityReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 120: {
 
               questId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 8: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -112,7 +112,7 @@ public final class QuestDestroyEntityReqOuterClass {
               emu.grasscutter.net.proto.QuestDestroyEntityReqOuterClass.QuestDestroyEntityReq.class, emu.grasscutter.net.proto.QuestDestroyEntityReqOuterClass.QuestDestroyEntityReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 15;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
 
     @java.lang.Override
@@ -120,7 +120,7 @@ public final class QuestDestroyEntityReqOuterClass {
       return entityId_;
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 4;
+    public static final int SCENE_ID_FIELD_NUMBER = 1;
     private int sceneId_;
 
     @java.lang.Override
@@ -128,7 +128,7 @@ public final class QuestDestroyEntityReqOuterClass {
       return sceneId_;
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 10;
+    public static final int QUEST_ID_FIELD_NUMBER = 15;
     private int questId_;
 
     @java.lang.Override
@@ -151,13 +151,13 @@ public final class QuestDestroyEntityReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(15, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       if (questId_ != 0) {
-        output.writeUInt32(10, questId_);
+        output.writeUInt32(15, questId_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(4, sceneId_);
+        output.writeUInt32(1, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,15 +170,15 @@ public final class QuestDestroyEntityReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, questId_);
+          .computeUInt32Size(15, questId_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, sceneId_);
+          .computeUInt32Size(1, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -112,7 +112,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -127,7 +127,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
               appearType_ = rawValue;
               break;
             }
-            case 112: {
+            case 56: {
 
               param_ = input.readUInt32();
               break;
@@ -167,7 +167,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify.class, emu.grasscutter.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify.Builder.class);
     }
 
-    public static final int PARAM_FIELD_NUMBER = 14;
+    public static final int PARAM_FIELD_NUMBER = 7;
     private int param_;
     /**
      * <code>uint32 param = 14;</code>
@@ -178,7 +178,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
       return param_;
     }
 
-    public static final int ENTITY_LIST_FIELD_NUMBER = 10;
+    public static final int ENTITY_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo> entityList_;
     /**
      * <code>repeated .SceneEntityInfo entity_list = 10;</code>
@@ -252,13 +252,13 @@ public final class SceneEntityUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < entityList_.size(); i++) {
-        output.writeMessage(10, entityList_.get(i));
+        output.writeMessage(14, entityList_.get(i));
       }
       if (appearType_ != emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.VisionType_VISION_NONE.getNumber()) {
         output.writeEnum(13, appearType_);
       }
       if (param_ != 0) {
-        output.writeUInt32(14, param_);
+        output.writeUInt32(7, param_);
       }
       unknownFields.writeTo(output);
     }
@@ -271,7 +271,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
       size = 0;
       for (int i = 0; i < entityList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, entityList_.get(i));
+          .computeMessageSize(14, entityList_.get(i));
       }
       if (appearType_ != emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.VisionType_VISION_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -279,7 +279,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
       }
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, param_);
+          .computeUInt32Size(7, param_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

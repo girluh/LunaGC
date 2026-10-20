@@ -73,17 +73,17 @@ public final class TeamEntityInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 72: {
 
               teamEntityId_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 112: {
 
               authorityPeerId_ = input.readUInt32();
               break;
             }
-            case 10: {
+            case 18: {
               emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
               if (teamAbilityInfo_ != null) {
                 subBuilder = teamAbilityInfo_.toBuilder();
@@ -128,7 +128,7 @@ public final class TeamEntityInfoOuterClass {
               emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo.class, emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo.Builder.class);
     }
 
-    public static final int TEAM_ABILITY_INFO_FIELD_NUMBER = 1;
+    public static final int TEAM_ABILITY_INFO_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo teamAbilityInfo_;
 
     @java.lang.Override
@@ -146,7 +146,7 @@ public final class TeamEntityInfoOuterClass {
       return getTeamAbilityInfo();
     }
 
-    public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 2;
+    public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 14;
     private int authorityPeerId_;
 
     @java.lang.Override
@@ -154,7 +154,7 @@ public final class TeamEntityInfoOuterClass {
       return authorityPeerId_;
     }
 
-    public static final int TEAM_ENTITY_ID_FIELD_NUMBER = 14;
+    public static final int TEAM_ENTITY_ID_FIELD_NUMBER = 9;
     private int teamEntityId_;
 
     @java.lang.Override
@@ -177,13 +177,13 @@ public final class TeamEntityInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (teamEntityId_ != 0) {
-        output.writeUInt32(14, teamEntityId_);
+        output.writeUInt32(9, teamEntityId_);
       }
       if (authorityPeerId_ != 0) {
-        output.writeUInt32(2, authorityPeerId_);
+        output.writeUInt32(14, authorityPeerId_);
       }
       if (teamAbilityInfo_ != null) {
-        output.writeMessage(1, getTeamAbilityInfo());
+        output.writeMessage(2, getTeamAbilityInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -196,15 +196,15 @@ public final class TeamEntityInfoOuterClass {
       size = 0;
       if (teamEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, teamEntityId_);
+          .computeUInt32Size(9, teamEntityId_);
       }
       if (authorityPeerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, authorityPeerId_);
+          .computeUInt32Size(14, authorityPeerId_);
       }
       if (teamAbilityInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getTeamAbilityInfo());
+          .computeMessageSize(2, getTeamAbilityInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

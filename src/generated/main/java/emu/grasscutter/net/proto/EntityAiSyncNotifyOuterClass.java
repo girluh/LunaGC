@@ -89,7 +89,7 @@ public final class EntityAiSyncNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 localAvatarAlertedMonsterList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -97,7 +97,7 @@ public final class EntityAiSyncNotifyOuterClass {
               localAvatarAlertedMonsterList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -110,7 +110,7 @@ public final class EntityAiSyncNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 90: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 infoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -157,7 +157,7 @@ public final class EntityAiSyncNotifyOuterClass {
               emu.grasscutter.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify.class, emu.grasscutter.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify.Builder.class);
     }
 
-    public static final int LOCAL_AVATAR_ALERTED_MONSTER_LIST_FIELD_NUMBER = 4;
+    public static final int LOCAL_AVATAR_ALERTED_MONSTER_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList localAvatarAlertedMonsterList_;
 
     @java.lang.Override
@@ -175,7 +175,7 @@ public final class EntityAiSyncNotifyOuterClass {
     }
     private int localAvatarAlertedMonsterListMemoizedSerializedSize = -1;
 
-    public static final int INFO_LIST_FIELD_NUMBER = 11;
+    public static final int INFO_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo> infoList_;
 
     @java.lang.Override
@@ -221,14 +221,14 @@ public final class EntityAiSyncNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getLocalAvatarAlertedMonsterListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(localAvatarAlertedMonsterListMemoizedSerializedSize);
       }
       for (int i = 0; i < localAvatarAlertedMonsterList_.size(); i++) {
         output.writeUInt32NoTag(localAvatarAlertedMonsterList_.getInt(i));
       }
       for (int i = 0; i < infoList_.size(); i++) {
-        output.writeMessage(11, infoList_.get(i));
+        output.writeMessage(4, infoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -255,7 +255,7 @@ public final class EntityAiSyncNotifyOuterClass {
       }
       for (int i = 0; i < infoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, infoList_.get(i));
+          .computeMessageSize(4, infoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

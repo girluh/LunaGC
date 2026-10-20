@@ -85,7 +85,7 @@ public final class MailChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mailList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MailDataOuterClass.MailData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -94,7 +94,7 @@ public final class MailChangeNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.MailDataOuterClass.MailData.parser(), extensionRegistry));
               break;
             }
-            case 72: {
+            case 32: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 delMailIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -102,7 +102,7 @@ public final class MailChangeNotifyOuterClass {
               delMailIdList_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -153,7 +153,7 @@ public final class MailChangeNotifyOuterClass {
               emu.grasscutter.net.proto.MailChangeNotifyOuterClass.MailChangeNotify.class, emu.grasscutter.net.proto.MailChangeNotifyOuterClass.MailChangeNotify.Builder.class);
     }
 
-    public static final int MAIL_LIST_FIELD_NUMBER = 5;
+    public static final int MAIL_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.MailDataOuterClass.MailData> mailList_;
 
     @java.lang.Override
@@ -183,7 +183,7 @@ public final class MailChangeNotifyOuterClass {
       return mailList_.get(index);
     }
 
-    public static final int DEL_MAIL_ID_LIST_FIELD_NUMBER = 9;
+    public static final int DEL_MAIL_ID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList delMailIdList_;
 
     @java.lang.Override
@@ -217,10 +217,10 @@ public final class MailChangeNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       for (int i = 0; i < mailList_.size(); i++) {
-        output.writeMessage(5, mailList_.get(i));
+        output.writeMessage(6, mailList_.get(i));
       }
       if (getDelMailIdListList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(delMailIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < delMailIdList_.size(); i++) {
@@ -237,7 +237,7 @@ public final class MailChangeNotifyOuterClass {
       size = 0;
       for (int i = 0; i < mailList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, mailList_.get(i));
+          .computeMessageSize(6, mailList_.get(i));
       }
       {
         int dataSize = 0;

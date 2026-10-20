@@ -73,7 +73,7 @@ public final class SetPlayerNameReqOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
               nickName_ = s;
@@ -111,7 +111,7 @@ public final class SetPlayerNameReqOuterClass {
               emu.grasscutter.net.proto.SetPlayerNameReqOuterClass.SetPlayerNameReq.class, emu.grasscutter.net.proto.SetPlayerNameReqOuterClass.SetPlayerNameReq.Builder.class);
     }
 
-    public static final int NICK_NAME_FIELD_NUMBER = 13;
+    public static final int NICK_NAME_FIELD_NUMBER = 11;
     private volatile java.lang.Object nickName_;
 
     @java.lang.Override
@@ -158,7 +158,7 @@ public final class SetPlayerNameReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nickName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, nickName_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,7 +170,7 @@ public final class SetPlayerNameReqOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nickName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, nickName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

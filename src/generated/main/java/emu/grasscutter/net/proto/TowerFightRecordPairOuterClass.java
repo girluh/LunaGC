@@ -72,7 +72,7 @@ public final class TowerFightRecordPairOuterClass {
               data_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 96: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -117,7 +117,7 @@ public final class TowerFightRecordPairOuterClass {
       return data_;
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 9;
+    public static final int AVATAR_ID_FIELD_NUMBER = 12;
     private int avatarId_;
 
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class TowerFightRecordPairOuterClass {
         output.writeUInt32(1, data_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(9, avatarId_);
+        output.writeUInt32(12, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -160,7 +160,7 @@ public final class TowerFightRecordPairOuterClass {
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, avatarId_);
+          .computeUInt32Size(12, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

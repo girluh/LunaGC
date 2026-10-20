@@ -69,17 +69,17 @@ public final class CityInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 56: {
 
               cityId_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 40: {
 
               level_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 24: {
 
               crystalNum_ = input.readUInt32();
               break;
@@ -116,7 +116,7 @@ public final class CityInfoOuterClass {
               emu.grasscutter.net.proto.CityInfoOuterClass.CityInfo.class, emu.grasscutter.net.proto.CityInfoOuterClass.CityInfo.Builder.class);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 1;
+    public static final int LEVEL_FIELD_NUMBER = 5;
     private int level_;
 
     @java.lang.Override
@@ -124,7 +124,7 @@ public final class CityInfoOuterClass {
       return level_;
     }
 
-    public static final int CITY_ID_FIELD_NUMBER = 15;
+    public static final int CITY_ID_FIELD_NUMBER = 7;
     private int cityId_;
 
     @java.lang.Override
@@ -132,7 +132,7 @@ public final class CityInfoOuterClass {
       return cityId_;
     }
 
-    public static final int CRYSTAL_NUM_FIELD_NUMBER = 4;
+    public static final int CRYSTAL_NUM_FIELD_NUMBER = 3;
     private int crystalNum_;
 
     @java.lang.Override
@@ -155,13 +155,13 @@ public final class CityInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cityId_ != 0) {
-        output.writeUInt32(15, cityId_);
+        output.writeUInt32(7, cityId_);
       }
       if (level_ != 0) {
-        output.writeUInt32(1, level_);
+        output.writeUInt32(5, level_);
       }
       if (crystalNum_ != 0) {
-        output.writeUInt32(4, crystalNum_);
+        output.writeUInt32(3, crystalNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,15 +174,15 @@ public final class CityInfoOuterClass {
       size = 0;
       if (cityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, cityId_);
+          .computeUInt32Size(7, cityId_);
       }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, level_);
+          .computeUInt32Size(5, level_);
       }
       if (crystalNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, crystalNum_);
+          .computeUInt32Size(3, crystalNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

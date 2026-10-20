@@ -81,27 +81,27 @@ public final class AbilityIdentifierOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 112: {
 
               instancedAbilityId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 8: {
 
               instancedModifierId_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 64: {
 
               localId_ = input.readInt32();
               break;
             }
-            case 64: {
+            case 24: {
 
               isServerbuffModifier_ = input.readBool();
               break;
             }
-            case 112: {
+            case 128000: {
 
               oBCMIANDPDK_ = input.readUInt32();
               break;
@@ -138,7 +138,7 @@ public final class AbilityIdentifierOuterClass {
               emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier.class, emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifier.Builder.class);
     }
 
-    public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 3;
+    public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 1;
     private int instancedModifierId_;
 
     @java.lang.Override
@@ -146,7 +146,7 @@ public final class AbilityIdentifierOuterClass {
       return instancedModifierId_;
     }
 
-    public static final int OBCMIANDPDK_FIELD_NUMBER = 14;
+    public static final int OBCMIANDPDK_FIELD_NUMBER = 16000;
     private int oBCMIANDPDK_;
     /**
      * <code>uint32 OBCMIANDPDK = 16;</code>
@@ -157,7 +157,7 @@ public final class AbilityIdentifierOuterClass {
       return oBCMIANDPDK_;
     }
 
-    public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 12;
+    public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 14;
     private int instancedAbilityId_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class AbilityIdentifierOuterClass {
       return instancedAbilityId_;
     }
 
-    public static final int LOCAL_ID_FIELD_NUMBER = 2;
+    public static final int LOCAL_ID_FIELD_NUMBER = 8;
     private int localId_;
 
     @java.lang.Override
@@ -173,7 +173,7 @@ public final class AbilityIdentifierOuterClass {
       return localId_;
     }
 
-    public static final int IS_SERVERBUFF_MODIFIER_FIELD_NUMBER = 8;
+    public static final int IS_SERVERBUFF_MODIFIER_FIELD_NUMBER = 3;
     private boolean isServerbuffModifier_;
     /**
      * <code>bool is_serverbuff_modifier = 11;</code>
@@ -199,19 +199,19 @@ public final class AbilityIdentifierOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (instancedAbilityId_ != 0) {
-        output.writeUInt32(12, instancedAbilityId_);
+        output.writeUInt32(14, instancedAbilityId_);
       }
       if (instancedModifierId_ != 0) {
-        output.writeUInt32(3, instancedModifierId_);
+        output.writeUInt32(1, instancedModifierId_);
       }
       if (localId_ != 0) {
-        output.writeInt32(2, localId_);
+        output.writeInt32(8, localId_);
       }
       if (isServerbuffModifier_ != false) {
-        output.writeBool(8, isServerbuffModifier_);
+        output.writeBool(3, isServerbuffModifier_);
       }
       if (oBCMIANDPDK_ != 0) {
-        output.writeUInt32(14, oBCMIANDPDK_);
+        output.writeUInt32(16000, oBCMIANDPDK_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,23 +224,23 @@ public final class AbilityIdentifierOuterClass {
       size = 0;
       if (instancedAbilityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, instancedAbilityId_);
+          .computeUInt32Size(14, instancedAbilityId_);
       }
       if (instancedModifierId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, instancedModifierId_);
+          .computeUInt32Size(1, instancedModifierId_);
       }
       if (localId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, localId_);
+          .computeInt32Size(8, localId_);
       }
       if (isServerbuffModifier_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isServerbuffModifier_);
+          .computeBoolSize(3, isServerbuffModifier_);
       }
       if (oBCMIANDPDK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, oBCMIANDPDK_);
+          .computeUInt32Size(16000, oBCMIANDPDK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

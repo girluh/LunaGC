@@ -71,7 +71,7 @@ public final class PlayerChatReqOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 50: {
               emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder subBuilder = null;
               if (chatInfo_ != null) {
                 subBuilder = chatInfo_.toBuilder();
@@ -84,7 +84,7 @@ public final class PlayerChatReqOuterClass {
 
               break;
             }
-            case 48: {
+            case 24: {
 
               channelId_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class PlayerChatReqOuterClass {
               emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq.class, emu.grasscutter.net.proto.PlayerChatReqOuterClass.PlayerChatReq.Builder.class);
     }
 
-    public static final int CHAT_INFO_FIELD_NUMBER = 10;
+    public static final int CHAT_INFO_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo chatInfo_;
 
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class PlayerChatReqOuterClass {
       return getChatInfo();
     }
 
-    public static final int CHANNEL_ID_FIELD_NUMBER = 6;
+    public static final int CHANNEL_ID_FIELD_NUMBER = 3;
     private int channelId_;
 
     @java.lang.Override
@@ -162,10 +162,10 @@ public final class PlayerChatReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (channelId_ != 0) {
-        output.writeUInt32(6, channelId_);
+        output.writeUInt32(3, channelId_);
       }
       if (chatInfo_ != null) {
-        output.writeMessage(10, getChatInfo());
+        output.writeMessage(6, getChatInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -178,11 +178,11 @@ public final class PlayerChatReqOuterClass {
       size = 0;
       if (channelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, channelId_);
+          .computeUInt32Size(3, channelId_);
       }
       if (chatInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getChatInfo());
+          .computeMessageSize(6, getChatInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

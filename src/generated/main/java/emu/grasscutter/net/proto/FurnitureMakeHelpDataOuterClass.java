@@ -79,12 +79,12 @@ public final class FurnitureMakeHelpDataOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 24: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 72: {
 
               times_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class FurnitureMakeHelpDataOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData.class, emu.grasscutter.net.proto.FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData.Builder.class);
     }
 
-    public static final int TIMES_FIELD_NUMBER = 10;
+    public static final int TIMES_FIELD_NUMBER = 9;
     private int times_;
     /**
      * <code>uint32 times = 10;</code>
@@ -132,7 +132,7 @@ public final class FurnitureMakeHelpDataOuterClass {
       return times_;
     }
 
-    public static final int UID_FIELD_NUMBER = 4;
+    public static final int UID_FIELD_NUMBER = 3;
     private int uid_;
     /**
      * <code>uint32 uid = 4;</code>
@@ -158,10 +158,10 @@ public final class FurnitureMakeHelpDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(4, uid_);
+        output.writeUInt32(3, uid_);
       }
       if (times_ != 0) {
-        output.writeUInt32(10, times_);
+        output.writeUInt32(9, times_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class FurnitureMakeHelpDataOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, uid_);
+          .computeUInt32Size(3, uid_);
       }
       if (times_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, times_);
+          .computeUInt32Size(9, times_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

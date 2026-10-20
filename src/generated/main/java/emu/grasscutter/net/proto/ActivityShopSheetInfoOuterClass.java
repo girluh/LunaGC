@@ -90,12 +90,12 @@ public final class ActivityShopSheetInfoOuterClass {
               beginTime_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 32: {
 
               sheetId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 120: {
 
               endTime_ = input.readUInt32();
               break;
@@ -143,7 +143,7 @@ public final class ActivityShopSheetInfoOuterClass {
       return beginTime_;
     }
 
-    public static final int SHEET_ID_FIELD_NUMBER = 11;
+    public static final int SHEET_ID_FIELD_NUMBER = 4;
     private int sheetId_;
     /**
      * <code>uint32 sheet_id = 14;</code>
@@ -154,7 +154,7 @@ public final class ActivityShopSheetInfoOuterClass {
       return sheetId_;
     }
 
-    public static final int END_TIME_FIELD_NUMBER = 14;
+    public static final int END_TIME_FIELD_NUMBER = 15;
     private int endTime_;
     /**
      * <code>uint32 end_time = 15;</code>
@@ -183,10 +183,10 @@ public final class ActivityShopSheetInfoOuterClass {
         output.writeUInt32(6, beginTime_);
       }
       if (sheetId_ != 0) {
-        output.writeUInt32(11, sheetId_);
+        output.writeUInt32(4, sheetId_);
       }
       if (endTime_ != 0) {
-        output.writeUInt32(14, endTime_);
+        output.writeUInt32(15, endTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -203,11 +203,11 @@ public final class ActivityShopSheetInfoOuterClass {
       }
       if (sheetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, sheetId_);
+          .computeUInt32Size(4, sheetId_);
       }
       if (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, endTime_);
+          .computeUInt32Size(15, endTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

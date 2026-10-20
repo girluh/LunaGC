@@ -81,7 +81,7 @@ public final class ChangeTeamNameReqOuterClass {
               teamName_ = s;
               break;
             }
-            case 56: {
+            case 72: {
 
               teamId_ = input.readInt32();
               break;
@@ -150,7 +150,7 @@ public final class ChangeTeamNameReqOuterClass {
       }
     }
 
-    public static final int TEAM_ID_FIELD_NUMBER = 7;
+    public static final int TEAM_ID_FIELD_NUMBER = 9;
     private int teamId_;
 
     @java.lang.Override
@@ -176,7 +176,7 @@ public final class ChangeTeamNameReqOuterClass {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, teamName_);
       }
       if (teamId_ != 0) {
-        output.writeInt32(7, teamId_);
+        output.writeInt32(9, teamId_);
       }
       unknownFields.writeTo(output);
     }
@@ -192,7 +192,7 @@ public final class ChangeTeamNameReqOuterClass {
       }
       if (teamId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, teamId_);
+          .computeInt32Size(9, teamId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

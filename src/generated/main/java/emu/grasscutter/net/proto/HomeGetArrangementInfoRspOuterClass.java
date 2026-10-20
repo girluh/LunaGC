@@ -100,7 +100,7 @@ public final class HomeGetArrangementInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sceneArrangementInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -109,7 +109,7 @@ public final class HomeGetArrangementInfoRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.parser(), extensionRegistry));
               break;
             }
-            case 32: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
@@ -149,7 +149,7 @@ public final class HomeGetArrangementInfoRspOuterClass {
               emu.grasscutter.net.proto.HomeGetArrangementInfoRspOuterClass.HomeGetArrangementInfoRsp.class, emu.grasscutter.net.proto.HomeGetArrangementInfoRspOuterClass.HomeGetArrangementInfoRsp.Builder.class);
     }
 
-    public static final int SCENE_ARRANGEMENT_INFO_LIST_FIELD_NUMBER = 6;
+    public static final int SCENE_ARRANGEMENT_INFO_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo> sceneArrangementInfoList_;
     /**
      * <code>repeated .HomeSceneArrangementInfo scene_arrangement_info_list = 4;</code>
@@ -189,7 +189,7 @@ public final class HomeGetArrangementInfoRspOuterClass {
       return sceneArrangementInfoList_.get(index);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
      * <code>int32 retcode = 12;</code>
@@ -215,10 +215,10 @@ public final class HomeGetArrangementInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < sceneArrangementInfoList_.size(); i++) {
-        output.writeMessage(6, sceneArrangementInfoList_.get(i));
+        output.writeMessage(7, sceneArrangementInfoList_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -231,11 +231,11 @@ public final class HomeGetArrangementInfoRspOuterClass {
       size = 0;
       for (int i = 0; i < sceneArrangementInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, sceneArrangementInfoList_.get(i));
+          .computeMessageSize(7, sceneArrangementInfoList_.get(i));
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

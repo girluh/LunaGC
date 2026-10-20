@@ -130,12 +130,12 @@ public final class TreasureMapRegionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 32: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 26: {
+            case 122: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (regionCenterPos_ != null) {
                 subBuilder = regionCenterPos_.toBuilder();
@@ -148,22 +148,22 @@ public final class TreasureMapRegionInfoOuterClass {
 
               break;
             }
-            case 128000: {
+            case 128008: {
 
               iEKIMNMPKJD_ = input.readBool();
               break;
             }
-            case 104: {
+            case 72: {
 
               regionId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 96: {
 
               startTime_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 8: {
 
               regionRadius_ = input.readUInt32();
               break;
@@ -178,7 +178,7 @@ public final class TreasureMapRegionInfoOuterClass {
               fGGBKHFBKDP_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 128000: {
 
               iMMKAGOADGP_ = input.readBool();
               break;
@@ -215,7 +215,7 @@ public final class TreasureMapRegionInfoOuterClass {
               emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.class, emu.grasscutter.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.Builder.class);
     }
 
-    public static final int REGION_ID_FIELD_NUMBER = 13;
+    public static final int REGION_ID_FIELD_NUMBER = 9;
     private int regionId_;
     /**
      * <code>uint32 region_id = 4;</code>
@@ -226,7 +226,7 @@ public final class TreasureMapRegionInfoOuterClass {
       return regionId_;
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 6;
+    public static final int START_TIME_FIELD_NUMBER = 12;
     private int startTime_;
     /**
      * <code>uint32 start_time = 6;</code>
@@ -248,7 +248,7 @@ public final class TreasureMapRegionInfoOuterClass {
       return fGGBKHFBKDP_;
     }
 
-    public static final int REGION_CENTER_POS_FIELD_NUMBER = 3;
+    public static final int REGION_CENTER_POS_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector regionCenterPos_;
     /**
      * <code>.Vector region_center_pos = 2;</code>
@@ -274,7 +274,7 @@ public final class TreasureMapRegionInfoOuterClass {
       return getRegionCenterPos();
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 2;
+    public static final int SCENE_ID_FIELD_NUMBER = 4;
     private int sceneId_;
     /**
      * <code>uint32 scene_id = 1;</code>
@@ -285,7 +285,7 @@ public final class TreasureMapRegionInfoOuterClass {
       return sceneId_;
     }
 
-    public static final int REGION_RADIUS_FIELD_NUMBER = 11;
+    public static final int REGION_RADIUS_FIELD_NUMBER = 1;
     private int regionRadius_;
     /**
      * <code>uint32 region_radius = 7;</code>
@@ -296,7 +296,7 @@ public final class TreasureMapRegionInfoOuterClass {
       return regionRadius_;
     }
 
-    public static final int IMMKAGOADGP_FIELD_NUMBER = 15;
+    public static final int IMMKAGOADGP_FIELD_NUMBER = 16000;
     private boolean iMMKAGOADGP_;
     /**
      * <code>bool IMMKAGOADGP = 15;</code>
@@ -318,7 +318,7 @@ public final class TreasureMapRegionInfoOuterClass {
       return lKCMDIFKAMB_;
     }
 
-    public static final int IEKIMNMPKJD_FIELD_NUMBER = 16000;
+    public static final int IEKIMNMPKJD_FIELD_NUMBER = 16001;
     private boolean iEKIMNMPKJD_;
     /**
      * <code>bool IEKIMNMPKJD = 3;</code>
@@ -344,22 +344,22 @@ public final class TreasureMapRegionInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneId_ != 0) {
-        output.writeUInt32(2, sceneId_);
+        output.writeUInt32(4, sceneId_);
       }
       if (regionCenterPos_ != null) {
-        output.writeMessage(3, getRegionCenterPos());
+        output.writeMessage(15, getRegionCenterPos());
       }
       if (iEKIMNMPKJD_ != false) {
-        output.writeBool(16000, iEKIMNMPKJD_);
+        output.writeBool(16001, iEKIMNMPKJD_);
       }
       if (regionId_ != 0) {
-        output.writeUInt32(13, regionId_);
+        output.writeUInt32(9, regionId_);
       }
       if (startTime_ != 0) {
-        output.writeUInt32(6, startTime_);
+        output.writeUInt32(12, startTime_);
       }
       if (regionRadius_ != 0) {
-        output.writeUInt32(11, regionRadius_);
+        output.writeUInt32(1, regionRadius_);
       }
       if (lKCMDIFKAMB_ != 0) {
         output.writeUInt32(10, lKCMDIFKAMB_);
@@ -368,7 +368,7 @@ public final class TreasureMapRegionInfoOuterClass {
         output.writeUInt32(14, fGGBKHFBKDP_);
       }
       if (iMMKAGOADGP_ != false) {
-        output.writeBool(15, iMMKAGOADGP_);
+        output.writeBool(16000, iMMKAGOADGP_);
       }
       unknownFields.writeTo(output);
     }
@@ -381,27 +381,27 @@ public final class TreasureMapRegionInfoOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, sceneId_);
+          .computeUInt32Size(4, sceneId_);
       }
       if (regionCenterPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getRegionCenterPos());
+          .computeMessageSize(15, getRegionCenterPos());
       }
       if (iEKIMNMPKJD_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(16000, iEKIMNMPKJD_);
+          .computeBoolSize(16001, iEKIMNMPKJD_);
       }
       if (regionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, regionId_);
+          .computeUInt32Size(9, regionId_);
       }
       if (startTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, startTime_);
+          .computeUInt32Size(12, startTime_);
       }
       if (regionRadius_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, regionRadius_);
+          .computeUInt32Size(1, regionRadius_);
       }
       if (lKCMDIFKAMB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -413,7 +413,7 @@ public final class TreasureMapRegionInfoOuterClass {
       }
       if (iMMKAGOADGP_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, iMMKAGOADGP_);
+          .computeBoolSize(16000, iMMKAGOADGP_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -188,7 +188,7 @@ public final class SalesmanActivityDetailInfoOuterClass {
               oHFNJHMMKLK_ = input.readBool();
               break;
             }
-            case 16: {
+            case 80: {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
@@ -346,7 +346,7 @@ public final class SalesmanActivityDetailInfoOuterClass {
       return aHEHGIPMGEJ_;
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
+    public static final int STATUS_FIELD_NUMBER = 10;
     private int status_;
 
     @java.lang.Override public int getStatusValue() {
@@ -453,7 +453,7 @@ public final class SalesmanActivityDetailInfoOuterClass {
         output.writeBool(11, oHFNJHMMKLK_);
       }
       if (status_ != emu.grasscutter.net.proto.DEMBMADKBALOuterClass.DEMBMADKBAL.DEMBMADKBAL_SALESMAN_STATUS_NONE.getNumber()) {
-        output.writeEnum(2, status_);
+        output.writeEnum(10, status_);
       }
       if (aHEHGIPMGEJ_ != 0) {
         output.writeUInt32(15, aHEHGIPMGEJ_);
@@ -503,7 +503,7 @@ public final class SalesmanActivityDetailInfoOuterClass {
       }
       if (status_ != emu.grasscutter.net.proto.DEMBMADKBALOuterClass.DEMBMADKBAL.DEMBMADKBAL_SALESMAN_STATUS_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, status_);
+          .computeEnumSize(10, status_);
       }
       if (aHEHGIPMGEJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream

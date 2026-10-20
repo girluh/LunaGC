@@ -84,12 +84,12 @@ public final class SyncTeamEntityNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 72: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 122: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 teamEntityInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,7 +133,7 @@ public final class SyncTeamEntityNotifyOuterClass {
               emu.grasscutter.net.proto.SyncTeamEntityNotifyOuterClass.SyncTeamEntityNotify.class, emu.grasscutter.net.proto.SyncTeamEntityNotifyOuterClass.SyncTeamEntityNotify.Builder.class);
     }
 
-    public static final int TEAM_ENTITY_INFO_LIST_FIELD_NUMBER = 15;
+    public static final int TEAM_ENTITY_INFO_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.TeamEntityInfoOuterClass.TeamEntityInfo> teamEntityInfoList_;
 
     @java.lang.Override
@@ -163,7 +163,7 @@ public final class SyncTeamEntityNotifyOuterClass {
       return teamEntityInfoList_.get(index);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 4;
+    public static final int SCENE_ID_FIELD_NUMBER = 9;
     private int sceneId_;
 
     @java.lang.Override
@@ -186,10 +186,10 @@ public final class SyncTeamEntityNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneId_ != 0) {
-        output.writeUInt32(4, sceneId_);
+        output.writeUInt32(9, sceneId_);
       }
       for (int i = 0; i < teamEntityInfoList_.size(); i++) {
-        output.writeMessage(15, teamEntityInfoList_.get(i));
+        output.writeMessage(6, teamEntityInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -202,11 +202,11 @@ public final class SyncTeamEntityNotifyOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, sceneId_);
+          .computeUInt32Size(9, sceneId_);
       }
       for (int i = 0; i < teamEntityInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, teamEntityInfoList_.get(i));
+          .computeMessageSize(6, teamEntityInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

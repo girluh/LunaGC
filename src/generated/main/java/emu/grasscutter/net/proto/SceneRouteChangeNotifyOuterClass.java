@@ -97,12 +97,12 @@ public final class SceneRouteChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 48: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 8: {
 
               sceneTime_ = input.readUInt32();
               break;
@@ -191,7 +191,7 @@ public final class SceneRouteChangeNotifyOuterClass {
       return nGGMELMIJFK_.get(index);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 5;
+    public static final int SCENE_ID_FIELD_NUMBER = 6;
     private int sceneId_;
 
     @java.lang.Override
@@ -199,7 +199,7 @@ public final class SceneRouteChangeNotifyOuterClass {
       return sceneId_;
     }
 
-    public static final int SCENE_TIME_FIELD_NUMBER = 3;
+    public static final int SCENE_TIME_FIELD_NUMBER = 1;
     private int sceneTime_;
 
     @java.lang.Override
@@ -222,10 +222,10 @@ public final class SceneRouteChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneId_ != 0) {
-        output.writeUInt32(5, sceneId_);
+        output.writeUInt32(6, sceneId_);
       }
       if (sceneTime_ != 0) {
-        output.writeUInt32(3, sceneTime_);
+        output.writeUInt32(1, sceneTime_);
       }
       for (int i = 0; i < nGGMELMIJFK_.size(); i++) {
         output.writeMessage(5124, nGGMELMIJFK_.get(i));
@@ -241,11 +241,11 @@ public final class SceneRouteChangeNotifyOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, sceneId_);
+          .computeUInt32Size(6, sceneId_);
       }
       if (sceneTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, sceneTime_);
+          .computeUInt32Size(1, sceneTime_);
       }
       for (int i = 0; i < nGGMELMIJFK_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream

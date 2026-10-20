@@ -96,17 +96,17 @@ public final class BladeDanceSettleInfoOuterClass {
               kDPNBLFJKND_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 48: {
 
               costTime_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 24: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 112: {
 
               isNewRecord_ = input.readBool();
               break;
@@ -143,7 +143,7 @@ public final class BladeDanceSettleInfoOuterClass {
               emu.grasscutter.net.proto.BladeDanceSettleInfoOuterClass.BladeDanceSettleInfo.class, emu.grasscutter.net.proto.BladeDanceSettleInfoOuterClass.BladeDanceSettleInfo.Builder.class);
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 1;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 14;
     private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 15;</code>
@@ -165,7 +165,7 @@ public final class BladeDanceSettleInfoOuterClass {
       return kDPNBLFJKND_;
     }
 
-    public static final int COST_TIME_FIELD_NUMBER = 9;
+    public static final int COST_TIME_FIELD_NUMBER = 6;
     private int costTime_;
     /**
      * <code>uint32 cost_time = 10;</code>
@@ -176,7 +176,7 @@ public final class BladeDanceSettleInfoOuterClass {
       return costTime_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 13;
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
     private int levelId_;
     /**
      * <code>uint32 level_id = 12;</code>
@@ -205,13 +205,13 @@ public final class BladeDanceSettleInfoOuterClass {
         output.writeUInt32(2, kDPNBLFJKND_);
       }
       if (costTime_ != 0) {
-        output.writeUInt32(9, costTime_);
+        output.writeUInt32(6, costTime_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(13, levelId_);
+        output.writeUInt32(3, levelId_);
       }
       if (isNewRecord_ != false) {
-        output.writeBool(1, isNewRecord_);
+        output.writeBool(14, isNewRecord_);
       }
       unknownFields.writeTo(output);
     }
@@ -228,15 +228,15 @@ public final class BladeDanceSettleInfoOuterClass {
       }
       if (costTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, costTime_);
+          .computeUInt32Size(6, costTime_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, levelId_);
+          .computeUInt32Size(3, levelId_);
       }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isNewRecord_);
+          .computeBoolSize(14, isNewRecord_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

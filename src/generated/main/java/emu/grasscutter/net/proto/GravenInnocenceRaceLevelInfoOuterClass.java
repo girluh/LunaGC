@@ -85,17 +85,17 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 16: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 64: {
+            case 72: {
 
               maxScore_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 32: {
 
               levelId_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
               emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfo.class, emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfo.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 2;
+    public static final int LEVEL_ID_FIELD_NUMBER = 4;
     private int levelId_;
     /**
      * <code>uint32 level_id = 15;</code>
@@ -143,7 +143,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
       return levelId_;
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 8;
+    public static final int MAX_SCORE_FIELD_NUMBER = 9;
     private int maxScore_;
     /**
      * <code>uint32 max_score = 8;</code>
@@ -154,7 +154,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
       return maxScore_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 13;
+    public static final int IS_OPEN_FIELD_NUMBER = 2;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 6;</code>
@@ -180,13 +180,13 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOpen_ != false) {
-        output.writeBool(13, isOpen_);
+        output.writeBool(2, isOpen_);
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(8, maxScore_);
+        output.writeUInt32(9, maxScore_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(2, levelId_);
+        output.writeUInt32(4, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
       size = 0;
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isOpen_);
+          .computeBoolSize(2, isOpen_);
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, maxScore_);
+          .computeUInt32Size(9, maxScore_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, levelId_);
+          .computeUInt32Size(4, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

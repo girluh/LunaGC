@@ -119,7 +119,7 @@ public final class ScenePointUnlockNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 16: {
+            case 64: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 unhidePointList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -127,7 +127,7 @@ public final class ScenePointUnlockNotifyOuterClass {
               unhidePointList_.addInt(input.readUInt32());
               break;
             }
-            case 18: {
+            case 66: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -140,7 +140,7 @@ public final class ScenePointUnlockNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 64: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 hidePointList_ = newIntList();
                 mutable_bitField0_ |= 0x00000008;
@@ -148,7 +148,7 @@ public final class ScenePointUnlockNotifyOuterClass {
               hidePointList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
@@ -161,7 +161,7 @@ public final class ScenePointUnlockNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 40: {
+            case 120: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 pointList_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -169,7 +169,7 @@ public final class ScenePointUnlockNotifyOuterClass {
               pointList_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 122: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -182,7 +182,7 @@ public final class ScenePointUnlockNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 72: {
+            case 16: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -231,7 +231,7 @@ public final class ScenePointUnlockNotifyOuterClass {
               emu.grasscutter.net.proto.ScenePointUnlockNotifyOuterClass.ScenePointUnlockNotify.class, emu.grasscutter.net.proto.ScenePointUnlockNotifyOuterClass.ScenePointUnlockNotify.Builder.class);
     }
 
-    public static final int UNHIDE_POINT_LIST_FIELD_NUMBER = 2;
+    public static final int UNHIDE_POINT_LIST_FIELD_NUMBER = 8;
     private com.google.protobuf.Internal.IntList unhidePointList_;
 
     @java.lang.Override
@@ -267,7 +267,7 @@ public final class ScenePointUnlockNotifyOuterClass {
     }
     private int lockedPointListMemoizedSerializedSize = -1;
 
-    public static final int POINT_LIST_FIELD_NUMBER = 5;
+    public static final int POINT_LIST_FIELD_NUMBER = 15;
     private com.google.protobuf.Internal.IntList pointList_;
 
     @java.lang.Override
@@ -285,7 +285,7 @@ public final class ScenePointUnlockNotifyOuterClass {
     }
     private int pointListMemoizedSerializedSize = -1;
 
-    public static final int HIDE_POINT_LIST_FIELD_NUMBER = 8;
+    public static final int HIDE_POINT_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList hidePointList_;
 
     @java.lang.Override
@@ -303,7 +303,7 @@ public final class ScenePointUnlockNotifyOuterClass {
     }
     private int hidePointListMemoizedSerializedSize = -1;
 
-    public static final int SCENE_ID_FIELD_NUMBER = 9;
+    public static final int SCENE_ID_FIELD_NUMBER = 2;
     private int sceneId_;
 
     @java.lang.Override
@@ -334,28 +334,28 @@ public final class ScenePointUnlockNotifyOuterClass {
         output.writeUInt32NoTag(lockedPointList_.getInt(i));
       }
       if (getUnhidePointListList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(66);
         output.writeUInt32NoTag(unhidePointListMemoizedSerializedSize);
       }
       for (int i = 0; i < unhidePointList_.size(); i++) {
         output.writeUInt32NoTag(unhidePointList_.getInt(i));
       }
       if (getHidePointListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(hidePointListMemoizedSerializedSize);
       }
       for (int i = 0; i < hidePointList_.size(); i++) {
         output.writeUInt32NoTag(hidePointList_.getInt(i));
       }
       if (getPointListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(pointListMemoizedSerializedSize);
       }
       for (int i = 0; i < pointList_.size(); i++) {
         output.writeUInt32NoTag(pointList_.getInt(i));
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(9, sceneId_);
+        output.writeUInt32(2, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -424,7 +424,7 @@ public final class ScenePointUnlockNotifyOuterClass {
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, sceneId_);
+          .computeUInt32Size(2, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

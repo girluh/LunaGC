@@ -89,7 +89,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 98: {
               emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource.Builder subBuilder = null;
               if (homeCoin_ != null) {
                 subBuilder = homeCoin_.toBuilder();
@@ -102,7 +102,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
 
               break;
             }
-            case 88: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
@@ -139,7 +139,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
               emu.grasscutter.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp.class, emu.grasscutter.net.proto.HomeResourceTakeHomeCoinRspOuterClass.HomeResourceTakeHomeCoinRsp.Builder.class);
     }
 
-    public static final int HOME_COIN_FIELD_NUMBER = 7;
+    public static final int HOME_COIN_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource homeCoin_;
     /**
      * <code>.HomeResource home_coin = 8;</code>
@@ -165,7 +165,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
       return getHomeCoin();
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
      * <code>int32 retcode = 15;</code>
@@ -191,10 +191,10 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (homeCoin_ != null) {
-        output.writeMessage(7, getHomeCoin());
+        output.writeMessage(12, getHomeCoin());
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -207,11 +207,11 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
       size = 0;
       if (homeCoin_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getHomeCoin());
+          .computeMessageSize(12, getHomeCoin());
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

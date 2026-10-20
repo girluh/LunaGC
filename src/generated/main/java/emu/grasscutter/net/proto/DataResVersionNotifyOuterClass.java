@@ -138,19 +138,19 @@ public final class DataResVersionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               clientSilenceVersionSuffix_ = s;
               break;
             }
-            case 42: {
+            case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
               clientVersionSuffix_ = s;
               break;
             }
-            case 56: {
+            case 32: {
               int rawValue = input.readEnum();
 
               opType_ = rawValue;
@@ -166,12 +166,12 @@ public final class DataResVersionNotifyOuterClass {
               isDataNeedRelogin_ = input.readBool();
               break;
             }
-            case 88: {
+            case 24: {
 
               clientSilenceDataVersion_ = input.readUInt32();
               break;
             }
-            case 26: {
+            case 50: {
               emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder subBuilder = null;
               if (resVersionConfig_ != null) {
                 subBuilder = resVersionConfig_.toBuilder();
@@ -216,7 +216,7 @@ public final class DataResVersionNotifyOuterClass {
               emu.grasscutter.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.class, emu.grasscutter.net.proto.DataResVersionNotifyOuterClass.DataResVersionNotify.Builder.class);
     }
 
-    public static final int CLIENT_SILENCE_VERSION_SUFFIX_FIELD_NUMBER = 6;
+    public static final int CLIENT_SILENCE_VERSION_SUFFIX_FIELD_NUMBER = 2;
     private volatile java.lang.Object clientSilenceVersionSuffix_;
     /**
      * <code>string client_silence_version_suffix = 2;</code>
@@ -254,7 +254,7 @@ public final class DataResVersionNotifyOuterClass {
       }
     }
 
-    public static final int RES_VERSION_CONFIG_FIELD_NUMBER = 3;
+    public static final int RES_VERSION_CONFIG_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.ResVersionConfigOuterClass.ResVersionConfig resVersionConfig_;
     /**
      * <code>.ResVersionConfig res_version_config = 14;</code>
@@ -280,7 +280,7 @@ public final class DataResVersionNotifyOuterClass {
       return getResVersionConfig();
     }
 
-    public static final int CLIENT_VERSION_SUFFIX_FIELD_NUMBER = 5;
+    public static final int CLIENT_VERSION_SUFFIX_FIELD_NUMBER = 10;
     private volatile java.lang.Object clientVersionSuffix_;
     /**
      * <code>string client_version_suffix = 5;</code>
@@ -329,7 +329,7 @@ public final class DataResVersionNotifyOuterClass {
       return clientDataVersion_;
     }
 
-    public static final int CLIENT_SILENCE_DATA_VERSION_FIELD_NUMBER = 11;
+    public static final int CLIENT_SILENCE_DATA_VERSION_FIELD_NUMBER = 3;
     private int clientSilenceDataVersion_;
     /**
      * <code>uint32 client_silence_data_version = 12;</code>
@@ -340,7 +340,7 @@ public final class DataResVersionNotifyOuterClass {
       return clientSilenceDataVersion_;
     }
 
-    public static final int OP_TYPE_FIELD_NUMBER = 7;
+    public static final int OP_TYPE_FIELD_NUMBER = 4;
     private int opType_;
     /**
      * <code>.DataResVersionOpType op_type = 8;</code>
@@ -385,13 +385,13 @@ public final class DataResVersionNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientSilenceVersionSuffix_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, clientSilenceVersionSuffix_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientSilenceVersionSuffix_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientVersionSuffix_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, clientVersionSuffix_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, clientVersionSuffix_);
       }
       if (opType_ != emu.grasscutter.net.proto.DataResVersionOpTypeOuterClass.DataResVersionOpType.DataResVersionOpType_OP_TYPE_NONE.getNumber()) {
-        output.writeEnum(7, opType_);
+        output.writeEnum(4, opType_);
       }
       if (clientDataVersion_ != 0) {
         output.writeUInt32(9, clientDataVersion_);
@@ -400,10 +400,10 @@ public final class DataResVersionNotifyOuterClass {
         output.writeBool(16000, isDataNeedRelogin_);
       }
       if (clientSilenceDataVersion_ != 0) {
-        output.writeUInt32(11, clientSilenceDataVersion_);
+        output.writeUInt32(3, clientSilenceDataVersion_);
       }
       if (resVersionConfig_ != null) {
-        output.writeMessage(3, getResVersionConfig());
+        output.writeMessage(6, getResVersionConfig());
       }
       unknownFields.writeTo(output);
     }
@@ -415,14 +415,14 @@ public final class DataResVersionNotifyOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientSilenceVersionSuffix_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, clientSilenceVersionSuffix_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientSilenceVersionSuffix_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientVersionSuffix_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, clientVersionSuffix_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, clientVersionSuffix_);
       }
       if (opType_ != emu.grasscutter.net.proto.DataResVersionOpTypeOuterClass.DataResVersionOpType.DataResVersionOpType_OP_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, opType_);
+          .computeEnumSize(4, opType_);
       }
       if (clientDataVersion_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -434,11 +434,11 @@ public final class DataResVersionNotifyOuterClass {
       }
       if (clientSilenceDataVersion_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, clientSilenceDataVersion_);
+          .computeUInt32Size(3, clientSilenceDataVersion_);
       }
       if (resVersionConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getResVersionConfig());
+          .computeMessageSize(6, getResVersionConfig());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

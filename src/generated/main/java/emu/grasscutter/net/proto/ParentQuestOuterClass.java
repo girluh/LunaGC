@@ -227,7 +227,7 @@ public final class ParentQuestOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 childQuestList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest>();
                 mutable_bitField0_ |= 0x00000001;
@@ -236,7 +236,7 @@ public final class ParentQuestOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest.parser(), extensionRegistry));
               break;
             }
-            case 82: {
+            case 66: {
               emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder subBuilder = null;
               if (randomInfo_ != null) {
                 subBuilder = randomInfo_.toBuilder();
@@ -249,22 +249,22 @@ public final class ParentQuestOuterClass {
 
               break;
             }
-            case 16: {
+            case 120: {
 
               acceptTime_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 128000: {
 
               videoKey_ = input.readUInt64();
               break;
             }
-            case 96: {
+            case 112: {
 
               parentQuestId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 questVar_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -272,7 +272,7 @@ public final class ParentQuestOuterClass {
               questVar_.addInt(input.readInt32());
               break;
             }
-            case 42: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -285,12 +285,12 @@ public final class ParentQuestOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 72: {
+            case 40: {
 
               parentQuestState_ = input.readUInt32();
               break;
             }
-            case 34: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 inferencePageList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo>();
                 mutable_bitField0_ |= 0x00000004;
@@ -299,7 +299,7 @@ public final class ParentQuestOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo.parser(), extensionRegistry));
               break;
             }
-            case 106: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 timeVarMap_ = com.google.protobuf.MapField.newMapField(
                     TimeVarMapDefaultEntryHolder.defaultEntry);
@@ -312,17 +312,17 @@ public final class ParentQuestOuterClass {
                   timeVarMap__.getKey(), timeVarMap__.getValue());
               break;
             }
-            case 56: {
+            case 96: {
 
               isRandom_ = input.readBool();
               break;
             }
-            case 8: {
+            case 32: {
 
               isFinished_ = input.readBool();
               break;
             }
-            case 64: {
+            case 24: {
 
               questVarSeq_ = input.readUInt32();
               break;
@@ -380,7 +380,7 @@ public final class ParentQuestOuterClass {
               emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest.class, emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest.Builder.class);
     }
 
-    public static final int VIDEO_KEY_FIELD_NUMBER = 11;
+    public static final int VIDEO_KEY_FIELD_NUMBER = 16000;
     private long videoKey_;
     /**
      * <code>uint64 video_key = 4;</code>
@@ -391,7 +391,7 @@ public final class ParentQuestOuterClass {
       return videoKey_;
     }
 
-    public static final int PARENT_QUEST_STATE_FIELD_NUMBER = 9;
+    public static final int PARENT_QUEST_STATE_FIELD_NUMBER = 5;
     private int parentQuestState_;
     /**
      * <code>uint32 parent_quest_state = 8;</code>
@@ -402,7 +402,7 @@ public final class ParentQuestOuterClass {
       return parentQuestState_;
     }
 
-    public static final int QUEST_VAR_SEQ_FIELD_NUMBER = 8;
+    public static final int QUEST_VAR_SEQ_FIELD_NUMBER = 3;
     private int questVarSeq_;
     /**
      * <code>uint32 quest_var_seq = 15;</code>
@@ -413,7 +413,7 @@ public final class ParentQuestOuterClass {
       return questVarSeq_;
     }
 
-    public static final int IS_RANDOM_FIELD_NUMBER = 7;
+    public static final int IS_RANDOM_FIELD_NUMBER = 12;
     private boolean isRandom_;
     /**
      * <code>bool is_random = 11;</code>
@@ -424,7 +424,7 @@ public final class ParentQuestOuterClass {
       return isRandom_;
     }
 
-    public static final int ACCEPT_TIME_FIELD_NUMBER = 2;
+    public static final int ACCEPT_TIME_FIELD_NUMBER = 15;
     private int acceptTime_;
     /**
      * <code>uint32 accept_time = 3;</code>
@@ -435,7 +435,7 @@ public final class ParentQuestOuterClass {
       return acceptTime_;
     }
 
-    public static final int CHILD_QUEST_LIST_FIELD_NUMBER = 6;
+    public static final int CHILD_QUEST_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest> childQuestList_;
     /**
      * <code>repeated .ChildQuest child_quest_list = 1;</code>
@@ -475,7 +475,7 @@ public final class ParentQuestOuterClass {
       return childQuestList_.get(index);
     }
 
-    public static final int QUEST_VAR_FIELD_NUMBER = 5;
+    public static final int QUEST_VAR_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList questVar_;
     /**
      * <code>repeated int32 quest_var = 7;</code>
@@ -503,7 +503,7 @@ public final class ParentQuestOuterClass {
     }
     private int questVarMemoizedSerializedSize = -1;
 
-    public static final int INFERENCE_PAGE_LIST_FIELD_NUMBER = 4;
+    public static final int INFERENCE_PAGE_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo> inferencePageList_;
     /**
      * <code>repeated .InferencePageInfo inference_page_list = 9;</code>
@@ -543,7 +543,7 @@ public final class ParentQuestOuterClass {
       return inferencePageList_.get(index);
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 1;
+    public static final int IS_FINISHED_FIELD_NUMBER = 4;
     private boolean isFinished_;
     /**
      * <code>bool is_finished = 14;</code>
@@ -554,7 +554,7 @@ public final class ParentQuestOuterClass {
       return isFinished_;
     }
 
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 12;
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 14;
     private int parentQuestId_;
     /**
      * <code>uint32 parent_quest_id = 5;</code>
@@ -565,7 +565,7 @@ public final class ParentQuestOuterClass {
       return parentQuestId_;
     }
 
-    public static final int TIME_VAR_MAP_FIELD_NUMBER = 13;
+    public static final int TIME_VAR_MAP_FIELD_NUMBER = 1;
     private static final class TimeVarMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -646,7 +646,7 @@ public final class ParentQuestOuterClass {
       return map.get(key);
     }
 
-    public static final int RANDOM_INFO_FIELD_NUMBER = 10;
+    public static final int RANDOM_INFO_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo randomInfo_;
     /**
      * <code>.ParentQuestRandomInfo random_info = 2;</code>
@@ -688,47 +688,47 @@ public final class ParentQuestOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       for (int i = 0; i < childQuestList_.size(); i++) {
-        output.writeMessage(6, childQuestList_.get(i));
+        output.writeMessage(13, childQuestList_.get(i));
       }
       if (randomInfo_ != null) {
-        output.writeMessage(10, getRandomInfo());
+        output.writeMessage(8, getRandomInfo());
       }
       if (acceptTime_ != 0) {
-        output.writeUInt32(2, acceptTime_);
+        output.writeUInt32(15, acceptTime_);
       }
       if (videoKey_ != 0L) {
-        output.writeUInt64(11, videoKey_);
+        output.writeUInt64(16000, videoKey_);
       }
       if (parentQuestId_ != 0) {
-        output.writeUInt32(12, parentQuestId_);
+        output.writeUInt32(14, parentQuestId_);
       }
       if (getQuestVarList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(questVarMemoizedSerializedSize);
       }
       for (int i = 0; i < questVar_.size(); i++) {
         output.writeInt32NoTag(questVar_.getInt(i));
       }
       if (parentQuestState_ != 0) {
-        output.writeUInt32(9, parentQuestState_);
+        output.writeUInt32(5, parentQuestState_);
       }
       for (int i = 0; i < inferencePageList_.size(); i++) {
-        output.writeMessage(4, inferencePageList_.get(i));
+        output.writeMessage(2, inferencePageList_.get(i));
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetTimeVarMap(),
           TimeVarMapDefaultEntryHolder.defaultEntry,
-          13);
+          1);
       if (isRandom_ != false) {
-        output.writeBool(7, isRandom_);
+        output.writeBool(12, isRandom_);
       }
       if (isFinished_ != false) {
-        output.writeBool(1, isFinished_);
+        output.writeBool(4, isFinished_);
       }
       if (questVarSeq_ != 0) {
-        output.writeUInt32(8, questVarSeq_);
+        output.writeUInt32(3, questVarSeq_);
       }
       unknownFields.writeTo(output);
     }
@@ -741,23 +741,23 @@ public final class ParentQuestOuterClass {
       size = 0;
       for (int i = 0; i < childQuestList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, childQuestList_.get(i));
+          .computeMessageSize(13, childQuestList_.get(i));
       }
       if (randomInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getRandomInfo());
+          .computeMessageSize(8, getRandomInfo());
       }
       if (acceptTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, acceptTime_);
+          .computeUInt32Size(15, acceptTime_);
       }
       if (videoKey_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(11, videoKey_);
+          .computeUInt64Size(16000, videoKey_);
       }
       if (parentQuestId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, parentQuestId_);
+          .computeUInt32Size(14, parentQuestId_);
       }
       {
         int dataSize = 0;
@@ -775,11 +775,11 @@ public final class ParentQuestOuterClass {
       }
       if (parentQuestState_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, parentQuestState_);
+          .computeUInt32Size(5, parentQuestState_);
       }
       for (int i = 0; i < inferencePageList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, inferencePageList_.get(i));
+          .computeMessageSize(2, inferencePageList_.get(i));
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetTimeVarMap().getMap().entrySet()) {
@@ -789,19 +789,19 @@ public final class ParentQuestOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(13, timeVarMap__);
+            .computeMessageSize(1, timeVarMap__);
       }
       if (isRandom_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isRandom_);
+          .computeBoolSize(12, isRandom_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isFinished_);
+          .computeBoolSize(4, isFinished_);
       }
       if (questVarSeq_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, questVarSeq_);
+          .computeUInt32Size(3, questVarSeq_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

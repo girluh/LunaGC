@@ -102,12 +102,12 @@ public final class GachaStageDataOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 88: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 64: {
 
               isOpen_ = input.readBool();
               break;
@@ -250,7 +250,7 @@ public final class GachaStageDataOuterClass {
       return map.get(key);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 6;
+    public static final int STAGE_ID_FIELD_NUMBER = 11;
     private int stageId_;
 
     @java.lang.Override
@@ -258,7 +258,7 @@ public final class GachaStageDataOuterClass {
       return stageId_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 12;
+    public static final int IS_OPEN_FIELD_NUMBER = 8;
     private boolean isOpen_;
 
     @java.lang.Override
@@ -281,10 +281,10 @@ public final class GachaStageDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(6, stageId_);
+        output.writeUInt32(11, stageId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(12, isOpen_);
+        output.writeBool(8, isOpen_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
@@ -303,11 +303,11 @@ public final class GachaStageDataOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, stageId_);
+          .computeUInt32Size(11, stageId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isOpen_);
+          .computeBoolSize(8, isOpen_);
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetGNCJBONIKBF().getMap().entrySet()) {

@@ -87,12 +87,12 @@ public final class AvatarEquipChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 96: {
 
               equipGuid_ = input.readUInt64();
               break;
             }
-            case 96: {
+            case 80: {
 
               equipType_ = input.readUInt32();
               break;
@@ -115,12 +115,12 @@ public final class AvatarEquipChangeNotifyOuterClass {
 
               break;
             }
-            case 24: {
+            case 120: {
 
               itemId_ = input.readUInt32();
               break;
             }
-            case 82: {
+            case 34: {
               emu.grasscutter.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo.Builder subBuilder = null;
               if (reliquary_ != null) {
                 subBuilder = reliquary_.toBuilder();
@@ -183,7 +183,7 @@ public final class AvatarEquipChangeNotifyOuterClass {
       return getWeapon();
     }
 
-    public static final int RELIQUARY_FIELD_NUMBER = 10;
+    public static final int RELIQUARY_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo reliquary_;
 
     @java.lang.Override
@@ -201,7 +201,7 @@ public final class AvatarEquipChangeNotifyOuterClass {
       return getReliquary();
     }
 
-    public static final int EQUIP_GUID_FIELD_NUMBER = 8;
+    public static final int EQUIP_GUID_FIELD_NUMBER = 12;
     private long equipGuid_;
 
     @java.lang.Override
@@ -209,7 +209,7 @@ public final class AvatarEquipChangeNotifyOuterClass {
       return equipGuid_;
     }
 
-    public static final int EQUIP_TYPE_FIELD_NUMBER = 12;
+    public static final int EQUIP_TYPE_FIELD_NUMBER = 10;
     private int equipType_;
 
     @java.lang.Override
@@ -217,7 +217,7 @@ public final class AvatarEquipChangeNotifyOuterClass {
       return equipType_;
     }
 
-    public static final int ITEM_ID_FIELD_NUMBER = 3;
+    public static final int ITEM_ID_FIELD_NUMBER = 15;
     private int itemId_;
 
     @java.lang.Override
@@ -248,7 +248,7 @@ public final class AvatarEquipChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (equipType_ != 0) {
-        output.writeUInt32(12, equipType_);
+        output.writeUInt32(10, equipType_);
       }
       if (weapon_ != null) {
         output.writeMessage(13, getWeapon());
@@ -257,13 +257,13 @@ public final class AvatarEquipChangeNotifyOuterClass {
         output.writeUInt64(9, avatarGuid_);
       }
       if (itemId_ != 0) {
-        output.writeUInt32(3, itemId_);
+        output.writeUInt32(15, itemId_);
       }
       if (reliquary_ != null) {
-        output.writeMessage(10, getReliquary());
+        output.writeMessage(4, getReliquary());
       }
       if (equipGuid_ != 0L) {
-        output.writeUInt64(8, equipGuid_);
+        output.writeUInt64(12, equipGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -276,7 +276,7 @@ public final class AvatarEquipChangeNotifyOuterClass {
       size = 0;
       if (equipType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, equipType_);
+          .computeUInt32Size(10, equipType_);
       }
       if (weapon_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -288,15 +288,15 @@ public final class AvatarEquipChangeNotifyOuterClass {
       }
       if (itemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, itemId_);
+          .computeUInt32Size(15, itemId_);
       }
       if (reliquary_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getReliquary());
+          .computeMessageSize(4, getReliquary());
       }
       if (equipGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(8, equipGuid_);
+          .computeUInt64Size(12, equipGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

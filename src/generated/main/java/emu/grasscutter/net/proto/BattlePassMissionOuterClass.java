@@ -105,12 +105,12 @@ public final class BattlePassMissionOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 80: {
 
               curProgress_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 56: {
 
               missionType_ = input.readUInt32();
               break;
@@ -120,18 +120,18 @@ public final class BattlePassMissionOuterClass {
               missionId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 32: {
 
               rewardBattlePassPoint_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 88: {
               int rawValue = input.readEnum();
 
               missionStatus_ = rawValue;
               break;
             }
-            case 112: {
+            case 120: {
 
               totalProgress_ = input.readUInt32();
               break;
@@ -294,7 +294,7 @@ public final class BattlePassMissionOuterClass {
       // @@protoc_insertion_point(enum_scope:BattlePassMission.MissionStatus)
     }
 
-    public static final int TOTAL_PROGRESS_FIELD_NUMBER = 14;
+    public static final int TOTAL_PROGRESS_FIELD_NUMBER = 15;
     private int totalProgress_;
     /**
      * <code>uint32 total_progress = 15;</code>
@@ -305,7 +305,7 @@ public final class BattlePassMissionOuterClass {
       return totalProgress_;
     }
 
-    public static final int MISSION_STATUS_FIELD_NUMBER = 10;
+    public static final int MISSION_STATUS_FIELD_NUMBER = 11;
     private int missionStatus_;
     /**
      * <code>.BattlePassMission.MissionStatus mission_status = 14;</code>
@@ -324,7 +324,7 @@ public final class BattlePassMissionOuterClass {
       return result == null ? emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.UNRECOGNIZED : result;
     }
 
-    public static final int CUR_PROGRESS_FIELD_NUMBER = 1;
+    public static final int CUR_PROGRESS_FIELD_NUMBER = 10;
     private int curProgress_;
     /**
      * <code>uint32 cur_progress = 4;</code>
@@ -335,7 +335,7 @@ public final class BattlePassMissionOuterClass {
       return curProgress_;
     }
 
-    public static final int MISSION_TYPE_FIELD_NUMBER = 11;
+    public static final int MISSION_TYPE_FIELD_NUMBER = 7;
     private int missionType_;
     /**
      * <code>uint32 mission_type = 6;</code>
@@ -357,7 +357,7 @@ public final class BattlePassMissionOuterClass {
       return missionId_;
     }
 
-    public static final int REWARD_BATTLE_PASS_POINT_FIELD_NUMBER = 7;
+    public static final int REWARD_BATTLE_PASS_POINT_FIELD_NUMBER = 4;
     private int rewardBattlePassPoint_;
     /**
      * <code>uint32 reward_battle_pass_point = 13;</code>
@@ -383,22 +383,22 @@ public final class BattlePassMissionOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (curProgress_ != 0) {
-        output.writeUInt32(1, curProgress_);
+        output.writeUInt32(10, curProgress_);
       }
       if (missionType_ != 0) {
-        output.writeUInt32(11, missionType_);
+        output.writeUInt32(7, missionType_);
       }
       if (missionId_ != 0) {
         output.writeUInt32(8, missionId_);
       }
       if (rewardBattlePassPoint_ != 0) {
-        output.writeUInt32(7, rewardBattlePassPoint_);
+        output.writeUInt32(4, rewardBattlePassPoint_);
       }
       if (missionStatus_ != emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.MISSION_INVALID.getNumber()) {
-        output.writeEnum(10, missionStatus_);
+        output.writeEnum(11, missionStatus_);
       }
       if (totalProgress_ != 0) {
-        output.writeUInt32(14, totalProgress_);
+        output.writeUInt32(15, totalProgress_);
       }
       unknownFields.writeTo(output);
     }
@@ -411,11 +411,11 @@ public final class BattlePassMissionOuterClass {
       size = 0;
       if (curProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, curProgress_);
+          .computeUInt32Size(10, curProgress_);
       }
       if (missionType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, missionType_);
+          .computeUInt32Size(7, missionType_);
       }
       if (missionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -423,15 +423,15 @@ public final class BattlePassMissionOuterClass {
       }
       if (rewardBattlePassPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, rewardBattlePassPoint_);
+          .computeUInt32Size(4, rewardBattlePassPoint_);
       }
       if (missionStatus_ != emu.grasscutter.net.proto.BattlePassMissionOuterClass.BattlePassMission.MissionStatus.MISSION_INVALID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, missionStatus_);
+          .computeEnumSize(11, missionStatus_);
       }
       if (totalProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, totalProgress_);
+          .computeUInt32Size(15, totalProgress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

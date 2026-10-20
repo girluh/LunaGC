@@ -75,7 +75,7 @@ public final class CutSceneExtraParamOuterClass {
             case 0:
               done = true;
               break;
-            case 73: {
+            case 49: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 detailParamList_ = newDoubleList();
                 mutable_bitField0_ |= 0x00000001;
@@ -83,7 +83,7 @@ public final class CutSceneExtraParamOuterClass {
               detailParamList_.addDouble(input.readDouble());
               break;
             }
-            case 74: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -131,7 +131,7 @@ public final class CutSceneExtraParamOuterClass {
               emu.grasscutter.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam.class, emu.grasscutter.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam.Builder.class);
     }
 
-    public static final int DETAIL_PARAM_LIST_FIELD_NUMBER = 9;
+    public static final int DETAIL_PARAM_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.DoubleList detailParamList_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class CutSceneExtraParamOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getDetailParamListList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(detailParamListMemoizedSerializedSize);
       }
       for (int i = 0; i < detailParamList_.size(); i++) {

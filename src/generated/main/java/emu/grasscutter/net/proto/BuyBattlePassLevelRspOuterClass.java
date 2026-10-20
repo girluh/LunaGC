@@ -80,12 +80,12 @@ public final class BuyBattlePassLevelRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 80: {
 
               buyLevel_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -122,7 +122,7 @@ public final class BuyBattlePassLevelRspOuterClass {
               emu.grasscutter.net.proto.BuyBattlePassLevelRspOuterClass.BuyBattlePassLevelRsp.class, emu.grasscutter.net.proto.BuyBattlePassLevelRspOuterClass.BuyBattlePassLevelRsp.Builder.class);
     }
 
-    public static final int BUY_LEVEL_FIELD_NUMBER = 7;
+    public static final int BUY_LEVEL_FIELD_NUMBER = 10;
     private int buyLevel_;
     /**
      * <code>uint32 buy_level = 7;</code>
@@ -133,7 +133,7 @@ public final class BuyBattlePassLevelRspOuterClass {
       return buyLevel_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
      * <code>int32 retcode = 11;</code>
@@ -159,10 +159,10 @@ public final class BuyBattlePassLevelRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (buyLevel_ != 0) {
-        output.writeUInt32(7, buyLevel_);
+        output.writeUInt32(10, buyLevel_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class BuyBattlePassLevelRspOuterClass {
       size = 0;
       if (buyLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, buyLevel_);
+          .computeUInt32Size(10, buyLevel_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

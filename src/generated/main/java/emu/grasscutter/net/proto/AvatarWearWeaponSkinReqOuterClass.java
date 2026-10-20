@@ -93,7 +93,7 @@ public final class AvatarWearWeaponSkinReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -101,7 +101,7 @@ public final class AvatarWearWeaponSkinReqOuterClass {
               avatarGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 42: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -114,7 +114,7 @@ public final class AvatarWearWeaponSkinReqOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 96: {
+            case 8: {
 
               weaponSkinId_ = input.readUInt32();
               break;
@@ -154,7 +154,7 @@ public final class AvatarWearWeaponSkinReqOuterClass {
               emu.grasscutter.net.proto.AvatarWearWeaponSkinReqOuterClass.AvatarWearWeaponSkinReq.class, emu.grasscutter.net.proto.AvatarWearWeaponSkinReqOuterClass.AvatarWearWeaponSkinReq.Builder.class);
     }
 
-    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 5;
+    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.LongList avatarGuidList_;
     /**
      * <code>repeated uint64 avatar_guid_list = 2;</code>
@@ -182,7 +182,7 @@ public final class AvatarWearWeaponSkinReqOuterClass {
     }
     private int avatarGuidListMemoizedSerializedSize = -1;
 
-    public static final int WEAPON_SKIN_ID_FIELD_NUMBER = 12;
+    public static final int WEAPON_SKIN_ID_FIELD_NUMBER = 1;
     private int weaponSkinId_;
     /**
      * <code>uint32 weapon_skin_id = 14;</code>
@@ -209,14 +209,14 @@ public final class AvatarWearWeaponSkinReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getAvatarGuidListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(avatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarGuidList_.size(); i++) {
         output.writeUInt64NoTag(avatarGuidList_.getLong(i));
       }
       if (weaponSkinId_ != 0) {
-        output.writeUInt32(12, weaponSkinId_);
+        output.writeUInt32(1, weaponSkinId_);
       }
       unknownFields.writeTo(output);
     }
@@ -243,7 +243,7 @@ public final class AvatarWearWeaponSkinReqOuterClass {
       }
       if (weaponSkinId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, weaponSkinId_);
+          .computeUInt32Size(1, weaponSkinId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

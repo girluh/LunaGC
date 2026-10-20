@@ -95,17 +95,17 @@ public final class AddAranaraCollectionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 112: {
 
               collectionType_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 104: {
 
               collectionId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 128000: {
               int rawValue = input.readEnum();
 
               iPFPDNJPPPP_ = rawValue;
@@ -149,7 +149,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
               emu.grasscutter.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify.class, emu.grasscutter.net.proto.AddAranaraCollectionNotifyOuterClass.AddAranaraCollectionNotify.Builder.class);
     }
 
-    public static final int IPFPDNJPPPP_FIELD_NUMBER = 14;
+    public static final int IPFPDNJPPPP_FIELD_NUMBER = 16000;
     private int iPFPDNJPPPP_;
     /**
      * <code>.AranaraCollectionState IPFPDNJPPPP = 14;</code>
@@ -187,7 +187,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.UNRECOGNIZED : result;
     }
 
-    public static final int COLLECTION_TYPE_FIELD_NUMBER = 8;
+    public static final int COLLECTION_TYPE_FIELD_NUMBER = 14;
     private int collectionType_;
 
     @java.lang.Override
@@ -195,7 +195,7 @@ public final class AddAranaraCollectionNotifyOuterClass {
       return collectionType_;
     }
 
-    public static final int COLLECTION_ID_FIELD_NUMBER = 6;
+    public static final int COLLECTION_ID_FIELD_NUMBER = 13;
     private int collectionId_;
 
     @java.lang.Override
@@ -218,13 +218,13 @@ public final class AddAranaraCollectionNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (collectionType_ != 0) {
-        output.writeUInt32(8, collectionType_);
+        output.writeUInt32(14, collectionType_);
       }
       if (collectionId_ != 0) {
-        output.writeUInt32(6, collectionId_);
+        output.writeUInt32(13, collectionId_);
       }
       if (iPFPDNJPPPP_ != emu.grasscutter.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.AranaraCollectionState_NONE.getNumber()) {
-        output.writeEnum(14, iPFPDNJPPPP_);
+        output.writeEnum(16000, iPFPDNJPPPP_);
       }
       if (oKGBACCFMKG_ != emu.grasscutter.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.AranaraCollectionState_NONE.getNumber()) {
         output.writeEnum(15, oKGBACCFMKG_);
@@ -240,15 +240,15 @@ public final class AddAranaraCollectionNotifyOuterClass {
       size = 0;
       if (collectionType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, collectionType_);
+          .computeUInt32Size(14, collectionType_);
       }
       if (collectionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, collectionId_);
+          .computeUInt32Size(13, collectionId_);
       }
       if (iPFPDNJPPPP_ != emu.grasscutter.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.AranaraCollectionState_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, iPFPDNJPPPP_);
+          .computeEnumSize(16000, iPFPDNJPPPP_);
       }
       if (oKGBACCFMKG_ != emu.grasscutter.net.proto.AranaraCollectionStateOuterClass.AranaraCollectionState.AranaraCollectionState_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream

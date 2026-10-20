@@ -161,7 +161,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.GIGBOMGHMDNOuterClass.GIGBOMGHMDN.parser(), extensionRegistry));
               break;
             }
-            case 66: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 stageList_ = new java.util.ArrayList<emu.grasscutter.net.proto.JGPIAPGGAINOuterClass.JGPIAPGGAIN>();
                 mutable_bitField0_ |= 0x00000004;
@@ -329,7 +329,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       return kILFHAAHDJO_.get(index);
     }
 
-    public static final int STAGE_LIST_FIELD_NUMBER = 8;
+    public static final int STAGE_LIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.JGPIAPGGAINOuterClass.JGPIAPGGAIN> stageList_;
 
     @java.lang.Override
@@ -417,7 +417,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         output.writeMessage(2, kILFHAAHDJO_.get(i));
       }
       for (int i = 0; i < stageList_.size(); i++) {
-        output.writeMessage(8, stageList_.get(i));
+        output.writeMessage(3, stageList_.get(i));
       }
       if (gHILFJPBEJP_ != 0) {
         output.writeUInt32(6, gHILFJPBEJP_);
@@ -447,7 +447,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       }
       for (int i = 0; i < stageList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, stageList_.get(i));
+          .computeMessageSize(3, stageList_.get(i));
       }
       if (gHILFJPBEJP_ != 0) {
         size += com.google.protobuf.CodedOutputStream

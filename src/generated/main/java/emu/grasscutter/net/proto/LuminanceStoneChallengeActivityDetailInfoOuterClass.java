@@ -93,7 +93,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
               jEAAOBMJBFF_ = input.readBool();
               break;
             }
-            case 8: {
+            case 104: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -157,7 +157,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       return jEAAOBMJBFF_;
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 1;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 13;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -197,7 +197,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
         output.writeBool(6, jEAAOBMJBFF_);
       }
       if (isContentClosed_ != false) {
-        output.writeBool(1, isContentClosed_);
+        output.writeBool(13, isContentClosed_);
       }
       if (nCMAJBKNJCA_ != 0) {
         output.writeUInt32(11, nCMAJBKNJCA_);
@@ -221,7 +221,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       }
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isContentClosed_);
+          .computeBoolSize(13, isContentClosed_);
       }
       if (nCMAJBKNJCA_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -85,17 +85,17 @@ public final class SpiceStageDataOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 120: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 40: {
 
               successTimes_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 56: {
 
               isOpen_ = input.readBool();
               break;
@@ -132,7 +132,7 @@ public final class SpiceStageDataOuterClass {
               emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageData.class, emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageData.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 6;
+    public static final int STAGE_ID_FIELD_NUMBER = 15;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 3;</code>
@@ -143,7 +143,7 @@ public final class SpiceStageDataOuterClass {
       return stageId_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 11;
+    public static final int IS_OPEN_FIELD_NUMBER = 7;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 14;</code>
@@ -154,7 +154,7 @@ public final class SpiceStageDataOuterClass {
       return isOpen_;
     }
 
-    public static final int SUCCESS_TIMES_FIELD_NUMBER = 14;
+    public static final int SUCCESS_TIMES_FIELD_NUMBER = 5;
     private int successTimes_;
     /**
      * <code>uint32 success_times = 9;</code>
@@ -180,13 +180,13 @@ public final class SpiceStageDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(6, stageId_);
+        output.writeUInt32(15, stageId_);
       }
       if (successTimes_ != 0) {
-        output.writeUInt32(14, successTimes_);
+        output.writeUInt32(5, successTimes_);
       }
       if (isOpen_ != false) {
-        output.writeBool(11, isOpen_);
+        output.writeBool(7, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class SpiceStageDataOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, stageId_);
+          .computeUInt32Size(15, stageId_);
       }
       if (successTimes_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, successTimes_);
+          .computeUInt32Size(5, successTimes_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isOpen_);
+          .computeBoolSize(7, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

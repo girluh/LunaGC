@@ -74,7 +74,7 @@ public final class HomeChangeEditModeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 96: {
 
               isEnterEditMode_ = input.readBool();
               break;
@@ -111,7 +111,7 @@ public final class HomeChangeEditModeReqOuterClass {
               emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.class, emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq.Builder.class);
     }
 
-    public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 10;
+    public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 12;
     private boolean isEnterEditMode_;
     /**
      * <code>bool is_enter_edit_mode = 2;</code>
@@ -137,7 +137,7 @@ public final class HomeChangeEditModeReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isEnterEditMode_ != false) {
-        output.writeBool(10, isEnterEditMode_);
+        output.writeBool(12, isEnterEditMode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class HomeChangeEditModeReqOuterClass {
       size = 0;
       if (isEnterEditMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isEnterEditMode_);
+          .computeBoolSize(12, isEnterEditMode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

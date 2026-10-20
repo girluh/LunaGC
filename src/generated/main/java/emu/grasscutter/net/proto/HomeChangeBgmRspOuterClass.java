@@ -74,7 +74,7 @@ public final class HomeChangeBgmRspOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,7 +111,7 @@ public final class HomeChangeBgmRspOuterClass {
               emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp.class, emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
      * <code>int32 retcode = 10;</code>
@@ -137,7 +137,7 @@ public final class HomeChangeBgmRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class HomeChangeBgmRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

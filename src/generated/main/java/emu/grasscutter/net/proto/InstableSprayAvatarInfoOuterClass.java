@@ -84,7 +84,7 @@ public final class InstableSprayAvatarInfoOuterClass {
               avatarId_ = input.readUInt64();
               break;
             }
-            case 88: {
+            case 48: {
 
               isTrial_ = input.readBool();
               break;
@@ -121,7 +121,7 @@ public final class InstableSprayAvatarInfoOuterClass {
               emu.grasscutter.net.proto.InstableSprayAvatarInfoOuterClass.InstableSprayAvatarInfo.class, emu.grasscutter.net.proto.InstableSprayAvatarInfoOuterClass.InstableSprayAvatarInfo.Builder.class);
     }
 
-    public static final int IS_TRIAL_FIELD_NUMBER = 11;
+    public static final int IS_TRIAL_FIELD_NUMBER = 6;
     private boolean isTrial_;
     /**
      * <code>bool is_trial = 15;</code>
@@ -161,7 +161,7 @@ public final class InstableSprayAvatarInfoOuterClass {
         output.writeUInt64(13, avatarId_);
       }
       if (isTrial_ != false) {
-        output.writeBool(11, isTrial_);
+        output.writeBool(6, isTrial_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,7 +178,7 @@ public final class InstableSprayAvatarInfoOuterClass {
       }
       if (isTrial_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isTrial_);
+          .computeBoolSize(6, isTrial_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

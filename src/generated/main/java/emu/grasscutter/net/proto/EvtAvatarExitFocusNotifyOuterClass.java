@@ -101,18 +101,18 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 64: {
               int rawValue = input.readEnum();
 
               forwardType_ = rawValue;
               break;
             }
-            case 106: {
+            case 90: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (finishForward_ != null) {
                 subBuilder = finishForward_.toBuilder();
@@ -157,7 +157,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
               emu.grasscutter.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify.class, emu.grasscutter.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify.Builder.class);
     }
 
-    public static final int FINISH_FORWARD_FIELD_NUMBER = 13;
+    public static final int FINISH_FORWARD_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector finishForward_;
     /**
      * <code>.Vector finish_forward = 13;</code>
@@ -183,7 +183,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
       return getFinishForward();
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 12;
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 8;
     private int forwardType_;
     /**
      * <code>.ForwardType forward_type = 12;</code>
@@ -202,7 +202,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
     private int entityId_;
     /**
      * <code>uint32 entity_id = 11;</code>
@@ -228,13 +228,13 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
+        output.writeUInt32(1, entityId_);
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.ForwardType_FORWARD_LOCAL.getNumber()) {
-        output.writeEnum(12, forwardType_);
+        output.writeEnum(8, forwardType_);
       }
       if (finishForward_ != null) {
-        output.writeMessage(13, getFinishForward());
+        output.writeMessage(11, getFinishForward());
       }
       unknownFields.writeTo(output);
     }
@@ -247,15 +247,15 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
+          .computeUInt32Size(1, entityId_);
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.ForwardType_FORWARD_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, forwardType_);
+          .computeEnumSize(8, forwardType_);
       }
       if (finishForward_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getFinishForward());
+          .computeMessageSize(11, getFinishForward());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

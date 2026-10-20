@@ -105,24 +105,24 @@ public final class PlayerApplyEnterHomeResultNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 96: {
 
               isAgreed_ = input.readBool();
               break;
             }
-            case 80: {
+            case 64: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
               break;
             }
-            case 26: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               targetNickname_ = s;
               break;
             }
-            case 72: {
+            case 32: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -334,7 +334,7 @@ public final class PlayerApplyEnterHomeResultNotifyOuterClass {
       // @@protoc_insertion_point(enum_scope:PlayerApplyEnterHomeResultNotify.Reason)
     }
 
-    public static final int IS_AGREED_FIELD_NUMBER = 14;
+    public static final int IS_AGREED_FIELD_NUMBER = 12;
     private boolean isAgreed_;
     /**
      * <code>bool is_agreed = 1;</code>
@@ -345,7 +345,7 @@ public final class PlayerApplyEnterHomeResultNotifyOuterClass {
       return isAgreed_;
     }
 
-    public static final int TARGET_NICKNAME_FIELD_NUMBER = 3;
+    public static final int TARGET_NICKNAME_FIELD_NUMBER = 14;
     private volatile java.lang.Object targetNickname_;
     /**
      * <code>string target_nickname = 7;</code>
@@ -383,7 +383,7 @@ public final class PlayerApplyEnterHomeResultNotifyOuterClass {
       }
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 9;
+    public static final int TARGET_UID_FIELD_NUMBER = 4;
     private int targetUid_;
     /**
      * <code>uint32 target_uid = 11;</code>
@@ -394,7 +394,7 @@ public final class PlayerApplyEnterHomeResultNotifyOuterClass {
       return targetUid_;
     }
 
-    public static final int REASON_FIELD_NUMBER = 10;
+    public static final int REASON_FIELD_NUMBER = 8;
     private int reason_;
     /**
      * <code>.PlayerApplyEnterHomeResultNotify.Reason reason = 4;</code>
@@ -428,16 +428,16 @@ public final class PlayerApplyEnterHomeResultNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isAgreed_ != false) {
-        output.writeBool(14, isAgreed_);
+        output.writeBool(12, isAgreed_);
       }
       if (reason_ != emu.grasscutter.net.proto.PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.PLAYER_JUDGE.getNumber()) {
-        output.writeEnum(10, reason_);
+        output.writeEnum(8, reason_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNickname_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetNickname_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, targetNickname_);
       }
       if (targetUid_ != 0) {
-        output.writeUInt32(9, targetUid_);
+        output.writeUInt32(4, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -450,18 +450,18 @@ public final class PlayerApplyEnterHomeResultNotifyOuterClass {
       size = 0;
       if (isAgreed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isAgreed_);
+          .computeBoolSize(12, isAgreed_);
       }
       if (reason_ != emu.grasscutter.net.proto.PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.PLAYER_JUDGE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, reason_);
+          .computeEnumSize(8, reason_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNickname_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetNickname_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, targetNickname_);
       }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, targetUid_);
+          .computeUInt32Size(4, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

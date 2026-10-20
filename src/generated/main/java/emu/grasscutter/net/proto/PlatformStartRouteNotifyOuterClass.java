@@ -100,7 +100,7 @@ public final class PlatformStartRouteNotifyOuterClass {
               sceneTime_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 58: {
               emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder subBuilder = null;
               if (platform_ != null) {
                 subBuilder = platform_.toBuilder();
@@ -113,7 +113,7 @@ public final class PlatformStartRouteNotifyOuterClass {
 
               break;
             }
-            case 24: {
+            case 16: {
 
               entityId_ = input.readUInt32();
               break;
@@ -150,7 +150,7 @@ public final class PlatformStartRouteNotifyOuterClass {
               emu.grasscutter.net.proto.PlatformStartRouteNotifyOuterClass.PlatformStartRouteNotify.class, emu.grasscutter.net.proto.PlatformStartRouteNotifyOuterClass.PlatformStartRouteNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 2;
     private int entityId_;
     /**
      * <code>uint32 entity_id = 14;</code>
@@ -172,7 +172,7 @@ public final class PlatformStartRouteNotifyOuterClass {
       return sceneTime_;
     }
 
-    public static final int PLATFORM_FIELD_NUMBER = 14;
+    public static final int PLATFORM_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo platform_;
     /**
      * <code>.PlatformInfo platform = 10;</code>
@@ -216,10 +216,10 @@ public final class PlatformStartRouteNotifyOuterClass {
         output.writeUInt32(11, sceneTime_);
       }
       if (platform_ != null) {
-        output.writeMessage(14, getPlatform());
+        output.writeMessage(7, getPlatform());
       }
       if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
+        output.writeUInt32(2, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -236,11 +236,11 @@ public final class PlatformStartRouteNotifyOuterClass {
       }
       if (platform_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getPlatform());
+          .computeMessageSize(7, getPlatform());
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
+          .computeUInt32Size(2, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

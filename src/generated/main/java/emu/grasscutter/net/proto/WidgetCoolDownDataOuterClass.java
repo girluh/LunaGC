@@ -74,12 +74,12 @@ public final class WidgetCoolDownDataOuterClass {
               id_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 112: {
 
               isSuccess_ = input.readBool();
               break;
             }
-            case 72: {
+            case 56: {
 
               coolDownTime_ = input.readUInt64();
               break;
@@ -124,7 +124,7 @@ public final class WidgetCoolDownDataOuterClass {
       return id_;
     }
 
-    public static final int IS_SUCCESS_FIELD_NUMBER = 7;
+    public static final int IS_SUCCESS_FIELD_NUMBER = 14;
     private boolean isSuccess_;
 
     @java.lang.Override
@@ -132,7 +132,7 @@ public final class WidgetCoolDownDataOuterClass {
       return isSuccess_;
     }
 
-    public static final int COOL_DOWN_TIME_FIELD_NUMBER = 9;
+    public static final int COOL_DOWN_TIME_FIELD_NUMBER = 7;
     private long coolDownTime_;
 
     @java.lang.Override
@@ -158,10 +158,10 @@ public final class WidgetCoolDownDataOuterClass {
         output.writeUInt32(12, id_);
       }
       if (isSuccess_ != false) {
-        output.writeBool(7, isSuccess_);
+        output.writeBool(14, isSuccess_);
       }
       if (coolDownTime_ != 0L) {
-        output.writeUInt64(9, coolDownTime_);
+        output.writeUInt64(7, coolDownTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,11 +178,11 @@ public final class WidgetCoolDownDataOuterClass {
       }
       if (isSuccess_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isSuccess_);
+          .computeBoolSize(14, isSuccess_);
       }
       if (coolDownTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, coolDownTime_);
+          .computeUInt64Size(7, coolDownTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

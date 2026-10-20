@@ -79,32 +79,32 @@ public final class AvatarSkillChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 24: {
 
               avatarGuid_ = input.readUInt64();
               break;
             }
-            case 104: {
+            case 80: {
 
               curLevel_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 112: {
 
               oldLevel_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 40: {
 
               avatarSkillId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 56: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 120: {
 
               skillDepotId_ = input.readUInt32();
               break;
@@ -141,7 +141,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify.class, emu.grasscutter.net.proto.AvatarSkillChangeNotifyOuterClass.AvatarSkillChangeNotify.Builder.class);
     }
 
-    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 8;
+    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 15;
     private int skillDepotId_;
 
     @java.lang.Override
@@ -149,7 +149,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
       return skillDepotId_;
     }
 
-    public static final int CUR_LEVEL_FIELD_NUMBER = 13;
+    public static final int CUR_LEVEL_FIELD_NUMBER = 10;
     private int curLevel_;
 
     @java.lang.Override
@@ -157,7 +157,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
       return curLevel_;
     }
 
-    public static final int OLD_LEVEL_FIELD_NUMBER = 2;
+    public static final int OLD_LEVEL_FIELD_NUMBER = 14;
     private int oldLevel_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
       return oldLevel_;
     }
 
-    public static final int AVATAR_SKILL_ID_FIELD_NUMBER = 14;
+    public static final int AVATAR_SKILL_ID_FIELD_NUMBER = 5;
     private int avatarSkillId_;
 
     @java.lang.Override
@@ -173,7 +173,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
       return avatarSkillId_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 6;
+    public static final int ENTITY_ID_FIELD_NUMBER = 7;
     private int entityId_;
 
     @java.lang.Override
@@ -181,7 +181,7 @@ public final class AvatarSkillChangeNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 10;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 3;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -204,22 +204,22 @@ public final class AvatarSkillChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(10, avatarGuid_);
+        output.writeUInt64(3, avatarGuid_);
       }
       if (curLevel_ != 0) {
-        output.writeUInt32(13, curLevel_);
+        output.writeUInt32(10, curLevel_);
       }
       if (oldLevel_ != 0) {
-        output.writeUInt32(2, oldLevel_);
+        output.writeUInt32(14, oldLevel_);
       }
       if (avatarSkillId_ != 0) {
-        output.writeUInt32(14, avatarSkillId_);
+        output.writeUInt32(5, avatarSkillId_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(6, entityId_);
+        output.writeUInt32(7, entityId_);
       }
       if (skillDepotId_ != 0) {
-        output.writeUInt32(8, skillDepotId_);
+        output.writeUInt32(15, skillDepotId_);
       }
       unknownFields.writeTo(output);
     }
@@ -232,27 +232,27 @@ public final class AvatarSkillChangeNotifyOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, avatarGuid_);
+          .computeUInt64Size(3, avatarGuid_);
       }
       if (curLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, curLevel_);
+          .computeUInt32Size(10, curLevel_);
       }
       if (oldLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, oldLevel_);
+          .computeUInt32Size(14, oldLevel_);
       }
       if (avatarSkillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, avatarSkillId_);
+          .computeUInt32Size(5, avatarSkillId_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, entityId_);
+          .computeUInt32Size(7, entityId_);
       }
       if (skillDepotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, skillDepotId_);
+          .computeUInt32Size(15, skillDepotId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

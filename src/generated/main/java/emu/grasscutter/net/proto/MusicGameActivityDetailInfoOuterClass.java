@@ -144,7 +144,7 @@ public final class MusicGameActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.parser(), extensionRegistry));
               break;
             }
-            case 82: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 musicGameRecordMap_ = com.google.protobuf.MapField.newMapField(
                     MusicGameRecordMapDefaultEntryHolder.defaultEntry);
@@ -216,7 +216,7 @@ public final class MusicGameActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.class, emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.Builder.class);
     }
 
-    public static final int MUSIC_GAME_RECORD_MAP_FIELD_NUMBER = 10;
+    public static final int MUSIC_GAME_RECORD_MAP_FIELD_NUMBER = 4;
     private static final class MusicGameRecordMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.MusicGameRecordOuterClass.MusicGameRecord> defaultEntry =
@@ -390,7 +390,7 @@ public final class MusicGameActivityDetailInfoOuterClass {
           output,
           internalGetMusicGameRecordMap(),
           MusicGameRecordMapDefaultEntryHolder.defaultEntry,
-          10);
+          4);
       for (int i = 0; i < kKPNLOJOOLN_.size(); i++) {
         output.writeMessage(15, kKPNLOJOOLN_.get(i));
       }
@@ -415,7 +415,7 @@ public final class MusicGameActivityDetailInfoOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(10, musicGameRecordMap__);
+            .computeMessageSize(4, musicGameRecordMap__);
       }
       for (int i = 0; i < kKPNLOJOOLN_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream

@@ -103,7 +103,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 playerInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -112,7 +112,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry));
               break;
             }
-            case 48: {
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 playerUidList_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -120,7 +120,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
               playerUidList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -133,7 +133,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 58: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 playerWidgetInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -183,7 +183,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
               emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify.class, emu.grasscutter.net.proto.WorldPlayerInfoNotifyOuterClass.WorldPlayerInfoNotify.Builder.class);
     }
 
-    public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 12;
+    public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo> playerInfoList_;
 
     @java.lang.Override
@@ -213,7 +213,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
       return playerInfoList_.get(index);
     }
 
-    public static final int PLAYER_WIDGET_INFO_LIST_FIELD_NUMBER = 7;
+    public static final int PLAYER_WIDGET_INFO_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfo> playerWidgetInfoList_;
 
     @java.lang.Override
@@ -243,7 +243,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
       return playerWidgetInfoList_.get(index);
     }
 
-    public static final int PLAYER_UID_LIST_FIELD_NUMBER = 6;
+    public static final int PLAYER_UID_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList playerUidList_;
 
     @java.lang.Override
@@ -277,17 +277,17 @@ public final class WorldPlayerInfoNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       for (int i = 0; i < playerInfoList_.size(); i++) {
-        output.writeMessage(12, playerInfoList_.get(i));
+        output.writeMessage(4, playerInfoList_.get(i));
       }
       if (getPlayerUidListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(playerUidListMemoizedSerializedSize);
       }
       for (int i = 0; i < playerUidList_.size(); i++) {
         output.writeUInt32NoTag(playerUidList_.getInt(i));
       }
       for (int i = 0; i < playerWidgetInfoList_.size(); i++) {
-        output.writeMessage(7, playerWidgetInfoList_.get(i));
+        output.writeMessage(14, playerWidgetInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -300,7 +300,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
       size = 0;
       for (int i = 0; i < playerInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, playerInfoList_.get(i));
+          .computeMessageSize(4, playerInfoList_.get(i));
       }
       {
         int dataSize = 0;
@@ -318,7 +318,7 @@ public final class WorldPlayerInfoNotifyOuterClass {
       }
       for (int i = 0; i < playerWidgetInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, playerWidgetInfoList_.get(i));
+          .computeMessageSize(14, playerWidgetInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

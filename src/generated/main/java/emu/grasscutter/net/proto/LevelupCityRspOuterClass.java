@@ -106,17 +106,17 @@ public final class LevelupCityRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 40: {
+            case 24: {
 
               areaId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 8: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 82: {
+            case 42: {
               emu.grasscutter.net.proto.CityInfoOuterClass.CityInfo.Builder subBuilder = null;
               if (cityInfo_ != null) {
                 subBuilder = cityInfo_.toBuilder();
@@ -161,7 +161,7 @@ public final class LevelupCityRspOuterClass {
               emu.grasscutter.net.proto.LevelupCityRspOuterClass.LevelupCityRsp.class, emu.grasscutter.net.proto.LevelupCityRspOuterClass.LevelupCityRsp.Builder.class);
     }
 
-    public static final int CITY_INFO_FIELD_NUMBER = 10;
+    public static final int CITY_INFO_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.CityInfoOuterClass.CityInfo cityInfo_;
     /**
      * <code>.CityInfo city_info = 13;</code>
@@ -187,7 +187,7 @@ public final class LevelupCityRspOuterClass {
       return getCityInfo();
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 8;
+    public static final int SCENE_ID_FIELD_NUMBER = 1;
     private int sceneId_;
     /**
      * <code>uint32 scene_id = 12;</code>
@@ -198,7 +198,7 @@ public final class LevelupCityRspOuterClass {
       return sceneId_;
     }
 
-    public static final int AREA_ID_FIELD_NUMBER = 5;
+    public static final int AREA_ID_FIELD_NUMBER = 3;
     private int areaId_;
     /**
      * <code>uint32 area_id = 8;</code>
@@ -238,13 +238,13 @@ public final class LevelupCityRspOuterClass {
         output.writeInt32(6, retcode_);
       }
       if (areaId_ != 0) {
-        output.writeUInt32(5, areaId_);
+        output.writeUInt32(3, areaId_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(8, sceneId_);
+        output.writeUInt32(1, sceneId_);
       }
       if (cityInfo_ != null) {
-        output.writeMessage(10, getCityInfo());
+        output.writeMessage(5, getCityInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -261,15 +261,15 @@ public final class LevelupCityRspOuterClass {
       }
       if (areaId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, areaId_);
+          .computeUInt32Size(3, areaId_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sceneId_);
+          .computeUInt32Size(1, sceneId_);
       }
       if (cityInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getCityInfo());
+          .computeMessageSize(5, getCityInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

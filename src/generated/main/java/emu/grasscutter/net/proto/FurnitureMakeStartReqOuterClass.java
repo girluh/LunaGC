@@ -80,7 +80,7 @@ public final class FurnitureMakeStartReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
               makeId_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class FurnitureMakeStartReqOuterClass {
       return avatarId_;
     }
 
-    public static final int MAKE_ID_FIELD_NUMBER = 3;
+    public static final int MAKE_ID_FIELD_NUMBER = 6;
     private int makeId_;
     /**
      * <code>uint32 make_id = 7;</code>
@@ -159,7 +159,7 @@ public final class FurnitureMakeStartReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (makeId_ != 0) {
-        output.writeUInt32(3, makeId_);
+        output.writeUInt32(6, makeId_);
       }
       if (avatarId_ != 0) {
         output.writeUInt32(12, avatarId_);
@@ -175,7 +175,7 @@ public final class FurnitureMakeStartReqOuterClass {
       size = 0;
       if (makeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, makeId_);
+          .computeUInt32Size(6, makeId_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -139,7 +139,7 @@ public final class TreasureMapBonusChallengeInfoOuterClass {
                   fragmentMap__.getKey(), fragmentMap__.getValue());
               break;
             }
-            case 80: {
+            case 40: {
 
               configId_ = input.readUInt32();
               break;
@@ -149,12 +149,12 @@ public final class TreasureMapBonusChallengeInfoOuterClass {
               isActive_ = input.readBool();
               break;
             }
-            case 48: {
+            case 56: {
 
               solutionId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 16: {
 
               isDone_ = input.readBool();
               break;
@@ -214,7 +214,7 @@ public final class TreasureMapBonusChallengeInfoOuterClass {
       return isActive_;
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 10;
+    public static final int CONFIG_ID_FIELD_NUMBER = 5;
     private int configId_;
     /**
      * <code>uint32 config_id = 5;</code>
@@ -306,7 +306,7 @@ public final class TreasureMapBonusChallengeInfoOuterClass {
       return map.get(key);
     }
 
-    public static final int SOLUTION_ID_FIELD_NUMBER = 6;
+    public static final int SOLUTION_ID_FIELD_NUMBER = 7;
     private int solutionId_;
     /**
      * <code>uint32 solution_id = 9;</code>
@@ -317,7 +317,7 @@ public final class TreasureMapBonusChallengeInfoOuterClass {
       return solutionId_;
     }
 
-    public static final int IS_DONE_FIELD_NUMBER = 7;
+    public static final int IS_DONE_FIELD_NUMBER = 2;
     private boolean isDone_;
     /**
      * <code>bool is_done = 10;</code>
@@ -349,16 +349,16 @@ public final class TreasureMapBonusChallengeInfoOuterClass {
           FragmentMapDefaultEntryHolder.defaultEntry,
           9);
       if (configId_ != 0) {
-        output.writeUInt32(10, configId_);
+        output.writeUInt32(5, configId_);
       }
       if (isActive_ != false) {
         output.writeBool(8, isActive_);
       }
       if (solutionId_ != 0) {
-        output.writeUInt32(6, solutionId_);
+        output.writeUInt32(7, solutionId_);
       }
       if (isDone_ != false) {
-        output.writeBool(7, isDone_);
+        output.writeBool(2, isDone_);
       }
       unknownFields.writeTo(output);
     }
@@ -381,7 +381,7 @@ public final class TreasureMapBonusChallengeInfoOuterClass {
       }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, configId_);
+          .computeUInt32Size(5, configId_);
       }
       if (isActive_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -389,11 +389,11 @@ public final class TreasureMapBonusChallengeInfoOuterClass {
       }
       if (solutionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, solutionId_);
+          .computeUInt32Size(7, solutionId_);
       }
       if (isDone_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isDone_);
+          .computeBoolSize(2, isDone_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

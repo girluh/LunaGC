@@ -73,17 +73,17 @@ public final class AvatarDieAnimationEndRspOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 64: {
+            case 112: {
 
               dieGuid_ = input.readUInt64();
               break;
             }
-            case 72: {
+            case 88: {
 
               skillId_ = input.readUInt32();
               break;
@@ -120,7 +120,7 @@ public final class AvatarDieAnimationEndRspOuterClass {
               emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.class, emu.grasscutter.net.proto.AvatarDieAnimationEndRspOuterClass.AvatarDieAnimationEndRsp.Builder.class);
     }
 
-    public static final int DIE_GUID_FIELD_NUMBER = 8;
+    public static final int DIE_GUID_FIELD_NUMBER = 14;
     private long dieGuid_;
 
     @java.lang.Override
@@ -128,7 +128,7 @@ public final class AvatarDieAnimationEndRspOuterClass {
       return dieGuid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
 
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class AvatarDieAnimationEndRspOuterClass {
       return retcode_;
     }
 
-    public static final int SKILL_ID_FIELD_NUMBER = 9;
+    public static final int SKILL_ID_FIELD_NUMBER = 11;
     private int skillId_;
 
     @java.lang.Override
@@ -159,13 +159,13 @@ public final class AvatarDieAnimationEndRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(5, retcode_);
       }
       if (dieGuid_ != 0L) {
-        output.writeUInt64(8, dieGuid_);
+        output.writeUInt64(14, dieGuid_);
       }
       if (skillId_ != 0) {
-        output.writeUInt32(9, skillId_);
+        output.writeUInt32(11, skillId_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,15 +178,15 @@ public final class AvatarDieAnimationEndRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       if (dieGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(8, dieGuid_);
+          .computeUInt64Size(14, dieGuid_);
       }
       if (skillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, skillId_);
+          .computeUInt32Size(11, skillId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

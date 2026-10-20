@@ -73,7 +73,7 @@ public final class MPLevelEntityInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 42: {
               emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
               if (abilityInfo_ != null) {
                 subBuilder = abilityInfo_.toBuilder();
@@ -86,7 +86,7 @@ public final class MPLevelEntityInfoOuterClass {
 
               break;
             }
-            case 80: {
+            case 32: {
 
               entityId_ = input.readUInt32();
               break;
@@ -128,7 +128,7 @@ public final class MPLevelEntityInfoOuterClass {
               emu.grasscutter.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.class, emu.grasscutter.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo.Builder.class);
     }
 
-    public static final int ABILITY_INFO_FIELD_NUMBER = 7;
+    public static final int ABILITY_INFO_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo abilityInfo_;
 
     @java.lang.Override
@@ -154,7 +154,7 @@ public final class MPLevelEntityInfoOuterClass {
       return authorityPeerId_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 10;
+    public static final int ENTITY_ID_FIELD_NUMBER = 4;
     private int entityId_;
 
     @java.lang.Override
@@ -177,10 +177,10 @@ public final class MPLevelEntityInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (abilityInfo_ != null) {
-        output.writeMessage(7, getAbilityInfo());
+        output.writeMessage(5, getAbilityInfo());
       }
       if (entityId_ != 0) {
-        output.writeUInt32(10, entityId_);
+        output.writeUInt32(4, entityId_);
       }
       if (authorityPeerId_ != 0) {
         output.writeUInt32(15, authorityPeerId_);
@@ -196,11 +196,11 @@ public final class MPLevelEntityInfoOuterClass {
       size = 0;
       if (abilityInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getAbilityInfo());
+          .computeMessageSize(5, getAbilityInfo());
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, entityId_);
+          .computeUInt32Size(4, entityId_);
       }
       if (authorityPeerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

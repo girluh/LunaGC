@@ -117,7 +117,7 @@ public final class InfernceWordInfoOuterClass {
               dGMLJIKFAMI_ = input.readBool();
               break;
             }
-            case 64: {
+            case 80: {
 
               unlockByWordId_ = input.readUInt32();
               break;
@@ -154,7 +154,7 @@ public final class InfernceWordInfoOuterClass {
               emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.class, emu.grasscutter.net.proto.InfernceWordInfoOuterClass.InfernceWordInfo.Builder.class);
     }
 
-    public static final int UNLOCK_BY_WORD_ID_FIELD_NUMBER = 8;
+    public static final int UNLOCK_BY_WORD_ID_FIELD_NUMBER = 10;
     private int unlockByWordId_;
     /**
      * <code>uint32 unlock_by_word_id = 13;</code>
@@ -236,7 +236,7 @@ public final class InfernceWordInfoOuterClass {
         output.writeBool(11, dGMLJIKFAMI_);
       }
       if (unlockByWordId_ != 0) {
-        output.writeUInt32(8, unlockByWordId_);
+        output.writeUInt32(10, unlockByWordId_);
       }
       unknownFields.writeTo(output);
     }
@@ -265,7 +265,7 @@ public final class InfernceWordInfoOuterClass {
       }
       if (unlockByWordId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, unlockByWordId_);
+          .computeUInt32Size(10, unlockByWordId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -86,7 +86,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 finishedBundleList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -94,7 +94,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
               finishedBundleList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -142,7 +142,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
               emu.grasscutter.net.proto.SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.class, emu.grasscutter.net.proto.SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.Builder.class);
     }
 
-    public static final int FINISHED_BUNDLE_LIST_FIELD_NUMBER = 8;
+    public static final int FINISHED_BUNDLE_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList finishedBundleList_;
     /**
      * <code>repeated uint32 finished_bundle_list = 6;</code>
@@ -186,7 +186,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getFinishedBundleListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(finishedBundleListMemoizedSerializedSize);
       }
       for (int i = 0; i < finishedBundleList_.size(); i++) {

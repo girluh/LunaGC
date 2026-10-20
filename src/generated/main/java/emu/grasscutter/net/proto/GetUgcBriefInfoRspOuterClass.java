@@ -108,17 +108,17 @@ public final class GetUgcBriefInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 48: {
 
               ugcGuid_ = input.readUInt64();
               break;
             }
-            case 104: {
+            case 16: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 50: {
+            case 90: {
               emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) != 0)) {
                 subBuilder = musicBriefInfo_.toBuilder();
@@ -131,7 +131,7 @@ public final class GetUgcBriefInfoRspOuterClass {
               bitField0_ |= 0x00000001;
               break;
             }
-            case 112: {
+            case 80: {
               int rawValue = input.readEnum();
 
               ugcType_ = rawValue;
@@ -170,7 +170,7 @@ public final class GetUgcBriefInfoRspOuterClass {
     }
 
     private int bitField0_;
-    public static final int UgcType_FIELD_NUMBER = 14;
+    public static final int UgcType_FIELD_NUMBER = 10;
     private int ugcType_;
     /**
      * <code>.UgcType ugc_type = 13;</code>
@@ -189,7 +189,7 @@ public final class GetUgcBriefInfoRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
     }
 
-    public static final int UGC_GUID_FIELD_NUMBER = 7;
+    public static final int UGC_GUID_FIELD_NUMBER = 6;
     private long ugcGuid_;
     /**
      * <code>uint64 ugc_guid = 1;</code>
@@ -200,7 +200,7 @@ public final class GetUgcBriefInfoRspOuterClass {
       return ugcGuid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
      * <code>int32 retcode = 2;</code>
@@ -211,7 +211,7 @@ public final class GetUgcBriefInfoRspOuterClass {
       return retcode_;
     }
 
-    public static final int MUSIC_BRIEF_INFO_FIELD_NUMBER = 6;
+    public static final int MUSIC_BRIEF_INFO_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo musicBriefInfo_;
     /**
      * <code>optional .UgcMusicBriefInfo music_brief_info = 12;</code>
@@ -252,16 +252,16 @@ public final class GetUgcBriefInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (ugcGuid_ != 0L) {
-        output.writeUInt64(7, ugcGuid_);
+        output.writeUInt64(6, ugcGuid_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(2, retcode_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(6, getMusicBriefInfo());
+        output.writeMessage(11, getMusicBriefInfo());
       }
       if (ugcType_ != emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType.UgcType_NONE.getNumber()) {
-        output.writeEnum(14, ugcType_);
+        output.writeEnum(10, ugcType_);
       }
       unknownFields.writeTo(output);
     }
@@ -274,19 +274,19 @@ public final class GetUgcBriefInfoRspOuterClass {
       size = 0;
       if (ugcGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, ugcGuid_);
+          .computeUInt64Size(6, ugcGuid_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(2, retcode_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getMusicBriefInfo());
+          .computeMessageSize(11, getMusicBriefInfo());
       }
       if (ugcType_ != emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType.UgcType_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, ugcType_);
+          .computeEnumSize(10, ugcType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

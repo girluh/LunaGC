@@ -99,7 +99,7 @@ public final class SetWidgetQuickSlotListRspOuterClass {
               unk3700EHHHNEBOJIL_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 materialIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -107,7 +107,7 @@ public final class SetWidgetQuickSlotListRspOuterClass {
               materialIdList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -120,7 +120,7 @@ public final class SetWidgetQuickSlotListRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 56: {
+            case 120: {
 
               retcode_ = input.readInt32();
               break;
@@ -160,7 +160,7 @@ public final class SetWidgetQuickSlotListRspOuterClass {
               emu.grasscutter.net.proto.SetWidgetQuickSlotListRspOuterClass.SetWidgetQuickSlotListRsp.class, emu.grasscutter.net.proto.SetWidgetQuickSlotListRspOuterClass.SetWidgetQuickSlotListRsp.Builder.class);
     }
 
-    public static final int MATERIAL_ID_LIST_FIELD_NUMBER = 6;
+    public static final int MATERIAL_ID_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList materialIdList_;
     /**
      * <code>repeated uint32 material_id_list = 6;</code>
@@ -188,7 +188,7 @@ public final class SetWidgetQuickSlotListRspOuterClass {
     }
     private int materialIdListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
     /**
      * <code>int32 retcode = 14;</code>
@@ -229,14 +229,14 @@ public final class SetWidgetQuickSlotListRspOuterClass {
         output.writeUInt32(5, unk3700EHHHNEBOJIL_);
       }
       if (getMaterialIdListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(materialIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < materialIdList_.size(); i++) {
         output.writeUInt32NoTag(materialIdList_.getInt(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -267,7 +267,7 @@ public final class SetWidgetQuickSlotListRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

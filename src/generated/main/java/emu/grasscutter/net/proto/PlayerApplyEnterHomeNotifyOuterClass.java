@@ -89,7 +89,7 @@ public final class PlayerApplyEnterHomeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 26: {
               emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
               if (srcPlayerInfo_ != null) {
                 subBuilder = srcPlayerInfo_.toBuilder();
@@ -102,7 +102,7 @@ public final class PlayerApplyEnterHomeNotifyOuterClass {
 
               break;
             }
-            case 48: {
+            case 40: {
 
               srcAppId_ = input.readUInt32();
               break;
@@ -139,7 +139,7 @@ public final class PlayerApplyEnterHomeNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterHomeNotifyOuterClass.PlayerApplyEnterHomeNotify.class, emu.grasscutter.net.proto.PlayerApplyEnterHomeNotifyOuterClass.PlayerApplyEnterHomeNotify.Builder.class);
     }
 
-    public static final int SRC_PLAYER_INFO_FIELD_NUMBER = 2;
+    public static final int SRC_PLAYER_INFO_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo srcPlayerInfo_;
     /**
      * <code>.OnlinePlayerInfo src_player_info = 2;</code>
@@ -165,7 +165,7 @@ public final class PlayerApplyEnterHomeNotifyOuterClass {
       return getSrcPlayerInfo();
     }
 
-    public static final int SRC_APP_ID_FIELD_NUMBER = 6;
+    public static final int SRC_APP_ID_FIELD_NUMBER = 5;
     private int srcAppId_;
     /**
      * <code>uint32 src_app_id = 12;</code>
@@ -191,10 +191,10 @@ public final class PlayerApplyEnterHomeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (srcPlayerInfo_ != null) {
-        output.writeMessage(2, getSrcPlayerInfo());
+        output.writeMessage(3, getSrcPlayerInfo());
       }
       if (srcAppId_ != 0) {
-        output.writeUInt32(6, srcAppId_);
+        output.writeUInt32(5, srcAppId_);
       }
       unknownFields.writeTo(output);
     }
@@ -207,11 +207,11 @@ public final class PlayerApplyEnterHomeNotifyOuterClass {
       size = 0;
       if (srcPlayerInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getSrcPlayerInfo());
+          .computeMessageSize(3, getSrcPlayerInfo());
       }
       if (srcAppId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, srcAppId_);
+          .computeUInt32Size(5, srcAppId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

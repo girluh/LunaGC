@@ -211,12 +211,12 @@ public final class FleurFairActivityDetailInfoOuterClass {
                   hMJJFAKHOKN__.getKey(), hMJJFAKHOKN__.getValue());
               break;
             }
-            case 80: {
+            case 40: {
 
               contentCloseTime_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 80: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -512,7 +512,7 @@ public final class FleurFairActivityDetailInfoOuterClass {
       return iOIIEKCBJBK_;
     }
 
-    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 10;
+    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 5;
     private int contentCloseTime_;
 
     @java.lang.Override
@@ -520,7 +520,7 @@ public final class FleurFairActivityDetailInfoOuterClass {
       return contentCloseTime_;
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 5;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 10;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -569,10 +569,10 @@ public final class FleurFairActivityDetailInfoOuterClass {
           HMJJFAKHOKNDefaultEntryHolder.defaultEntry,
           7);
       if (contentCloseTime_ != 0) {
-        output.writeUInt32(10, contentCloseTime_);
+        output.writeUInt32(5, contentCloseTime_);
       }
       if (isContentClosed_ != false) {
-        output.writeBool(5, isContentClosed_);
+        output.writeBool(10, isContentClosed_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
@@ -616,11 +616,11 @@ public final class FleurFairActivityDetailInfoOuterClass {
       }
       if (contentCloseTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, contentCloseTime_);
+          .computeUInt32Size(5, contentCloseTime_);
       }
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isContentClosed_);
+          .computeBoolSize(10, isContentClosed_);
       }
       for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.KKMKOOOMMPEOuterClass.KKMKOOOMMPE> entry
            : internalGetGENNHGADGJB().getMap().entrySet()) {

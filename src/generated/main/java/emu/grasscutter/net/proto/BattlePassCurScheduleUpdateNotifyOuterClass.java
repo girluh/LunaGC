@@ -94,7 +94,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
               haveCurSchedule_ = input.readBool();
               break;
             }
-            case 16: {
+            case 72: {
 
               isViewed_ = input.readBool();
               break;
@@ -194,7 +194,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       return pHLGOADDENJ_;
     }
 
-    public static final int IS_VIEWED_FIELD_NUMBER = 2;
+    public static final int IS_VIEWED_FIELD_NUMBER = 9;
     private boolean isViewed_;
 
     @java.lang.Override
@@ -231,7 +231,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
         output.writeBool(4, haveCurSchedule_);
       }
       if (isViewed_ != false) {
-        output.writeBool(2, isViewed_);
+        output.writeBool(9, isViewed_);
       }
       if (pHLGOADDENJ_ != false) {
         output.writeBool(6, pHLGOADDENJ_);
@@ -258,7 +258,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       }
       if (isViewed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isViewed_);
+          .computeBoolSize(9, isViewed_);
       }
       if (pHLGOADDENJ_ != false) {
         size += com.google.protobuf.CodedOutputStream

@@ -82,7 +82,7 @@ public final class MusicGameRecordOuterClass {
               ugcGuid_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 80: {
 
               maxCombo_ = input.readUInt32();
               break;
@@ -135,7 +135,7 @@ public final class MusicGameRecordOuterClass {
       return ugcGuid_;
     }
 
-    public static final int MAX_COMBO_FIELD_NUMBER = 7;
+    public static final int MAX_COMBO_FIELD_NUMBER = 10;
     private int maxCombo_;
 
     @java.lang.Override
@@ -172,7 +172,7 @@ public final class MusicGameRecordOuterClass {
         output.writeUInt32(5, ugcGuid_);
       }
       if (maxCombo_ != 0) {
-        output.writeUInt32(7, maxCombo_);
+        output.writeUInt32(10, maxCombo_);
       }
       if (hDIKBBEMGGA_ != false) {
         output.writeBool(13, hDIKBBEMGGA_);
@@ -192,7 +192,7 @@ public final class MusicGameRecordOuterClass {
       }
       if (maxCombo_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, maxCombo_);
+          .computeUInt32Size(10, maxCombo_);
       }
       if (hDIKBBEMGGA_ != false) {
         size += com.google.protobuf.CodedOutputStream

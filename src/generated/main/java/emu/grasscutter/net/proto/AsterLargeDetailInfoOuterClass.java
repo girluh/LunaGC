@@ -67,7 +67,7 @@ public final class AsterLargeDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 80: {
 
               isOpen_ = input.readBool();
               break;
@@ -117,7 +117,7 @@ public final class AsterLargeDetailInfoOuterClass {
       return beginTime_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 1;
+    public static final int IS_OPEN_FIELD_NUMBER = 10;
     private boolean isOpen_;
 
     @java.lang.Override
@@ -140,7 +140,7 @@ public final class AsterLargeDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOpen_ != false) {
-        output.writeBool(1, isOpen_);
+        output.writeBool(10, isOpen_);
       }
       if (beginTime_ != 0) {
         output.writeUInt32(6, beginTime_);
@@ -156,7 +156,7 @@ public final class AsterLargeDetailInfoOuterClass {
       size = 0;
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isOpen_);
+          .computeBoolSize(10, isOpen_);
       }
       if (beginTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -86,12 +86,12 @@ public final class GetInvestigationMonsterRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 114: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 monsterList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster>();
                 mutable_bitField0_ |= 0x00000001;
@@ -100,7 +100,7 @@ public final class GetInvestigationMonsterRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.parser(), extensionRegistry));
               break;
             }
-            case 64: {
+            case 112: {
 
               isForMark_ = input.readBool();
               break;
@@ -140,7 +140,7 @@ public final class GetInvestigationMonsterRspOuterClass {
               emu.grasscutter.net.proto.GetInvestigationMonsterRspOuterClass.GetInvestigationMonsterRsp.class, emu.grasscutter.net.proto.GetInvestigationMonsterRspOuterClass.GetInvestigationMonsterRsp.Builder.class);
     }
 
-    public static final int MONSTER_LIST_FIELD_NUMBER = 14;
+    public static final int MONSTER_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster> monsterList_;
 
     @java.lang.Override
@@ -170,7 +170,7 @@ public final class GetInvestigationMonsterRspOuterClass {
       return monsterList_.get(index);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
 
     @java.lang.Override
@@ -178,7 +178,7 @@ public final class GetInvestigationMonsterRspOuterClass {
       return retcode_;
     }
 
-    public static final int IS_FOR_MARK_FIELD_NUMBER = 8;
+    public static final int IS_FOR_MARK_FIELD_NUMBER = 14;
     private boolean isForMark_;
 
     @java.lang.Override
@@ -201,13 +201,13 @@ public final class GetInvestigationMonsterRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
+        output.writeInt32(6, retcode_);
       }
       for (int i = 0; i < monsterList_.size(); i++) {
-        output.writeMessage(14, monsterList_.get(i));
+        output.writeMessage(1, monsterList_.get(i));
       }
       if (isForMark_ != false) {
-        output.writeBool(8, isForMark_);
+        output.writeBool(14, isForMark_);
       }
       unknownFields.writeTo(output);
     }
@@ -220,15 +220,15 @@ public final class GetInvestigationMonsterRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       for (int i = 0; i < monsterList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, monsterList_.get(i));
+          .computeMessageSize(1, monsterList_.get(i));
       }
       if (isForMark_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isForMark_);
+          .computeBoolSize(14, isForMark_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

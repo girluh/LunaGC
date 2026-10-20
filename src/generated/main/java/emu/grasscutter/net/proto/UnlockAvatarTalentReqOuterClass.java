@@ -71,12 +71,12 @@ public final class UnlockAvatarTalentReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 104: {
 
               talentId_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 64: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -113,7 +113,7 @@ public final class UnlockAvatarTalentReqOuterClass {
               emu.grasscutter.net.proto.UnlockAvatarTalentReqOuterClass.UnlockAvatarTalentReq.class, emu.grasscutter.net.proto.UnlockAvatarTalentReqOuterClass.UnlockAvatarTalentReq.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 8;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -121,7 +121,7 @@ public final class UnlockAvatarTalentReqOuterClass {
       return avatarGuid_;
     }
 
-    public static final int TALENT_ID_FIELD_NUMBER = 8;
+    public static final int TALENT_ID_FIELD_NUMBER = 13;
     private int talentId_;
 
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class UnlockAvatarTalentReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(2, avatarGuid_);
+        output.writeUInt64(8, avatarGuid_);
       }
       if (talentId_ != 0) {
-        output.writeUInt32(8, talentId_);
+        output.writeUInt32(13, talentId_);
       }
       unknownFields.writeTo(output);
     }
@@ -160,11 +160,11 @@ public final class UnlockAvatarTalentReqOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, avatarGuid_);
+          .computeUInt64Size(8, avatarGuid_);
       }
       if (talentId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, talentId_);
+          .computeUInt32Size(13, talentId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

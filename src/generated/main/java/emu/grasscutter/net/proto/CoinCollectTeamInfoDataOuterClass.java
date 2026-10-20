@@ -140,7 +140,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -148,7 +148,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
               avatarIdList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -161,7 +161,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 40: {
+            case 128008: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 dIDCPEELBFN_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -169,7 +169,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
               dIDCPEELBFN_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 128010: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -182,7 +182,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 8: {
+            case 64: {
 
               isHost_ = input.readBool();
               break;
@@ -208,12 +208,12 @@ public final class CoinCollectTeamInfoDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 64: {
+            case 96: {
 
               playerUid_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 8: {
 
               chooseSkillNo_ = input.readUInt32();
               break;
@@ -259,7 +259,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
               emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.class, emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.Builder.class);
     }
 
-    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 6;
+    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList avatarIdList_;
     /**
      * <code>repeated uint32 avatar_id_list = 4;</code>
@@ -287,7 +287,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
     }
     private int avatarIdListMemoizedSerializedSize = -1;
 
-    public static final int PLAYER_UID_FIELD_NUMBER = 8;
+    public static final int PLAYER_UID_FIELD_NUMBER = 12;
     private int playerUid_;
     /**
      * <code>uint32 player_uid = 13;</code>
@@ -298,7 +298,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
       return playerUid_;
     }
 
-    public static final int IS_HOST_FIELD_NUMBER = 1;
+    public static final int IS_HOST_FIELD_NUMBER = 8;
     private boolean isHost_;
     /**
      * <code>bool is_host = 8;</code>
@@ -309,7 +309,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
       return isHost_;
     }
 
-    public static final int CHOOSE_SKILL_NO_FIELD_NUMBER = 4;
+    public static final int CHOOSE_SKILL_NO_FIELD_NUMBER = 1;
     private int chooseSkillNo_;
     /**
      * <code>uint32 choose_skill_no = 15;</code>
@@ -348,7 +348,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
     }
     private int pLDBCFMDGLPMemoizedSerializedSize = -1;
 
-    public static final int DIDCPEELBFN_FIELD_NUMBER = 5;
+    public static final int DIDCPEELBFN_FIELD_NUMBER = 16001;
     private com.google.protobuf.Internal.IntList dIDCPEELBFN_;
     /**
      * <code>repeated uint32 DIDCPEELBFN = 5;</code>
@@ -392,21 +392,21 @@ public final class CoinCollectTeamInfoDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getAvatarIdListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(avatarIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarIdList_.size(); i++) {
         output.writeUInt32NoTag(avatarIdList_.getInt(i));
       }
       if (getDIDCPEELBFNList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(128010);
         output.writeUInt32NoTag(dIDCPEELBFNMemoizedSerializedSize);
       }
       for (int i = 0; i < dIDCPEELBFN_.size(); i++) {
         output.writeUInt32NoTag(dIDCPEELBFN_.getInt(i));
       }
       if (isHost_ != false) {
-        output.writeBool(1, isHost_);
+        output.writeBool(8, isHost_);
       }
       if (getPLDBCFMDGLPList().size() > 0) {
         output.writeUInt32NoTag(128002);
@@ -416,10 +416,10 @@ public final class CoinCollectTeamInfoDataOuterClass {
         output.writeUInt32NoTag(pLDBCFMDGLP_.getInt(i));
       }
       if (playerUid_ != 0) {
-        output.writeUInt32(8, playerUid_);
+        output.writeUInt32(12, playerUid_);
       }
       if (chooseSkillNo_ != 0) {
-        output.writeUInt32(4, chooseSkillNo_);
+        output.writeUInt32(1, chooseSkillNo_);
       }
       unknownFields.writeTo(output);
     }
@@ -452,7 +452,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
         }
         size += dataSize;
         if (!getDIDCPEELBFNList().isEmpty()) {
-          size += 1;
+          size += 3;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
@@ -460,7 +460,7 @@ public final class CoinCollectTeamInfoDataOuterClass {
       }
       if (isHost_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isHost_);
+          .computeBoolSize(8, isHost_);
       }
       {
         int dataSize = 0;
@@ -478,11 +478,11 @@ public final class CoinCollectTeamInfoDataOuterClass {
       }
       if (playerUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, playerUid_);
+          .computeUInt32Size(12, playerUid_);
       }
       if (chooseSkillNo_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, chooseSkillNo_);
+          .computeUInt32Size(1, chooseSkillNo_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

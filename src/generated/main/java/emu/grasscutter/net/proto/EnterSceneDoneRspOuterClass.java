@@ -87,12 +87,12 @@ public final class EnterSceneDoneRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
               enterSceneToken_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 80: {
 
               retcode_ = input.readInt32();
               break;
@@ -129,7 +129,7 @@ public final class EnterSceneDoneRspOuterClass {
               emu.grasscutter.net.proto.EnterSceneDoneRspOuterClass.EnterSceneDoneRsp.class, emu.grasscutter.net.proto.EnterSceneDoneRspOuterClass.EnterSceneDoneRsp.Builder.class);
     }
 
-    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 3;
+    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 6;
     private int enterSceneToken_;
     /**
      * <pre>
@@ -144,7 +144,7 @@ public final class EnterSceneDoneRspOuterClass {
       return enterSceneToken_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
      * <pre>
@@ -174,10 +174,10 @@ public final class EnterSceneDoneRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(10, retcode_);
       }
       if (enterSceneToken_ != 0) {
-        output.writeUInt32(3, enterSceneToken_);
+        output.writeUInt32(6, enterSceneToken_);
       }
       unknownFields.writeTo(output);
     }
@@ -190,11 +190,11 @@ public final class EnterSceneDoneRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
+          .computeInt32Size(10, retcode_);
       }
       if (enterSceneToken_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, enterSceneToken_);
+          .computeUInt32Size(6, enterSceneToken_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -76,7 +76,7 @@ public final class AvatarFetterLevelRewardReqOuterClass {
               fetterLevel_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 120: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -113,7 +113,7 @@ public final class AvatarFetterLevelRewardReqOuterClass {
               emu.grasscutter.net.proto.AvatarFetterLevelRewardReqOuterClass.AvatarFetterLevelRewardReq.class, emu.grasscutter.net.proto.AvatarFetterLevelRewardReqOuterClass.AvatarFetterLevelRewardReq.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 13;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 15;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class AvatarFetterLevelRewardReqOuterClass {
         output.writeUInt32(3, fetterLevel_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(13, avatarGuid_);
+        output.writeUInt64(15, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -164,7 +164,7 @@ public final class AvatarFetterLevelRewardReqOuterClass {
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, avatarGuid_);
+          .computeUInt64Size(15, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

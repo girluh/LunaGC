@@ -94,7 +94,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 briefInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BlossomBriefInfoOuterClass.BlossomBriefInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,7 +138,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
               emu.grasscutter.net.proto.BlossomBriefInfoNotifyOuterClass.BlossomBriefInfoNotify.class, emu.grasscutter.net.proto.BlossomBriefInfoNotifyOuterClass.BlossomBriefInfoNotify.Builder.class);
     }
 
-    public static final int BRIEF_INFO_LIST_FIELD_NUMBER = 13;
+    public static final int BRIEF_INFO_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.BlossomBriefInfoOuterClass.BlossomBriefInfo> briefInfoList_;
     /**
      * <code>repeated .BlossomBriefInfo brief_info_list = 12;</code>
@@ -193,7 +193,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < briefInfoList_.size(); i++) {
-        output.writeMessage(13, briefInfoList_.get(i));
+        output.writeMessage(10, briefInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
       size = 0;
       for (int i = 0; i < briefInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, briefInfoList_.get(i));
+          .computeMessageSize(10, briefInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

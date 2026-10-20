@@ -146,12 +146,12 @@ public final class ItemGivingReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 112: {
 
               givingId_ = input.readUInt32();
               break;
             }
-            case 50: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemParamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -166,7 +166,7 @@ public final class ItemGivingReqOuterClass {
               itemGivingType_ = rawValue;
               break;
             }
-            case 66: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 itemGuidCountMap_ = com.google.protobuf.MapField.newMapField(
                     ItemGuidCountMapDefaultEntryHolder.defaultEntry);
@@ -338,7 +338,7 @@ public final class ItemGivingReqOuterClass {
       // @@protoc_insertion_point(enum_scope:ItemGivingReq.ItemGivingType)
     }
 
-    public static final int GIVING_ID_FIELD_NUMBER = 10;
+    public static final int GIVING_ID_FIELD_NUMBER = 14;
     private int givingId_;
     /**
      * <code>uint32 giving_id = 12;</code>
@@ -349,7 +349,7 @@ public final class ItemGivingReqOuterClass {
       return givingId_;
     }
 
-    public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 6;
+    public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemParamList_;
     /**
      * <code>repeated .ItemParam item_param_list = 15;</code>
@@ -389,7 +389,7 @@ public final class ItemGivingReqOuterClass {
       return itemParamList_.get(index);
     }
 
-    public static final int ITEM_GUID_COUNT_MAP_FIELD_NUMBER = 8;
+    public static final int ITEM_GUID_COUNT_MAP_FIELD_NUMBER = 13;
     private static final class ItemGuidCountMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Long, java.lang.Integer> defaultEntry =
@@ -507,16 +507,16 @@ public final class ItemGivingReqOuterClass {
         output.writeEnum(7, itemGivingType_);
       }
       if (givingId_ != 0) {
-        output.writeUInt32(10, givingId_);
+        output.writeUInt32(14, givingId_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeLongMapTo(
           output,
           internalGetItemGuidCountMap(),
           ItemGuidCountMapDefaultEntryHolder.defaultEntry,
-          8);
+          13);
       for (int i = 0; i < itemParamList_.size(); i++) {
-        output.writeMessage(6, itemParamList_.get(i));
+        output.writeMessage(4, itemParamList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -533,7 +533,7 @@ public final class ItemGivingReqOuterClass {
       }
       if (givingId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, givingId_);
+          .computeUInt32Size(14, givingId_);
       }
       for (java.util.Map.Entry<java.lang.Long, java.lang.Integer> entry
            : internalGetItemGuidCountMap().getMap().entrySet()) {
@@ -543,11 +543,11 @@ public final class ItemGivingReqOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(8, itemGuidCountMap__);
+            .computeMessageSize(13, itemGuidCountMap__);
       }
       for (int i = 0; i < itemParamList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, itemParamList_.get(i));
+          .computeMessageSize(4, itemParamList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

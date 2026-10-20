@@ -79,12 +79,12 @@ public final class BartenderTaskInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 112: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 112: {
+            case 32: {
 
               id_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class BartenderTaskInfoOuterClass {
               emu.grasscutter.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo.class, emu.grasscutter.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 14;
+    public static final int ID_FIELD_NUMBER = 4;
     private int id_;
     /**
      * <code>uint32 id = 15;</code>
@@ -132,7 +132,7 @@ public final class BartenderTaskInfoOuterClass {
       return id_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 9;
+    public static final int IS_FINISH_FIELD_NUMBER = 14;
     private boolean isFinish_;
     /**
      * <code>bool is_finish = 9;</code>
@@ -158,10 +158,10 @@ public final class BartenderTaskInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isFinish_ != false) {
-        output.writeBool(9, isFinish_);
+        output.writeBool(14, isFinish_);
       }
       if (id_ != 0) {
-        output.writeUInt32(14, id_);
+        output.writeUInt32(4, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class BartenderTaskInfoOuterClass {
       size = 0;
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isFinish_);
+          .computeBoolSize(14, isFinish_);
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, id_);
+          .computeUInt32Size(4, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

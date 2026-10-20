@@ -91,22 +91,22 @@ public final class RockBoardExploreStageDataOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 48: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 80: {
+            case 112: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 88: {
+            case 104: {
 
               openTime_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 96: {
 
               stageId_ = input.readUInt32();
               break;
@@ -143,7 +143,7 @@ public final class RockBoardExploreStageDataOuterClass {
               emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.class, emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 10;
+    public static final int IS_OPEN_FIELD_NUMBER = 14;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 5;</code>
@@ -154,7 +154,7 @@ public final class RockBoardExploreStageDataOuterClass {
       return isOpen_;
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 11;
+    public static final int OPEN_TIME_FIELD_NUMBER = 13;
     private int openTime_;
     /**
      * <code>uint32 open_time = 6;</code>
@@ -165,7 +165,7 @@ public final class RockBoardExploreStageDataOuterClass {
       return openTime_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 14;
+    public static final int STAGE_ID_FIELD_NUMBER = 12;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 8;</code>
@@ -176,7 +176,7 @@ public final class RockBoardExploreStageDataOuterClass {
       return stageId_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 13;
+    public static final int IS_FINISH_FIELD_NUMBER = 6;
     private boolean isFinish_;
     /**
      * <code>bool is_finish = 3;</code>
@@ -202,16 +202,16 @@ public final class RockBoardExploreStageDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isFinish_ != false) {
-        output.writeBool(13, isFinish_);
+        output.writeBool(6, isFinish_);
       }
       if (isOpen_ != false) {
-        output.writeBool(10, isOpen_);
+        output.writeBool(14, isOpen_);
       }
       if (openTime_ != 0) {
-        output.writeUInt32(11, openTime_);
+        output.writeUInt32(13, openTime_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(14, stageId_);
+        output.writeUInt32(12, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,19 +224,19 @@ public final class RockBoardExploreStageDataOuterClass {
       size = 0;
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isFinish_);
+          .computeBoolSize(6, isFinish_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isOpen_);
+          .computeBoolSize(14, isOpen_);
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, openTime_);
+          .computeUInt32Size(13, openTime_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, stageId_);
+          .computeUInt32Size(12, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

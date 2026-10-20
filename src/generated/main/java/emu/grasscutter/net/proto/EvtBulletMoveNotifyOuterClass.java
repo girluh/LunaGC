@@ -106,7 +106,7 @@ public final class EvtBulletMoveNotifyOuterClass {
               entityId_ = input.readUInt32();
               break;
             }
-            case 66: {
+            case 106: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (curPos_ != null) {
                 subBuilder = curPos_.toBuilder();
@@ -119,7 +119,7 @@ public final class EvtBulletMoveNotifyOuterClass {
 
               break;
             }
-            case 112: {
+            case 80: {
               int rawValue = input.readEnum();
 
               forwardType_ = rawValue;
@@ -168,7 +168,7 @@ public final class EvtBulletMoveNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int CUR_POS_FIELD_NUMBER = 8;
+    public static final int CUR_POS_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector curPos_;
     /**
      * <code>.Vector cur_pos = 13;</code>
@@ -194,7 +194,7 @@ public final class EvtBulletMoveNotifyOuterClass {
       return getCurPos();
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 14;
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 10;
     private int forwardType_;
     /**
      * <code>.ForwardType forward_type = 15;</code>
@@ -231,10 +231,10 @@ public final class EvtBulletMoveNotifyOuterClass {
         output.writeUInt32(5, entityId_);
       }
       if (curPos_ != null) {
-        output.writeMessage(8, getCurPos());
+        output.writeMessage(13, getCurPos());
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.ForwardType_FORWARD_LOCAL.getNumber()) {
-        output.writeEnum(14, forwardType_);
+        output.writeEnum(10, forwardType_);
       }
       unknownFields.writeTo(output);
     }
@@ -251,11 +251,11 @@ public final class EvtBulletMoveNotifyOuterClass {
       }
       if (curPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getCurPos());
+          .computeMessageSize(13, getCurPos());
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.ForwardType_FORWARD_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, forwardType_);
+          .computeEnumSize(10, forwardType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

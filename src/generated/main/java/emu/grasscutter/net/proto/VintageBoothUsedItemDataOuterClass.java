@@ -84,7 +84,7 @@ public final class VintageBoothUsedItemDataOuterClass {
               gadgetId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 32: {
 
               isOpen_ = input.readBool();
               break;
@@ -121,7 +121,7 @@ public final class VintageBoothUsedItemDataOuterClass {
               emu.grasscutter.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.class, emu.grasscutter.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 13;
+    public static final int IS_OPEN_FIELD_NUMBER = 4;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 15;</code>
@@ -161,7 +161,7 @@ public final class VintageBoothUsedItemDataOuterClass {
         output.writeUInt32(9, gadgetId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(13, isOpen_);
+        output.writeBool(4, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,7 +178,7 @@ public final class VintageBoothUsedItemDataOuterClass {
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isOpen_);
+          .computeBoolSize(4, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

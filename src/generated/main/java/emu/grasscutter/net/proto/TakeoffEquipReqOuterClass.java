@@ -71,7 +71,7 @@ public final class TakeoffEquipReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 24: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -121,7 +121,7 @@ public final class TakeoffEquipReqOuterClass {
       return slot_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 14;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 3;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -144,7 +144,7 @@ public final class TakeoffEquipReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(14, avatarGuid_);
+        output.writeUInt64(3, avatarGuid_);
       }
       if (slot_ != 0) {
         output.writeUInt32(9, slot_);
@@ -160,7 +160,7 @@ public final class TakeoffEquipReqOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, avatarGuid_);
+          .computeUInt64Size(3, avatarGuid_);
       }
       if (slot_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -247,12 +247,12 @@ public final class HomeSceneArrangementInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.parser(), extensionRegistry));
               break;
             }
-            case 72: {
+            case 32: {
 
               bgmId_ = input.readUInt32();
               break;
             }
-            case 82: {
+            case 74: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (djinnPos_ != null) {
                 subBuilder = djinnPos_.toBuilder();
@@ -265,12 +265,12 @@ public final class HomeSceneArrangementInfoOuterClass {
 
               break;
             }
-            case 104: {
+            case 120: {
 
               comfortValue_ = input.readUInt32();
               break;
             }
-            case 42: {
+            case 82: {
               emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder subBuilder = null;
               if (mainHouse_ != null) {
                 subBuilder = mainHouse_.toBuilder();
@@ -283,7 +283,7 @@ public final class HomeSceneArrangementInfoOuterClass {
 
               break;
             }
-            case 58: {
+            case 128002: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 hDOFAHGPJGK_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
                 mutable_bitField0_ |= 0x00000002;
@@ -292,12 +292,12 @@ public final class HomeSceneArrangementInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
               break;
             }
-            case 16: {
+            case 104: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 128010: {
+            case 26: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (bornRot_ != null) {
                 subBuilder = bornRot_.toBuilder();
@@ -310,7 +310,7 @@ public final class HomeSceneArrangementInfoOuterClass {
 
               break;
             }
-            case 50: {
+            case 114: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (bornPos_ != null) {
                 subBuilder = bornPos_.toBuilder();
@@ -323,7 +323,7 @@ public final class HomeSceneArrangementInfoOuterClass {
 
               break;
             }
-            case 128002: {
+            case 128010: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 mLECLIOFALA_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
                 mutable_bitField0_ |= 0x00000004;
@@ -332,7 +332,7 @@ public final class HomeSceneArrangementInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
               break;
             }
-            case 96: {
+            case 56: {
 
               tmpVersion_ = input.readUInt32();
               break;
@@ -418,7 +418,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return blockArrangementInfoList_.get(index);
     }
 
-    public static final int HDOFAHGPJGK_FIELD_NUMBER = 7;
+    public static final int HDOFAHGPJGK_FIELD_NUMBER = 16000;
     private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> hDOFAHGPJGK_;
     /**
      * <code>repeated .HomeFurnitureData HDOFAHGPJGK = 7;</code>
@@ -458,7 +458,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return hDOFAHGPJGK_.get(index);
     }
 
-    public static final int MLECLIOFALA_FIELD_NUMBER = 16000;
+    public static final int MLECLIOFALA_FIELD_NUMBER = 16001;
     private java.util.List<emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> mLECLIOFALA_;
     /**
      * <code>repeated .HomeFurnitureData MLECLIOFALA = 12;</code>
@@ -498,7 +498,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return mLECLIOFALA_.get(index);
     }
 
-    public static final int BORN_ROT_FIELD_NUMBER = 16001;
+    public static final int BORN_ROT_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector bornRot_;
     /**
      * <code>.Vector born_rot = 9;</code>
@@ -524,7 +524,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return getBornRot();
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 2;
+    public static final int SCENE_ID_FIELD_NUMBER = 13;
     private int sceneId_;
     /**
      * <code>uint32 scene_id = 8;</code>
@@ -535,7 +535,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return sceneId_;
     }
 
-    public static final int BGM_ID_FIELD_NUMBER = 9;
+    public static final int BGM_ID_FIELD_NUMBER = 4;
     private int bgmId_;
     /**
      * <code>uint32 bgm_id = 3;</code>
@@ -546,7 +546,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return bgmId_;
     }
 
-    public static final int COMFORT_VALUE_FIELD_NUMBER = 13;
+    public static final int COMFORT_VALUE_FIELD_NUMBER = 15;
     private int comfortValue_;
     /**
      * <code>uint32 comfort_value = 5;</code>
@@ -557,7 +557,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return comfortValue_;
     }
 
-    public static final int MAIN_HOUSE_FIELD_NUMBER = 5;
+    public static final int MAIN_HOUSE_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData mainHouse_;
     /**
      * <code>.HomeFurnitureData main_house = 6;</code>
@@ -583,7 +583,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return getMainHouse();
     }
 
-    public static final int TMP_VERSION_FIELD_NUMBER = 12;
+    public static final int TMP_VERSION_FIELD_NUMBER = 7;
     private int tmpVersion_;
     /**
      * <code>uint32 tmp_version = 13;</code>
@@ -605,7 +605,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return isSetBornPos_;
     }
 
-    public static final int DJINN_POS_FIELD_NUMBER = 10;
+    public static final int DJINN_POS_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector djinnPos_;
     /**
      * <code>.Vector djinn_pos = 4;</code>
@@ -631,7 +631,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       return getDjinnPos();
     }
 
-    public static final int BORN_POS_FIELD_NUMBER = 6;
+    public static final int BORN_POS_FIELD_NUMBER = 14;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector bornPos_;
     /**
      * <code>.Vector born_pos = 10;</code>
@@ -678,34 +678,34 @@ public final class HomeSceneArrangementInfoOuterClass {
         output.writeMessage(1, blockArrangementInfoList_.get(i));
       }
       if (bgmId_ != 0) {
-        output.writeUInt32(9, bgmId_);
+        output.writeUInt32(4, bgmId_);
       }
       if (djinnPos_ != null) {
-        output.writeMessage(10, getDjinnPos());
+        output.writeMessage(9, getDjinnPos());
       }
       if (comfortValue_ != 0) {
-        output.writeUInt32(13, comfortValue_);
+        output.writeUInt32(15, comfortValue_);
       }
       if (mainHouse_ != null) {
-        output.writeMessage(5, getMainHouse());
+        output.writeMessage(10, getMainHouse());
       }
       for (int i = 0; i < hDOFAHGPJGK_.size(); i++) {
-        output.writeMessage(7, hDOFAHGPJGK_.get(i));
+        output.writeMessage(16000, hDOFAHGPJGK_.get(i));
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(2, sceneId_);
+        output.writeUInt32(13, sceneId_);
       }
       if (bornRot_ != null) {
-        output.writeMessage(16001, getBornRot());
+        output.writeMessage(3, getBornRot());
       }
       if (bornPos_ != null) {
-        output.writeMessage(6, getBornPos());
+        output.writeMessage(14, getBornPos());
       }
       for (int i = 0; i < mLECLIOFALA_.size(); i++) {
-        output.writeMessage(16000, mLECLIOFALA_.get(i));
+        output.writeMessage(16001, mLECLIOFALA_.get(i));
       }
       if (tmpVersion_ != 0) {
-        output.writeUInt32(12, tmpVersion_);
+        output.writeUInt32(7, tmpVersion_);
       }
       unknownFields.writeTo(output);
     }
@@ -726,43 +726,43 @@ public final class HomeSceneArrangementInfoOuterClass {
       }
       if (bgmId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, bgmId_);
+          .computeUInt32Size(4, bgmId_);
       }
       if (djinnPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getDjinnPos());
+          .computeMessageSize(9, getDjinnPos());
       }
       if (comfortValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, comfortValue_);
+          .computeUInt32Size(15, comfortValue_);
       }
       if (mainHouse_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getMainHouse());
+          .computeMessageSize(10, getMainHouse());
       }
       for (int i = 0; i < hDOFAHGPJGK_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, hDOFAHGPJGK_.get(i));
+          .computeMessageSize(16000, hDOFAHGPJGK_.get(i));
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, sceneId_);
+          .computeUInt32Size(13, sceneId_);
       }
       if (bornRot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16001, getBornRot());
+          .computeMessageSize(3, getBornRot());
       }
       if (bornPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getBornPos());
+          .computeMessageSize(14, getBornPos());
       }
       for (int i = 0; i < mLECLIOFALA_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16000, mLECLIOFALA_.get(i));
+          .computeMessageSize(16001, mLECLIOFALA_.get(i));
       }
       if (tmpVersion_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, tmpVersion_);
+          .computeUInt32Size(7, tmpVersion_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

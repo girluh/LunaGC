@@ -85,17 +85,17 @@ public final class ChannelerSlabOneoffDungeonOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 112: {
 
               dungeonId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 80: {
 
               rewardId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 32: {
 
               isDone_ = input.readBool();
               break;
@@ -132,7 +132,7 @@ public final class ChannelerSlabOneoffDungeonOuterClass {
               emu.grasscutter.net.proto.ChannelerSlabOneoffDungeonOuterClass.ChannelerSlabOneoffDungeon.class, emu.grasscutter.net.proto.ChannelerSlabOneoffDungeonOuterClass.ChannelerSlabOneoffDungeon.Builder.class);
     }
 
-    public static final int REWARD_ID_FIELD_NUMBER = 11;
+    public static final int REWARD_ID_FIELD_NUMBER = 10;
     private int rewardId_;
     /**
      * <code>uint32 reward_id = 10;</code>
@@ -143,7 +143,7 @@ public final class ChannelerSlabOneoffDungeonOuterClass {
       return rewardId_;
     }
 
-    public static final int IS_DONE_FIELD_NUMBER = 15;
+    public static final int IS_DONE_FIELD_NUMBER = 4;
     private boolean isDone_;
     /**
      * <code>bool is_done = 11;</code>
@@ -154,7 +154,7 @@ public final class ChannelerSlabOneoffDungeonOuterClass {
       return isDone_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 9;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 14;
     private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 3;</code>
@@ -180,13 +180,13 @@ public final class ChannelerSlabOneoffDungeonOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonId_ != 0) {
-        output.writeUInt32(9, dungeonId_);
+        output.writeUInt32(14, dungeonId_);
       }
       if (rewardId_ != 0) {
-        output.writeUInt32(11, rewardId_);
+        output.writeUInt32(10, rewardId_);
       }
       if (isDone_ != false) {
-        output.writeBool(15, isDone_);
+        output.writeBool(4, isDone_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class ChannelerSlabOneoffDungeonOuterClass {
       size = 0;
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, dungeonId_);
+          .computeUInt32Size(14, dungeonId_);
       }
       if (rewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, rewardId_);
+          .computeUInt32Size(10, rewardId_);
       }
       if (isDone_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isDone_);
+          .computeBoolSize(4, isDone_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

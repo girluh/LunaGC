@@ -67,7 +67,7 @@ public final class PlayerRoutineInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 120: {
 
               finishedNum_ = input.readUInt32();
               break;
@@ -117,7 +117,7 @@ public final class PlayerRoutineInfoOuterClass {
       return routineType_;
     }
 
-    public static final int FINISHED_NUM_FIELD_NUMBER = 13;
+    public static final int FINISHED_NUM_FIELD_NUMBER = 15;
     private int finishedNum_;
 
     @java.lang.Override
@@ -140,7 +140,7 @@ public final class PlayerRoutineInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (finishedNum_ != 0) {
-        output.writeUInt32(13, finishedNum_);
+        output.writeUInt32(15, finishedNum_);
       }
       if (routineType_ != 0) {
         output.writeUInt32(14, routineType_);
@@ -156,7 +156,7 @@ public final class PlayerRoutineInfoOuterClass {
       size = 0;
       if (finishedNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, finishedNum_);
+          .computeUInt32Size(15, finishedNum_);
       }
       if (routineType_ != 0) {
         size += com.google.protobuf.CodedOutputStream

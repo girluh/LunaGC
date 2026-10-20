@@ -110,12 +110,12 @@ public final class CreateVehicleReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 112: {
 
               scenePointId_ = input.readUInt32();
               break;
             }
-            case 66: {
+            case 42: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
@@ -128,7 +128,7 @@ public final class CreateVehicleReqOuterClass {
 
               break;
             }
-            case 58: {
+            case 90: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -141,7 +141,7 @@ public final class CreateVehicleReqOuterClass {
 
               break;
             }
-            case 40: {
+            case 104: {
 
               vehicleId_ = input.readUInt32();
               break;
@@ -178,7 +178,7 @@ public final class CreateVehicleReqOuterClass {
               emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReq.class, emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReq.Builder.class);
     }
 
-    public static final int SCENE_POINT_ID_FIELD_NUMBER = 1;
+    public static final int SCENE_POINT_ID_FIELD_NUMBER = 14;
     private int scenePointId_;
     /**
      * <code>uint32 scene_point_id = 4;</code>
@@ -189,7 +189,7 @@ public final class CreateVehicleReqOuterClass {
       return scenePointId_;
     }
 
-    public static final int POS_FIELD_NUMBER = 7;
+    public static final int POS_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 10;</code>
@@ -215,7 +215,7 @@ public final class CreateVehicleReqOuterClass {
       return getPos();
     }
 
-    public static final int VEHICLE_ID_FIELD_NUMBER = 5;
+    public static final int VEHICLE_ID_FIELD_NUMBER = 13;
     private int vehicleId_;
     /**
      * <code>uint32 vehicle_id = 11;</code>
@@ -226,7 +226,7 @@ public final class CreateVehicleReqOuterClass {
       return vehicleId_;
     }
 
-    public static final int ROT_FIELD_NUMBER = 8;
+    public static final int ROT_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
     /**
      * <code>.Vector rot = 5;</code>
@@ -267,16 +267,16 @@ public final class CreateVehicleReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scenePointId_ != 0) {
-        output.writeUInt32(1, scenePointId_);
+        output.writeUInt32(14, scenePointId_);
       }
       if (rot_ != null) {
-        output.writeMessage(8, getRot());
+        output.writeMessage(5, getRot());
       }
       if (pos_ != null) {
-        output.writeMessage(7, getPos());
+        output.writeMessage(11, getPos());
       }
       if (vehicleId_ != 0) {
-        output.writeUInt32(5, vehicleId_);
+        output.writeUInt32(13, vehicleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -289,19 +289,19 @@ public final class CreateVehicleReqOuterClass {
       size = 0;
       if (scenePointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, scenePointId_);
+          .computeUInt32Size(14, scenePointId_);
       }
       if (rot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getRot());
+          .computeMessageSize(5, getRot());
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getPos());
+          .computeMessageSize(11, getPos());
       }
       if (vehicleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, vehicleId_);
+          .computeUInt32Size(13, vehicleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

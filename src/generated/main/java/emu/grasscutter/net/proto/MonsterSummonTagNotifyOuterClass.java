@@ -91,12 +91,12 @@ public final class MonsterSummonTagNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 72: {
 
               monsterEntityId_ = input.readUInt32();
               break;
             }
-            case 42: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 summonTagMap_ = com.google.protobuf.MapField.newMapField(
                     SummonTagMapDefaultEntryHolder.defaultEntry);
@@ -153,7 +153,7 @@ public final class MonsterSummonTagNotifyOuterClass {
               emu.grasscutter.net.proto.MonsterSummonTagNotifyOuterClass.MonsterSummonTagNotify.class, emu.grasscutter.net.proto.MonsterSummonTagNotifyOuterClass.MonsterSummonTagNotify.Builder.class);
     }
 
-    public static final int SUMMON_TAG_MAP_FIELD_NUMBER = 5;
+    public static final int SUMMON_TAG_MAP_FIELD_NUMBER = 15;
     private static final class SummonTagMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -225,7 +225,7 @@ public final class MonsterSummonTagNotifyOuterClass {
       return map.get(key);
     }
 
-    public static final int MONSTER_ENTITY_ID_FIELD_NUMBER = 4;
+    public static final int MONSTER_ENTITY_ID_FIELD_NUMBER = 9;
     private int monsterEntityId_;
 
     @java.lang.Override
@@ -248,14 +248,14 @@ public final class MonsterSummonTagNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (monsterEntityId_ != 0) {
-        output.writeUInt32(4, monsterEntityId_);
+        output.writeUInt32(9, monsterEntityId_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetSummonTagMap(),
           SummonTagMapDefaultEntryHolder.defaultEntry,
-          5);
+          15);
       unknownFields.writeTo(output);
     }
 
@@ -267,7 +267,7 @@ public final class MonsterSummonTagNotifyOuterClass {
       size = 0;
       if (monsterEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, monsterEntityId_);
+          .computeUInt32Size(9, monsterEntityId_);
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetSummonTagMap().getMap().entrySet()) {
@@ -277,7 +277,7 @@ public final class MonsterSummonTagNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(5, summonTagMap__);
+            .computeMessageSize(15, summonTagMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

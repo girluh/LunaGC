@@ -85,7 +85,7 @@ public final class McoinExchangeHcoinReqOuterClass {
               hcoin_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 8: {
 
               mcoinCost_ = input.readUInt32();
               break;
@@ -122,7 +122,7 @@ public final class McoinExchangeHcoinReqOuterClass {
               emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq.class, emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq.Builder.class);
     }
 
-    public static final int MCOIN_COST_FIELD_NUMBER = 14;
+    public static final int MCOIN_COST_FIELD_NUMBER = 1;
     private int mcoinCost_;
     /**
      * <code>uint32 mcoin_cost = 13;</code>
@@ -162,7 +162,7 @@ public final class McoinExchangeHcoinReqOuterClass {
         output.writeUInt32(8, hcoin_);
       }
       if (mcoinCost_ != 0) {
-        output.writeUInt32(14, mcoinCost_);
+        output.writeUInt32(1, mcoinCost_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,7 +179,7 @@ public final class McoinExchangeHcoinReqOuterClass {
       }
       if (mcoinCost_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, mcoinCost_);
+          .computeUInt32Size(1, mcoinCost_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

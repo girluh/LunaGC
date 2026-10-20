@@ -82,7 +82,7 @@ public final class GetInvestigationMonsterReqOuterClass {
               isForMark_ = input.readBool();
               break;
             }
-            case 8: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +90,7 @@ public final class GetInvestigationMonsterReqOuterClass {
               cityIdList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,7 +138,7 @@ public final class GetInvestigationMonsterReqOuterClass {
               emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.class, emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.Builder.class);
     }
 
-    public static final int CITY_ID_LIST_FIELD_NUMBER = 1;
+    public static final int CITY_ID_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList cityIdList_;
 
     @java.lang.Override
@@ -183,7 +183,7 @@ public final class GetInvestigationMonsterReqOuterClass {
         output.writeBool(9, isForMark_);
       }
       if (getCityIdListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(cityIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < cityIdList_.size(); i++) {

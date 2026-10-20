@@ -43,6 +43,10 @@ public final class MatchTypeOuterClass {
      * <code>MatchType_GCG = 5;</code>
      */
     MatchType_GCG(5),
+    /**
+     * <code>MatchType_BEYOND = 6;</code>
+     */
+    MatchType_BEYOND(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -70,6 +74,10 @@ public final class MatchTypeOuterClass {
      * <code>MatchType_GCG = 5;</code>
      */
     public static final int MatchType_GCG_VALUE = 5;
+    /**
+     * <code>MatchType_BEYOND = 6;</code>
+     */
+    public static final int MatchType_BEYOND_VALUE = 6;
 
 
     public final int getNumber() {
@@ -102,6 +110,7 @@ public final class MatchTypeOuterClass {
         case 3: return MatchType_MECHANICUS;
         case 4: return MatchType_GENERAL;
         case 5: return MatchType_GCG;
+        case 6: return MatchType_BEYOND;
         default: return null;
       }
     }

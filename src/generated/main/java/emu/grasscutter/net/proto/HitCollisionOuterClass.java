@@ -88,13 +88,13 @@ public final class HitCollisionOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 40: {
               int rawValue = input.readEnum();
 
               hitColliderType_ = rawValue;
               break;
             }
-            case 106: {
+            case 98: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (hitDir_ != null) {
                 subBuilder = hitDir_.toBuilder();
@@ -107,12 +107,12 @@ public final class HitCollisionOuterClass {
 
               break;
             }
-            case 72: {
+            case 120: {
 
               hitBoxIndex_ = input.readInt32();
               break;
             }
-            case 82: {
+            case 74: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (hitPoint_ != null) {
                 subBuilder = hitPoint_.toBuilder();
@@ -162,7 +162,7 @@ public final class HitCollisionOuterClass {
               emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.class, emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.Builder.class);
     }
 
-    public static final int HIT_DIR_FIELD_NUMBER = 13;
+    public static final int HIT_DIR_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector hitDir_;
 
     @java.lang.Override
@@ -180,7 +180,7 @@ public final class HitCollisionOuterClass {
       return getHitDir();
     }
 
-    public static final int HIT_POINT_FIELD_NUMBER = 10;
+    public static final int HIT_POINT_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector hitPoint_;
 
     @java.lang.Override
@@ -209,7 +209,7 @@ public final class HitCollisionOuterClass {
       return cHNELJGJJDG_;
     }
 
-    public static final int HIT_COLLIDER_TYPE_FIELD_NUMBER = 12;
+    public static final int HIT_COLLIDER_TYPE_FIELD_NUMBER = 5;
     private int hitColliderType_;
 
     @java.lang.Override public int getHitColliderTypeValue() {
@@ -222,7 +222,7 @@ public final class HitCollisionOuterClass {
       return result == null ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
     }
 
-    public static final int HIT_BOX_INDEX_FIELD_NUMBER = 9;
+    public static final int HIT_BOX_INDEX_FIELD_NUMBER = 15;
     private int hitBoxIndex_;
 
     @java.lang.Override
@@ -245,16 +245,16 @@ public final class HitCollisionOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (hitColliderType_ != emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.HitColliderType_HIT_COLLIDER_INVALID.getNumber()) {
-        output.writeEnum(12, hitColliderType_);
+        output.writeEnum(5, hitColliderType_);
       }
       if (hitDir_ != null) {
-        output.writeMessage(13, getHitDir());
+        output.writeMessage(12, getHitDir());
       }
       if (hitBoxIndex_ != 0) {
-        output.writeInt32(9, hitBoxIndex_);
+        output.writeInt32(15, hitBoxIndex_);
       }
       if (hitPoint_ != null) {
-        output.writeMessage(10, getHitPoint());
+        output.writeMessage(9, getHitPoint());
       }
       if (cHNELJGJJDG_ != 0F) {
         output.writeFloat(1101, cHNELJGJJDG_);
@@ -270,19 +270,19 @@ public final class HitCollisionOuterClass {
       size = 0;
       if (hitColliderType_ != emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.HitColliderType_HIT_COLLIDER_INVALID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, hitColliderType_);
+          .computeEnumSize(5, hitColliderType_);
       }
       if (hitDir_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getHitDir());
+          .computeMessageSize(12, getHitDir());
       }
       if (hitBoxIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, hitBoxIndex_);
+          .computeInt32Size(15, hitBoxIndex_);
       }
       if (hitPoint_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getHitPoint());
+          .computeMessageSize(9, getHitPoint());
       }
       if (cHNELJGJJDG_ != 0F) {
         size += com.google.protobuf.CodedOutputStream

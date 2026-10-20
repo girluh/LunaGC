@@ -65,7 +65,7 @@ public final class SystemHintOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
 
               type_ = input.readUInt32();
               break;
@@ -102,7 +102,7 @@ public final class SystemHintOuterClass {
               emu.grasscutter.net.proto.SystemHintOuterClass.SystemHint.class, emu.grasscutter.net.proto.SystemHintOuterClass.SystemHint.Builder.class);
     }
 
-    public static final int TYPE_FIELD_NUMBER = 4;
+    public static final int TYPE_FIELD_NUMBER = 5;
     private int type_;
 
     @java.lang.Override
@@ -125,7 +125,7 @@ public final class SystemHintOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != 0) {
-        output.writeUInt32(4, type_);
+        output.writeUInt32(5, type_);
       }
       unknownFields.writeTo(output);
     }
@@ -138,7 +138,7 @@ public final class SystemHintOuterClass {
       size = 0;
       if (type_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, type_);
+          .computeUInt32Size(5, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

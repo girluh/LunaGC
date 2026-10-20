@@ -79,12 +79,12 @@ public final class BlitzRushStageOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 8: {
 
               openTime_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 112: {
 
               isOpen_ = input.readBool();
               break;
@@ -121,7 +121,7 @@ public final class BlitzRushStageOuterClass {
               emu.grasscutter.net.proto.BlitzRushStageOuterClass.BlitzRushStage.class, emu.grasscutter.net.proto.BlitzRushStageOuterClass.BlitzRushStage.Builder.class);
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 8;
+    public static final int OPEN_TIME_FIELD_NUMBER = 1;
     private int openTime_;
     /**
      * <code>uint32 open_time = 6;</code>
@@ -132,7 +132,7 @@ public final class BlitzRushStageOuterClass {
       return openTime_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 4;
+    public static final int IS_OPEN_FIELD_NUMBER = 14;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 12;</code>
@@ -158,10 +158,10 @@ public final class BlitzRushStageOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (openTime_ != 0) {
-        output.writeUInt32(8, openTime_);
+        output.writeUInt32(1, openTime_);
       }
       if (isOpen_ != false) {
-        output.writeBool(4, isOpen_);
+        output.writeBool(14, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class BlitzRushStageOuterClass {
       size = 0;
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, openTime_);
+          .computeUInt32Size(1, openTime_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isOpen_);
+          .computeBoolSize(14, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

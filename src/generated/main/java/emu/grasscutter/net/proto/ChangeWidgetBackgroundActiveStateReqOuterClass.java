@@ -75,7 +75,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 104: {
 
               isActive_ = input.readBool();
               break;
@@ -117,7 +117,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
               emu.grasscutter.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq.class, emu.grasscutter.net.proto.ChangeWidgetBackgroundActiveStateReqOuterClass.ChangeWidgetBackgroundActiveStateReq.Builder.class);
     }
 
-    public static final int IS_ACTIVE_FIELD_NUMBER = 4;
+    public static final int IS_ACTIVE_FIELD_NUMBER = 13;
     private boolean isActive_;
     /**
      * <code>bool is_active = 1;</code>
@@ -154,7 +154,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isActive_ != false) {
-        output.writeBool(4, isActive_);
+        output.writeBool(13, isActive_);
       }
       if (materialId_ != 0) {
         output.writeUInt32(3, materialId_);
@@ -170,7 +170,7 @@ public final class ChangeWidgetBackgroundActiveStateReqOuterClass {
       size = 0;
       if (isActive_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isActive_);
+          .computeBoolSize(13, isActive_);
       }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

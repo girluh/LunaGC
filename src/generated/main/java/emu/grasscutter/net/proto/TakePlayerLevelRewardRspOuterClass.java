@@ -83,7 +83,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 56: {
 
               rewardId_ = input.readUInt32();
               break;
@@ -120,7 +120,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
               emu.grasscutter.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp.class, emu.grasscutter.net.proto.TakePlayerLevelRewardRspOuterClass.TakePlayerLevelRewardRsp.Builder.class);
     }
 
-    public static final int REWARD_ID_FIELD_NUMBER = 9;
+    public static final int REWARD_ID_FIELD_NUMBER = 7;
     private int rewardId_;
 
     @java.lang.Override
@@ -162,7 +162,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
         output.writeUInt32(10, level_);
       }
       if (rewardId_ != 0) {
-        output.writeUInt32(9, rewardId_);
+        output.writeUInt32(7, rewardId_);
       }
       if (retcode_ != 0) {
         output.writeInt32(3, retcode_);
@@ -182,7 +182,7 @@ public final class TakePlayerLevelRewardRspOuterClass {
       }
       if (rewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, rewardId_);
+          .computeUInt32Size(7, rewardId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream

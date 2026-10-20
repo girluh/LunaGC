@@ -92,7 +92,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 128000: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 jHKIIFBAHMC_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -100,7 +100,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
               jHKIIFBAHMC_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 128002: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -113,17 +113,17 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 40: {
+            case 80: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 8: {
 
               configId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
@@ -163,7 +163,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
               emu.grasscutter.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp.class, emu.grasscutter.net.proto.GCGStartChallengeByCheckRewardRspOuterClass.GCGStartChallengeByCheckRewardRsp.Builder.class);
     }
 
-    public static final int JHKIIFBAHMC_FIELD_NUMBER = 1;
+    public static final int JHKIIFBAHMC_FIELD_NUMBER = 16000;
     private com.google.protobuf.Internal.IntList jHKIIFBAHMC_;
     /**
      * <code>repeated uint32 JHKIIFBAHMC = 1;</code>
@@ -191,7 +191,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
     }
     private int jHKIIFBAHMCMemoizedSerializedSize = -1;
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 5;
+    public static final int LEVEL_ID_FIELD_NUMBER = 10;
     private int levelId_;
 
     @java.lang.Override
@@ -199,7 +199,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       return levelId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
 
     @java.lang.Override
@@ -207,7 +207,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       return retcode_;
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 7;
+    public static final int CONFIG_ID_FIELD_NUMBER = 1;
     private int configId_;
 
     @java.lang.Override
@@ -231,20 +231,20 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getJHKIIFBAHMCList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(128002);
         output.writeUInt32NoTag(jHKIIFBAHMCMemoizedSerializedSize);
       }
       for (int i = 0; i < jHKIIFBAHMC_.size(); i++) {
         output.writeUInt32NoTag(jHKIIFBAHMC_.getInt(i));
       }
       if (levelId_ != 0) {
-        output.writeUInt32(5, levelId_);
+        output.writeUInt32(10, levelId_);
       }
       if (configId_ != 0) {
-        output.writeUInt32(7, configId_);
+        output.writeUInt32(1, configId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(7, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -263,7 +263,7 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
         }
         size += dataSize;
         if (!getJHKIIFBAHMCList().isEmpty()) {
-          size += 1;
+          size += 3;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
@@ -271,15 +271,15 @@ public final class GCGStartChallengeByCheckRewardRspOuterClass {
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, levelId_);
+          .computeUInt32Size(10, levelId_);
       }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, configId_);
+          .computeUInt32Size(1, configId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

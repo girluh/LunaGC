@@ -89,7 +89,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 aiCdMap_ = com.google.protobuf.MapField.newMapField(
                     AiCdMapDefaultEntryHolder.defaultEntry);
@@ -146,7 +146,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
               emu.grasscutter.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify.class, emu.grasscutter.net.proto.EvtAiSyncSkillCdNotifyOuterClass.EvtAiSyncSkillCdNotify.Builder.class);
     }
 
-    public static final int AI_CD_MAP_FIELD_NUMBER = 10;
+    public static final int AI_CD_MAP_FIELD_NUMBER = 8;
     private static final class AiCdMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.AiSkillCdInfoOuterClass.AiSkillCdInfo> defaultEntry =
@@ -237,7 +237,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
           output,
           internalGetAiCdMap(),
           AiCdMapDefaultEntryHolder.defaultEntry,
-          10);
+          8);
       unknownFields.writeTo(output);
     }
 
@@ -255,7 +255,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(10, aiCdMap__);
+            .computeMessageSize(8, aiCdMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -100,12 +100,12 @@ public final class ChannelerSlabCampOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 32: {
 
               buffNum_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 42: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -118,12 +118,12 @@ public final class ChannelerSlabCampOuterClass {
 
               break;
             }
-            case 32: {
+            case 8: {
 
               groupId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 96: {
 
               rewardId_ = input.readUInt32();
               break;
@@ -160,7 +160,7 @@ public final class ChannelerSlabCampOuterClass {
               emu.grasscutter.net.proto.ChannelerSlabCampOuterClass.ChannelerSlabCamp.class, emu.grasscutter.net.proto.ChannelerSlabCampOuterClass.ChannelerSlabCamp.Builder.class);
     }
 
-    public static final int POS_FIELD_NUMBER = 14;
+    public static final int POS_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 11;</code>
@@ -186,7 +186,7 @@ public final class ChannelerSlabCampOuterClass {
       return getPos();
     }
 
-    public static final int REWARD_ID_FIELD_NUMBER = 3;
+    public static final int REWARD_ID_FIELD_NUMBER = 12;
     private int rewardId_;
     /**
      * <code>uint32 reward_id = 15;</code>
@@ -197,7 +197,7 @@ public final class ChannelerSlabCampOuterClass {
       return rewardId_;
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 4;
+    public static final int GROUP_ID_FIELD_NUMBER = 1;
     private int groupId_;
     /**
      * <code>uint32 group_id = 14;</code>
@@ -208,7 +208,7 @@ public final class ChannelerSlabCampOuterClass {
       return groupId_;
     }
 
-    public static final int BUFF_NUM_FIELD_NUMBER = 7;
+    public static final int BUFF_NUM_FIELD_NUMBER = 4;
     private int buffNum_;
     /**
      * <code>uint32 buff_num = 5;</code>
@@ -234,16 +234,16 @@ public final class ChannelerSlabCampOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (buffNum_ != 0) {
-        output.writeUInt32(7, buffNum_);
+        output.writeUInt32(4, buffNum_);
       }
       if (pos_ != null) {
-        output.writeMessage(14, getPos());
+        output.writeMessage(5, getPos());
       }
       if (groupId_ != 0) {
-        output.writeUInt32(4, groupId_);
+        output.writeUInt32(1, groupId_);
       }
       if (rewardId_ != 0) {
-        output.writeUInt32(3, rewardId_);
+        output.writeUInt32(12, rewardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -256,19 +256,19 @@ public final class ChannelerSlabCampOuterClass {
       size = 0;
       if (buffNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, buffNum_);
+          .computeUInt32Size(4, buffNum_);
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getPos());
+          .computeMessageSize(5, getPos());
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, groupId_);
+          .computeUInt32Size(1, groupId_);
       }
       if (rewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, rewardId_);
+          .computeUInt32Size(12, rewardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

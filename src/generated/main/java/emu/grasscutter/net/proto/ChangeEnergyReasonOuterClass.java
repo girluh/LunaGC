@@ -47,6 +47,10 @@ public final class ChangeEnergyReasonOuterClass {
      * <code>ChangeEnergyReason_CHANGE_ENERGY_SKILL_DEPOT = 6;</code>
      */
     ChangeEnergyReason_CHANGE_ENERGY_SKILL_DEPOT(6),
+    /**
+     * <code>ChangeEnergyReason_CHANGE_ENERGY_BEYOND_BLUEPRINT = 7;</code>
+     */
+    ChangeEnergyReason_CHANGE_ENERGY_BEYOND_BLUEPRINT(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -78,6 +82,10 @@ public final class ChangeEnergyReasonOuterClass {
      * <code>ChangeEnergyReason_CHANGE_ENERGY_SKILL_DEPOT = 6;</code>
      */
     public static final int ChangeEnergyReason_CHANGE_ENERGY_SKILL_DEPOT_VALUE = 6;
+    /**
+     * <code>ChangeEnergyReason_CHANGE_ENERGY_BEYOND_BLUEPRINT = 7;</code>
+     */
+    public static final int ChangeEnergyReason_CHANGE_ENERGY_BEYOND_BLUEPRINT_VALUE = 7;
 
 
     public final int getNumber() {
@@ -111,6 +119,7 @@ public final class ChangeEnergyReasonOuterClass {
         case 4: return ChangeEnergyReason_CHANGE_ENERGY_ABILITY;
         case 5: return ChangeEnergyReason_CHANGE_ENERGY_DIE;
         case 6: return ChangeEnergyReason_CHANGE_ENERGY_SKILL_DEPOT;
+        case 7: return ChangeEnergyReason_CHANGE_ENERGY_BEYOND_BLUEPRINT;
         default: return null;
       }
     }

@@ -89,7 +89,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
               isInMp_ = input.readBool();
               break;
             }
-            case 18: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sceneTeamAvatarList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,7 +133,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotify.class, emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotify.Builder.class);
     }
 
-    public static final int SCENE_TEAM_AVATAR_LIST_FIELD_NUMBER = 2;
+    public static final int SCENE_TEAM_AVATAR_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar> sceneTeamAvatarList_;
 
     @java.lang.Override
@@ -189,7 +189,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
         output.writeBool(5, isInMp_);
       }
       for (int i = 0; i < sceneTeamAvatarList_.size(); i++) {
-        output.writeMessage(2, sceneTeamAvatarList_.get(i));
+        output.writeMessage(8, sceneTeamAvatarList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
       }
       for (int i = 0; i < sceneTeamAvatarList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, sceneTeamAvatarList_.get(i));
+          .computeMessageSize(8, sceneTeamAvatarList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

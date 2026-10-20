@@ -91,22 +91,22 @@ public final class PotionLevelDataOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 120: {
 
               modeId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 112: {
 
               score_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 32: {
 
               difficultyLevel_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 40: {
 
               levelId_ = input.readUInt32();
               break;
@@ -143,7 +143,7 @@ public final class PotionLevelDataOuterClass {
               emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData.class, emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData.Builder.class);
     }
 
-    public static final int DIFFICULTY_LEVEL_FIELD_NUMBER = 12;
+    public static final int DIFFICULTY_LEVEL_FIELD_NUMBER = 4;
     private int difficultyLevel_;
     /**
      * <code>uint32 difficulty_level = 13;</code>
@@ -154,7 +154,7 @@ public final class PotionLevelDataOuterClass {
       return difficultyLevel_;
     }
 
-    public static final int SCORE_FIELD_NUMBER = 7;
+    public static final int SCORE_FIELD_NUMBER = 14;
     private int score_;
     /**
      * <code>uint32 score = 12;</code>
@@ -165,7 +165,7 @@ public final class PotionLevelDataOuterClass {
       return score_;
     }
 
-    public static final int MODE_ID_FIELD_NUMBER = 3;
+    public static final int MODE_ID_FIELD_NUMBER = 15;
     private int modeId_;
     /**
      * <code>uint32 mode_id = 10;</code>
@@ -176,7 +176,7 @@ public final class PotionLevelDataOuterClass {
       return modeId_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 9;
+    public static final int LEVEL_ID_FIELD_NUMBER = 5;
     private int levelId_;
     /**
      * <code>uint32 level_id = 15;</code>
@@ -202,16 +202,16 @@ public final class PotionLevelDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (modeId_ != 0) {
-        output.writeUInt32(3, modeId_);
+        output.writeUInt32(15, modeId_);
       }
       if (score_ != 0) {
-        output.writeUInt32(7, score_);
+        output.writeUInt32(14, score_);
       }
       if (difficultyLevel_ != 0) {
-        output.writeUInt32(12, difficultyLevel_);
+        output.writeUInt32(4, difficultyLevel_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(9, levelId_);
+        output.writeUInt32(5, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,19 +224,19 @@ public final class PotionLevelDataOuterClass {
       size = 0;
       if (modeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, modeId_);
+          .computeUInt32Size(15, modeId_);
       }
       if (score_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, score_);
+          .computeUInt32Size(14, score_);
       }
       if (difficultyLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, difficultyLevel_);
+          .computeUInt32Size(4, difficultyLevel_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, levelId_);
+          .computeUInt32Size(5, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

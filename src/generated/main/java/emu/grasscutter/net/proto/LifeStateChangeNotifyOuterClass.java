@@ -104,29 +104,29 @@ public final class LifeStateChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 40: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 16: {
               int rawValue = input.readEnum();
 
               dieType_ = rawValue;
               break;
             }
-            case 10: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               attackTag_ = s;
               break;
             }
-            case 40: {
+            case 80: {
 
               sourceEntityId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 88: {
 
               lifeState_ = input.readUInt32();
               break;
@@ -140,7 +140,7 @@ public final class LifeStateChangeNotifyOuterClass {
               jODAADBMKKA_.add(s);
               break;
             }
-            case 90: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 serverBuffList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff>();
                 mutable_bitField0_ |= 0x00000002;
@@ -149,7 +149,7 @@ public final class LifeStateChangeNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
               break;
             }
-            case 80: {
+            case 24: {
 
               moveReliableSeq_ = input.readUInt32();
               break;
@@ -213,7 +213,7 @@ public final class LifeStateChangeNotifyOuterClass {
       return jODAADBMKKA_.getByteString(index);
     }
 
-    public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 11;
+    public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
 
     @java.lang.Override
@@ -243,7 +243,7 @@ public final class LifeStateChangeNotifyOuterClass {
       return serverBuffList_.get(index);
     }
 
-    public static final int ATTACK_TAG_FIELD_NUMBER = 1;
+    public static final int ATTACK_TAG_FIELD_NUMBER = 14;
     private volatile java.lang.Object attackTag_;
 
     @java.lang.Override
@@ -275,7 +275,7 @@ public final class LifeStateChangeNotifyOuterClass {
       }
     }
 
-    public static final int MOVE_RELIABLE_SEQ_FIELD_NUMBER = 10;
+    public static final int MOVE_RELIABLE_SEQ_FIELD_NUMBER = 3;
     private int moveReliableSeq_;
 
     @java.lang.Override
@@ -283,7 +283,7 @@ public final class LifeStateChangeNotifyOuterClass {
       return moveReliableSeq_;
     }
 
-    public static final int DIE_TYPE_FIELD_NUMBER = 15;
+    public static final int DIE_TYPE_FIELD_NUMBER = 2;
     private int dieType_;
 
     @java.lang.Override public int getDieTypeValue() {
@@ -296,7 +296,7 @@ public final class LifeStateChangeNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
     }
 
-    public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 5;
+    public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 10;
     private int sourceEntityId_;
 
     @java.lang.Override
@@ -304,7 +304,7 @@ public final class LifeStateChangeNotifyOuterClass {
       return sourceEntityId_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 7;
+    public static final int ENTITY_ID_FIELD_NUMBER = 5;
     private int entityId_;
 
     @java.lang.Override
@@ -312,7 +312,7 @@ public final class LifeStateChangeNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int LIFE_STATE_FIELD_NUMBER = 9;
+    public static final int LIFE_STATE_FIELD_NUMBER = 11;
     private int lifeState_;
 
     @java.lang.Override
@@ -335,28 +335,28 @@ public final class LifeStateChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(7, entityId_);
+        output.writeUInt32(5, entityId_);
       }
       if (dieType_ != emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.PlayerDieType_PLAYER_DIE_NONE.getNumber()) {
-        output.writeEnum(15, dieType_);
+        output.writeEnum(2, dieType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attackTag_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, attackTag_);
       }
       if (sourceEntityId_ != 0) {
-        output.writeUInt32(5, sourceEntityId_);
+        output.writeUInt32(10, sourceEntityId_);
       }
       if (lifeState_ != 0) {
-        output.writeUInt32(9, lifeState_);
+        output.writeUInt32(11, lifeState_);
       }
       for (int i = 0; i < jODAADBMKKA_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16000, jODAADBMKKA_.getRaw(i));
       }
       for (int i = 0; i < serverBuffList_.size(); i++) {
-        output.writeMessage(11, serverBuffList_.get(i));
+        output.writeMessage(6, serverBuffList_.get(i));
       }
       if (moveReliableSeq_ != 0) {
-        output.writeUInt32(10, moveReliableSeq_);
+        output.writeUInt32(3, moveReliableSeq_);
       }
       unknownFields.writeTo(output);
     }
@@ -369,22 +369,22 @@ public final class LifeStateChangeNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, entityId_);
+          .computeUInt32Size(5, entityId_);
       }
       if (dieType_ != emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType.PlayerDieType_PLAYER_DIE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(15, dieType_);
+          .computeEnumSize(2, dieType_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attackTag_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, attackTag_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, attackTag_);
       }
       if (sourceEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, sourceEntityId_);
+          .computeUInt32Size(10, sourceEntityId_);
       }
       if (lifeState_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, lifeState_);
+          .computeUInt32Size(11, lifeState_);
       }
       {
         int dataSize = 0;
@@ -396,11 +396,11 @@ public final class LifeStateChangeNotifyOuterClass {
       }
       for (int i = 0; i < serverBuffList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, serverBuffList_.get(i));
+          .computeMessageSize(6, serverBuffList_.get(i));
       }
       if (moveReliableSeq_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, moveReliableSeq_);
+          .computeUInt32Size(3, moveReliableSeq_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

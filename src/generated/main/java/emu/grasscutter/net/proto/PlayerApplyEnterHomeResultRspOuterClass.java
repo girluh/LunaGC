@@ -92,17 +92,17 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 32: {
 
               applyUid_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 96: {
 
               isAgreed_ = input.readBool();
               break;
             }
-            case 88: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
@@ -144,7 +144,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp.class, emu.grasscutter.net.proto.PlayerApplyEnterHomeResultRspOuterClass.PlayerApplyEnterHomeResultRsp.Builder.class);
     }
 
-    public static final int IS_AGREED_FIELD_NUMBER = 4;
+    public static final int IS_AGREED_FIELD_NUMBER = 12;
     private boolean isAgreed_;
     /**
      * <code>bool is_agreed = 3;</code>
@@ -155,7 +155,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       return isAgreed_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
@@ -177,7 +177,7 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       return param_;
     }
 
-    public static final int APPLY_UID_FIELD_NUMBER = 9;
+    public static final int APPLY_UID_FIELD_NUMBER = 4;
     private int applyUid_;
     /**
      * <code>uint32 apply_uid = 1;</code>
@@ -203,13 +203,13 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (applyUid_ != 0) {
-        output.writeUInt32(9, applyUid_);
+        output.writeUInt32(4, applyUid_);
       }
       if (isAgreed_ != false) {
-        output.writeBool(4, isAgreed_);
+        output.writeBool(12, isAgreed_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(5, retcode_);
       }
       if (param_ != 0) {
         output.writeUInt32(15, param_);
@@ -225,15 +225,15 @@ public final class PlayerApplyEnterHomeResultRspOuterClass {
       size = 0;
       if (applyUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, applyUid_);
+          .computeUInt32Size(4, applyUid_);
       }
       if (isAgreed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isAgreed_);
+          .computeBoolSize(12, isAgreed_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -167,7 +167,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
                   nCDHBPLKPHB__.getKey(), nCDHBPLKPHB__.getValue());
               break;
             }
-            case 96: {
+            case 64: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
@@ -381,7 +381,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
       return map.get(key);
     }
 
-    public static final int TYPE_FIELD_NUMBER = 12;
+    public static final int TYPE_FIELD_NUMBER = 8;
     private int type_;
 
     @java.lang.Override public int getTypeValue() {
@@ -421,7 +421,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
           NCDHBPLKPHBDefaultEntryHolder.defaultEntry,
           16001);
       if (type_ != emu.grasscutter.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.MaterialDeleteReturnType_MATERIAL_DELETE_RETURN_BAG.getNumber()) {
-        output.writeEnum(12, type_);
+        output.writeEnum(8, type_);
       }
       unknownFields.writeTo(output);
     }
@@ -454,7 +454,7 @@ public final class MaterialDeleteReturnNotifyOuterClass {
       }
       if (type_ != emu.grasscutter.net.proto.MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.MaterialDeleteReturnType_MATERIAL_DELETE_RETURN_BAG.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, type_);
+          .computeEnumSize(8, type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

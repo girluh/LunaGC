@@ -95,12 +95,12 @@ public final class PlatformStopRouteNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 112: {
 
               sceneTime_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 40: {
 
               entityId_ = input.readUInt32();
               break;
@@ -150,7 +150,7 @@ public final class PlatformStopRouteNotifyOuterClass {
               emu.grasscutter.net.proto.PlatformStopRouteNotifyOuterClass.PlatformStopRouteNotify.class, emu.grasscutter.net.proto.PlatformStopRouteNotifyOuterClass.PlatformStopRouteNotify.Builder.class);
     }
 
-    public static final int SCENE_TIME_FIELD_NUMBER = 8;
+    public static final int SCENE_TIME_FIELD_NUMBER = 14;
     private int sceneTime_;
     /**
      * <code>uint32 scene_time = 1;</code>
@@ -187,7 +187,7 @@ public final class PlatformStopRouteNotifyOuterClass {
       return getPlatform();
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 5;
     private int entityId_;
     /**
      * <code>uint32 entity_id = 5;</code>
@@ -213,10 +213,10 @@ public final class PlatformStopRouteNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneTime_ != 0) {
-        output.writeUInt32(8, sceneTime_);
+        output.writeUInt32(14, sceneTime_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
+        output.writeUInt32(5, entityId_);
       }
       if (platform_ != null) {
         output.writeMessage(12, getPlatform());
@@ -232,11 +232,11 @@ public final class PlatformStopRouteNotifyOuterClass {
       size = 0;
       if (sceneTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sceneTime_);
+          .computeUInt32Size(14, sceneTime_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
+          .computeUInt32Size(5, entityId_);
       }
       if (platform_ != null) {
         size += com.google.protobuf.CodedOutputStream

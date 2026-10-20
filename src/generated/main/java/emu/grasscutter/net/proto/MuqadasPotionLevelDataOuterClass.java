@@ -85,17 +85,17 @@ public final class MuqadasPotionLevelDataOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 112: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 24: {
+            case 40: {
 
               maxScore_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 24: {
 
               levelId_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class MuqadasPotionLevelDataOuterClass {
               emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.class, emu.grasscutter.net.proto.MuqadasPotionLevelDataOuterClass.MuqadasPotionLevelData.Builder.class);
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 3;
+    public static final int MAX_SCORE_FIELD_NUMBER = 5;
     private int maxScore_;
     /**
      * <code>uint32 max_score = 6;</code>
@@ -143,7 +143,7 @@ public final class MuqadasPotionLevelDataOuterClass {
       return maxScore_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 1;
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
     private int levelId_;
     /**
      * <code>uint32 level_id = 14;</code>
@@ -154,7 +154,7 @@ public final class MuqadasPotionLevelDataOuterClass {
       return levelId_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 7;
+    public static final int IS_OPEN_FIELD_NUMBER = 14;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 1;</code>
@@ -180,13 +180,13 @@ public final class MuqadasPotionLevelDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOpen_ != false) {
-        output.writeBool(7, isOpen_);
+        output.writeBool(14, isOpen_);
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(3, maxScore_);
+        output.writeUInt32(5, maxScore_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(1, levelId_);
+        output.writeUInt32(3, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class MuqadasPotionLevelDataOuterClass {
       size = 0;
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isOpen_);
+          .computeBoolSize(14, isOpen_);
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, maxScore_);
+          .computeUInt32Size(5, maxScore_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, levelId_);
+          .computeUInt32Size(3, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -168,7 +168,7 @@ public final class CoinCollectLevelDataOuterClass {
             case 0:
               done = true;
               break;
-            case 114: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 doubleBestTeamInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -177,22 +177,22 @@ public final class CoinCollectLevelDataOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.parser(), extensionRegistry));
               break;
             }
-            case 128016: {
+            case 128032: {
 
               gENIGFJFKEE_ = input.readUInt32();
               break;
             }
-            case 128008: {
+            case 128016: {
 
               nFKJLPLDDBM_ = input.readBool();
               break;
             }
-            case 104: {
+            case 64: {
 
               isLevelOpen_ = input.readBool();
               break;
             }
-            case 26: {
+            case 98: {
               emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData.Builder subBuilder = null;
               if (singleBestTeamInfo_ != null) {
                 subBuilder = singleBestTeamInfo_.toBuilder();
@@ -210,7 +210,7 @@ public final class CoinCollectLevelDataOuterClass {
               gICIIMOFPLC_ = input.readBool();
               break;
             }
-            case 80: {
+            case 128008: {
 
               nJJLELKNFPL_ = input.readBool();
               break;
@@ -220,7 +220,7 @@ public final class CoinCollectLevelDataOuterClass {
               oIDEGDJMAAH_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 128024: {
 
               nOBHHOIAPMM_ = input.readUInt32();
               break;
@@ -230,12 +230,12 @@ public final class CoinCollectLevelDataOuterClass {
               cGCAEFMBDLE_ = input.readUInt32();
               break;
             }
-            case 128024: {
+            case 128040: {
 
               pKPHLANBFAM_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 80: {
 
               levelId_ = input.readUInt32();
               break;
@@ -297,7 +297,7 @@ public final class CoinCollectLevelDataOuterClass {
       return oIDEGDJMAAH_;
     }
 
-    public static final int NJJLELKNFPL_FIELD_NUMBER = 10;
+    public static final int NJJLELKNFPL_FIELD_NUMBER = 16001;
     private boolean nJJLELKNFPL_;
     /**
      * <code>bool NJJLELKNFPL = 10;</code>
@@ -319,7 +319,7 @@ public final class CoinCollectLevelDataOuterClass {
       return gICIIMOFPLC_;
     }
 
-    public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 13;
+    public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 8;
     private boolean isLevelOpen_;
     /**
      * <code>bool is_level_open = 5;</code>
@@ -330,7 +330,7 @@ public final class CoinCollectLevelDataOuterClass {
       return isLevelOpen_;
     }
 
-    public static final int NFKJLPLDDBM_FIELD_NUMBER = 16001;
+    public static final int NFKJLPLDDBM_FIELD_NUMBER = 16002;
     private boolean nFKJLPLDDBM_;
     /**
      * <code>bool NFKJLPLDDBM = 4;</code>
@@ -341,7 +341,7 @@ public final class CoinCollectLevelDataOuterClass {
       return nFKJLPLDDBM_;
     }
 
-    public static final int NOBHHOIAPMM_FIELD_NUMBER = 12;
+    public static final int NOBHHOIAPMM_FIELD_NUMBER = 16003;
     private int nOBHHOIAPMM_;
     /**
      * <code>uint32 NOBHHOIAPMM = 12;</code>
@@ -352,7 +352,7 @@ public final class CoinCollectLevelDataOuterClass {
       return nOBHHOIAPMM_;
     }
 
-    public static final int GENIGFJFKEE_FIELD_NUMBER = 16002;
+    public static final int GENIGFJFKEE_FIELD_NUMBER = 16004;
     private int gENIGFJFKEE_;
     /**
      * <code>uint32 GENIGFJFKEE = 3;</code>
@@ -363,7 +363,7 @@ public final class CoinCollectLevelDataOuterClass {
       return gENIGFJFKEE_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 4;
+    public static final int LEVEL_ID_FIELD_NUMBER = 10;
     private int levelId_;
     /**
      * <code>uint32 level_id = 15;</code>
@@ -374,7 +374,7 @@ public final class CoinCollectLevelDataOuterClass {
       return levelId_;
     }
 
-    public static final int SINGLE_BEST_TEAM_INFO_FIELD_NUMBER = 3;
+    public static final int SINGLE_BEST_TEAM_INFO_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData singleBestTeamInfo_;
     /**
      * <code>.CoinCollectTeamInfoData single_best_team_info = 8;</code>
@@ -400,7 +400,7 @@ public final class CoinCollectLevelDataOuterClass {
       return getSingleBestTeamInfo();
     }
 
-    public static final int DOUBLE_BEST_TEAM_INFO_LIST_FIELD_NUMBER = 14;
+    public static final int DOUBLE_BEST_TEAM_INFO_LIST_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.CoinCollectTeamInfoDataOuterClass.CoinCollectTeamInfoData> doubleBestTeamInfoList_;
     /**
      * <code>repeated .CoinCollectTeamInfoData double_best_team_info_list = 2;</code>
@@ -440,7 +440,7 @@ public final class CoinCollectLevelDataOuterClass {
       return doubleBestTeamInfoList_.get(index);
     }
 
-    public static final int PKPHLANBFAM_FIELD_NUMBER = 16003;
+    public static final int PKPHLANBFAM_FIELD_NUMBER = 16005;
     private int pKPHLANBFAM_;
     /**
      * <code>uint32 PKPHLANBFAM = 14;</code>
@@ -466,40 +466,40 @@ public final class CoinCollectLevelDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < doubleBestTeamInfoList_.size(); i++) {
-        output.writeMessage(14, doubleBestTeamInfoList_.get(i));
+        output.writeMessage(5, doubleBestTeamInfoList_.get(i));
       }
       if (gENIGFJFKEE_ != 0) {
-        output.writeUInt32(16002, gENIGFJFKEE_);
+        output.writeUInt32(16004, gENIGFJFKEE_);
       }
       if (nFKJLPLDDBM_ != false) {
-        output.writeBool(16001, nFKJLPLDDBM_);
+        output.writeBool(16002, nFKJLPLDDBM_);
       }
       if (isLevelOpen_ != false) {
-        output.writeBool(13, isLevelOpen_);
+        output.writeBool(8, isLevelOpen_);
       }
       if (singleBestTeamInfo_ != null) {
-        output.writeMessage(3, getSingleBestTeamInfo());
+        output.writeMessage(12, getSingleBestTeamInfo());
       }
       if (gICIIMOFPLC_ != false) {
         output.writeBool(9, gICIIMOFPLC_);
       }
       if (nJJLELKNFPL_ != false) {
-        output.writeBool(10, nJJLELKNFPL_);
+        output.writeBool(16001, nJJLELKNFPL_);
       }
       if (oIDEGDJMAAH_ != 0) {
         output.writeUInt32(11, oIDEGDJMAAH_);
       }
       if (nOBHHOIAPMM_ != 0) {
-        output.writeUInt32(12, nOBHHOIAPMM_);
+        output.writeUInt32(16003, nOBHHOIAPMM_);
       }
       if (cGCAEFMBDLE_ != 0) {
         output.writeUInt32(16000, cGCAEFMBDLE_);
       }
       if (pKPHLANBFAM_ != 0) {
-        output.writeUInt32(16003, pKPHLANBFAM_);
+        output.writeUInt32(16005, pKPHLANBFAM_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(4, levelId_);
+        output.writeUInt32(10, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -512,23 +512,23 @@ public final class CoinCollectLevelDataOuterClass {
       size = 0;
       for (int i = 0; i < doubleBestTeamInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, doubleBestTeamInfoList_.get(i));
+          .computeMessageSize(5, doubleBestTeamInfoList_.get(i));
       }
       if (gENIGFJFKEE_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16002, gENIGFJFKEE_);
+          .computeUInt32Size(16004, gENIGFJFKEE_);
       }
       if (nFKJLPLDDBM_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(16001, nFKJLPLDDBM_);
+          .computeBoolSize(16002, nFKJLPLDDBM_);
       }
       if (isLevelOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isLevelOpen_);
+          .computeBoolSize(8, isLevelOpen_);
       }
       if (singleBestTeamInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getSingleBestTeamInfo());
+          .computeMessageSize(12, getSingleBestTeamInfo());
       }
       if (gICIIMOFPLC_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -536,7 +536,7 @@ public final class CoinCollectLevelDataOuterClass {
       }
       if (nJJLELKNFPL_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, nJJLELKNFPL_);
+          .computeBoolSize(16001, nJJLELKNFPL_);
       }
       if (oIDEGDJMAAH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -544,7 +544,7 @@ public final class CoinCollectLevelDataOuterClass {
       }
       if (nOBHHOIAPMM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, nOBHHOIAPMM_);
+          .computeUInt32Size(16003, nOBHHOIAPMM_);
       }
       if (cGCAEFMBDLE_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -552,11 +552,11 @@ public final class CoinCollectLevelDataOuterClass {
       }
       if (pKPHLANBFAM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16003, pKPHLANBFAM_);
+          .computeUInt32Size(16005, pKPHLANBFAM_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, levelId_);
+          .computeUInt32Size(10, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

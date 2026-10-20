@@ -70,7 +70,7 @@ public final class SetNameCardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 88: {
 
               nameCardId_ = input.readUInt32();
               break;
@@ -107,7 +107,7 @@ public final class SetNameCardReqOuterClass {
               emu.grasscutter.net.proto.SetNameCardReqOuterClass.SetNameCardReq.class, emu.grasscutter.net.proto.SetNameCardReqOuterClass.SetNameCardReq.Builder.class);
     }
 
-    public static final int NAME_CARD_ID_FIELD_NUMBER = 1;
+    public static final int NAME_CARD_ID_FIELD_NUMBER = 11;
     private int nameCardId_;
 
     @java.lang.Override
@@ -130,7 +130,7 @@ public final class SetNameCardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (nameCardId_ != 0) {
-        output.writeUInt32(1, nameCardId_);
+        output.writeUInt32(11, nameCardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -143,7 +143,7 @@ public final class SetNameCardReqOuterClass {
       size = 0;
       if (nameCardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, nameCardId_);
+          .computeUInt32Size(11, nameCardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

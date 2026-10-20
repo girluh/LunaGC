@@ -86,17 +86,17 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 48: {
 
               dungeonEntryScenePointId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 56: {
 
               sceneId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 40: {
 
               dungeonEntryConfigId_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
               emu.grasscutter.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq.class, emu.grasscutter.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq.Builder.class);
     }
 
-    public static final int DUNGEON_ENTRY_CONFIG_ID_FIELD_NUMBER = 12;
+    public static final int DUNGEON_ENTRY_CONFIG_ID_FIELD_NUMBER = 5;
     private int dungeonEntryConfigId_;
     /**
      * <code>uint32 dungeon_entry_config_id = 14;</code>
@@ -144,7 +144,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       return dungeonEntryConfigId_;
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 9;
+    public static final int SCENE_ID_FIELD_NUMBER = 7;
     private int sceneId_;
     /**
      * <code>uint32 scene_id = 6;</code>
@@ -155,7 +155,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       return sceneId_;
     }
 
-    public static final int DUNGEON_ENTRY_SCENE_POINT_ID_FIELD_NUMBER = 8;
+    public static final int DUNGEON_ENTRY_SCENE_POINT_ID_FIELD_NUMBER = 6;
     private int dungeonEntryScenePointId_;
     /**
      * <code>uint32 dungeon_entry_scene_point_id = 5;</code>
@@ -181,13 +181,13 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonEntryScenePointId_ != 0) {
-        output.writeUInt32(8, dungeonEntryScenePointId_);
+        output.writeUInt32(6, dungeonEntryScenePointId_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(9, sceneId_);
+        output.writeUInt32(7, sceneId_);
       }
       if (dungeonEntryConfigId_ != 0) {
-        output.writeUInt32(12, dungeonEntryConfigId_);
+        output.writeUInt32(5, dungeonEntryConfigId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       size = 0;
       if (dungeonEntryScenePointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, dungeonEntryScenePointId_);
+          .computeUInt32Size(6, dungeonEntryScenePointId_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, sceneId_);
+          .computeUInt32Size(7, sceneId_);
       }
       if (dungeonEntryConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, dungeonEntryConfigId_);
+          .computeUInt32Size(5, dungeonEntryConfigId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

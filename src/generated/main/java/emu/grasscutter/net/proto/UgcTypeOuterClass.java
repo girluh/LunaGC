@@ -31,6 +31,10 @@ public final class UgcTypeOuterClass {
      * <code>UgcType_LAN_V_5_CARD_GAME = 2;</code>
      */
     UgcType_LAN_V_5_CARD_GAME(2),
+    /**
+     * <code>UgcType_SHORT_VIDEO = 3;</code>
+     */
+    UgcType_SHORT_VIDEO(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -46,6 +50,10 @@ public final class UgcTypeOuterClass {
      * <code>UgcType_LAN_V_5_CARD_GAME = 2;</code>
      */
     public static final int UgcType_LAN_V_5_CARD_GAME_VALUE = 2;
+    /**
+     * <code>UgcType_SHORT_VIDEO = 3;</code>
+     */
+    public static final int UgcType_SHORT_VIDEO_VALUE = 3;
 
 
     public final int getNumber() {
@@ -75,6 +83,7 @@ public final class UgcTypeOuterClass {
         case 0: return UgcType_NONE;
         case 1: return UgcType_MUSIC_GAME;
         case 2: return UgcType_LAN_V_5_CARD_GAME;
+        case 3: return UgcType_SHORT_VIDEO;
         default: return null;
       }
     }

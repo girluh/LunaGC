@@ -90,12 +90,12 @@ public final class FungusTrainingDungeonDetailOuterClass {
               isOpen_ = input.readBool();
               break;
             }
-            case 8: {
+            case 48: {
 
               bestScore_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 64: {
 
               dungeonId_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class FungusTrainingDungeonDetailOuterClass {
               emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetail.class, emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetail.Builder.class);
     }
 
-    public static final int BEST_SCORE_FIELD_NUMBER = 1;
+    public static final int BEST_SCORE_FIELD_NUMBER = 6;
     private int bestScore_;
     /**
      * <code>uint32 best_score = 12;</code>
@@ -143,7 +143,7 @@ public final class FungusTrainingDungeonDetailOuterClass {
       return bestScore_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 11;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 8;
     private int dungeonId_;
     /**
      * <code>uint32 dungeon_id = 14;</code>
@@ -183,10 +183,10 @@ public final class FungusTrainingDungeonDetailOuterClass {
         output.writeBool(9, isOpen_);
       }
       if (bestScore_ != 0) {
-        output.writeUInt32(1, bestScore_);
+        output.writeUInt32(6, bestScore_);
       }
       if (dungeonId_ != 0) {
-        output.writeUInt32(11, dungeonId_);
+        output.writeUInt32(8, dungeonId_);
       }
       unknownFields.writeTo(output);
     }
@@ -203,11 +203,11 @@ public final class FungusTrainingDungeonDetailOuterClass {
       }
       if (bestScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, bestScore_);
+          .computeUInt32Size(6, bestScore_);
       }
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, dungeonId_);
+          .computeUInt32Size(8, dungeonId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

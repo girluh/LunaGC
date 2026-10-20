@@ -109,7 +109,7 @@ public final class CustomDungeonBlockOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 106: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -122,7 +122,7 @@ public final class CustomDungeonBlockOuterClass {
 
               break;
             }
-            case 106: {
+            case 18: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rot_ != null) {
                 subBuilder = rot_.toBuilder();
@@ -135,12 +135,12 @@ public final class CustomDungeonBlockOuterClass {
 
               break;
             }
-            case 88: {
+            case 48: {
 
               blockId_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 120: {
 
               guid_ = input.readUInt32();
               break;
@@ -177,7 +177,7 @@ public final class CustomDungeonBlockOuterClass {
               emu.grasscutter.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock.class, emu.grasscutter.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock.Builder.class);
     }
 
-    public static final int GUID_FIELD_NUMBER = 2;
+    public static final int GUID_FIELD_NUMBER = 15;
     private int guid_;
     /**
      * <code>uint32 guid = 15;</code>
@@ -188,7 +188,7 @@ public final class CustomDungeonBlockOuterClass {
       return guid_;
     }
 
-    public static final int ROT_FIELD_NUMBER = 13;
+    public static final int ROT_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rot_;
     /**
      * <code>.Vector rot = 9;</code>
@@ -214,7 +214,7 @@ public final class CustomDungeonBlockOuterClass {
       return getRot();
     }
 
-    public static final int POS_FIELD_NUMBER = 15;
+    public static final int POS_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 5;</code>
@@ -240,7 +240,7 @@ public final class CustomDungeonBlockOuterClass {
       return getPos();
     }
 
-    public static final int BLOCK_ID_FIELD_NUMBER = 11;
+    public static final int BLOCK_ID_FIELD_NUMBER = 6;
     private int blockId_;
     /**
      * <code>uint32 block_id = 10;</code>
@@ -266,16 +266,16 @@ public final class CustomDungeonBlockOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pos_ != null) {
-        output.writeMessage(15, getPos());
+        output.writeMessage(13, getPos());
       }
       if (rot_ != null) {
-        output.writeMessage(13, getRot());
+        output.writeMessage(2, getRot());
       }
       if (blockId_ != 0) {
-        output.writeUInt32(11, blockId_);
+        output.writeUInt32(6, blockId_);
       }
       if (guid_ != 0) {
-        output.writeUInt32(2, guid_);
+        output.writeUInt32(15, guid_);
       }
       unknownFields.writeTo(output);
     }
@@ -288,19 +288,19 @@ public final class CustomDungeonBlockOuterClass {
       size = 0;
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getPos());
+          .computeMessageSize(13, getPos());
       }
       if (rot_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getRot());
+          .computeMessageSize(2, getRot());
       }
       if (blockId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, blockId_);
+          .computeUInt32Size(6, blockId_);
       }
       if (guid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, guid_);
+          .computeUInt32Size(15, guid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

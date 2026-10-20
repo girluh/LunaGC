@@ -91,12 +91,12 @@ public final class CompoundQueueDataOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 8: {
 
               outputTime_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 80: {
 
               compoundId_ = input.readUInt32();
               break;
@@ -106,7 +106,7 @@ public final class CompoundQueueDataOuterClass {
               outputCount_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 56: {
 
               waitCount_ = input.readUInt32();
               break;
@@ -143,7 +143,7 @@ public final class CompoundQueueDataOuterClass {
               emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.class, emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.Builder.class);
     }
 
-    public static final int OUTPUTTIME_FIELD_NUMBER = 9;
+    public static final int OUTPUTTIME_FIELD_NUMBER = 1;
     private int outputTime_;
     /**
      * <code>uint32 outputTime = 1;</code>
@@ -154,7 +154,7 @@ public final class CompoundQueueDataOuterClass {
       return outputTime_;
     }
 
-    public static final int WAITCOUNT_FIELD_NUMBER = 15;
+    public static final int WAITCOUNT_FIELD_NUMBER = 7;
     private int waitCount_;
     /**
      * <code>uint32 waitCount = 14;</code>
@@ -165,7 +165,7 @@ public final class CompoundQueueDataOuterClass {
       return waitCount_;
     }
 
-    public static final int COMPOUND_ID_FIELD_NUMBER = 13;
+    public static final int COMPOUND_ID_FIELD_NUMBER = 10;
     private int compoundId_;
     /**
      * <code>uint32 compound_id = 11;</code>
@@ -202,16 +202,16 @@ public final class CompoundQueueDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (outputTime_ != 0) {
-        output.writeUInt32(9, outputTime_);
+        output.writeUInt32(1, outputTime_);
       }
       if (compoundId_ != 0) {
-        output.writeUInt32(13, compoundId_);
+        output.writeUInt32(10, compoundId_);
       }
       if (outputCount_ != 0) {
         output.writeUInt32(2, outputCount_);
       }
       if (waitCount_ != 0) {
-        output.writeUInt32(15, waitCount_);
+        output.writeUInt32(7, waitCount_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,11 +224,11 @@ public final class CompoundQueueDataOuterClass {
       size = 0;
       if (outputTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, outputTime_);
+          .computeUInt32Size(1, outputTime_);
       }
       if (compoundId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, compoundId_);
+          .computeUInt32Size(10, compoundId_);
       }
       if (outputCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -236,7 +236,7 @@ public final class CompoundQueueDataOuterClass {
       }
       if (waitCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, waitCount_);
+          .computeUInt32Size(7, waitCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -81,7 +81,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 98: {
               emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder subBuilder = null;
               if (invoke_ != null) {
                 subBuilder = invoke_.toBuilder();
@@ -94,13 +94,13 @@ public final class AbilityInvocationFailNotifyOuterClass {
 
               break;
             }
-            case 98: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               reason_ = s;
               break;
             }
-            case 40: {
+            case 56: {
 
               entityId_ = input.readUInt32();
               break;
@@ -137,7 +137,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
               emu.grasscutter.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify.class, emu.grasscutter.net.proto.AbilityInvocationFailNotifyOuterClass.AbilityInvocationFailNotify.Builder.class);
     }
 
-    public static final int INVOKE_FIELD_NUMBER = 9;
+    public static final int INVOKE_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry invoke_;
 
     @java.lang.Override
@@ -155,7 +155,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
       return getInvoke();
     }
 
-    public static final int REASON_FIELD_NUMBER = 12;
+    public static final int REASON_FIELD_NUMBER = 6;
     private volatile java.lang.Object reason_;
 
     @java.lang.Override
@@ -187,7 +187,7 @@ public final class AbilityInvocationFailNotifyOuterClass {
       }
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 5;
+    public static final int ENTITY_ID_FIELD_NUMBER = 7;
     private int entityId_;
 
     @java.lang.Override
@@ -210,13 +210,13 @@ public final class AbilityInvocationFailNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (invoke_ != null) {
-        output.writeMessage(9, getInvoke());
+        output.writeMessage(12, getInvoke());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, reason_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, reason_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(5, entityId_);
+        output.writeUInt32(7, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -229,14 +229,14 @@ public final class AbilityInvocationFailNotifyOuterClass {
       size = 0;
       if (invoke_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getInvoke());
+          .computeMessageSize(12, getInvoke());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, reason_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, reason_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, entityId_);
+          .computeUInt32Size(7, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

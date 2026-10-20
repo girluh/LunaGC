@@ -78,7 +78,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -122,7 +122,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
               emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.class, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder.class);
     }
 
-    public static final int AVATAR_LIST_FIELD_NUMBER = 15;
+    public static final int AVATAR_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo> avatarList_;
 
     @java.lang.Override
@@ -167,7 +167,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < avatarList_.size(); i++) {
-        output.writeMessage(15, avatarList_.get(i));
+        output.writeMessage(9, avatarList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -180,7 +180,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
       size = 0;
       for (int i = 0; i < avatarList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, avatarList_.get(i));
+          .computeMessageSize(9, avatarList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

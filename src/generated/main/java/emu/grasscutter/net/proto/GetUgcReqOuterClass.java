@@ -122,35 +122,35 @@ public final class GetUgcReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 80: {
 
               ugcGuid_ = input.readUInt64();
               break;
             }
-            case 72: {
+            case 56: {
               int rawValue = input.readEnum();
 
               ugcRecordUsage_ = rawValue;
               break;
             }
-            case 96: {
+            case 104: {
               int rawValue = input.readEnum();
 
               getUgcType_ = rawValue;
               break;
             }
-            case 80: {
+            case 24: {
               int rawValue = input.readEnum();
 
               ugcType_ = rawValue;
               break;
             }
-            case 120: {
+            case 88: {
 
               scheduleId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 120: {
 
               isRequireBrief_ = input.readBool();
               break;
@@ -187,7 +187,7 @@ public final class GetUgcReqOuterClass {
               emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReq.class, emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReq.Builder.class);
     }
 
-    public static final int GET_UgcType_FIELD_NUMBER = 6;
+    public static final int GET_UgcType_FIELD_NUMBER = 13;
     private int getUgcType_;
     /**
      * <code>.GetUgcType get_ugc_type = 6;</code>
@@ -206,7 +206,7 @@ public final class GetUgcReqOuterClass {
       return result == null ? emu.grasscutter.net.proto.GetUgcTypeOuterClass.GetUgcType.UNRECOGNIZED : result;
     }
 
-    public static final int UgcType_FIELD_NUMBER = 13;
+    public static final int UgcType_FIELD_NUMBER = 3;
     private int ugcType_;
     /**
      * <code>.UgcType ugc_type = 13;</code>
@@ -225,7 +225,7 @@ public final class GetUgcReqOuterClass {
       return result == null ? emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
     }
 
-    public static final int IS_REQUIRE_BRIEF_FIELD_NUMBER = 13;
+    public static final int IS_REQUIRE_BRIEF_FIELD_NUMBER = 15;
     private boolean isRequireBrief_;
     /**
      * <code>bool is_require_brief = 15;</code>
@@ -236,7 +236,7 @@ public final class GetUgcReqOuterClass {
       return isRequireBrief_;
     }
 
-    public static final int UGC_GUID_FIELD_NUMBER = 3;
+    public static final int UGC_GUID_FIELD_NUMBER = 10;
     private long ugcGuid_;
     /**
      * <code>uint64 ugc_guid = 2;</code>
@@ -247,7 +247,7 @@ public final class GetUgcReqOuterClass {
       return ugcGuid_;
     }
 
-    public static final int UGC_RECORD_USAGE_FIELD_NUMBER = 9;
+    public static final int UGC_RECORD_USAGE_FIELD_NUMBER = 7;
     private int ugcRecordUsage_;
     /**
      * <code>.RecordUsage ugc_record_usage = 5;</code>
@@ -266,7 +266,7 @@ public final class GetUgcReqOuterClass {
       return result == null ? emu.grasscutter.net.proto.RecordUsageOuterClass.RecordUsage.UNRECOGNIZED : result;
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 15;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 11;
     private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 14;</code>
@@ -292,22 +292,22 @@ public final class GetUgcReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (ugcGuid_ != 0L) {
-        output.writeUInt64(3, ugcGuid_);
+        output.writeUInt64(10, ugcGuid_);
       }
       if (ugcRecordUsage_ != emu.grasscutter.net.proto.RecordUsageOuterClass.RecordUsage.UGC_RECORD_USAGE_NONE.getNumber()) {
-        output.writeEnum(9, ugcRecordUsage_);
+        output.writeEnum(7, ugcRecordUsage_);
       }
       if (getUgcType_ != emu.grasscutter.net.proto.GetUgcTypeOuterClass.GetUgcType.GET_UGC_NONE.getNumber()) {
-        output.writeEnum(12, getUgcType_);
+        output.writeEnum(13, getUgcType_);
       }
       if (ugcType_ != emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType.UgcType_NONE.getNumber()) {
-        output.writeEnum(10, ugcType_);
+        output.writeEnum(3, ugcType_);
       }
       if (scheduleId_ != 0) {
-        output.writeUInt32(15, scheduleId_);
+        output.writeUInt32(11, scheduleId_);
       }
       if (isRequireBrief_ != false) {
-        output.writeBool(13, isRequireBrief_);
+        output.writeBool(15, isRequireBrief_);
       }
       unknownFields.writeTo(output);
     }
@@ -320,27 +320,27 @@ public final class GetUgcReqOuterClass {
       size = 0;
       if (ugcGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, ugcGuid_);
+          .computeUInt64Size(10, ugcGuid_);
       }
       if (ugcRecordUsage_ != emu.grasscutter.net.proto.RecordUsageOuterClass.RecordUsage.UGC_RECORD_USAGE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, ugcRecordUsage_);
+          .computeEnumSize(7, ugcRecordUsage_);
       }
       if (getUgcType_ != emu.grasscutter.net.proto.GetUgcTypeOuterClass.GetUgcType.GET_UGC_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, getUgcType_);
+          .computeEnumSize(13, getUgcType_);
       }
       if (ugcType_ != emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType.UgcType_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, ugcType_);
+          .computeEnumSize(3, ugcType_);
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, scheduleId_);
+          .computeUInt32Size(11, scheduleId_);
       }
       if (isRequireBrief_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isRequireBrief_);
+          .computeBoolSize(15, isRequireBrief_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

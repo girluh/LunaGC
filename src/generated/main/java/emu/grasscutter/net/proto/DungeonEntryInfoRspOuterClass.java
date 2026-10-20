@@ -108,17 +108,17 @@ public final class DungeonEntryInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 48: {
 
               pointId_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 96: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 48: {
+            case 24: {
 
               recommendDungeonId_ = input.readUInt32();
               break;
@@ -128,7 +128,7 @@ public final class DungeonEntryInfoRspOuterClass {
               jPMDJMADPIL_ = input.readBool();
               break;
             }
-            case 122: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dungeonEntryPointList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,7 +137,7 @@ public final class DungeonEntryInfoRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo.parser(), extensionRegistry));
               break;
             }
-            case 66: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 dungeonEntryList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -184,7 +184,7 @@ public final class DungeonEntryInfoRspOuterClass {
               emu.grasscutter.net.proto.DungeonEntryInfoRspOuterClass.DungeonEntryInfoRsp.class, emu.grasscutter.net.proto.DungeonEntryInfoRspOuterClass.DungeonEntryInfoRsp.Builder.class);
     }
 
-    public static final int DUNGEON_ENTRY_POINT_LIST_FIELD_NUMBER = 15;
+    public static final int DUNGEON_ENTRY_POINT_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.DungeonEntryPointInfoOuterClass.DungeonEntryPointInfo> dungeonEntryPointList_;
 
     @java.lang.Override
@@ -214,7 +214,7 @@ public final class DungeonEntryInfoRspOuterClass {
       return dungeonEntryPointList_.get(index);
     }
 
-    public static final int DUNGEON_ENTRY_LIST_FIELD_NUMBER = 8;
+    public static final int DUNGEON_ENTRY_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo> dungeonEntryList_;
 
     @java.lang.Override
@@ -244,7 +244,7 @@ public final class DungeonEntryInfoRspOuterClass {
       return dungeonEntryList_.get(index);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
 
     @java.lang.Override
@@ -252,7 +252,7 @@ public final class DungeonEntryInfoRspOuterClass {
       return retcode_;
     }
 
-    public static final int RECOMMEND_DUNGEON_ID_FIELD_NUMBER = 6;
+    public static final int RECOMMEND_DUNGEON_ID_FIELD_NUMBER = 3;
     private int recommendDungeonId_;
 
     @java.lang.Override
@@ -271,7 +271,7 @@ public final class DungeonEntryInfoRspOuterClass {
       return jPMDJMADPIL_;
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 4;
+    public static final int POINT_ID_FIELD_NUMBER = 6;
     private int pointId_;
 
     @java.lang.Override
@@ -294,22 +294,22 @@ public final class DungeonEntryInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(4, pointId_);
+        output.writeUInt32(6, pointId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
+        output.writeInt32(12, retcode_);
       }
       if (recommendDungeonId_ != 0) {
-        output.writeUInt32(6, recommendDungeonId_);
+        output.writeUInt32(3, recommendDungeonId_);
       }
       if (jPMDJMADPIL_ != false) {
         output.writeBool(16000, jPMDJMADPIL_);
       }
       for (int i = 0; i < dungeonEntryPointList_.size(); i++) {
-        output.writeMessage(15, dungeonEntryPointList_.get(i));
+        output.writeMessage(1, dungeonEntryPointList_.get(i));
       }
       for (int i = 0; i < dungeonEntryList_.size(); i++) {
-        output.writeMessage(8, dungeonEntryList_.get(i));
+        output.writeMessage(7, dungeonEntryList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -322,15 +322,15 @@ public final class DungeonEntryInfoRspOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, pointId_);
+          .computeUInt32Size(6, pointId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
+          .computeInt32Size(12, retcode_);
       }
       if (recommendDungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, recommendDungeonId_);
+          .computeUInt32Size(3, recommendDungeonId_);
       }
       if (jPMDJMADPIL_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -338,11 +338,11 @@ public final class DungeonEntryInfoRspOuterClass {
       }
       for (int i = 0; i < dungeonEntryPointList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, dungeonEntryPointList_.get(i));
+          .computeMessageSize(1, dungeonEntryPointList_.get(i));
       }
       for (int i = 0; i < dungeonEntryList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, dungeonEntryList_.get(i));
+          .computeMessageSize(7, dungeonEntryList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

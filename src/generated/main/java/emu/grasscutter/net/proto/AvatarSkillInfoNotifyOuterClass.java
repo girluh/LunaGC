@@ -91,7 +91,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 skillMap_ = com.google.protobuf.MapField.newMapField(
                     SkillMapDefaultEntryHolder.defaultEntry);
@@ -104,7 +104,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                   skillMap__.getKey(), skillMap__.getValue());
               break;
             }
-            case 120: {
+            case 80: {
 
               guid_ = input.readUInt64();
               break;
@@ -153,7 +153,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify.class, emu.grasscutter.net.proto.AvatarSkillInfoNotifyOuterClass.AvatarSkillInfoNotify.Builder.class);
     }
 
-    public static final int SKILL_MAP_FIELD_NUMBER = 11;
+    public static final int SKILL_MAP_FIELD_NUMBER = 2;
     private static final class SkillMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo> defaultEntry =
@@ -225,7 +225,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
       return map.get(key);
     }
 
-    public static final int GUID_FIELD_NUMBER = 15;
+    public static final int GUID_FIELD_NUMBER = 10;
     private long guid_;
 
     @java.lang.Override
@@ -252,9 +252,9 @@ public final class AvatarSkillInfoNotifyOuterClass {
           output,
           internalGetSkillMap(),
           SkillMapDefaultEntryHolder.defaultEntry,
-          11);
+          2);
       if (guid_ != 0L) {
-        output.writeUInt64(15, guid_);
+        output.writeUInt64(10, guid_);
       }
       unknownFields.writeTo(output);
     }
@@ -273,11 +273,11 @@ public final class AvatarSkillInfoNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(11, skillMap__);
+            .computeMessageSize(2, skillMap__);
       }
       if (guid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(15, guid_);
+          .computeUInt64Size(10, guid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

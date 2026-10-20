@@ -80,12 +80,12 @@ public final class HomeAvatarRewardEventGetReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 88: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 40: {
 
               eventId_ = input.readUInt32();
               break;
@@ -122,7 +122,7 @@ public final class HomeAvatarRewardEventGetReqOuterClass {
               emu.grasscutter.net.proto.HomeAvatarRewardEventGetReqOuterClass.HomeAvatarRewardEventGetReq.class, emu.grasscutter.net.proto.HomeAvatarRewardEventGetReqOuterClass.HomeAvatarRewardEventGetReq.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 7;
+    public static final int AVATAR_ID_FIELD_NUMBER = 11;
     private int avatarId_;
     /**
      * <code>uint32 avatar_id = 9;</code>
@@ -133,7 +133,7 @@ public final class HomeAvatarRewardEventGetReqOuterClass {
       return avatarId_;
     }
 
-    public static final int EVENT_ID_FIELD_NUMBER = 8;
+    public static final int EVENT_ID_FIELD_NUMBER = 5;
     private int eventId_;
     /**
      * <code>uint32 event_id = 10;</code>
@@ -159,10 +159,10 @@ public final class HomeAvatarRewardEventGetReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarId_ != 0) {
-        output.writeUInt32(7, avatarId_);
+        output.writeUInt32(11, avatarId_);
       }
       if (eventId_ != 0) {
-        output.writeUInt32(8, eventId_);
+        output.writeUInt32(5, eventId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class HomeAvatarRewardEventGetReqOuterClass {
       size = 0;
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, avatarId_);
+          .computeUInt32Size(11, avatarId_);
       }
       if (eventId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, eventId_);
+          .computeUInt32Size(5, eventId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -74,23 +74,23 @@ public final class WidgetSlotDataOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 112: {
 
               cdOverTime_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 72: {
 
               materialId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 64: {
               int rawValue = input.readEnum();
 
               tag_ = rawValue;
               break;
             }
-            case 112: {
+            case 56: {
 
               isActive_ = input.readBool();
               break;
@@ -127,7 +127,7 @@ public final class WidgetSlotDataOuterClass {
               emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.class, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder.class);
     }
 
-    public static final int TAG_FIELD_NUMBER = 5;
+    public static final int TAG_FIELD_NUMBER = 8;
     private int tag_;
 
     @java.lang.Override public int getTagValue() {
@@ -140,7 +140,7 @@ public final class WidgetSlotDataOuterClass {
       return result == null ? emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.UNRECOGNIZED : result;
     }
 
-    public static final int MATERIAL_ID_FIELD_NUMBER = 2;
+    public static final int MATERIAL_ID_FIELD_NUMBER = 9;
     private int materialId_;
 
     @java.lang.Override
@@ -148,7 +148,7 @@ public final class WidgetSlotDataOuterClass {
       return materialId_;
     }
 
-    public static final int CD_OVER_TIME_FIELD_NUMBER = 9;
+    public static final int CD_OVER_TIME_FIELD_NUMBER = 14;
     private int cdOverTime_;
 
     @java.lang.Override
@@ -156,7 +156,7 @@ public final class WidgetSlotDataOuterClass {
       return cdOverTime_;
     }
 
-    public static final int IS_ACTIVE_FIELD_NUMBER = 14;
+    public static final int IS_ACTIVE_FIELD_NUMBER = 7;
     private boolean isActive_;
 
     @java.lang.Override
@@ -179,16 +179,16 @@ public final class WidgetSlotDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cdOverTime_ != 0) {
-        output.writeUInt32(9, cdOverTime_);
+        output.writeUInt32(14, cdOverTime_);
       }
       if (materialId_ != 0) {
-        output.writeUInt32(2, materialId_);
+        output.writeUInt32(9, materialId_);
       }
       if (tag_ != emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.WidgetSlotTag_WIDGET_SLOT_QUICK_USE.getNumber()) {
-        output.writeEnum(5, tag_);
+        output.writeEnum(8, tag_);
       }
       if (isActive_ != false) {
-        output.writeBool(14, isActive_);
+        output.writeBool(7, isActive_);
       }
       unknownFields.writeTo(output);
     }
@@ -201,19 +201,19 @@ public final class WidgetSlotDataOuterClass {
       size = 0;
       if (cdOverTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, cdOverTime_);
+          .computeUInt32Size(14, cdOverTime_);
       }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, materialId_);
+          .computeUInt32Size(9, materialId_);
       }
       if (tag_ != emu.grasscutter.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.WidgetSlotTag_WIDGET_SLOT_QUICK_USE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, tag_);
+          .computeEnumSize(8, tag_);
       }
       if (isActive_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isActive_);
+          .computeBoolSize(7, isActive_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

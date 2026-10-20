@@ -204,23 +204,23 @@ public final class ReunionBriefInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               version_ = s;
               break;
             }
-            case 128008: {
+            case 128016: {
 
               dCFLMEMCBFI_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 120: {
 
               startTime_ = input.readUInt32();
               break;
             }
-            case 128000: {
+            case 128008: {
 
               fGJAEAJGGMI_ = input.readUInt32();
               break;
@@ -238,7 +238,7 @@ public final class ReunionBriefInfoOuterClass {
 
               break;
             }
-            case 112: {
+            case 32: {
 
               missionId_ = input.readUInt32();
               break;
@@ -248,7 +248,7 @@ public final class ReunionBriefInfoOuterClass {
               iKKILCGOJJD_ = input.readBool();
               break;
             }
-            case 106: {
+            case 128002: {
               emu.grasscutter.net.proto.ADGPIOIDKENOuterClass.ADGPIOIDKEN.Builder subBuilder = null;
               if (oAEJHHNMLJA_ != null) {
                 subBuilder = oAEJHHNMLJA_.toBuilder();
@@ -261,12 +261,12 @@ public final class ReunionBriefInfoOuterClass {
 
               break;
             }
-            case 64: {
+            case 104: {
 
               finishTime_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 88: {
 
               firstDayStartTime_ = input.readUInt32();
               break;
@@ -387,7 +387,7 @@ public final class ReunionBriefInfoOuterClass {
               emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.class, emu.grasscutter.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder.class);
     }
 
-    public static final int OAEJHHNMLJA_FIELD_NUMBER = 13;
+    public static final int OAEJHHNMLJA_FIELD_NUMBER = 16000;
     private emu.grasscutter.net.proto.ADGPIOIDKENOuterClass.ADGPIOIDKEN oAEJHHNMLJA_;
     /**
      * <code>.ADGPIOIDKEN OAEJHHNMLJA = 13;</code>
@@ -493,7 +493,7 @@ public final class ReunionBriefInfoOuterClass {
       return getOMPMBGFABEN();
     }
 
-    public static final int VERSION_FIELD_NUMBER = 7;
+    public static final int VERSION_FIELD_NUMBER = 1;
     private volatile java.lang.Object version_;
 
     @java.lang.Override
@@ -579,7 +579,7 @@ public final class ReunionBriefInfoOuterClass {
       return getBFDOPIBBLII();
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 3;
+    public static final int START_TIME_FIELD_NUMBER = 15;
     private int startTime_;
 
     @java.lang.Override
@@ -587,7 +587,7 @@ public final class ReunionBriefInfoOuterClass {
       return startTime_;
     }
 
-    public static final int FINISH_TIME_FIELD_NUMBER = 8;
+    public static final int FINISH_TIME_FIELD_NUMBER = 13;
     private int finishTime_;
 
     @java.lang.Override
@@ -595,7 +595,7 @@ public final class ReunionBriefInfoOuterClass {
       return finishTime_;
     }
 
-    public static final int MISSION_ID_FIELD_NUMBER = 14;
+    public static final int MISSION_ID_FIELD_NUMBER = 4;
     private int missionId_;
 
     @java.lang.Override
@@ -603,7 +603,7 @@ public final class ReunionBriefInfoOuterClass {
       return missionId_;
     }
 
-    public static final int FGJAEAJGGMI_FIELD_NUMBER = 16000;
+    public static final int FGJAEAJGGMI_FIELD_NUMBER = 16001;
     private int fGJAEAJGGMI_;
     /**
      * <code>uint32 FGJAEAJGGMI = 8;</code>
@@ -625,7 +625,7 @@ public final class ReunionBriefInfoOuterClass {
       return aEKADMBGKBI_;
     }
 
-    public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 2;
+    public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 11;
     private int firstDayStartTime_;
 
     @java.lang.Override
@@ -655,7 +655,7 @@ public final class ReunionBriefInfoOuterClass {
       return jCMAMEJKFJP_;
     }
 
-    public static final int DCFLMEMCBFI_FIELD_NUMBER = 16001;
+    public static final int DCFLMEMCBFI_FIELD_NUMBER = 16002;
     private int dCFLMEMCBFI_;
     /**
      * <code>uint32 DCFLMEMCBFI = 5;</code>
@@ -682,34 +682,34 @@ public final class ReunionBriefInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, version_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
       }
       if (dCFLMEMCBFI_ != 0) {
-        output.writeUInt32(16001, dCFLMEMCBFI_);
+        output.writeUInt32(16002, dCFLMEMCBFI_);
       }
       if (startTime_ != 0) {
-        output.writeUInt32(3, startTime_);
+        output.writeUInt32(15, startTime_);
       }
       if (fGJAEAJGGMI_ != 0) {
-        output.writeUInt32(16000, fGJAEAJGGMI_);
+        output.writeUInt32(16001, fGJAEAJGGMI_);
       }
       if (bFDOPIBBLII_ != null) {
         output.writeMessage(9, getBFDOPIBBLII());
       }
       if (missionId_ != 0) {
-        output.writeUInt32(14, missionId_);
+        output.writeUInt32(4, missionId_);
       }
       if (iKKILCGOJJD_ != false) {
         output.writeBool(12, iKKILCGOJJD_);
       }
       if (oAEJHHNMLJA_ != null) {
-        output.writeMessage(13, getOAEJHHNMLJA());
+        output.writeMessage(16000, getOAEJHHNMLJA());
       }
       if (finishTime_ != 0) {
-        output.writeUInt32(8, finishTime_);
+        output.writeUInt32(13, finishTime_);
       }
       if (firstDayStartTime_ != 0) {
-        output.writeUInt32(2, firstDayStartTime_);
+        output.writeUInt32(11, firstDayStartTime_);
       }
       if (jCMAMEJKFJP_ != false) {
         output.writeBool(16, jCMAMEJKFJP_);
@@ -747,19 +747,19 @@ public final class ReunionBriefInfoOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, version_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
       }
       if (dCFLMEMCBFI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16001, dCFLMEMCBFI_);
+          .computeUInt32Size(16002, dCFLMEMCBFI_);
       }
       if (startTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, startTime_);
+          .computeUInt32Size(15, startTime_);
       }
       if (fGJAEAJGGMI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16000, fGJAEAJGGMI_);
+          .computeUInt32Size(16001, fGJAEAJGGMI_);
       }
       if (bFDOPIBBLII_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -767,7 +767,7 @@ public final class ReunionBriefInfoOuterClass {
       }
       if (missionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, missionId_);
+          .computeUInt32Size(4, missionId_);
       }
       if (iKKILCGOJJD_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -775,15 +775,15 @@ public final class ReunionBriefInfoOuterClass {
       }
       if (oAEJHHNMLJA_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getOAEJHHNMLJA());
+          .computeMessageSize(16000, getOAEJHHNMLJA());
       }
       if (finishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, finishTime_);
+          .computeUInt32Size(13, finishTime_);
       }
       if (firstDayStartTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, firstDayStartTime_);
+          .computeUInt32Size(11, firstDayStartTime_);
       }
       if (jCMAMEJKFJP_ != false) {
         size += com.google.protobuf.CodedOutputStream

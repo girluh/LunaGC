@@ -99,12 +99,12 @@ public final class MonsterAlertChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 72: {
 
               isAlert_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 monsterEntityList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -112,7 +112,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
               monsterEntityList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -176,7 +176,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
       return avatarEntityId_;
     }
 
-    public static final int IS_ALERT_FIELD_NUMBER = 4;
+    public static final int IS_ALERT_FIELD_NUMBER = 9;
     private int isAlert_;
     /**
      * <code>uint32 is_alert = 1;</code>
@@ -187,7 +187,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
       return isAlert_;
     }
 
-    public static final int MONSTER_ENTITY_LIST_FIELD_NUMBER = 3;
+    public static final int MONSTER_ENTITY_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList monsterEntityList_;
     /**
      * <code>repeated uint32 monster_entity_list = 12;</code>
@@ -231,10 +231,10 @@ public final class MonsterAlertChangeNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (isAlert_ != 0) {
-        output.writeUInt32(4, isAlert_);
+        output.writeUInt32(9, isAlert_);
       }
       if (getMonsterEntityListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(monsterEntityListMemoizedSerializedSize);
       }
       for (int i = 0; i < monsterEntityList_.size(); i++) {
@@ -254,7 +254,7 @@ public final class MonsterAlertChangeNotifyOuterClass {
       size = 0;
       if (isAlert_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, isAlert_);
+          .computeUInt32Size(9, isAlert_);
       }
       {
         int dataSize = 0;

@@ -106,17 +106,17 @@ public final class GetFriendShowAvatarInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 48: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 122: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 showAvatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -160,7 +160,7 @@ public final class GetFriendShowAvatarInfoRspOuterClass {
               emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.class, emu.grasscutter.net.proto.GetFriendShowAvatarInfoRspOuterClass.GetFriendShowAvatarInfoRsp.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 13;
+    public static final int UID_FIELD_NUMBER = 6;
     private int uid_;
     /**
      * <code>uint32 uid = 8;</code>
@@ -171,7 +171,7 @@ public final class GetFriendShowAvatarInfoRspOuterClass {
       return uid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
@@ -182,7 +182,7 @@ public final class GetFriendShowAvatarInfoRspOuterClass {
       return retcode_;
     }
 
-    public static final int SHOW_AVATAR_INFO_LIST_FIELD_NUMBER = 15;
+    public static final int SHOW_AVATAR_INFO_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> showAvatarInfoList_;
     /**
      * <code>repeated .ShowAvatarInfo show_avatar_info_list = 14;</code>
@@ -237,13 +237,13 @@ public final class GetFriendShowAvatarInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(14, retcode_);
       }
       if (uid_ != 0) {
-        output.writeUInt32(13, uid_);
+        output.writeUInt32(6, uid_);
       }
       for (int i = 0; i < showAvatarInfoList_.size(); i++) {
-        output.writeMessage(15, showAvatarInfoList_.get(i));
+        output.writeMessage(13, showAvatarInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -256,15 +256,15 @@ public final class GetFriendShowAvatarInfoRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, uid_);
+          .computeUInt32Size(6, uid_);
       }
       for (int i = 0; i < showAvatarInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, showAvatarInfoList_.get(i));
+          .computeMessageSize(13, showAvatarInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

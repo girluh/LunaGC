@@ -102,7 +102,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
 
               break;
             }
-            case 80: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
@@ -139,7 +139,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
               emu.grasscutter.net.proto.PlayerCompoundMaterialRspOuterClass.PlayerCompoundMaterialRsp.class, emu.grasscutter.net.proto.PlayerCompoundMaterialRspOuterClass.PlayerCompoundMaterialRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
@@ -194,7 +194,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
         output.writeMessage(2, getCompoundQueueData());
       }
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(5, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -211,7 +211,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

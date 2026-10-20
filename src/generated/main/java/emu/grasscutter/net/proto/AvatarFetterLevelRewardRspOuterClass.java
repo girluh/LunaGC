@@ -75,22 +75,22 @@ public final class AvatarFetterLevelRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 112: {
 
               fetterLevel_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 24: {
 
               rewardId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 48: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -127,7 +127,7 @@ public final class AvatarFetterLevelRewardRspOuterClass {
               emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp.class, emu.grasscutter.net.proto.AvatarFetterLevelRewardRspOuterClass.AvatarFetterLevelRewardRsp.Builder.class);
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 13;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 6;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -135,7 +135,7 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       return avatarGuid_;
     }
 
-    public static final int FETTER_LEVEL_FIELD_NUMBER = 7;
+    public static final int FETTER_LEVEL_FIELD_NUMBER = 14;
     private int fetterLevel_;
 
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       return fetterLevel_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
 
     @java.lang.Override
@@ -151,7 +151,7 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       return retcode_;
     }
 
-    public static final int REWARD_ID_FIELD_NUMBER = 9;
+    public static final int REWARD_ID_FIELD_NUMBER = 3;
     private int rewardId_;
 
     @java.lang.Override
@@ -174,16 +174,16 @@ public final class AvatarFetterLevelRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (fetterLevel_ != 0) {
-        output.writeUInt32(7, fetterLevel_);
+        output.writeUInt32(14, fetterLevel_);
       }
       if (rewardId_ != 0) {
-        output.writeUInt32(9, rewardId_);
+        output.writeUInt32(3, rewardId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(5, retcode_);
       }
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(13, avatarGuid_);
+        output.writeUInt64(6, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -196,19 +196,19 @@ public final class AvatarFetterLevelRewardRspOuterClass {
       size = 0;
       if (fetterLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, fetterLevel_);
+          .computeUInt32Size(14, fetterLevel_);
       }
       if (rewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, rewardId_);
+          .computeUInt32Size(3, rewardId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, avatarGuid_);
+          .computeUInt64Size(6, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

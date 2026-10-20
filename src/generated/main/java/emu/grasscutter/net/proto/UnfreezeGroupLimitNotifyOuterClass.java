@@ -63,7 +63,7 @@ public final class UnfreezeGroupLimitNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 120: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -105,7 +105,7 @@ public final class UnfreezeGroupLimitNotifyOuterClass {
               emu.grasscutter.net.proto.UnfreezeGroupLimitNotifyOuterClass.UnfreezeGroupLimitNotify.class, emu.grasscutter.net.proto.UnfreezeGroupLimitNotifyOuterClass.UnfreezeGroupLimitNotify.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 5;
+    public static final int SCENE_ID_FIELD_NUMBER = 15;
     private int sceneId_;
 
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class UnfreezeGroupLimitNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneId_ != 0) {
-        output.writeUInt32(5, sceneId_);
+        output.writeUInt32(15, sceneId_);
       }
       if (pointId_ != 0) {
         output.writeUInt32(3, pointId_);
@@ -152,7 +152,7 @@ public final class UnfreezeGroupLimitNotifyOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, sceneId_);
+          .computeUInt32Size(15, sceneId_);
       }
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

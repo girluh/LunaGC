@@ -69,17 +69,17 @@ public final class BattlePassCycleOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 80: {
 
               endTime_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 88: {
 
               beginTime_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 48: {
 
               cycleIdx_ = input.readUInt32();
               break;
@@ -116,7 +116,7 @@ public final class BattlePassCycleOuterClass {
               emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.class, emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle.Builder.class);
     }
 
-    public static final int END_TIME_FIELD_NUMBER = 1;
+    public static final int END_TIME_FIELD_NUMBER = 10;
     private int endTime_;
 
     @java.lang.Override
@@ -124,7 +124,7 @@ public final class BattlePassCycleOuterClass {
       return endTime_;
     }
 
-    public static final int BEGIN_TIME_FIELD_NUMBER = 3;
+    public static final int BEGIN_TIME_FIELD_NUMBER = 11;
     private int beginTime_;
 
     @java.lang.Override
@@ -132,7 +132,7 @@ public final class BattlePassCycleOuterClass {
       return beginTime_;
     }
 
-    public static final int CYCLE_IDX_FIELD_NUMBER = 13;
+    public static final int CYCLE_IDX_FIELD_NUMBER = 6;
     private int cycleIdx_;
 
     @java.lang.Override
@@ -155,13 +155,13 @@ public final class BattlePassCycleOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (endTime_ != 0) {
-        output.writeUInt32(1, endTime_);
+        output.writeUInt32(10, endTime_);
       }
       if (beginTime_ != 0) {
-        output.writeUInt32(3, beginTime_);
+        output.writeUInt32(11, beginTime_);
       }
       if (cycleIdx_ != 0) {
-        output.writeUInt32(13, cycleIdx_);
+        output.writeUInt32(6, cycleIdx_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,15 +174,15 @@ public final class BattlePassCycleOuterClass {
       size = 0;
       if (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, endTime_);
+          .computeUInt32Size(10, endTime_);
       }
       if (beginTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, beginTime_);
+          .computeUInt32Size(11, beginTime_);
       }
       if (cycleIdx_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, cycleIdx_);
+          .computeUInt32Size(6, cycleIdx_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -94,17 +94,17 @@ public final class MichiaeMatsuriChestPositionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 48: {
 
               groupId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 40: {
 
               configId_ = input.readUInt32();
               break;
             }
-            case 26: {
+            case 114: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -149,7 +149,7 @@ public final class MichiaeMatsuriChestPositionInfoOuterClass {
               emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.class, emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder.class);
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 9;
+    public static final int GROUP_ID_FIELD_NUMBER = 6;
     private int groupId_;
     /**
      * <code>uint32 group_id = 8;</code>
@@ -160,7 +160,7 @@ public final class MichiaeMatsuriChestPositionInfoOuterClass {
       return groupId_;
     }
 
-    public static final int POS_FIELD_NUMBER = 3;
+    public static final int POS_FIELD_NUMBER = 14;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 12;</code>
@@ -186,7 +186,7 @@ public final class MichiaeMatsuriChestPositionInfoOuterClass {
       return getPos();
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 7;
+    public static final int CONFIG_ID_FIELD_NUMBER = 5;
     private int configId_;
     /**
      * <code>uint32 config_id = 11;</code>
@@ -212,13 +212,13 @@ public final class MichiaeMatsuriChestPositionInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (groupId_ != 0) {
-        output.writeUInt32(9, groupId_);
+        output.writeUInt32(6, groupId_);
       }
       if (configId_ != 0) {
-        output.writeUInt32(7, configId_);
+        output.writeUInt32(5, configId_);
       }
       if (pos_ != null) {
-        output.writeMessage(3, getPos());
+        output.writeMessage(14, getPos());
       }
       unknownFields.writeTo(output);
     }
@@ -231,15 +231,15 @@ public final class MichiaeMatsuriChestPositionInfoOuterClass {
       size = 0;
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, groupId_);
+          .computeUInt32Size(6, groupId_);
       }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, configId_);
+          .computeUInt32Size(5, configId_);
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getPos());
+          .computeMessageSize(14, getPos());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

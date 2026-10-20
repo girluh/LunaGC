@@ -107,17 +107,17 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
               initialPromoteLevel_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 96: {
 
               reason_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 120: {
 
               initialLevel_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 56: {
 
               isTransferToItem_ = input.readBool();
               break;
@@ -131,12 +131,12 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem.parser(), extensionRegistry));
               break;
             }
-            case 80: {
+            case 16: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 72: {
 
               itemId_ = input.readUInt32();
               break;
@@ -206,7 +206,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       return transferItemList_.get(index);
     }
 
-    public static final int IS_TRANSFER_TO_ITEM_FIELD_NUMBER = 14;
+    public static final int IS_TRANSFER_TO_ITEM_FIELD_NUMBER = 7;
     private boolean isTransferToItem_;
 
     @java.lang.Override
@@ -225,7 +225,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       return initialPromoteLevel_;
     }
 
-    public static final int ITEM_ID_FIELD_NUMBER = 4;
+    public static final int ITEM_ID_FIELD_NUMBER = 9;
     private int itemId_;
 
     @java.lang.Override
@@ -233,7 +233,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       return itemId_;
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 10;
+    public static final int AVATAR_ID_FIELD_NUMBER = 2;
     private int avatarId_;
 
     @java.lang.Override
@@ -241,7 +241,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       return avatarId_;
     }
 
-    public static final int INITIAL_LEVEL_FIELD_NUMBER = 5;
+    public static final int INITIAL_LEVEL_FIELD_NUMBER = 15;
     private int initialLevel_;
     /**
      * <code>uint32 initial_level = 15;</code>
@@ -252,7 +252,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       return initialLevel_;
     }
 
-    public static final int REASON_FIELD_NUMBER = 7;
+    public static final int REASON_FIELD_NUMBER = 12;
     private int reason_;
 
     @java.lang.Override
@@ -278,22 +278,22 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         output.writeUInt32(6, initialPromoteLevel_);
       }
       if (reason_ != 0) {
-        output.writeUInt32(7, reason_);
+        output.writeUInt32(12, reason_);
       }
       if (initialLevel_ != 0) {
-        output.writeUInt32(5, initialLevel_);
+        output.writeUInt32(15, initialLevel_);
       }
       if (isTransferToItem_ != false) {
-        output.writeBool(14, isTransferToItem_);
+        output.writeBool(7, isTransferToItem_);
       }
       for (int i = 0; i < transferItemList_.size(); i++) {
         output.writeMessage(13, transferItemList_.get(i));
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(10, avatarId_);
+        output.writeUInt32(2, avatarId_);
       }
       if (itemId_ != 0) {
-        output.writeUInt32(4, itemId_);
+        output.writeUInt32(9, itemId_);
       }
       unknownFields.writeTo(output);
     }
@@ -310,15 +310,15 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       }
       if (reason_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, reason_);
+          .computeUInt32Size(12, reason_);
       }
       if (initialLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, initialLevel_);
+          .computeUInt32Size(15, initialLevel_);
       }
       if (isTransferToItem_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isTransferToItem_);
+          .computeBoolSize(7, isTransferToItem_);
       }
       for (int i = 0; i < transferItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -326,11 +326,11 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, avatarId_);
+          .computeUInt32Size(2, avatarId_);
       }
       if (itemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, itemId_);
+          .computeUInt32Size(9, itemId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

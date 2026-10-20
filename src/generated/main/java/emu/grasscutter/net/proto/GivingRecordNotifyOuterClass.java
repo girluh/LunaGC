@@ -94,7 +94,7 @@ public final class GivingRecordNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 givingRecordList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GivingRecordOuterClass.GivingRecord>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,7 +138,7 @@ public final class GivingRecordNotifyOuterClass {
               emu.grasscutter.net.proto.GivingRecordNotifyOuterClass.GivingRecordNotify.class, emu.grasscutter.net.proto.GivingRecordNotifyOuterClass.GivingRecordNotify.Builder.class);
     }
 
-    public static final int GIVING_RECORD_LIST_FIELD_NUMBER = 10;
+    public static final int GIVING_RECORD_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.GivingRecordOuterClass.GivingRecord> givingRecordList_;
     /**
      * <code>repeated .GivingRecord giving_record_list = 4;</code>
@@ -193,7 +193,7 @@ public final class GivingRecordNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < givingRecordList_.size(); i++) {
-        output.writeMessage(10, givingRecordList_.get(i));
+        output.writeMessage(2, givingRecordList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class GivingRecordNotifyOuterClass {
       size = 0;
       for (int i = 0; i < givingRecordList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, givingRecordList_.get(i));
+          .computeMessageSize(2, givingRecordList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

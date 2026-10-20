@@ -100,7 +100,7 @@ public final class WinterCampRaceStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 10: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -113,17 +113,17 @@ public final class WinterCampRaceStageInfoOuterClass {
 
               break;
             }
-            case 48: {
+            case 104: {
 
               openTime_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 40: {
 
               id_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 80: {
 
               maxScore_ = input.readUInt32();
               break;
@@ -160,7 +160,7 @@ public final class WinterCampRaceStageInfoOuterClass {
               emu.grasscutter.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo.class, emu.grasscutter.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 4;
+    public static final int ID_FIELD_NUMBER = 5;
     private int id_;
     /**
      * <code>uint32 id = 5;</code>
@@ -171,7 +171,7 @@ public final class WinterCampRaceStageInfoOuterClass {
       return id_;
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 8;
+    public static final int MAX_SCORE_FIELD_NUMBER = 10;
     private int maxScore_;
     /**
      * <code>uint32 max_score = 10;</code>
@@ -182,7 +182,7 @@ public final class WinterCampRaceStageInfoOuterClass {
       return maxScore_;
     }
 
-    public static final int POS_FIELD_NUMBER = 12;
+    public static final int POS_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 1;</code>
@@ -208,7 +208,7 @@ public final class WinterCampRaceStageInfoOuterClass {
       return getPos();
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 6;
+    public static final int OPEN_TIME_FIELD_NUMBER = 13;
     private int openTime_;
     /**
      * <code>uint32 open_time = 2;</code>
@@ -234,16 +234,16 @@ public final class WinterCampRaceStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pos_ != null) {
-        output.writeMessage(12, getPos());
+        output.writeMessage(1, getPos());
       }
       if (openTime_ != 0) {
-        output.writeUInt32(6, openTime_);
+        output.writeUInt32(13, openTime_);
       }
       if (id_ != 0) {
-        output.writeUInt32(4, id_);
+        output.writeUInt32(5, id_);
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(8, maxScore_);
+        output.writeUInt32(10, maxScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -256,19 +256,19 @@ public final class WinterCampRaceStageInfoOuterClass {
       size = 0;
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getPos());
+          .computeMessageSize(1, getPos());
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, openTime_);
+          .computeUInt32Size(13, openTime_);
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, id_);
+          .computeUInt32Size(5, id_);
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, maxScore_);
+          .computeUInt32Size(10, maxScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

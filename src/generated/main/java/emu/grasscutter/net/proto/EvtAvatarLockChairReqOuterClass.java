@@ -77,7 +77,7 @@ public final class EvtAvatarLockChairReqOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 82: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (position_ != null) {
                 subBuilder = position_.toBuilder();
@@ -140,7 +140,7 @@ public final class EvtAvatarLockChairReqOuterClass {
       return chairId_;
     }
 
-    public static final int POSITION_FIELD_NUMBER = 3;
+    public static final int POSITION_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector position_;
 
     @java.lang.Override
@@ -184,7 +184,7 @@ public final class EvtAvatarLockChairReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (position_ != null) {
-        output.writeMessage(3, getPosition());
+        output.writeMessage(10, getPosition());
       }
       if (performId_ != 0) {
         output.writeInt32(9, performId_);
@@ -203,7 +203,7 @@ public final class EvtAvatarLockChairReqOuterClass {
       size = 0;
       if (position_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getPosition());
+          .computeMessageSize(10, getPosition());
       }
       if (performId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

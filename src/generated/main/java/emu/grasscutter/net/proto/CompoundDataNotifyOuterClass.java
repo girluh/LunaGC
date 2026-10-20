@@ -112,7 +112,7 @@ public final class CompoundDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 unlockCompoundList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -120,7 +120,7 @@ public final class CompoundDataNotifyOuterClass {
               unlockCompoundList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -220,7 +220,7 @@ public final class CompoundDataNotifyOuterClass {
       return compoundQueueDataList_.get(index);
     }
 
-    public static final int UNLOCKCOMPOUNDLIST_FIELD_NUMBER = 12;
+    public static final int UNLOCKCOMPOUNDLIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList unlockCompoundList_;
     /**
      * <code>repeated uint32 unlockCompoundList = 6;</code>
@@ -264,7 +264,7 @@ public final class CompoundDataNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getUnlockCompoundListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(unlockCompoundListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockCompoundList_.size(); i++) {

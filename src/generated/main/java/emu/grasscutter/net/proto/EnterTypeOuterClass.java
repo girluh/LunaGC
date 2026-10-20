@@ -71,6 +71,14 @@ public final class EnterTypeOuterClass {
      * <code>EnterType_ENTER_GOTO_BY_TPL = 12;</code>
      */
     EnterType_ENTER_GOTO_BY_TPL(12),
+    /**
+     * <code>EnterType_ENTER_BEYOND = 13;</code>
+     */
+    EnterType_ENTER_BEYOND(13),
+    /**
+     * <code>EnterType_ENTER_HALL = 14;</code>
+     */
+    EnterType_ENTER_HALL(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -126,6 +134,14 @@ public final class EnterTypeOuterClass {
      * <code>EnterType_ENTER_GOTO_BY_TPL = 12;</code>
      */
     public static final int EnterType_ENTER_GOTO_BY_TPL_VALUE = 12;
+    /**
+     * <code>EnterType_ENTER_BEYOND = 13;</code>
+     */
+    public static final int EnterType_ENTER_BEYOND_VALUE = 13;
+    /**
+     * <code>EnterType_ENTER_HALL = 14;</code>
+     */
+    public static final int EnterType_ENTER_HALL_VALUE = 14;
 
 
     public final int getNumber() {
@@ -165,6 +181,8 @@ public final class EnterTypeOuterClass {
         case 10: return EnterType_ENTER_OTHER_HOME;
         case 11: return EnterType_ENTER_GOTO_RECREATE;
         case 12: return EnterType_ENTER_GOTO_BY_TPL;
+        case 13: return EnterType_ENTER_BEYOND;
+        case 14: return EnterType_ENTER_HALL;
         default: return null;
       }
     }

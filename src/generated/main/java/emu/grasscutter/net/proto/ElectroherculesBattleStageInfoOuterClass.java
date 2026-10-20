@@ -105,7 +105,7 @@ public final class ElectroherculesBattleStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -114,7 +114,7 @@ public final class ElectroherculesBattleStageInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo.parser(), extensionRegistry));
               break;
             }
-            case 104: {
+            case 120: {
 
               stageId_ = input.readUInt32();
               break;
@@ -159,7 +159,7 @@ public final class ElectroherculesBattleStageInfoOuterClass {
               emu.grasscutter.net.proto.ElectroherculesBattleStageInfoOuterClass.ElectroherculesBattleStageInfo.class, emu.grasscutter.net.proto.ElectroherculesBattleStageInfoOuterClass.ElectroherculesBattleStageInfo.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 13;
+    public static final int STAGE_ID_FIELD_NUMBER = 15;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 5;</code>
@@ -181,7 +181,7 @@ public final class ElectroherculesBattleStageInfoOuterClass {
       return isStageOpen_;
     }
 
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 12;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.ElectroherculesBattleLevelInfoOuterClass.ElectroherculesBattleLevelInfo> levelInfoList_;
     /**
      * <code>repeated .ElectroherculesBattleLevelInfo level_info_list = 3;</code>
@@ -236,10 +236,10 @@ public final class ElectroherculesBattleStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(12, levelInfoList_.get(i));
+        output.writeMessage(2, levelInfoList_.get(i));
       }
       if (stageId_ != 0) {
-        output.writeUInt32(13, stageId_);
+        output.writeUInt32(15, stageId_);
       }
       if (isStageOpen_ != false) {
         output.writeBool(11, isStageOpen_);
@@ -255,11 +255,11 @@ public final class ElectroherculesBattleStageInfoOuterClass {
       size = 0;
       for (int i = 0; i < levelInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, levelInfoList_.get(i));
+          .computeMessageSize(2, levelInfoList_.get(i));
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, stageId_);
+          .computeUInt32Size(15, stageId_);
       }
       if (isStageOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream

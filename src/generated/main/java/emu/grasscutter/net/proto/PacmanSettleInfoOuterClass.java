@@ -103,7 +103,7 @@ public final class PacmanSettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 104: {
 
               isNewRecord_ = input.readBool();
               break;
@@ -113,7 +113,7 @@ public final class PacmanSettleInfoOuterClass {
               nHFGIBDCPGC_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 24: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
@@ -124,7 +124,7 @@ public final class PacmanSettleInfoOuterClass {
               gIMCFEIADKI_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 88: {
 
               finalScore_ = input.readUInt32();
               break;
@@ -161,7 +161,7 @@ public final class PacmanSettleInfoOuterClass {
               emu.grasscutter.net.proto.PacmanSettleInfoOuterClass.PacmanSettleInfo.class, emu.grasscutter.net.proto.PacmanSettleInfoOuterClass.PacmanSettleInfo.Builder.class);
     }
 
-    public static final int FINAL_SCORE_FIELD_NUMBER = 10;
+    public static final int FINAL_SCORE_FIELD_NUMBER = 11;
     private int finalScore_;
     /**
      * <code>uint32 final_score = 8;</code>
@@ -183,7 +183,7 @@ public final class PacmanSettleInfoOuterClass {
       return gIMCFEIADKI_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 11;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 13;
     private boolean isNewRecord_;
     /**
      * <code>bool is_new_record = 3;</code>
@@ -205,7 +205,7 @@ public final class PacmanSettleInfoOuterClass {
       return nHFGIBDCPGC_;
     }
 
-    public static final int REASON_FIELD_NUMBER = 2;
+    public static final int REASON_FIELD_NUMBER = 3;
     private int reason_;
     /**
      * <code>.FKMJAPDCONH reason = 5;</code>
@@ -239,19 +239,19 @@ public final class PacmanSettleInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isNewRecord_ != false) {
-        output.writeBool(11, isNewRecord_);
+        output.writeBool(13, isNewRecord_);
       }
       if (nHFGIBDCPGC_ != 0) {
         output.writeUInt32(4, nHFGIBDCPGC_);
       }
       if (reason_ != emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH.FKMJAPDCONH_PacmanDungeonStopNone.getNumber()) {
-        output.writeEnum(2, reason_);
+        output.writeEnum(3, reason_);
       }
       if (gIMCFEIADKI_ != 0) {
         output.writeUInt32(16000, gIMCFEIADKI_);
       }
       if (finalScore_ != 0) {
-        output.writeUInt32(10, finalScore_);
+        output.writeUInt32(11, finalScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -264,7 +264,7 @@ public final class PacmanSettleInfoOuterClass {
       size = 0;
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isNewRecord_);
+          .computeBoolSize(13, isNewRecord_);
       }
       if (nHFGIBDCPGC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -272,7 +272,7 @@ public final class PacmanSettleInfoOuterClass {
       }
       if (reason_ != emu.grasscutter.net.proto.FKMJAPDCONHOuterClass.FKMJAPDCONH.FKMJAPDCONH_PacmanDungeonStopNone.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, reason_);
+          .computeEnumSize(3, reason_);
       }
       if (gIMCFEIADKI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -280,7 +280,7 @@ public final class PacmanSettleInfoOuterClass {
       }
       if (finalScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, finalScore_);
+          .computeUInt32Size(11, finalScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

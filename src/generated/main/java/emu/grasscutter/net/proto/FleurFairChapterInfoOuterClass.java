@@ -84,7 +84,7 @@ public final class FleurFairChapterInfoOuterClass {
               openTime_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 40: {
 
               chapterId_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class FleurFairChapterInfoOuterClass {
       return openTime_;
     }
 
-    public static final int CHAPTER_ID_FIELD_NUMBER = 7;
+    public static final int CHAPTER_ID_FIELD_NUMBER = 5;
     private int chapterId_;
     /**
      * <code>uint32 chapter_id = 12;</code>
@@ -161,7 +161,7 @@ public final class FleurFairChapterInfoOuterClass {
         output.writeUInt32(1, openTime_);
       }
       if (chapterId_ != 0) {
-        output.writeUInt32(7, chapterId_);
+        output.writeUInt32(5, chapterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,7 +178,7 @@ public final class FleurFairChapterInfoOuterClass {
       }
       if (chapterId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, chapterId_);
+          .computeUInt32Size(5, chapterId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -80,12 +80,12 @@ public final class PlayerCookArgsRspOuterClass {
             case 0:
               done = true;
               break;
-            case 13: {
+            case 77: {
 
               qteRangeRatio_ = input.readFloat();
               break;
             }
-            case 88: {
+            case 96: {
 
               retcode_ = input.readInt32();
               break;
@@ -122,7 +122,7 @@ public final class PlayerCookArgsRspOuterClass {
               emu.grasscutter.net.proto.PlayerCookArgsRspOuterClass.PlayerCookArgsRsp.class, emu.grasscutter.net.proto.PlayerCookArgsRspOuterClass.PlayerCookArgsRsp.Builder.class);
     }
 
-    public static final int QTE_RANGE_RATIO_FIELD_NUMBER = 1;
+    public static final int QTE_RANGE_RATIO_FIELD_NUMBER = 9;
     private float qteRangeRatio_;
     /**
      * <code>float qte_range_ratio = 4;</code>
@@ -133,7 +133,7 @@ public final class PlayerCookArgsRspOuterClass {
       return qteRangeRatio_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
      * <code>int32 retcode = 8;</code>
@@ -159,10 +159,10 @@ public final class PlayerCookArgsRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (qteRangeRatio_ != 0F) {
-        output.writeFloat(1, qteRangeRatio_);
+        output.writeFloat(9, qteRangeRatio_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(12, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class PlayerCookArgsRspOuterClass {
       size = 0;
       if (qteRangeRatio_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, qteRangeRatio_);
+          .computeFloatSize(9, qteRangeRatio_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(12, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

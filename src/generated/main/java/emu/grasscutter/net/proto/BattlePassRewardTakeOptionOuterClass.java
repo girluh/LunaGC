@@ -77,7 +77,7 @@ public final class BattlePassRewardTakeOptionOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 104: {
 
               optionIdx_ = input.readUInt32();
               break;
@@ -161,7 +161,7 @@ public final class BattlePassRewardTakeOptionOuterClass {
       return rewardType_;
     }
 
-    public static final int OPTION_IDX_FIELD_NUMBER = 4;
+    public static final int OPTION_IDX_FIELD_NUMBER = 13;
     private int optionIdx_;
 
     @java.lang.Override
@@ -184,7 +184,7 @@ public final class BattlePassRewardTakeOptionOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (optionIdx_ != 0) {
-        output.writeUInt32(4, optionIdx_);
+        output.writeUInt32(13, optionIdx_);
       }
       if (rewardType_ != 0) {
         output.writeUInt32(6, rewardType_);
@@ -203,7 +203,7 @@ public final class BattlePassRewardTakeOptionOuterClass {
       size = 0;
       if (optionIdx_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, optionIdx_);
+          .computeUInt32Size(13, optionIdx_);
       }
       if (rewardType_ != 0) {
         size += com.google.protobuf.CodedOutputStream

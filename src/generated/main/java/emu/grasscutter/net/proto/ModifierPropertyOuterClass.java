@@ -71,7 +71,7 @@ public final class ModifierPropertyOuterClass {
             case 0:
               done = true;
               break;
-            case 61: {
+            case 101: {
 
               value_ = input.readFloat();
               break;
@@ -139,7 +139,7 @@ public final class ModifierPropertyOuterClass {
       return getKey();
     }
 
-    public static final int VALUE_FIELD_NUMBER = 7;
+    public static final int VALUE_FIELD_NUMBER = 12;
     private float value_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class ModifierPropertyOuterClass {
         output.writeMessage(10, getKey());
       }
       if (value_ != 0F) {
-        output.writeFloat(7, value_);
+        output.writeFloat(12, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class ModifierPropertyOuterClass {
       }
       if (value_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, value_);
+          .computeFloatSize(12, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

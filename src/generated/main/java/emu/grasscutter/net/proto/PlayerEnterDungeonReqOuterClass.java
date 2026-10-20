@@ -77,17 +77,17 @@ public final class PlayerEnterDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 40: {
 
               pointId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 112: {
 
               dungeonId_ = input.readUInt32();
               break;
             }
-            case 26: {
+            case 90: {
               emu.grasscutter.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo.Builder subBuilder = null;
               if (enterPosInfo_ != null) {
                 subBuilder = enterPosInfo_.toBuilder();
@@ -132,7 +132,7 @@ public final class PlayerEnterDungeonReqOuterClass {
               emu.grasscutter.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq.class, emu.grasscutter.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq.Builder.class);
     }
 
-    public static final int ENTER_POS_INFO_FIELD_NUMBER = 3;
+    public static final int ENTER_POS_INFO_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo enterPosInfo_;
 
     @java.lang.Override
@@ -150,7 +150,7 @@ public final class PlayerEnterDungeonReqOuterClass {
       return getEnterPosInfo();
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 7;
+    public static final int POINT_ID_FIELD_NUMBER = 5;
     private int pointId_;
 
     @java.lang.Override
@@ -158,7 +158,7 @@ public final class PlayerEnterDungeonReqOuterClass {
       return pointId_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 9;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 14;
     private int dungeonId_;
 
     @java.lang.Override
@@ -181,13 +181,13 @@ public final class PlayerEnterDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(7, pointId_);
+        output.writeUInt32(5, pointId_);
       }
       if (dungeonId_ != 0) {
-        output.writeUInt32(9, dungeonId_);
+        output.writeUInt32(14, dungeonId_);
       }
       if (enterPosInfo_ != null) {
-        output.writeMessage(3, getEnterPosInfo());
+        output.writeMessage(11, getEnterPosInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class PlayerEnterDungeonReqOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, pointId_);
+          .computeUInt32Size(5, pointId_);
       }
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, dungeonId_);
+          .computeUInt32Size(14, dungeonId_);
       }
       if (enterPosInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getEnterPosInfo());
+          .computeMessageSize(11, getEnterPosInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

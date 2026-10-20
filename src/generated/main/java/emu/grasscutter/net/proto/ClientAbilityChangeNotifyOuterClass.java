@@ -86,17 +86,17 @@ public final class ClientAbilityChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 120: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 64: {
 
               isInitHash_ = input.readBool();
               break;
             }
-            case 98: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 invokes_ = new java.util.ArrayList<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry>();
                 mutable_bitField0_ |= 0x00000001;
@@ -140,7 +140,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
               emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify.class, emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotify.Builder.class);
     }
 
-    public static final int INVOKES_FIELD_NUMBER = 12;
+    public static final int INVOKES_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry> invokes_;
 
     @java.lang.Override
@@ -170,7 +170,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
       return invokes_.get(index);
     }
 
-    public static final int IS_INIT_HASH_FIELD_NUMBER = 4;
+    public static final int IS_INIT_HASH_FIELD_NUMBER = 8;
     private boolean isInitHash_;
 
     @java.lang.Override
@@ -178,7 +178,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
       return isInitHash_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 13;
+    public static final int ENTITY_ID_FIELD_NUMBER = 15;
     private int entityId_;
 
     @java.lang.Override
@@ -201,13 +201,13 @@ public final class ClientAbilityChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(13, entityId_);
+        output.writeUInt32(15, entityId_);
       }
       if (isInitHash_ != false) {
-        output.writeBool(4, isInitHash_);
+        output.writeBool(8, isInitHash_);
       }
       for (int i = 0; i < invokes_.size(); i++) {
-        output.writeMessage(12, invokes_.get(i));
+        output.writeMessage(13, invokes_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -220,15 +220,15 @@ public final class ClientAbilityChangeNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, entityId_);
+          .computeUInt32Size(15, entityId_);
       }
       if (isInitHash_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isInitHash_);
+          .computeBoolSize(8, isInitHash_);
       }
       for (int i = 0; i < invokes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, invokes_.get(i));
+          .computeMessageSize(13, invokes_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

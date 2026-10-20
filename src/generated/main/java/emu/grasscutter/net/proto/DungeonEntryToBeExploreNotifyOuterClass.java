@@ -86,17 +86,17 @@ public final class DungeonEntryToBeExploreNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 24: {
 
               dungeonEntryConfigId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 88: {
 
               dungeonEntryScenePointId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 80: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class DungeonEntryToBeExploreNotifyOuterClass {
               emu.grasscutter.net.proto.DungeonEntryToBeExploreNotifyOuterClass.DungeonEntryToBeExploreNotify.class, emu.grasscutter.net.proto.DungeonEntryToBeExploreNotifyOuterClass.DungeonEntryToBeExploreNotify.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 5;
+    public static final int SCENE_ID_FIELD_NUMBER = 10;
     private int sceneId_;
     /**
      * <code>uint32 scene_id = 15;</code>
@@ -144,7 +144,7 @@ public final class DungeonEntryToBeExploreNotifyOuterClass {
       return sceneId_;
     }
 
-    public static final int DUNGEON_ENTRY_SCENE_POINT_ID_FIELD_NUMBER = 6;
+    public static final int DUNGEON_ENTRY_SCENE_POINT_ID_FIELD_NUMBER = 11;
     private int dungeonEntryScenePointId_;
     /**
      * <code>uint32 dungeon_entry_scene_point_id = 13;</code>
@@ -155,7 +155,7 @@ public final class DungeonEntryToBeExploreNotifyOuterClass {
       return dungeonEntryScenePointId_;
     }
 
-    public static final int DUNGEON_ENTRY_CONFIG_ID_FIELD_NUMBER = 4;
+    public static final int DUNGEON_ENTRY_CONFIG_ID_FIELD_NUMBER = 3;
     private int dungeonEntryConfigId_;
     /**
      * <code>uint32 dungeon_entry_config_id = 5;</code>
@@ -181,13 +181,13 @@ public final class DungeonEntryToBeExploreNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonEntryConfigId_ != 0) {
-        output.writeUInt32(4, dungeonEntryConfigId_);
+        output.writeUInt32(3, dungeonEntryConfigId_);
       }
       if (dungeonEntryScenePointId_ != 0) {
-        output.writeUInt32(6, dungeonEntryScenePointId_);
+        output.writeUInt32(11, dungeonEntryScenePointId_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(5, sceneId_);
+        output.writeUInt32(10, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class DungeonEntryToBeExploreNotifyOuterClass {
       size = 0;
       if (dungeonEntryConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, dungeonEntryConfigId_);
+          .computeUInt32Size(3, dungeonEntryConfigId_);
       }
       if (dungeonEntryScenePointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, dungeonEntryScenePointId_);
+          .computeUInt32Size(11, dungeonEntryScenePointId_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, sceneId_);
+          .computeUInt32Size(10, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

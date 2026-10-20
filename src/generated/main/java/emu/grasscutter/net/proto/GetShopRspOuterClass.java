@@ -75,7 +75,7 @@ public final class GetShopRspOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 74: {
               emu.grasscutter.net.proto.ShopOuterClass.Shop.Builder subBuilder = null;
               if (shop_ != null) {
                 subBuilder = shop_.toBuilder();
@@ -125,7 +125,7 @@ public final class GetShopRspOuterClass {
               emu.grasscutter.net.proto.GetShopRspOuterClass.GetShopRsp.class, emu.grasscutter.net.proto.GetShopRspOuterClass.GetShopRsp.Builder.class);
     }
 
-    public static final int SHOP_FIELD_NUMBER = 12;
+    public static final int SHOP_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.ShopOuterClass.Shop shop_;
 
     @java.lang.Override
@@ -166,7 +166,7 @@ public final class GetShopRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (shop_ != null) {
-        output.writeMessage(12, getShop());
+        output.writeMessage(9, getShop());
       }
       if (retcode_ != 0) {
         output.writeInt32(2, retcode_);
@@ -182,7 +182,7 @@ public final class GetShopRspOuterClass {
       size = 0;
       if (shop_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getShop());
+          .computeMessageSize(9, getShop());
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream

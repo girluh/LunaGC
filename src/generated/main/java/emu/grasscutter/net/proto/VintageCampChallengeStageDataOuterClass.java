@@ -132,12 +132,12 @@ public final class VintageCampChallengeStageDataOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 112: {
 
               openTime_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 72: {
 
               isOpen_ = input.readBool();
               break;
@@ -147,17 +147,17 @@ public final class VintageCampChallengeStageDataOuterClass {
               bBDDIHJJNPL_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 48: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 32: {
+            case 24: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 campLevelMap_ = com.google.protobuf.MapField.newMapField(
                     CampLevelMapDefaultEntryHolder.defaultEntry);
@@ -214,7 +214,7 @@ public final class VintageCampChallengeStageDataOuterClass {
               emu.grasscutter.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData.class, emu.grasscutter.net.proto.VintageCampChallengeStageDataOuterClass.VintageCampChallengeStageData.Builder.class);
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 3;
+    public static final int OPEN_TIME_FIELD_NUMBER = 14;
     private int openTime_;
     /**
      * <code>uint32 open_time = 2;</code>
@@ -225,7 +225,7 @@ public final class VintageCampChallengeStageDataOuterClass {
       return openTime_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 13;
+    public static final int IS_FINISH_FIELD_NUMBER = 6;
     private boolean isFinish_;
     /**
      * <code>bool is_finish = 7;</code>
@@ -236,7 +236,7 @@ public final class VintageCampChallengeStageDataOuterClass {
       return isFinish_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 4;
+    public static final int STAGE_ID_FIELD_NUMBER = 3;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 9;</code>
@@ -247,7 +247,7 @@ public final class VintageCampChallengeStageDataOuterClass {
       return stageId_;
     }
 
-    public static final int CAMP_LEVEL_MAP_FIELD_NUMBER = 14;
+    public static final int CAMP_LEVEL_MAP_FIELD_NUMBER = 13;
     private static final class CampLevelMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, emu.grasscutter.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData> defaultEntry =
@@ -339,7 +339,7 @@ public final class VintageCampChallengeStageDataOuterClass {
       return bBDDIHJJNPL_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 1;
+    public static final int IS_OPEN_FIELD_NUMBER = 9;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 3;</code>
@@ -365,26 +365,26 @@ public final class VintageCampChallengeStageDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (openTime_ != 0) {
-        output.writeUInt32(3, openTime_);
+        output.writeUInt32(14, openTime_);
       }
       if (isOpen_ != false) {
-        output.writeBool(1, isOpen_);
+        output.writeBool(9, isOpen_);
       }
       if (bBDDIHJJNPL_ != 0) {
         output.writeUInt32(16000, bBDDIHJJNPL_);
       }
       if (isFinish_ != false) {
-        output.writeBool(13, isFinish_);
+        output.writeBool(6, isFinish_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(4, stageId_);
+        output.writeUInt32(3, stageId_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetCampLevelMap(),
           CampLevelMapDefaultEntryHolder.defaultEntry,
-          14);
+          13);
       unknownFields.writeTo(output);
     }
 
@@ -396,11 +396,11 @@ public final class VintageCampChallengeStageDataOuterClass {
       size = 0;
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, openTime_);
+          .computeUInt32Size(14, openTime_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isOpen_);
+          .computeBoolSize(9, isOpen_);
       }
       if (bBDDIHJJNPL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -408,11 +408,11 @@ public final class VintageCampChallengeStageDataOuterClass {
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isFinish_);
+          .computeBoolSize(6, isFinish_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, stageId_);
+          .computeUInt32Size(3, stageId_);
       }
       for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.VintageCampChallengeLevelDataOuterClass.VintageCampChallengeLevelData> entry
            : internalGetCampLevelMap().getMap().entrySet()) {
@@ -422,7 +422,7 @@ public final class VintageCampChallengeStageDataOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(14, campLevelMap__);
+            .computeMessageSize(13, campLevelMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

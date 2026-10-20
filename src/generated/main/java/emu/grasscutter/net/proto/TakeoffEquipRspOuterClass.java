@@ -83,7 +83,7 @@ public final class TakeoffEquipRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 80: {
+            case 32: {
 
               slot_ = input.readUInt32();
               break;
@@ -120,7 +120,7 @@ public final class TakeoffEquipRspOuterClass {
               emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp.class, emu.grasscutter.net.proto.TakeoffEquipRspOuterClass.TakeoffEquipRsp.Builder.class);
     }
 
-    public static final int SLOT_FIELD_NUMBER = 10;
+    public static final int SLOT_FIELD_NUMBER = 4;
     private int slot_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class TakeoffEquipRspOuterClass {
         output.writeInt32(9, retcode_);
       }
       if (slot_ != 0) {
-        output.writeUInt32(10, slot_);
+        output.writeUInt32(4, slot_);
       }
       unknownFields.writeTo(output);
     }
@@ -186,7 +186,7 @@ public final class TakeoffEquipRspOuterClass {
       }
       if (slot_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, slot_);
+          .computeUInt32Size(4, slot_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

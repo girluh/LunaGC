@@ -74,7 +74,7 @@ public final class ClientLockGameTimeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 56: {
 
               isLock_ = input.readBool();
               break;
@@ -111,7 +111,7 @@ public final class ClientLockGameTimeNotifyOuterClass {
               emu.grasscutter.net.proto.ClientLockGameTimeNotifyOuterClass.ClientLockGameTimeNotify.class, emu.grasscutter.net.proto.ClientLockGameTimeNotifyOuterClass.ClientLockGameTimeNotify.Builder.class);
     }
 
-    public static final int IS_LOCK_FIELD_NUMBER = 15;
+    public static final int IS_LOCK_FIELD_NUMBER = 7;
     private boolean isLock_;
     /**
      * <code>bool is_lock = 1;</code>
@@ -137,7 +137,7 @@ public final class ClientLockGameTimeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isLock_ != false) {
-        output.writeBool(15, isLock_);
+        output.writeBool(7, isLock_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ClientLockGameTimeNotifyOuterClass {
       size = 0;
       if (isLock_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isLock_);
+          .computeBoolSize(7, isLock_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

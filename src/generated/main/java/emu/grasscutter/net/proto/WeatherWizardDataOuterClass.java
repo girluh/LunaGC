@@ -65,7 +65,7 @@ public final class WeatherWizardDataOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 24: {
 
               shieldValue_ = input.readUInt32();
               break;
@@ -102,7 +102,7 @@ public final class WeatherWizardDataOuterClass {
               emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.class, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder.class);
     }
 
-    public static final int SHIELD_VALUE_FIELD_NUMBER = 4;
+    public static final int SHIELD_VALUE_FIELD_NUMBER = 3;
     private int shieldValue_;
 
     @java.lang.Override
@@ -125,7 +125,7 @@ public final class WeatherWizardDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (shieldValue_ != 0) {
-        output.writeUInt32(4, shieldValue_);
+        output.writeUInt32(3, shieldValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -138,7 +138,7 @@ public final class WeatherWizardDataOuterClass {
       size = 0;
       if (shieldValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, shieldValue_);
+          .computeUInt32Size(3, shieldValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -155,7 +155,7 @@ public final class PlayerHomeCompInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 24: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 seenModuleIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -163,7 +163,7 @@ public final class PlayerHomeCompInfoOuterClass {
               seenModuleIdList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -176,7 +176,7 @@ public final class PlayerHomeCompInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 8: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 unlockedModuleIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -184,7 +184,7 @@ public final class PlayerHomeCompInfoOuterClass {
               unlockedModuleIdList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -197,7 +197,7 @@ public final class PlayerHomeCompInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 120: {
+            case 80: {
               int rawValue = input.readEnum();
 
               friendEnterHomeOption_ = rawValue;
@@ -272,7 +272,7 @@ public final class PlayerHomeCompInfoOuterClass {
     }
     private int levelupRewardGotLevelListMemoizedSerializedSize = -1;
 
-    public static final int UNLOCKED_MODULE_ID_LIST_FIELD_NUMBER = 1;
+    public static final int UNLOCKED_MODULE_ID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList unlockedModuleIdList_;
     /**
      * <code>repeated uint32 unlocked_module_id_list = 10;</code>
@@ -300,7 +300,7 @@ public final class PlayerHomeCompInfoOuterClass {
     }
     private int unlockedModuleIdListMemoizedSerializedSize = -1;
 
-    public static final int SEEN_MODULE_ID_LIST_FIELD_NUMBER = 3;
+    public static final int SEEN_MODULE_ID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList seenModuleIdList_;
     /**
      * <code>repeated uint32 seen_module_id_list = 8;</code>
@@ -328,7 +328,7 @@ public final class PlayerHomeCompInfoOuterClass {
     }
     private int seenModuleIdListMemoizedSerializedSize = -1;
 
-    public static final int FriendEnterHomeOption_FIELD_NUMBER = 15;
+    public static final int FriendEnterHomeOption_FIELD_NUMBER = 10;
     private int friendEnterHomeOption_;
     /**
      * <code>.FriendEnterHomeOption FriendEnterHomeOption = 15;</code>
@@ -370,21 +370,21 @@ public final class PlayerHomeCompInfoOuterClass {
         output.writeUInt32NoTag(levelupRewardGotLevelList_.getInt(i));
       }
       if (getSeenModuleIdListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(seenModuleIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < seenModuleIdList_.size(); i++) {
         output.writeUInt32NoTag(seenModuleIdList_.getInt(i));
       }
       if (getUnlockedModuleIdListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(unlockedModuleIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockedModuleIdList_.size(); i++) {
         output.writeUInt32NoTag(unlockedModuleIdList_.getInt(i));
       }
       if (friendEnterHomeOption_ != emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FriendEnterHomeOption_NEED_CONFIRM.getNumber()) {
-        output.writeEnum(15, friendEnterHomeOption_);
+        output.writeEnum(10, friendEnterHomeOption_);
       }
       unknownFields.writeTo(output);
     }
@@ -439,7 +439,7 @@ public final class PlayerHomeCompInfoOuterClass {
       }
       if (friendEnterHomeOption_ != emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FriendEnterHomeOption_NEED_CONFIRM.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(15, friendEnterHomeOption_);
+          .computeEnumSize(10, friendEnterHomeOption_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

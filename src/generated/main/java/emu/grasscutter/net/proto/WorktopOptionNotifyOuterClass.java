@@ -69,12 +69,12 @@ public final class WorktopOptionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 88: {
 
               gadgetEntityId_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 optionList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -82,7 +82,7 @@ public final class WorktopOptionNotifyOuterClass {
               optionList_.addInt(input.readUInt32());
               break;
             }
-            case 18: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -130,7 +130,7 @@ public final class WorktopOptionNotifyOuterClass {
               emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify.class, emu.grasscutter.net.proto.WorktopOptionNotifyOuterClass.WorktopOptionNotify.Builder.class);
     }
 
-    public static final int OPTION_LIST_FIELD_NUMBER = 2;
+    public static final int OPTION_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList optionList_;
 
     @java.lang.Override
@@ -148,7 +148,7 @@ public final class WorktopOptionNotifyOuterClass {
     }
     private int optionListMemoizedSerializedSize = -1;
 
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 8;
+    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 11;
     private int gadgetEntityId_;
 
     @java.lang.Override
@@ -172,10 +172,10 @@ public final class WorktopOptionNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (gadgetEntityId_ != 0) {
-        output.writeUInt32(8, gadgetEntityId_);
+        output.writeUInt32(11, gadgetEntityId_);
       }
       if (getOptionListList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(optionListMemoizedSerializedSize);
       }
       for (int i = 0; i < optionList_.size(); i++) {
@@ -192,7 +192,7 @@ public final class WorktopOptionNotifyOuterClass {
       size = 0;
       if (gadgetEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, gadgetEntityId_);
+          .computeUInt32Size(11, gadgetEntityId_);
       }
       {
         int dataSize = 0;

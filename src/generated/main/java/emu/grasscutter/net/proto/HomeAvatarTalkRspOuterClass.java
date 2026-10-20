@@ -89,7 +89,7 @@ public final class HomeAvatarTalkRspOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 18: {
               emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.Builder subBuilder = null;
               if (avatarTalkInfo_ != null) {
                 subBuilder = avatarTalkInfo_.toBuilder();
@@ -102,7 +102,7 @@ public final class HomeAvatarTalkRspOuterClass {
 
               break;
             }
-            case 48: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
@@ -139,7 +139,7 @@ public final class HomeAvatarTalkRspOuterClass {
               emu.grasscutter.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp.class, emu.grasscutter.net.proto.HomeAvatarTalkRspOuterClass.HomeAvatarTalkRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
      * <code>int32 retcode = 15;</code>
@@ -150,7 +150,7 @@ public final class HomeAvatarTalkRspOuterClass {
       return retcode_;
     }
 
-    public static final int AVATAR_TALK_INFO_FIELD_NUMBER = 12;
+    public static final int AVATAR_TALK_INFO_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo avatarTalkInfo_;
     /**
      * <code>.HomeAvatarTalkFinishInfo avatar_talk_info = 11;</code>
@@ -191,10 +191,10 @@ public final class HomeAvatarTalkRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarTalkInfo_ != null) {
-        output.writeMessage(12, getAvatarTalkInfo());
+        output.writeMessage(2, getAvatarTalkInfo());
       }
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -207,11 +207,11 @@ public final class HomeAvatarTalkRspOuterClass {
       size = 0;
       if (avatarTalkInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getAvatarTalkInfo());
+          .computeMessageSize(2, getAvatarTalkInfo());
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

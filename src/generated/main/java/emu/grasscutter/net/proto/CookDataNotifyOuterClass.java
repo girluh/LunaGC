@@ -100,7 +100,7 @@ public final class CookDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 recipeDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -149,7 +149,7 @@ public final class CookDataNotifyOuterClass {
               emu.grasscutter.net.proto.CookDataNotifyOuterClass.CookDataNotify.class, emu.grasscutter.net.proto.CookDataNotifyOuterClass.CookDataNotify.Builder.class);
     }
 
-    public static final int RECIPE_DATA_LIST_FIELD_NUMBER = 6;
+    public static final int RECIPE_DATA_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.CookRecipeDataOuterClass.CookRecipeData> recipeDataList_;
     /**
      * <code>repeated .CookRecipeData recipe_data_list = 1;</code>
@@ -215,7 +215,7 @@ public final class CookDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < recipeDataList_.size(); i++) {
-        output.writeMessage(6, recipeDataList_.get(i));
+        output.writeMessage(14, recipeDataList_.get(i));
       }
       if (grade_ != 0) {
         output.writeUInt32(1, grade_);
@@ -231,7 +231,7 @@ public final class CookDataNotifyOuterClass {
       size = 0;
       for (int i = 0; i < recipeDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, recipeDataList_.get(i));
+          .computeMessageSize(14, recipeDataList_.get(i));
       }
       if (grade_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -82,7 +82,7 @@ public final class GetShopmallDataRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 shopTypeList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +90,7 @@ public final class GetShopmallDataRspOuterClass {
               shopTypeList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,7 +138,7 @@ public final class GetShopmallDataRspOuterClass {
               emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp.class, emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp.Builder.class);
     }
 
-    public static final int SHOP_TYPE_LIST_FIELD_NUMBER = 13;
+    public static final int SHOP_TYPE_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList shopTypeList_;
 
     @java.lang.Override
@@ -183,7 +183,7 @@ public final class GetShopmallDataRspOuterClass {
         output.writeInt32(8, retcode_);
       }
       if (getShopTypeListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(shopTypeListMemoizedSerializedSize);
       }
       for (int i = 0; i < shopTypeList_.size(); i++) {

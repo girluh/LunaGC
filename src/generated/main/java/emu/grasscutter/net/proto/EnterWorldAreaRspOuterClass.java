@@ -65,12 +65,12 @@ public final class EnterWorldAreaRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 24: {
 
               areaId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
@@ -112,7 +112,7 @@ public final class EnterWorldAreaRspOuterClass {
               emu.grasscutter.net.proto.EnterWorldAreaRspOuterClass.EnterWorldAreaRsp.class, emu.grasscutter.net.proto.EnterWorldAreaRspOuterClass.EnterWorldAreaRsp.Builder.class);
     }
 
-    public static final int AREA_ID_FIELD_NUMBER = 10;
+    public static final int AREA_ID_FIELD_NUMBER = 3;
     private int areaId_;
 
     @java.lang.Override
@@ -120,7 +120,7 @@ public final class EnterWorldAreaRspOuterClass {
       return areaId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
 
     @java.lang.Override
@@ -151,10 +151,10 @@ public final class EnterWorldAreaRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (areaId_ != 0) {
-        output.writeUInt32(10, areaId_);
+        output.writeUInt32(3, areaId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(5, retcode_);
       }
       if (areaType_ != 0) {
         output.writeUInt32(2, areaType_);
@@ -170,11 +170,11 @@ public final class EnterWorldAreaRspOuterClass {
       size = 0;
       if (areaId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, areaId_);
+          .computeUInt32Size(3, areaId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       if (areaType_ != 0) {
         size += com.google.protobuf.CodedOutputStream

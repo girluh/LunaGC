@@ -86,17 +86,17 @@ public final class ChangeGameTimeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 72: {
 
               curGameTime_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 120: {
+            case 96: {
 
               extraDays_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class ChangeGameTimeRspOuterClass {
               emu.grasscutter.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp.class, emu.grasscutter.net.proto.ChangeGameTimeRspOuterClass.ChangeGameTimeRsp.Builder.class);
     }
 
-    public static final int CUR_GAME_TIME_FIELD_NUMBER = 12;
+    public static final int CUR_GAME_TIME_FIELD_NUMBER = 9;
     private int curGameTime_;
     /**
      * <code>uint32 cur_game_time = 1;</code>
@@ -144,7 +144,7 @@ public final class ChangeGameTimeRspOuterClass {
       return curGameTime_;
     }
 
-    public static final int EXTRA_DAYS_FIELD_NUMBER = 15;
+    public static final int EXTRA_DAYS_FIELD_NUMBER = 12;
     private int extraDays_;
     /**
      * <code>uint32 extra_days = 14;</code>
@@ -155,7 +155,7 @@ public final class ChangeGameTimeRspOuterClass {
       return extraDays_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
      * <code>int32 retcode = 13;</code>
@@ -181,13 +181,13 @@ public final class ChangeGameTimeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (curGameTime_ != 0) {
-        output.writeUInt32(12, curGameTime_);
+        output.writeUInt32(9, curGameTime_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(8, retcode_);
       }
       if (extraDays_ != 0) {
-        output.writeUInt32(15, extraDays_);
+        output.writeUInt32(12, extraDays_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class ChangeGameTimeRspOuterClass {
       size = 0;
       if (curGameTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, curGameTime_);
+          .computeUInt32Size(9, curGameTime_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       if (extraDays_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, extraDays_);
+          .computeUInt32Size(12, extraDays_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

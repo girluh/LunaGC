@@ -76,7 +76,7 @@ public final class GetSceneAreaReqOuterClass {
               sceneId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 88: {
 
               belongUid_ = input.readUInt32();
               break;
@@ -113,7 +113,7 @@ public final class GetSceneAreaReqOuterClass {
               emu.grasscutter.net.proto.GetSceneAreaReqOuterClass.GetSceneAreaReq.class, emu.grasscutter.net.proto.GetSceneAreaReqOuterClass.GetSceneAreaReq.Builder.class);
     }
 
-    public static final int BELONG_UID_FIELD_NUMBER = 13;
+    public static final int BELONG_UID_FIELD_NUMBER = 11;
     private int belongUid_;
 
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class GetSceneAreaReqOuterClass {
         output.writeUInt32(5, sceneId_);
       }
       if (belongUid_ != 0) {
-        output.writeUInt32(13, belongUid_);
+        output.writeUInt32(11, belongUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -164,7 +164,7 @@ public final class GetSceneAreaReqOuterClass {
       }
       if (belongUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, belongUid_);
+          .computeUInt32Size(11, belongUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

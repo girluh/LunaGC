@@ -79,7 +79,7 @@ public final class GroupSuiteNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 groupMap_ = com.google.protobuf.MapField.newMapField(
                     GroupMapDefaultEntryHolder.defaultEntry);
@@ -136,7 +136,7 @@ public final class GroupSuiteNotifyOuterClass {
               emu.grasscutter.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify.class, emu.grasscutter.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify.Builder.class);
     }
 
-    public static final int GROUP_MAP_FIELD_NUMBER = 10;
+    public static final int GROUP_MAP_FIELD_NUMBER = 13;
     private static final class GroupMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -225,7 +225,7 @@ public final class GroupSuiteNotifyOuterClass {
           output,
           internalGetGroupMap(),
           GroupMapDefaultEntryHolder.defaultEntry,
-          10);
+          13);
       unknownFields.writeTo(output);
     }
 
@@ -243,7 +243,7 @@ public final class GroupSuiteNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(10, groupMap__);
+            .computeMessageSize(13, groupMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

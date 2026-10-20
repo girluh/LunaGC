@@ -82,7 +82,7 @@ public final class AchievementUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 achievementList_ = new java.util.ArrayList<emu.grasscutter.net.proto.AchievementOuterClass.Achievement>();
                 mutable_bitField0_ |= 0x00000001;
@@ -126,7 +126,7 @@ public final class AchievementUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.AchievementUpdateNotifyOuterClass.AchievementUpdateNotify.class, emu.grasscutter.net.proto.AchievementUpdateNotifyOuterClass.AchievementUpdateNotify.Builder.class);
     }
 
-    public static final int ACHIEVEMENT_LIST_FIELD_NUMBER = 5;
+    public static final int ACHIEVEMENT_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.AchievementOuterClass.Achievement> achievementList_;
 
     @java.lang.Override
@@ -171,7 +171,7 @@ public final class AchievementUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < achievementList_.size(); i++) {
-        output.writeMessage(5, achievementList_.get(i));
+        output.writeMessage(13, achievementList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -184,7 +184,7 @@ public final class AchievementUpdateNotifyOuterClass {
       size = 0;
       for (int i = 0; i < achievementList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, achievementList_.get(i));
+          .computeMessageSize(13, achievementList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -113,22 +113,22 @@ public final class DungeonEntryInfoOuterClass {
               dungeonId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 32: {
 
               bossChestNum_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 16: {
 
               nextRefreshTime_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 80: {
 
               maxBossChestNum_ = input.readUInt32();
               break;
             }
-            case 98: {
+            case 26: {
               emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder subBuilder = null;
               if (weeklyBossResinDiscountInfo_ != null) {
                 subBuilder = weeklyBossResinDiscountInfo_.toBuilder();
@@ -141,7 +141,7 @@ public final class DungeonEntryInfoOuterClass {
 
               break;
             }
-            case 64: {
+            case 96: {
 
               isPassed_ = input.readBool();
               break;
@@ -178,7 +178,7 @@ public final class DungeonEntryInfoOuterClass {
               emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.class, emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder.class);
     }
 
-    public static final int WEEKLY_BOSS_RESIN_DISCOUNT_INFO_FIELD_NUMBER = 12;
+    public static final int WEEKLY_BOSS_RESIN_DISCOUNT_INFO_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
     /**
      * <code>.WeeklyBossResinDiscountInfo weekly_boss_resin_discount_info = 8;</code>
@@ -204,7 +204,7 @@ public final class DungeonEntryInfoOuterClass {
       return getWeeklyBossResinDiscountInfo();
     }
 
-    public static final int IS_PASSED_FIELD_NUMBER = 8;
+    public static final int IS_PASSED_FIELD_NUMBER = 12;
     private boolean isPassed_;
     /**
      * <code>bool is_passed = 14;</code>
@@ -215,7 +215,7 @@ public final class DungeonEntryInfoOuterClass {
       return isPassed_;
     }
 
-    public static final int MAX_BOSS_CHEST_NUM_FIELD_NUMBER = 14;
+    public static final int MAX_BOSS_CHEST_NUM_FIELD_NUMBER = 10;
     private int maxBossChestNum_;
     /**
      * <code>uint32 max_boss_chest_num = 7;</code>
@@ -226,7 +226,7 @@ public final class DungeonEntryInfoOuterClass {
       return maxBossChestNum_;
     }
 
-    public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 1;
+    public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 2;
     private int nextRefreshTime_;
     /**
      * <code>uint32 next_refresh_time = 5;</code>
@@ -248,7 +248,7 @@ public final class DungeonEntryInfoOuterClass {
       return dungeonId_;
     }
 
-    public static final int BOSS_CHEST_NUM_FIELD_NUMBER = 11;
+    public static final int BOSS_CHEST_NUM_FIELD_NUMBER = 4;
     private int bossChestNum_;
     /**
      * <code>uint32 boss_chest_num = 4;</code>
@@ -277,19 +277,19 @@ public final class DungeonEntryInfoOuterClass {
         output.writeUInt32(15, dungeonId_);
       }
       if (bossChestNum_ != 0) {
-        output.writeUInt32(11, bossChestNum_);
+        output.writeUInt32(4, bossChestNum_);
       }
       if (nextRefreshTime_ != 0) {
-        output.writeUInt32(1, nextRefreshTime_);
+        output.writeUInt32(2, nextRefreshTime_);
       }
       if (maxBossChestNum_ != 0) {
-        output.writeUInt32(14, maxBossChestNum_);
+        output.writeUInt32(10, maxBossChestNum_);
       }
       if (weeklyBossResinDiscountInfo_ != null) {
-        output.writeMessage(12, getWeeklyBossResinDiscountInfo());
+        output.writeMessage(3, getWeeklyBossResinDiscountInfo());
       }
       if (isPassed_ != false) {
-        output.writeBool(8, isPassed_);
+        output.writeBool(12, isPassed_);
       }
       unknownFields.writeTo(output);
     }
@@ -306,23 +306,23 @@ public final class DungeonEntryInfoOuterClass {
       }
       if (bossChestNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, bossChestNum_);
+          .computeUInt32Size(4, bossChestNum_);
       }
       if (nextRefreshTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, nextRefreshTime_);
+          .computeUInt32Size(2, nextRefreshTime_);
       }
       if (maxBossChestNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, maxBossChestNum_);
+          .computeUInt32Size(10, maxBossChestNum_);
       }
       if (weeklyBossResinDiscountInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getWeeklyBossResinDiscountInfo());
+          .computeMessageSize(3, getWeeklyBossResinDiscountInfo());
       }
       if (isPassed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isPassed_);
+          .computeBoolSize(12, isPassed_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

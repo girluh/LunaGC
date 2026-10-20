@@ -107,12 +107,12 @@ public final class ActivityCondStateChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 56: {
 
               activityId_ = input.readUInt32();
               break;
             }
-            case 128008: {
+            case 8: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 expireCondList_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -120,7 +120,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               expireCondList_.addInt(input.readUInt32());
               break;
             }
-            case 128010: {
+            case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -133,12 +133,12 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 96: {
+            case 72: {
 
               scheduleId_ = input.readUInt32();
               break;
             }
-            case 128000: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 meetCondList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -146,7 +146,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               meetCondList_.addInt(input.readUInt32());
               break;
             }
-            case 128002: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -159,7 +159,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 32: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 activatedSaleIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -167,7 +167,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               activatedSaleIdList_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -180,7 +180,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 122: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 disableTransferPointInteractionList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
                 mutable_bitField0_ |= 0x00000008;
@@ -233,7 +233,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
               emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify.class, emu.grasscutter.net.proto.ActivityCondStateChangeNotifyOuterClass.ActivityCondStateChangeNotify.Builder.class);
     }
 
-    public static final int MEET_COND_LIST_FIELD_NUMBER = 16000;
+    public static final int MEET_COND_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList meetCondList_;
 
     @java.lang.Override
@@ -251,7 +251,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     }
     private int meetCondListMemoizedSerializedSize = -1;
 
-    public static final int ACTIVATED_SALE_ID_LIST_FIELD_NUMBER = 14;
+    public static final int ACTIVATED_SALE_ID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList activatedSaleIdList_;
 
     @java.lang.Override
@@ -269,7 +269,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     }
     private int activatedSaleIdListMemoizedSerializedSize = -1;
 
-    public static final int EXPIRE_COND_LIST_FIELD_NUMBER = 16001;
+    public static final int EXPIRE_COND_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList expireCondList_;
 
     @java.lang.Override
@@ -287,7 +287,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
     }
     private int expireCondListMemoizedSerializedSize = -1;
 
-    public static final int DISABLE_TRANSFER_POINT_INTERACTION_LIST_FIELD_NUMBER = 15;
+    public static final int DISABLE_TRANSFER_POINT_INTERACTION_LIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_;
 
     @java.lang.Override
@@ -317,7 +317,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       return disableTransferPointInteractionList_.get(index);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 12;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
     private int scheduleId_;
 
     @java.lang.Override
@@ -325,7 +325,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       return scheduleId_;
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 4;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 7;
     private int activityId_;
 
     @java.lang.Override
@@ -349,34 +349,34 @@ public final class ActivityCondStateChangeNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (activityId_ != 0) {
-        output.writeUInt32(4, activityId_);
+        output.writeUInt32(7, activityId_);
       }
       if (getExpireCondListList().size() > 0) {
-        output.writeUInt32NoTag(128010);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(expireCondListMemoizedSerializedSize);
       }
       for (int i = 0; i < expireCondList_.size(); i++) {
         output.writeUInt32NoTag(expireCondList_.getInt(i));
       }
       if (scheduleId_ != 0) {
-        output.writeUInt32(12, scheduleId_);
+        output.writeUInt32(9, scheduleId_);
       }
       if (getMeetCondListList().size() > 0) {
-        output.writeUInt32NoTag(128002);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(meetCondListMemoizedSerializedSize);
       }
       for (int i = 0; i < meetCondList_.size(); i++) {
         output.writeUInt32NoTag(meetCondList_.getInt(i));
       }
       if (getActivatedSaleIdListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(activatedSaleIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < activatedSaleIdList_.size(); i++) {
         output.writeUInt32NoTag(activatedSaleIdList_.getInt(i));
       }
       for (int i = 0; i < disableTransferPointInteractionList_.size(); i++) {
-        output.writeMessage(15, disableTransferPointInteractionList_.get(i));
+        output.writeMessage(3, disableTransferPointInteractionList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -389,7 +389,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       size = 0;
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, activityId_);
+          .computeUInt32Size(7, activityId_);
       }
       {
         int dataSize = 0;
@@ -399,7 +399,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         }
         size += dataSize;
         if (!getExpireCondListList().isEmpty()) {
-          size += 3;
+          size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
@@ -407,7 +407,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, scheduleId_);
+          .computeUInt32Size(9, scheduleId_);
       }
       {
         int dataSize = 0;
@@ -417,7 +417,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
         }
         size += dataSize;
         if (!getMeetCondListList().isEmpty()) {
-          size += 3;
+          size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
@@ -439,7 +439,7 @@ public final class ActivityCondStateChangeNotifyOuterClass {
       }
       for (int i = 0; i < disableTransferPointInteractionList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, disableTransferPointInteractionList_.get(i));
+          .computeMessageSize(3, disableTransferPointInteractionList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -73,7 +73,7 @@ public final class SceneKickPlayerReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 32: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -110,7 +110,7 @@ public final class SceneKickPlayerReqOuterClass {
               emu.grasscutter.net.proto.SceneKickPlayerReqOuterClass.SceneKickPlayerReq.class, emu.grasscutter.net.proto.SceneKickPlayerReqOuterClass.SceneKickPlayerReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 13;
+    public static final int TARGET_UID_FIELD_NUMBER = 4;
     private int targetUid_;
     /**
      * <code>uint32 target_uid = 3;</code>
@@ -136,7 +136,7 @@ public final class SceneKickPlayerReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(13, targetUid_);
+        output.writeUInt32(4, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -149,7 +149,7 @@ public final class SceneKickPlayerReqOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, targetUid_);
+          .computeUInt32Size(4, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

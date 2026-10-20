@@ -95,12 +95,12 @@ public final class GetDailyDungeonEntryInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 8: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 98: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dailyDungeonInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -144,7 +144,7 @@ public final class GetDailyDungeonEntryInfoRspOuterClass {
               emu.grasscutter.net.proto.GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.class, emu.grasscutter.net.proto.GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.Builder.class);
     }
 
-    public static final int DAILY_DUNGEON_INFO_LIST_FIELD_NUMBER = 12;
+    public static final int DAILY_DUNGEON_INFO_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo> dailyDungeonInfoList_;
     /**
      * <code>repeated .DailyDungeonEntryInfo daily_dungeon_info_list = 14;</code>
@@ -184,7 +184,7 @@ public final class GetDailyDungeonEntryInfoRspOuterClass {
       return dailyDungeonInfoList_.get(index);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
      * <code>int32 retcode = 4;</code>
@@ -210,10 +210,10 @@ public final class GetDailyDungeonEntryInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(1, retcode_);
       }
       for (int i = 0; i < dailyDungeonInfoList_.size(); i++) {
-        output.writeMessage(12, dailyDungeonInfoList_.get(i));
+        output.writeMessage(15, dailyDungeonInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -226,11 +226,11 @@ public final class GetDailyDungeonEntryInfoRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(1, retcode_);
       }
       for (int i = 0; i < dailyDungeonInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, dailyDungeonInfoList_.get(i));
+          .computeMessageSize(15, dailyDungeonInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

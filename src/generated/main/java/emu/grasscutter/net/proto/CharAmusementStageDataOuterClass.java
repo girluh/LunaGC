@@ -85,17 +85,17 @@ public final class CharAmusementStageDataOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 8: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 72: {
+            case 24: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 40: {
 
               finishTime_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class CharAmusementStageDataOuterClass {
               emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.class, emu.grasscutter.net.proto.CharAmusementStageDataOuterClass.CharAmusementStageData.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 14;
+    public static final int IS_OPEN_FIELD_NUMBER = 1;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 6;</code>
@@ -143,7 +143,7 @@ public final class CharAmusementStageDataOuterClass {
       return isOpen_;
     }
 
-    public static final int FINISH_TIME_FIELD_NUMBER = 6;
+    public static final int FINISH_TIME_FIELD_NUMBER = 5;
     private int finishTime_;
     /**
      * <code>uint32 finish_time = 12;</code>
@@ -154,7 +154,7 @@ public final class CharAmusementStageDataOuterClass {
       return finishTime_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 9;
+    public static final int STAGE_ID_FIELD_NUMBER = 3;
     private int stageId_;
     /**
      * <code>uint32 stage_id = 7;</code>
@@ -180,13 +180,13 @@ public final class CharAmusementStageDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOpen_ != false) {
-        output.writeBool(14, isOpen_);
+        output.writeBool(1, isOpen_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(9, stageId_);
+        output.writeUInt32(3, stageId_);
       }
       if (finishTime_ != 0) {
-        output.writeUInt32(6, finishTime_);
+        output.writeUInt32(5, finishTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class CharAmusementStageDataOuterClass {
       size = 0;
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isOpen_);
+          .computeBoolSize(1, isOpen_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, stageId_);
+          .computeUInt32Size(3, stageId_);
       }
       if (finishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, finishTime_);
+          .computeUInt32Size(5, finishTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

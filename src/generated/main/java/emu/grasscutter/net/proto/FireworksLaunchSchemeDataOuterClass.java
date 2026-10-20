@@ -117,7 +117,7 @@ public final class FireworksLaunchSchemeDataOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 fireworksIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -125,7 +125,7 @@ public final class FireworksLaunchSchemeDataOuterClass {
               fireworksIdList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,12 +138,12 @@ public final class FireworksLaunchSchemeDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 56: {
 
               schemeId_ = input.readUInt32();
               break;
             }
-            case 50: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 launchParamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.FireworksLaunchParamOuterClass.FireworksLaunchParam>();
                 mutable_bitField0_ |= 0x00000001;
@@ -190,7 +190,7 @@ public final class FireworksLaunchSchemeDataOuterClass {
               emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.class, emu.grasscutter.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder.class);
     }
 
-    public static final int LAUNCH_PARAM_LIST_FIELD_NUMBER = 6;
+    public static final int LAUNCH_PARAM_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.FireworksLaunchParamOuterClass.FireworksLaunchParam> launchParamList_;
     /**
      * <code>repeated .FireworksLaunchParam launch_param_list = 14;</code>
@@ -230,7 +230,7 @@ public final class FireworksLaunchSchemeDataOuterClass {
       return launchParamList_.get(index);
     }
 
-    public static final int SCHEME_ID_FIELD_NUMBER = 14;
+    public static final int SCHEME_ID_FIELD_NUMBER = 7;
     private int schemeId_;
     /**
      * <code>uint32 scheme_id = 12;</code>
@@ -241,7 +241,7 @@ public final class FireworksLaunchSchemeDataOuterClass {
       return schemeId_;
     }
 
-    public static final int FIREWORKS_ID_LIST_FIELD_NUMBER = 3;
+    public static final int FIREWORKS_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList fireworksIdList_;
     /**
      * <code>repeated uint32 fireworks_id_list = 3;</code>
@@ -285,17 +285,17 @@ public final class FireworksLaunchSchemeDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getFireworksIdListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(fireworksIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < fireworksIdList_.size(); i++) {
         output.writeUInt32NoTag(fireworksIdList_.getInt(i));
       }
       if (schemeId_ != 0) {
-        output.writeUInt32(14, schemeId_);
+        output.writeUInt32(7, schemeId_);
       }
       for (int i = 0; i < launchParamList_.size(); i++) {
-        output.writeMessage(6, launchParamList_.get(i));
+        output.writeMessage(8, launchParamList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -322,11 +322,11 @@ public final class FireworksLaunchSchemeDataOuterClass {
       }
       if (schemeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, schemeId_);
+          .computeUInt32Size(7, schemeId_);
       }
       for (int i = 0; i < launchParamList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, launchParamList_.get(i));
+          .computeMessageSize(8, launchParamList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

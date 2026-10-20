@@ -85,12 +85,12 @@ public final class CoopRewardOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 80: {
 
               id_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 104: {
               int rawValue = input.readEnum();
 
               state_ = rawValue;
@@ -249,7 +249,7 @@ public final class CoopRewardOuterClass {
       // @@protoc_insertion_point(enum_scope:CoopReward.State)
     }
 
-    public static final int ID_FIELD_NUMBER = 4;
+    public static final int ID_FIELD_NUMBER = 10;
     private int id_;
     /**
      * <code>uint32 id = 2;</code>
@@ -260,7 +260,7 @@ public final class CoopRewardOuterClass {
       return id_;
     }
 
-    public static final int STATE_FIELD_NUMBER = 12;
+    public static final int STATE_FIELD_NUMBER = 13;
     private int state_;
     /**
      * <code>.CoopReward.State state = 10;</code>
@@ -294,10 +294,10 @@ public final class CoopRewardOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0) {
-        output.writeUInt32(4, id_);
+        output.writeUInt32(10, id_);
       }
       if (state_ != emu.grasscutter.net.proto.CoopRewardOuterClass.CoopReward.State.STATE_UNLOCK.getNumber()) {
-        output.writeEnum(12, state_);
+        output.writeEnum(13, state_);
       }
       unknownFields.writeTo(output);
     }
@@ -310,11 +310,11 @@ public final class CoopRewardOuterClass {
       size = 0;
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, id_);
+          .computeUInt32Size(10, id_);
       }
       if (state_ != emu.grasscutter.net.proto.CoopRewardOuterClass.CoopReward.State.STATE_UNLOCK.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, state_);
+          .computeEnumSize(13, state_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

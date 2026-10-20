@@ -148,12 +148,12 @@ public final class PersonalLineAllDataRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 104: {
 
               legendaryKeyCount_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 canBeUnlockedPersonalLineList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -161,7 +161,7 @@ public final class PersonalLineAllDataRspOuterClass {
               canBeUnlockedPersonalLineList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -174,7 +174,7 @@ public final class PersonalLineAllDataRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 24: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
@@ -200,7 +200,7 @@ public final class PersonalLineAllDataRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 34: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 lockedPersonalLineList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData>();
                 mutable_bitField0_ |= 0x00000004;
@@ -209,7 +209,7 @@ public final class PersonalLineAllDataRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.parser(), extensionRegistry));
               break;
             }
-            case 64: {
+            case 40: {
 
               curFinishedDailyTaskCount_ = input.readUInt32();
               break;
@@ -255,7 +255,7 @@ public final class PersonalLineAllDataRspOuterClass {
               emu.grasscutter.net.proto.PersonalLineAllDataRspOuterClass.PersonalLineAllDataRsp.class, emu.grasscutter.net.proto.PersonalLineAllDataRspOuterClass.PersonalLineAllDataRsp.Builder.class);
     }
 
-    public static final int CAN_BE_UNLOCKED_PERSONAL_LINE_LIST_FIELD_NUMBER = 6;
+    public static final int CAN_BE_UNLOCKED_PERSONAL_LINE_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList canBeUnlockedPersonalLineList_;
     /**
      * <code>repeated uint32 can_be_unlocked_personal_line_list = 2;</code>
@@ -283,7 +283,7 @@ public final class PersonalLineAllDataRspOuterClass {
     }
     private int canBeUnlockedPersonalLineListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
      * <code>int32 retcode = 3;</code>
@@ -294,7 +294,7 @@ public final class PersonalLineAllDataRspOuterClass {
       return retcode_;
     }
 
-    public static final int CUR_FINISHED_DAILY_TASK_COUNT_FIELD_NUMBER = 8;
+    public static final int CUR_FINISHED_DAILY_TASK_COUNT_FIELD_NUMBER = 5;
     private int curFinishedDailyTaskCount_;
     /**
      * <code>uint32 cur_finished_daily_task_count = 11;</code>
@@ -305,7 +305,7 @@ public final class PersonalLineAllDataRspOuterClass {
       return curFinishedDailyTaskCount_;
     }
 
-    public static final int LEGENDARY_KEY_COUNT_FIELD_NUMBER = 10;
+    public static final int LEGENDARY_KEY_COUNT_FIELD_NUMBER = 13;
     private int legendaryKeyCount_;
     /**
      * <code>uint32 legendary_key_count = 1;</code>
@@ -344,7 +344,7 @@ public final class PersonalLineAllDataRspOuterClass {
     }
     private int ongoingPersonalLineListMemoizedSerializedSize = -1;
 
-    public static final int LOCKED_PERSONAL_LINE_LIST_FIELD_NUMBER = 4;
+    public static final int LOCKED_PERSONAL_LINE_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData> lockedPersonalLineList_;
     /**
      * <code>repeated .LockedPersonallineData locked_personal_line_list = 8;</code>
@@ -400,17 +400,17 @@ public final class PersonalLineAllDataRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (legendaryKeyCount_ != 0) {
-        output.writeUInt32(10, legendaryKeyCount_);
+        output.writeUInt32(13, legendaryKeyCount_);
       }
       if (getCanBeUnlockedPersonalLineListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(canBeUnlockedPersonalLineListMemoizedSerializedSize);
       }
       for (int i = 0; i < canBeUnlockedPersonalLineList_.size(); i++) {
         output.writeUInt32NoTag(canBeUnlockedPersonalLineList_.getInt(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+        output.writeInt32(7, retcode_);
       }
       if (getOngoingPersonalLineListList().size() > 0) {
         output.writeUInt32NoTag(18);
@@ -420,10 +420,10 @@ public final class PersonalLineAllDataRspOuterClass {
         output.writeUInt32NoTag(ongoingPersonalLineList_.getInt(i));
       }
       for (int i = 0; i < lockedPersonalLineList_.size(); i++) {
-        output.writeMessage(4, lockedPersonalLineList_.get(i));
+        output.writeMessage(6, lockedPersonalLineList_.get(i));
       }
       if (curFinishedDailyTaskCount_ != 0) {
-        output.writeUInt32(8, curFinishedDailyTaskCount_);
+        output.writeUInt32(5, curFinishedDailyTaskCount_);
       }
       unknownFields.writeTo(output);
     }
@@ -436,7 +436,7 @@ public final class PersonalLineAllDataRspOuterClass {
       size = 0;
       if (legendaryKeyCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, legendaryKeyCount_);
+          .computeUInt32Size(13, legendaryKeyCount_);
       }
       {
         int dataSize = 0;
@@ -454,7 +454,7 @@ public final class PersonalLineAllDataRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       {
         int dataSize = 0;
@@ -472,11 +472,11 @@ public final class PersonalLineAllDataRspOuterClass {
       }
       for (int i = 0; i < lockedPersonalLineList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, lockedPersonalLineList_.get(i));
+          .computeMessageSize(6, lockedPersonalLineList_.get(i));
       }
       if (curFinishedDailyTaskCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, curFinishedDailyTaskCount_);
+          .computeUInt32Size(5, curFinishedDailyTaskCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

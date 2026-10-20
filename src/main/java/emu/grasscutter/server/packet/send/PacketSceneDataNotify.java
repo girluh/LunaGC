@@ -6,7 +6,7 @@ import java.io.ByteArrayOutputStream;
 
 public class PacketSceneDataNotify extends BasePacket {
 
-    private static final int F_SCENE_ID = 3;
+    private static final int F_SCENE_ID = 4;
 
     public PacketSceneDataNotify(int sceneId) {
         super(PacketOpcodes.SceneDataNotify);

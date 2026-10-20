@@ -92,12 +92,12 @@ public final class QuestUpdateQuestVarRspOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 80: {
 
               questId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 64: {
 
               parentQuestVarSeq_ = input.readUInt32();
               break;
@@ -107,7 +107,7 @@ public final class QuestUpdateQuestVarRspOuterClass {
               parentQuestId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 96: {
 
               retcode_ = input.readInt32();
               break;
@@ -144,7 +144,7 @@ public final class QuestUpdateQuestVarRspOuterClass {
               emu.grasscutter.net.proto.QuestUpdateQuestVarRspOuterClass.QuestUpdateQuestVarRsp.class, emu.grasscutter.net.proto.QuestUpdateQuestVarRspOuterClass.QuestUpdateQuestVarRsp.Builder.class);
     }
 
-    public static final int PARENT_QUEST_VAR_SEQ_FIELD_NUMBER = 7;
+    public static final int PARENT_QUEST_VAR_SEQ_FIELD_NUMBER = 8;
     private int parentQuestVarSeq_;
     /**
      * <code>uint32 parent_quest_var_seq = 10;</code>
@@ -155,7 +155,7 @@ public final class QuestUpdateQuestVarRspOuterClass {
       return parentQuestVarSeq_;
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 14;
+    public static final int QUEST_ID_FIELD_NUMBER = 10;
     private int questId_;
     /**
      * <code>uint32 quest_id = 7;</code>
@@ -166,7 +166,7 @@ public final class QuestUpdateQuestVarRspOuterClass {
       return questId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
      * <code>int32 retcode = 14;</code>
@@ -203,16 +203,16 @@ public final class QuestUpdateQuestVarRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (questId_ != 0) {
-        output.writeUInt32(14, questId_);
+        output.writeUInt32(10, questId_);
       }
       if (parentQuestVarSeq_ != 0) {
-        output.writeUInt32(7, parentQuestVarSeq_);
+        output.writeUInt32(8, parentQuestVarSeq_);
       }
       if (parentQuestId_ != 0) {
         output.writeUInt32(9, parentQuestId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(12, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -225,11 +225,11 @@ public final class QuestUpdateQuestVarRspOuterClass {
       size = 0;
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, questId_);
+          .computeUInt32Size(10, questId_);
       }
       if (parentQuestVarSeq_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, parentQuestVarSeq_);
+          .computeUInt32Size(8, parentQuestVarSeq_);
       }
       if (parentQuestId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -237,7 +237,7 @@ public final class QuestUpdateQuestVarRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(12, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

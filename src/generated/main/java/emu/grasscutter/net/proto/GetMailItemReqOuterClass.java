@@ -71,7 +71,7 @@ public final class GetMailItemReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mailIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -79,7 +79,7 @@ public final class GetMailItemReqOuterClass {
               mailIdList_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -127,7 +127,7 @@ public final class GetMailItemReqOuterClass {
               emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq.class, emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq.Builder.class);
     }
 
-    public static final int MAIL_ID_LIST_FIELD_NUMBER = 15;
+    public static final int MAIL_ID_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList mailIdList_;
 
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class GetMailItemReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getMailIdListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(mailIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < mailIdList_.size(); i++) {

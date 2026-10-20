@@ -92,22 +92,22 @@ public final class ExecuteGadgetLuaReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 112: {
 
               param1_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 72: {
 
               param2_ = input.readInt32();
               break;
             }
-            case 120: {
+            case 48: {
 
               param3_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 64: {
 
               sourceEntityId_ = input.readUInt32();
               break;
@@ -144,7 +144,7 @@ public final class ExecuteGadgetLuaReqOuterClass {
               emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq.class, emu.grasscutter.net.proto.ExecuteGadgetLuaReqOuterClass.ExecuteGadgetLuaReq.Builder.class);
     }
 
-    public static final int PARAM1_FIELD_NUMBER = 11;
+    public static final int PARAM1_FIELD_NUMBER = 14;
     private int param1_;
     /**
      * <code>int32 param1 = 2;</code>
@@ -155,7 +155,7 @@ public final class ExecuteGadgetLuaReqOuterClass {
       return param1_;
     }
 
-    public static final int PARAM3_FIELD_NUMBER = 15;
+    public static final int PARAM3_FIELD_NUMBER = 6;
     private int param3_;
     /**
      * <code>int32 param3 = 5;</code>
@@ -166,7 +166,7 @@ public final class ExecuteGadgetLuaReqOuterClass {
       return param3_;
     }
 
-    public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 9;
+    public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 8;
     private int sourceEntityId_;
     /**
      * <code>uint32 source_entity_id = 10;</code>
@@ -177,7 +177,7 @@ public final class ExecuteGadgetLuaReqOuterClass {
       return sourceEntityId_;
     }
 
-    public static final int PARAM2_FIELD_NUMBER = 13;
+    public static final int PARAM2_FIELD_NUMBER = 9;
     private int param2_;
     /**
      * <code>int32 param2 = 8;</code>
@@ -203,16 +203,16 @@ public final class ExecuteGadgetLuaReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (param1_ != 0) {
-        output.writeInt32(11, param1_);
+        output.writeInt32(14, param1_);
       }
       if (param2_ != 0) {
-        output.writeInt32(13, param2_);
+        output.writeInt32(9, param2_);
       }
       if (param3_ != 0) {
-        output.writeInt32(15, param3_);
+        output.writeInt32(6, param3_);
       }
       if (sourceEntityId_ != 0) {
-        output.writeUInt32(9, sourceEntityId_);
+        output.writeUInt32(8, sourceEntityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -225,19 +225,19 @@ public final class ExecuteGadgetLuaReqOuterClass {
       size = 0;
       if (param1_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, param1_);
+          .computeInt32Size(14, param1_);
       }
       if (param2_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, param2_);
+          .computeInt32Size(9, param2_);
       }
       if (param3_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, param3_);
+          .computeInt32Size(6, param3_);
       }
       if (sourceEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, sourceEntityId_);
+          .computeUInt32Size(8, sourceEntityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

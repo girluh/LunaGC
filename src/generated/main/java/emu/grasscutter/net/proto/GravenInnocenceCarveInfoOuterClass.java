@@ -117,12 +117,12 @@ public final class GravenInnocenceCarveInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 88: {
 
               canEditCount_ = input.readUInt32();
               break;
             }
-            case 90: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 stageInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -131,7 +131,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.parser(), extensionRegistry));
               break;
             }
-            case 24: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 hasEditConfigIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -139,7 +139,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
               hasEditConfigIdList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -190,7 +190,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
               emu.grasscutter.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.class, emu.grasscutter.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.Builder.class);
     }
 
-    public static final int CAN_EDIT_COUNT_FIELD_NUMBER = 9;
+    public static final int CAN_EDIT_COUNT_FIELD_NUMBER = 11;
     private int canEditCount_;
     /**
      * <code>uint32 can_edit_count = 8;</code>
@@ -201,7 +201,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
       return canEditCount_;
     }
 
-    public static final int HAS_EDIT_CONFIG_ID_LIST_FIELD_NUMBER = 3;
+    public static final int HAS_EDIT_CONFIG_ID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList hasEditConfigIdList_;
     /**
      * <code>repeated uint32 has_edit_config_id_list = 13;</code>
@@ -229,7 +229,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
     }
     private int hasEditConfigIdListMemoizedSerializedSize = -1;
 
-    public static final int STAGE_INFO_LIST_FIELD_NUMBER = 11;
+    public static final int STAGE_INFO_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo> stageInfoList_;
     /**
      * <code>repeated .GravenInnocenceCarveStageInfo stage_info_list = 12;</code>
@@ -285,13 +285,13 @@ public final class GravenInnocenceCarveInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (canEditCount_ != 0) {
-        output.writeUInt32(9, canEditCount_);
+        output.writeUInt32(11, canEditCount_);
       }
       for (int i = 0; i < stageInfoList_.size(); i++) {
-        output.writeMessage(11, stageInfoList_.get(i));
+        output.writeMessage(10, stageInfoList_.get(i));
       }
       if (getHasEditConfigIdListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(hasEditConfigIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < hasEditConfigIdList_.size(); i++) {
@@ -308,11 +308,11 @@ public final class GravenInnocenceCarveInfoOuterClass {
       size = 0;
       if (canEditCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, canEditCount_);
+          .computeUInt32Size(11, canEditCount_);
       }
       for (int i = 0; i < stageInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, stageInfoList_.get(i));
+          .computeMessageSize(10, stageInfoList_.get(i));
       }
       {
         int dataSize = 0;

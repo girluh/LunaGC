@@ -82,7 +82,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 worldRoutineTypeList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -126,7 +126,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
               emu.grasscutter.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify.class, emu.grasscutter.net.proto.WorldAllRoutineTypeNotifyOuterClass.WorldAllRoutineTypeNotify.Builder.class);
     }
 
-    public static final int WORLD_ROUTINE_TYPE_LIST_FIELD_NUMBER = 9;
+    public static final int WORLD_ROUTINE_TYPE_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo> worldRoutineTypeList_;
 
     @java.lang.Override
@@ -171,7 +171,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < worldRoutineTypeList_.size(); i++) {
-        output.writeMessage(9, worldRoutineTypeList_.get(i));
+        output.writeMessage(6, worldRoutineTypeList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -184,7 +184,7 @@ public final class WorldAllRoutineTypeNotifyOuterClass {
       size = 0;
       for (int i = 0; i < worldRoutineTypeList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, worldRoutineTypeList_.get(i));
+          .computeMessageSize(6, worldRoutineTypeList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

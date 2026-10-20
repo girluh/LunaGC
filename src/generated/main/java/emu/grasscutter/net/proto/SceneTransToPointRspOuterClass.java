@@ -74,12 +74,12 @@ public final class SceneTransToPointRspOuterClass {
               pointId_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 96: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 48: {
+            case 56: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -116,7 +116,7 @@ public final class SceneTransToPointRspOuterClass {
               emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRsp.class, emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRsp.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 6;
+    public static final int SCENE_ID_FIELD_NUMBER = 7;
     private int sceneId_;
 
     @java.lang.Override
@@ -124,7 +124,7 @@ public final class SceneTransToPointRspOuterClass {
       return sceneId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
 
     @java.lang.Override
@@ -158,10 +158,10 @@ public final class SceneTransToPointRspOuterClass {
         output.writeUInt32(15, pointId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeInt32(12, retcode_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(6, sceneId_);
+        output.writeUInt32(7, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,11 +178,11 @@ public final class SceneTransToPointRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeInt32Size(12, retcode_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, sceneId_);
+          .computeUInt32Size(7, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -94,7 +94,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 furnitureArrangeCountList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,7 +138,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
               emu.grasscutter.net.proto.FurnitureCurModuleArrangeCountNotifyOuterClass.FurnitureCurModuleArrangeCountNotify.class, emu.grasscutter.net.proto.FurnitureCurModuleArrangeCountNotifyOuterClass.FurnitureCurModuleArrangeCountNotify.Builder.class);
     }
 
-    public static final int FURNITURE_ARRANGE_COUNT_LIST_FIELD_NUMBER = 6;
+    public static final int FURNITURE_ARRANGE_COUNT_LIST_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> furnitureArrangeCountList_;
     /**
      * <code>repeated .Uint32Pair furniture_arrange_count_list = 1;</code>
@@ -193,7 +193,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < furnitureArrangeCountList_.size(); i++) {
-        output.writeMessage(6, furnitureArrangeCountList_.get(i));
+        output.writeMessage(5, furnitureArrangeCountList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
       size = 0;
       for (int i = 0; i < furnitureArrangeCountList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, furnitureArrangeCountList_.get(i));
+          .computeMessageSize(5, furnitureArrangeCountList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -113,17 +113,17 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 72: {
 
               icon_ = input.readUInt32();
               break;
             }
-            case 117: {
+            case 37: {
 
               time_ = input.readFixed32();
               break;
             }
-            case 98: {
+            case 106: {
               emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
               if (profilePicture_ != null) {
                 subBuilder = profilePicture_.toBuilder();
@@ -136,12 +136,12 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
 
               break;
             }
-            case 56: {
+            case 48: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 18: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               playerName_ = s;
@@ -179,7 +179,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.class, emu.grasscutter.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder.class);
     }
 
-    public static final int PROFILE_PICTURE_FIELD_NUMBER = 12;
+    public static final int PROFILE_PICTURE_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
     /**
      * <code>.ProfilePicture profile_picture = 8;</code>
@@ -205,7 +205,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       return getProfilePicture();
     }
 
-    public static final int UID_FIELD_NUMBER = 7;
+    public static final int UID_FIELD_NUMBER = 6;
     private int uid_;
     /**
      * <code>uint32 uid = 11;</code>
@@ -216,7 +216,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       return uid_;
     }
 
-    public static final int TIME_FIELD_NUMBER = 14;
+    public static final int TIME_FIELD_NUMBER = 4;
     private int time_;
     /**
      * <code>fixed32 time = 3;</code>
@@ -227,7 +227,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       return time_;
     }
 
-    public static final int ICON_FIELD_NUMBER = 8;
+    public static final int ICON_FIELD_NUMBER = 9;
     private int icon_;
     /**
      * <code>uint32 icon = 1;</code>
@@ -238,7 +238,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       return icon_;
     }
 
-    public static final int PLAYER_NAME_FIELD_NUMBER = 2;
+    public static final int PLAYER_NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object playerName_;
     /**
      * <code>string player_name = 14;</code>
@@ -291,19 +291,19 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (icon_ != 0) {
-        output.writeUInt32(8, icon_);
+        output.writeUInt32(9, icon_);
       }
       if (time_ != 0) {
-        output.writeFixed32(14, time_);
+        output.writeFixed32(4, time_);
       }
       if (profilePicture_ != null) {
-        output.writeMessage(12, getProfilePicture());
+        output.writeMessage(13, getProfilePicture());
       }
       if (uid_ != 0) {
-        output.writeUInt32(7, uid_);
+        output.writeUInt32(6, uid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(playerName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, playerName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, playerName_);
       }
       unknownFields.writeTo(output);
     }
@@ -316,22 +316,22 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       size = 0;
       if (icon_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, icon_);
+          .computeUInt32Size(9, icon_);
       }
       if (time_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(14, time_);
+          .computeFixed32Size(4, time_);
       }
       if (profilePicture_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getProfilePicture());
+          .computeMessageSize(13, getProfilePicture());
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, uid_);
+          .computeUInt32Size(6, uid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(playerName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, playerName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, playerName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

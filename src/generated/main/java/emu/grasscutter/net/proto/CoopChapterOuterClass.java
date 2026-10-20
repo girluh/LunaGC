@@ -249,12 +249,12 @@ public final class CoopChapterOuterClass {
               state_ = rawValue;
               break;
             }
-            case 128008: {
+            case 128016: {
 
               hKOAKJNBIIO_ = input.readUInt32();
               break;
             }
-            case 98: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 coopPointList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CoopPointOuterClass.CoopPoint>();
                 mutable_bitField0_ |= 0x00000004;
@@ -263,7 +263,7 @@ public final class CoopChapterOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.CoopPointOuterClass.CoopPoint.parser(), extensionRegistry));
               break;
             }
-            case 128000: {
+            case 128008: {
               if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 eOMGDNCEACF_ = newIntList();
                 mutable_bitField0_ |= 0x00000020;
@@ -271,7 +271,7 @@ public final class CoopChapterOuterClass {
               eOMGDNCEACF_.addInt(input.readUInt32());
               break;
             }
-            case 128002: {
+            case 128010: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000020) != 0) && input.getBytesUntilLimit() > 0) {
@@ -284,7 +284,7 @@ public final class CoopChapterOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 114: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 coopCgList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CoopCgOuterClass.CoopCg>();
                 mutable_bitField0_ |= 0x00000010;
@@ -293,7 +293,7 @@ public final class CoopChapterOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.CoopCgOuterClass.CoopCg.parser(), extensionRegistry));
               break;
             }
-            case 72: {
+            case 128000: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 lAAOIEBFJKP_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -301,7 +301,7 @@ public final class CoopChapterOuterClass {
               lAAOIEBFJKP_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 128002: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -314,7 +314,7 @@ public final class CoopChapterOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 122: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 coopRewardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CoopRewardOuterClass.CoopReward>();
                 mutable_bitField0_ |= 0x00000008;
@@ -328,12 +328,12 @@ public final class CoopChapterOuterClass {
               jDENGALMPJN_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 80: {
 
               id_ = input.readUInt32();
               break;
             }
-            case 18: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 seenEndingMap_ = com.google.protobuf.MapField.newMapField(
                     SeenEndingMapDefaultEntryHolder.defaultEntry);
@@ -554,7 +554,7 @@ public final class CoopChapterOuterClass {
       return result == null ? emu.grasscutter.net.proto.CoopChapterOuterClass.CoopChapter.State.UNRECOGNIZED : result;
     }
 
-    public static final int LAAOIEBFJKP_FIELD_NUMBER = 9;
+    public static final int LAAOIEBFJKP_FIELD_NUMBER = 16000;
     private com.google.protobuf.Internal.IntList lAAOIEBFJKP_;
     /**
      * <code>repeated uint32 LAAOIEBFJKP = 9;</code>
@@ -582,7 +582,7 @@ public final class CoopChapterOuterClass {
     }
     private int lAAOIEBFJKPMemoizedSerializedSize = -1;
 
-    public static final int SEEN_ENDING_MAP_FIELD_NUMBER = 2;
+    public static final int SEEN_ENDING_MAP_FIELD_NUMBER = 12;
     private static final class SeenEndingMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -663,7 +663,7 @@ public final class CoopChapterOuterClass {
       return map.get(key);
     }
 
-    public static final int COOP_POINT_LIST_FIELD_NUMBER = 12;
+    public static final int COOP_POINT_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.CoopPointOuterClass.CoopPoint> coopPointList_;
     /**
      * <code>repeated .CoopPoint coop_point_list = 6;</code>
@@ -703,7 +703,7 @@ public final class CoopChapterOuterClass {
       return coopPointList_.get(index);
     }
 
-    public static final int COOP_REWARD_LIST_FIELD_NUMBER = 15;
+    public static final int COOP_REWARD_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.CoopRewardOuterClass.CoopReward> coopRewardList_;
     /**
      * <code>repeated .CoopReward coop_reward_list = 11;</code>
@@ -743,7 +743,7 @@ public final class CoopChapterOuterClass {
       return coopRewardList_.get(index);
     }
 
-    public static final int COOP_CG_LIST_FIELD_NUMBER = 14;
+    public static final int COOP_CG_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.CoopCgOuterClass.CoopCg> coopCgList_;
     /**
      * <code>repeated .CoopCg coop_cg_list = 8;</code>
@@ -783,7 +783,7 @@ public final class CoopChapterOuterClass {
       return coopCgList_.get(index);
     }
 
-    public static final int ID_FIELD_NUMBER = 7;
+    public static final int ID_FIELD_NUMBER = 10;
     private int id_;
     /**
      * <code>uint32 id = 14;</code>
@@ -805,7 +805,7 @@ public final class CoopChapterOuterClass {
       return jDENGALMPJN_;
     }
 
-    public static final int EOMGDNCEACF_FIELD_NUMBER = 16000;
+    public static final int EOMGDNCEACF_FIELD_NUMBER = 16001;
     private com.google.protobuf.Internal.IntList eOMGDNCEACF_;
     /**
      * <code>repeated uint32 EOMGDNCEACF = 7;</code>
@@ -833,7 +833,7 @@ public final class CoopChapterOuterClass {
     }
     private int eOMGDNCEACFMemoizedSerializedSize = -1;
 
-    public static final int HKOAKJNBIIO_FIELD_NUMBER = 16001;
+    public static final int HKOAKJNBIIO_FIELD_NUMBER = 16002;
     private int hKOAKJNBIIO_;
     /**
      * <code>uint32 HKOAKJNBIIO = 5;</code>
@@ -863,43 +863,43 @@ public final class CoopChapterOuterClass {
         output.writeEnum(5, state_);
       }
       if (hKOAKJNBIIO_ != 0) {
-        output.writeUInt32(16001, hKOAKJNBIIO_);
+        output.writeUInt32(16002, hKOAKJNBIIO_);
       }
       for (int i = 0; i < coopPointList_.size(); i++) {
-        output.writeMessage(12, coopPointList_.get(i));
+        output.writeMessage(8, coopPointList_.get(i));
       }
       if (getEOMGDNCEACFList().size() > 0) {
-        output.writeUInt32NoTag(128002);
+        output.writeUInt32NoTag(128010);
         output.writeUInt32NoTag(eOMGDNCEACFMemoizedSerializedSize);
       }
       for (int i = 0; i < eOMGDNCEACF_.size(); i++) {
         output.writeUInt32NoTag(eOMGDNCEACF_.getInt(i));
       }
       for (int i = 0; i < coopCgList_.size(); i++) {
-        output.writeMessage(14, coopCgList_.get(i));
+        output.writeMessage(4, coopCgList_.get(i));
       }
       if (getLAAOIEBFJKPList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(128002);
         output.writeUInt32NoTag(lAAOIEBFJKPMemoizedSerializedSize);
       }
       for (int i = 0; i < lAAOIEBFJKP_.size(); i++) {
         output.writeUInt32NoTag(lAAOIEBFJKP_.getInt(i));
       }
       for (int i = 0; i < coopRewardList_.size(); i++) {
-        output.writeMessage(15, coopRewardList_.get(i));
+        output.writeMessage(9, coopRewardList_.get(i));
       }
       if (jDENGALMPJN_ != 0) {
         output.writeUInt32(13, jDENGALMPJN_);
       }
       if (id_ != 0) {
-        output.writeUInt32(7, id_);
+        output.writeUInt32(10, id_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetSeenEndingMap(),
           SeenEndingMapDefaultEntryHolder.defaultEntry,
-          2);
+          12);
       unknownFields.writeTo(output);
     }
 
@@ -915,11 +915,11 @@ public final class CoopChapterOuterClass {
       }
       if (hKOAKJNBIIO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16001, hKOAKJNBIIO_);
+          .computeUInt32Size(16002, hKOAKJNBIIO_);
       }
       for (int i = 0; i < coopPointList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, coopPointList_.get(i));
+          .computeMessageSize(8, coopPointList_.get(i));
       }
       {
         int dataSize = 0;
@@ -937,7 +937,7 @@ public final class CoopChapterOuterClass {
       }
       for (int i = 0; i < coopCgList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, coopCgList_.get(i));
+          .computeMessageSize(4, coopCgList_.get(i));
       }
       {
         int dataSize = 0;
@@ -947,7 +947,7 @@ public final class CoopChapterOuterClass {
         }
         size += dataSize;
         if (!getLAAOIEBFJKPList().isEmpty()) {
-          size += 1;
+          size += 3;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
@@ -955,7 +955,7 @@ public final class CoopChapterOuterClass {
       }
       for (int i = 0; i < coopRewardList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, coopRewardList_.get(i));
+          .computeMessageSize(9, coopRewardList_.get(i));
       }
       if (jDENGALMPJN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -963,7 +963,7 @@ public final class CoopChapterOuterClass {
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, id_);
+          .computeUInt32Size(10, id_);
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetSeenEndingMap().getMap().entrySet()) {
@@ -973,7 +973,7 @@ public final class CoopChapterOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, seenEndingMap__);
+            .computeMessageSize(12, seenEndingMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

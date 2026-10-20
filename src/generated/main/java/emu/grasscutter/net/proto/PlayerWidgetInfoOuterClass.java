@@ -85,7 +85,7 @@ public final class PlayerWidgetInfoOuterClass {
               uid_ = input.readUInt32();
               break;
             }
-            case 98: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 slotList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -129,7 +129,7 @@ public final class PlayerWidgetInfoOuterClass {
               emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfo.class, emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfo.Builder.class);
     }
 
-    public static final int SLOT_LIST_FIELD_NUMBER = 12;
+    public static final int SLOT_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> slotList_;
 
     @java.lang.Override
@@ -185,7 +185,7 @@ public final class PlayerWidgetInfoOuterClass {
         output.writeUInt32(7, uid_);
       }
       for (int i = 0; i < slotList_.size(); i++) {
-        output.writeMessage(12, slotList_.get(i));
+        output.writeMessage(10, slotList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -202,7 +202,7 @@ public final class PlayerWidgetInfoOuterClass {
       }
       for (int i = 0; i < slotList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, slotList_.get(i));
+          .computeMessageSize(10, slotList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

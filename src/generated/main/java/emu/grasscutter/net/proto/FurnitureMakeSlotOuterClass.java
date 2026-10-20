@@ -78,7 +78,7 @@ public final class FurnitureMakeSlotOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 furnitureMakeDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -122,7 +122,7 @@ public final class FurnitureMakeSlotOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.class, emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder.class);
     }
 
-    public static final int FURNITURE_MAKE_DATA_LIST_FIELD_NUMBER = 10;
+    public static final int FURNITURE_MAKE_DATA_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData> furnitureMakeDataList_;
 
     @java.lang.Override
@@ -167,7 +167,7 @@ public final class FurnitureMakeSlotOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < furnitureMakeDataList_.size(); i++) {
-        output.writeMessage(10, furnitureMakeDataList_.get(i));
+        output.writeMessage(7, furnitureMakeDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -180,7 +180,7 @@ public final class FurnitureMakeSlotOuterClass {
       size = 0;
       for (int i = 0; i < furnitureMakeDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, furnitureMakeDataList_.get(i));
+          .computeMessageSize(7, furnitureMakeDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -171,7 +171,7 @@ public final class LanternProjectionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 openStageList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -179,7 +179,7 @@ public final class LanternProjectionInfoOuterClass {
               openStageList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -215,7 +215,7 @@ public final class LanternProjectionInfoOuterClass {
               input.popLimit(oldLimit);
               break;
             }
-            case 50: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 levelList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanternProjectionLevelInfoOuterClass.LanternProjectionLevelInfo>();
                 mutable_bitField0_ |= 0x00000004;
@@ -291,7 +291,7 @@ public final class LanternProjectionInfoOuterClass {
               emu.grasscutter.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.class, emu.grasscutter.net.proto.LanternProjectionInfoOuterClass.LanternProjectionInfo.Builder.class);
     }
 
-    public static final int OPEN_STAGE_LIST_FIELD_NUMBER = 4;
+    public static final int OPEN_STAGE_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList openStageList_;
     /**
      * <code>repeated uint32 open_stage_list = 6;</code>
@@ -377,7 +377,7 @@ public final class LanternProjectionInfoOuterClass {
     }
     private int lPFHLCMPJDEMemoizedSerializedSize;
 
-    public static final int LEVEL_LIST_FIELD_NUMBER = 6;
+    public static final int LEVEL_LIST_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.LanternProjectionLevelInfoOuterClass.LanternProjectionLevelInfo> levelList_;
     /**
      * <code>repeated .LanternProjectionLevelInfo level_list = 12;</code>
@@ -491,7 +491,7 @@ public final class LanternProjectionInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getOpenStageListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(openStageListMemoizedSerializedSize);
       }
       for (int i = 0; i < openStageList_.size(); i++) {
@@ -505,7 +505,7 @@ public final class LanternProjectionInfoOuterClass {
         output.writeEnumNoTag(lPFHLCMPJDE_.get(i));
       }
       for (int i = 0; i < levelList_.size(); i++) {
-        output.writeMessage(6, levelList_.get(i));
+        output.writeMessage(5, levelList_.get(i));
       }
       if (getIHBEIKHBBPAList().size() > 0) {
         output.writeUInt32NoTag(114);
@@ -551,7 +551,7 @@ public final class LanternProjectionInfoOuterClass {
       }
       for (int i = 0; i < levelList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, levelList_.get(i));
+          .computeMessageSize(5, levelList_.get(i));
       }
       {
         int dataSize = 0;

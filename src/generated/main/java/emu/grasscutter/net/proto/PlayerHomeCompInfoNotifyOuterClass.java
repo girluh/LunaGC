@@ -65,7 +65,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 106: {
               emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder subBuilder = null;
               if (compInfo_ != null) {
                 subBuilder = compInfo_.toBuilder();
@@ -110,7 +110,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify.class, emu.grasscutter.net.proto.PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify.Builder.class);
     }
 
-    public static final int COMP_INFO_FIELD_NUMBER = 4;
+    public static final int COMP_INFO_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo compInfo_;
 
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (compInfo_ != null) {
-        output.writeMessage(4, getCompInfo());
+        output.writeMessage(13, getCompInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -156,7 +156,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
       size = 0;
       if (compInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getCompInfo());
+          .computeMessageSize(13, getCompInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

@@ -71,7 +71,7 @@ public final class WearEquipReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 16: {
 
               equipGuid_ = input.readUInt64();
               break;
@@ -113,7 +113,7 @@ public final class WearEquipReqOuterClass {
               emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq.class, emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq.Builder.class);
     }
 
-    public static final int EQUIP_GUID_FIELD_NUMBER = 7;
+    public static final int EQUIP_GUID_FIELD_NUMBER = 2;
     private long equipGuid_;
 
     @java.lang.Override
@@ -144,7 +144,7 @@ public final class WearEquipReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (equipGuid_ != 0L) {
-        output.writeUInt64(7, equipGuid_);
+        output.writeUInt64(2, equipGuid_);
       }
       if (avatarGuid_ != 0L) {
         output.writeUInt64(9, avatarGuid_);
@@ -160,7 +160,7 @@ public final class WearEquipReqOuterClass {
       size = 0;
       if (equipGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, equipGuid_);
+          .computeUInt64Size(2, equipGuid_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream

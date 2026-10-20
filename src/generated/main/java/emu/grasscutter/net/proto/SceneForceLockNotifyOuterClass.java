@@ -75,7 +75,7 @@ public final class SceneForceLockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 forceIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -83,7 +83,7 @@ public final class SceneForceLockNotifyOuterClass {
               forceIdList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -131,7 +131,7 @@ public final class SceneForceLockNotifyOuterClass {
               emu.grasscutter.net.proto.SceneForceLockNotifyOuterClass.SceneForceLockNotify.class, emu.grasscutter.net.proto.SceneForceLockNotifyOuterClass.SceneForceLockNotify.Builder.class);
     }
 
-    public static final int FORCE_ID_LIST_FIELD_NUMBER = 3;
+    public static final int FORCE_ID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList forceIdList_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class SceneForceLockNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getForceIdListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(forceIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < forceIdList_.size(); i++) {

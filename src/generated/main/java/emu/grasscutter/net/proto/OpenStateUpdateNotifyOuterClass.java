@@ -89,7 +89,7 @@ public final class OpenStateUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 openStateMap_ = com.google.protobuf.MapField.newMapField(
                     OpenStateMapDefaultEntryHolder.defaultEntry);
@@ -146,7 +146,7 @@ public final class OpenStateUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.class, emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.Builder.class);
     }
 
-    public static final int OPEN_STATE_MAP_FIELD_NUMBER = 8;
+    public static final int OPEN_STATE_MAP_FIELD_NUMBER = 15;
     private static final class OpenStateMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -237,7 +237,7 @@ public final class OpenStateUpdateNotifyOuterClass {
           output,
           internalGetOpenStateMap(),
           OpenStateMapDefaultEntryHolder.defaultEntry,
-          8);
+          15);
       unknownFields.writeTo(output);
     }
 
@@ -255,7 +255,7 @@ public final class OpenStateUpdateNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(8, openStateMap__);
+            .computeMessageSize(15, openStateMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

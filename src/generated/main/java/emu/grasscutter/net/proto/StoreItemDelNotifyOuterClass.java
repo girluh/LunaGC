@@ -80,7 +80,7 @@ public final class StoreItemDelNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 guidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -88,7 +88,7 @@ public final class StoreItemDelNotifyOuterClass {
               guidList_.addLong(input.readUInt64());
               break;
             }
-            case 58: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -101,7 +101,7 @@ public final class StoreItemDelNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 8: {
+            case 96: {
               int rawValue = input.readEnum();
 
               storeType_ = rawValue;
@@ -142,7 +142,7 @@ public final class StoreItemDelNotifyOuterClass {
               emu.grasscutter.net.proto.StoreItemDelNotifyOuterClass.StoreItemDelNotify.class, emu.grasscutter.net.proto.StoreItemDelNotifyOuterClass.StoreItemDelNotify.Builder.class);
     }
 
-    public static final int GUID_LIST_FIELD_NUMBER = 7;
+    public static final int GUID_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.LongList guidList_;
 
     @java.lang.Override
@@ -160,7 +160,7 @@ public final class StoreItemDelNotifyOuterClass {
     }
     private int guidListMemoizedSerializedSize = -1;
 
-    public static final int STORE_TYPE_FIELD_NUMBER = 1;
+    public static final int STORE_TYPE_FIELD_NUMBER = 12;
     private int storeType_;
 
     @java.lang.Override public int getStoreTypeValue() {
@@ -189,10 +189,10 @@ public final class StoreItemDelNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (storeType_ != emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.StoreType_STORE_NONE.getNumber()) {
-        output.writeEnum(1, storeType_);
+        output.writeEnum(12, storeType_);
       }
       if (getGuidListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(guidListMemoizedSerializedSize);
       }
       for (int i = 0; i < guidList_.size(); i++) {
@@ -209,7 +209,7 @@ public final class StoreItemDelNotifyOuterClass {
       size = 0;
       if (storeType_ != emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.StoreType_STORE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, storeType_);
+          .computeEnumSize(12, storeType_);
       }
       {
         int dataSize = 0;

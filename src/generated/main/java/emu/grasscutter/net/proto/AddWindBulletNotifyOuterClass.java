@@ -81,7 +81,7 @@ public final class AddWindBulletNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 10: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (seedPos_ != null) {
                 subBuilder = seedPos_.toBuilder();
@@ -136,7 +136,7 @@ public final class AddWindBulletNotifyOuterClass {
               emu.grasscutter.net.proto.AddWindBulletNotifyOuterClass.AddWindBulletNotify.class, emu.grasscutter.net.proto.AddWindBulletNotifyOuterClass.AddWindBulletNotify.Builder.class);
     }
 
-    public static final int SEED_POS_FIELD_NUMBER = 9;
+    public static final int SEED_POS_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector seedPos_;
 
     @java.lang.Override
@@ -191,7 +191,7 @@ public final class AddWindBulletNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (seedPos_ != null) {
-        output.writeMessage(9, getSeedPos());
+        output.writeMessage(1, getSeedPos());
       }
       if (aJBPDBIMHIP_ != 0) {
         output.writeUInt32(12, aJBPDBIMHIP_);
@@ -210,7 +210,7 @@ public final class AddWindBulletNotifyOuterClass {
       size = 0;
       if (seedPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getSeedPos());
+          .computeMessageSize(1, getSeedPos());
       }
       if (aJBPDBIMHIP_ != 0) {
         size += com.google.protobuf.CodedOutputStream

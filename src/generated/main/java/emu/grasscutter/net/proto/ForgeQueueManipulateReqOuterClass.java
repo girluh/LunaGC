@@ -74,13 +74,13 @@ public final class ForgeQueueManipulateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 16: {
               int rawValue = input.readEnum();
 
               manipulateType_ = rawValue;
               break;
             }
-            case 88: {
+            case 120: {
 
               forgeQueueId_ = input.readUInt32();
               break;
@@ -117,7 +117,7 @@ public final class ForgeQueueManipulateReqOuterClass {
               emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq.class, emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueManipulateReq.Builder.class);
     }
 
-    public static final int FORGE_QUEUE_ID_FIELD_NUMBER = 11;
+    public static final int FORGE_QUEUE_ID_FIELD_NUMBER = 15;
     private int forgeQueueId_;
 
     @java.lang.Override
@@ -125,7 +125,7 @@ public final class ForgeQueueManipulateReqOuterClass {
       return forgeQueueId_;
     }
 
-    public static final int MANIPULATE_TYPE_FIELD_NUMBER = 14;
+    public static final int MANIPULATE_TYPE_FIELD_NUMBER = 2;
     private int manipulateType_;
 
     @java.lang.Override public int getManipulateTypeValue() {
@@ -153,10 +153,10 @@ public final class ForgeQueueManipulateReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (manipulateType_ != emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.ForgeQueueManipulateType_RECEIVE_OUTPUT.getNumber()) {
-        output.writeEnum(14, manipulateType_);
+        output.writeEnum(2, manipulateType_);
       }
       if (forgeQueueId_ != 0) {
-        output.writeUInt32(11, forgeQueueId_);
+        output.writeUInt32(15, forgeQueueId_);
       }
       unknownFields.writeTo(output);
     }
@@ -169,11 +169,11 @@ public final class ForgeQueueManipulateReqOuterClass {
       size = 0;
       if (manipulateType_ != emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.ForgeQueueManipulateType_RECEIVE_OUTPUT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, manipulateType_);
+          .computeEnumSize(2, manipulateType_);
       }
       if (forgeQueueId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, forgeQueueId_);
+          .computeUInt32Size(15, forgeQueueId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

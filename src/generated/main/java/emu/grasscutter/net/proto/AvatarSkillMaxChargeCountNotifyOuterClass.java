@@ -73,7 +73,7 @@ public final class AvatarSkillMaxChargeCountNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 48: {
 
               avatarGuid_ = input.readUInt64();
               break;
@@ -136,7 +136,7 @@ public final class AvatarSkillMaxChargeCountNotifyOuterClass {
       return maxChargeCount_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 15;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 6;
     private long avatarGuid_;
 
     @java.lang.Override
@@ -159,7 +159,7 @@ public final class AvatarSkillMaxChargeCountNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarGuid_ != 0L) {
-        output.writeUInt64(15, avatarGuid_);
+        output.writeUInt64(6, avatarGuid_);
       }
       if (skillId_ != 0) {
         output.writeUInt32(2, skillId_);
@@ -178,7 +178,7 @@ public final class AvatarSkillMaxChargeCountNotifyOuterClass {
       size = 0;
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(15, avatarGuid_);
+          .computeUInt64Size(6, avatarGuid_);
       }
       if (skillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

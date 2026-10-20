@@ -97,7 +97,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 112: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -111,7 +111,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.OFFICPDHBCIOuterClass.OFFICPDHBCI.parser(), extensionRegistry));
               break;
             }
-            case 112: {
+            case 128000: {
 
               bJHLBMLBBBP_ = input.readUInt32();
               break;
@@ -191,7 +191,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       return kJHIGIHFFGH_.get(index);
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 13;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 14;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -199,7 +199,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       return isContentClosed_;
     }
 
-    public static final int BJHLBMLBBBP_FIELD_NUMBER = 14;
+    public static final int BJHLBMLBBBP_FIELD_NUMBER = 16000;
     private int bJHLBMLBBBP_;
     /**
      * <code>uint32 BJHLBMLBBBP = 14;</code>
@@ -225,13 +225,13 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isContentClosed_ != false) {
-        output.writeBool(13, isContentClosed_);
+        output.writeBool(14, isContentClosed_);
       }
       for (int i = 0; i < kJHIGIHFFGH_.size(); i++) {
         output.writeMessage(6, kJHIGIHFFGH_.get(i));
       }
       if (bJHLBMLBBBP_ != 0) {
-        output.writeUInt32(14, bJHLBMLBBBP_);
+        output.writeUInt32(16000, bJHLBMLBBBP_);
       }
       unknownFields.writeTo(output);
     }
@@ -244,7 +244,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       size = 0;
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isContentClosed_);
+          .computeBoolSize(14, isContentClosed_);
       }
       for (int i = 0; i < kJHIGIHFFGH_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -252,7 +252,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       }
       if (bJHLBMLBBBP_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, bJHLBMLBBBP_);
+          .computeUInt32Size(16000, bJHLBMLBBBP_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

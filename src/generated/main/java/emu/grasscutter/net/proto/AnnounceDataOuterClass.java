@@ -132,12 +132,12 @@ public final class AnnounceDataOuterClass {
               countDownText_ = s;
               break;
             }
-            case 80: {
+            case 112: {
 
               configId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 56: {
 
               beginTime_ = input.readUInt32();
               break;
@@ -148,7 +148,7 @@ public final class AnnounceDataOuterClass {
               dungeonConfirmText_ = s;
               break;
             }
-            case 56: {
+            case 128016: {
 
               centerSystemFrequency_ = input.readUInt32();
               break;
@@ -158,7 +158,7 @@ public final class AnnounceDataOuterClass {
               countDownFrequency_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 64: {
 
               endTime_ = input.readUInt32();
               break;
@@ -169,7 +169,7 @@ public final class AnnounceDataOuterClass {
               centerSystemText_ = s;
               break;
             }
-            case 16: {
+            case 8: {
 
               isCenterSystemLast5EveryMinutes_ = input.readBool();
               break;
@@ -320,7 +320,7 @@ public final class AnnounceDataOuterClass {
       }
     }
 
-    public static final int CENTER_SYSTEM_FREQUENCY_FIELD_NUMBER = 7;
+    public static final int CENTER_SYSTEM_FREQUENCY_FIELD_NUMBER = 16002;
     private int centerSystemFrequency_;
     /**
      * <code>uint32 center_system_frequency = 7;</code>
@@ -331,7 +331,7 @@ public final class AnnounceDataOuterClass {
       return centerSystemFrequency_;
     }
 
-    public static final int BEGIN_TIME_FIELD_NUMBER = 4;
+    public static final int BEGIN_TIME_FIELD_NUMBER = 7;
     private int beginTime_;
 
     @java.lang.Override
@@ -339,7 +339,7 @@ public final class AnnounceDataOuterClass {
       return beginTime_;
     }
 
-    public static final int END_TIME_FIELD_NUMBER = 3;
+    public static final int END_TIME_FIELD_NUMBER = 8;
     private int endTime_;
 
     @java.lang.Override
@@ -347,7 +347,7 @@ public final class AnnounceDataOuterClass {
       return endTime_;
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 10;
+    public static final int CONFIG_ID_FIELD_NUMBER = 14;
     private int configId_;
 
     @java.lang.Override
@@ -366,7 +366,7 @@ public final class AnnounceDataOuterClass {
       return countDownFrequency_;
     }
 
-    public static final int IS_CENTER_SYSTEM_LAST5_EVERY_MINUTES_FIELD_NUMBER = 2;
+    public static final int IS_CENTER_SYSTEM_LAST5_EVERY_MINUTES_FIELD_NUMBER = 1;
     private boolean isCenterSystemLast5EveryMinutes_;
     /**
      * <code>bool is_center_system_last5_every_minutes = 1301;</code>
@@ -395,28 +395,28 @@ public final class AnnounceDataOuterClass {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16000, countDownText_);
       }
       if (configId_ != 0) {
-        output.writeUInt32(10, configId_);
+        output.writeUInt32(14, configId_);
       }
       if (beginTime_ != 0) {
-        output.writeUInt32(4, beginTime_);
+        output.writeUInt32(7, beginTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dungeonConfirmText_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, dungeonConfirmText_);
       }
       if (centerSystemFrequency_ != 0) {
-        output.writeUInt32(7, centerSystemFrequency_);
+        output.writeUInt32(16002, centerSystemFrequency_);
       }
       if (countDownFrequency_ != 0) {
         output.writeUInt32(9, countDownFrequency_);
       }
       if (endTime_ != 0) {
-        output.writeUInt32(3, endTime_);
+        output.writeUInt32(8, endTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(centerSystemText_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16001, centerSystemText_);
       }
       if (isCenterSystemLast5EveryMinutes_ != false) {
-        output.writeBool(2, isCenterSystemLast5EveryMinutes_);
+        output.writeBool(1, isCenterSystemLast5EveryMinutes_);
       }
       unknownFields.writeTo(output);
     }
@@ -432,18 +432,18 @@ public final class AnnounceDataOuterClass {
       }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, configId_);
+          .computeUInt32Size(14, configId_);
       }
       if (beginTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, beginTime_);
+          .computeUInt32Size(7, beginTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dungeonConfirmText_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, dungeonConfirmText_);
       }
       if (centerSystemFrequency_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, centerSystemFrequency_);
+          .computeUInt32Size(16002, centerSystemFrequency_);
       }
       if (countDownFrequency_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -451,14 +451,14 @@ public final class AnnounceDataOuterClass {
       }
       if (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, endTime_);
+          .computeUInt32Size(8, endTime_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(centerSystemText_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16001, centerSystemText_);
       }
       if (isCenterSystemLast5EveryMinutes_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isCenterSystemLast5EveryMinutes_);
+          .computeBoolSize(1, isCenterSystemLast5EveryMinutes_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

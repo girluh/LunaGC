@@ -85,17 +85,17 @@ public final class BartenderLevelInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 104: {
 
               id_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 24: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 16: {
+            case 96: {
 
               maxScore_ = input.readUInt32();
               break;
@@ -132,7 +132,7 @@ public final class BartenderLevelInfoOuterClass {
               emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo.class, emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo.Builder.class);
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 2;
+    public static final int MAX_SCORE_FIELD_NUMBER = 12;
     private int maxScore_;
     /**
      * <code>uint32 max_score = 10;</code>
@@ -143,7 +143,7 @@ public final class BartenderLevelInfoOuterClass {
       return maxScore_;
     }
 
-    public static final int ID_FIELD_NUMBER = 9;
+    public static final int ID_FIELD_NUMBER = 13;
     private int id_;
     /**
      * <code>uint32 id = 3;</code>
@@ -154,7 +154,7 @@ public final class BartenderLevelInfoOuterClass {
       return id_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 10;
+    public static final int IS_FINISH_FIELD_NUMBER = 3;
     private boolean isFinish_;
     /**
      * <code>bool is_finish = 7;</code>
@@ -180,13 +180,13 @@ public final class BartenderLevelInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0) {
-        output.writeUInt32(9, id_);
+        output.writeUInt32(13, id_);
       }
       if (isFinish_ != false) {
-        output.writeBool(10, isFinish_);
+        output.writeBool(3, isFinish_);
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(2, maxScore_);
+        output.writeUInt32(12, maxScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,15 +199,15 @@ public final class BartenderLevelInfoOuterClass {
       size = 0;
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, id_);
+          .computeUInt32Size(13, id_);
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isFinish_);
+          .computeBoolSize(3, isFinish_);
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, maxScore_);
+          .computeUInt32Size(12, maxScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

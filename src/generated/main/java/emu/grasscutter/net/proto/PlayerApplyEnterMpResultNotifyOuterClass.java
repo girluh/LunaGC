@@ -104,23 +104,23 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
               targetNickname_ = s;
               break;
             }
-            case 40: {
+            case 112: {
 
               isAgreed_ = input.readBool();
               break;
             }
-            case 16: {
+            case 104: {
 
               targetUid_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 16: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
@@ -158,7 +158,7 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.class, emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass.PlayerApplyEnterMpResultNotify.Builder.class);
     }
 
-    public static final int TARGET_NICKNAME_FIELD_NUMBER = 15;
+    public static final int TARGET_NICKNAME_FIELD_NUMBER = 11;
     private volatile java.lang.Object targetNickname_;
     /**
      * <code>string target_nickname = 6;</code>
@@ -196,7 +196,7 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
       }
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 2;
+    public static final int TARGET_UID_FIELD_NUMBER = 13;
     private int targetUid_;
     /**
      * <code>uint32 target_uid = 13;</code>
@@ -207,7 +207,7 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
       return targetUid_;
     }
 
-    public static final int REASON_FIELD_NUMBER = 4;
+    public static final int REASON_FIELD_NUMBER = 2;
     private int reason_;
     /**
      * <code>.Reason reason = 15;</code>
@@ -226,7 +226,7 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.ReasonOuterClass.Reason.UNRECOGNIZED : result;
     }
 
-    public static final int IS_AGREED_FIELD_NUMBER = 5;
+    public static final int IS_AGREED_FIELD_NUMBER = 14;
     private boolean isAgreed_;
     /**
      * <code>bool is_agreed = 8;</code>
@@ -252,16 +252,16 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNickname_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, targetNickname_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, targetNickname_);
       }
       if (isAgreed_ != false) {
-        output.writeBool(5, isAgreed_);
+        output.writeBool(14, isAgreed_);
       }
       if (targetUid_ != 0) {
-        output.writeUInt32(2, targetUid_);
+        output.writeUInt32(13, targetUid_);
       }
       if (reason_ != emu.grasscutter.net.proto.ReasonOuterClass.Reason.Reason_PLAYER_JUDGE.getNumber()) {
-        output.writeEnum(4, reason_);
+        output.writeEnum(2, reason_);
       }
       unknownFields.writeTo(output);
     }
@@ -273,19 +273,19 @@ public final class PlayerApplyEnterMpResultNotifyOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNickname_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, targetNickname_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, targetNickname_);
       }
       if (isAgreed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isAgreed_);
+          .computeBoolSize(14, isAgreed_);
       }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, targetUid_);
+          .computeUInt32Size(13, targetUid_);
       }
       if (reason_ != emu.grasscutter.net.proto.ReasonOuterClass.Reason.Reason_PLAYER_JUDGE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, reason_);
+          .computeEnumSize(2, reason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

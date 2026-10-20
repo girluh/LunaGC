@@ -79,12 +79,12 @@ public final class QuestGlobalVarOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 120: {
 
               key_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 48: {
 
               value_ = input.readInt32();
               break;
@@ -121,7 +121,7 @@ public final class QuestGlobalVarOuterClass {
               emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.class, emu.grasscutter.net.proto.QuestGlobalVarOuterClass.QuestGlobalVar.Builder.class);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 1;
+    public static final int VALUE_FIELD_NUMBER = 6;
     private int value_;
     /**
      * <code>int32 value = 14;</code>
@@ -132,7 +132,7 @@ public final class QuestGlobalVarOuterClass {
       return value_;
     }
 
-    public static final int KEY_FIELD_NUMBER = 14;
+    public static final int KEY_FIELD_NUMBER = 15;
     private int key_;
     /**
      * <code>uint32 key = 8;</code>
@@ -158,10 +158,10 @@ public final class QuestGlobalVarOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (key_ != 0) {
-        output.writeUInt32(14, key_);
+        output.writeUInt32(15, key_);
       }
       if (value_ != 0) {
-        output.writeInt32(1, value_);
+        output.writeInt32(6, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class QuestGlobalVarOuterClass {
       size = 0;
       if (key_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, key_);
+          .computeUInt32Size(15, key_);
       }
       if (value_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, value_);
+          .computeInt32Size(6, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

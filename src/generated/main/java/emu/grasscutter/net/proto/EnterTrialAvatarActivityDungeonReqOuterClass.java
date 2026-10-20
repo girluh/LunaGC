@@ -86,17 +86,17 @@ public final class EnterTrialAvatarActivityDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 16: {
 
               enterPointId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 64: {
 
               trialAvatarIndexId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 112: {
 
               activityId_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class EnterTrialAvatarActivityDungeonReqOuterClass {
               emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonReqOuterClass.EnterTrialAvatarActivityDungeonReq.class, emu.grasscutter.net.proto.EnterTrialAvatarActivityDungeonReqOuterClass.EnterTrialAvatarActivityDungeonReq.Builder.class);
     }
 
-    public static final int ENTER_POINT_ID_FIELD_NUMBER = 7;
+    public static final int ENTER_POINT_ID_FIELD_NUMBER = 2;
     private int enterPointId_;
     /**
      * <code>uint32 enter_point_id = 2;</code>
@@ -144,7 +144,7 @@ public final class EnterTrialAvatarActivityDungeonReqOuterClass {
       return enterPointId_;
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 9;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 14;
     private int activityId_;
     /**
      * <code>uint32 activity_id = 10;</code>
@@ -155,7 +155,7 @@ public final class EnterTrialAvatarActivityDungeonReqOuterClass {
       return activityId_;
     }
 
-    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 11;
+    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 8;
     private int trialAvatarIndexId_;
     /**
      * <code>uint32 trial_avatar_index_id = 6;</code>
@@ -181,13 +181,13 @@ public final class EnterTrialAvatarActivityDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (enterPointId_ != 0) {
-        output.writeUInt32(7, enterPointId_);
+        output.writeUInt32(2, enterPointId_);
       }
       if (trialAvatarIndexId_ != 0) {
-        output.writeUInt32(11, trialAvatarIndexId_);
+        output.writeUInt32(8, trialAvatarIndexId_);
       }
       if (activityId_ != 0) {
-        output.writeUInt32(9, activityId_);
+        output.writeUInt32(14, activityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class EnterTrialAvatarActivityDungeonReqOuterClass {
       size = 0;
       if (enterPointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, enterPointId_);
+          .computeUInt32Size(2, enterPointId_);
       }
       if (trialAvatarIndexId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, trialAvatarIndexId_);
+          .computeUInt32Size(8, trialAvatarIndexId_);
       }
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, activityId_);
+          .computeUInt32Size(14, activityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

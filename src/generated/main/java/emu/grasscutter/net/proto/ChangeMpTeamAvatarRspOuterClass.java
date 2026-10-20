@@ -84,12 +84,12 @@ public final class ChangeMpTeamAvatarRspOuterClass {
               curAvatarGuid_ = input.readUInt64();
               break;
             }
-            case 112: {
+            case 32: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 64: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -97,7 +97,7 @@ public final class ChangeMpTeamAvatarRspOuterClass {
               avatarGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 66: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -145,7 +145,7 @@ public final class ChangeMpTeamAvatarRspOuterClass {
               emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRsp.class, emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRsp.Builder.class);
     }
 
-    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 8;
+    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.LongList avatarGuidList_;
 
     @java.lang.Override
@@ -171,7 +171,7 @@ public final class ChangeMpTeamAvatarRspOuterClass {
       return curAvatarGuid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
 
     @java.lang.Override
@@ -198,10 +198,10 @@ public final class ChangeMpTeamAvatarRspOuterClass {
         output.writeUInt64(10, curAvatarGuid_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(4, retcode_);
       }
       if (getAvatarGuidListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(avatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarGuidList_.size(); i++) {
@@ -222,7 +222,7 @@ public final class ChangeMpTeamAvatarRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(4, retcode_);
       }
       {
         int dataSize = 0;

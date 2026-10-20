@@ -112,27 +112,27 @@ public final class WinterCampStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 120: {
 
               isFinished_ = input.readBool();
               break;
             }
-            case 112: {
+            case 16: {
 
               totalProgress_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 48: {
 
               id_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 8: {
 
               openTime_ = input.readUInt32();
               break;
             }
-            case 50: {
+            case 98: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -145,7 +145,7 @@ public final class WinterCampStageInfoOuterClass {
 
               break;
             }
-            case 80: {
+            case 72: {
 
               curProgress_ = input.readUInt32();
               break;
@@ -182,7 +182,7 @@ public final class WinterCampStageInfoOuterClass {
               emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.class, emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.Builder.class);
     }
 
-    public static final int CUR_PROGRESS_FIELD_NUMBER = 10;
+    public static final int CUR_PROGRESS_FIELD_NUMBER = 9;
     private int curProgress_;
     /**
      * <code>uint32 cur_progress = 14;</code>
@@ -193,7 +193,7 @@ public final class WinterCampStageInfoOuterClass {
       return curProgress_;
     }
 
-    public static final int TOTAL_PROGRESS_FIELD_NUMBER = 14;
+    public static final int TOTAL_PROGRESS_FIELD_NUMBER = 2;
     private int totalProgress_;
     /**
      * <code>uint32 total_progress = 6;</code>
@@ -204,7 +204,7 @@ public final class WinterCampStageInfoOuterClass {
       return totalProgress_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 13;
+    public static final int IS_FINISHED_FIELD_NUMBER = 15;
     private boolean isFinished_;
     /**
      * <code>bool is_finished = 3;</code>
@@ -215,7 +215,7 @@ public final class WinterCampStageInfoOuterClass {
       return isFinished_;
     }
 
-    public static final int ID_FIELD_NUMBER = 4;
+    public static final int ID_FIELD_NUMBER = 6;
     private int id_;
     /**
      * <code>uint32 id = 7;</code>
@@ -226,7 +226,7 @@ public final class WinterCampStageInfoOuterClass {
       return id_;
     }
 
-    public static final int POS_FIELD_NUMBER = 6;
+    public static final int POS_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
      * <code>.Vector pos = 10;</code>
@@ -252,7 +252,7 @@ public final class WinterCampStageInfoOuterClass {
       return getPos();
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 12;
+    public static final int OPEN_TIME_FIELD_NUMBER = 1;
     private int openTime_;
     /**
      * <code>uint32 open_time = 9;</code>
@@ -278,22 +278,22 @@ public final class WinterCampStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isFinished_ != false) {
-        output.writeBool(13, isFinished_);
+        output.writeBool(15, isFinished_);
       }
       if (totalProgress_ != 0) {
-        output.writeUInt32(14, totalProgress_);
+        output.writeUInt32(2, totalProgress_);
       }
       if (id_ != 0) {
-        output.writeUInt32(4, id_);
+        output.writeUInt32(6, id_);
       }
       if (openTime_ != 0) {
-        output.writeUInt32(12, openTime_);
+        output.writeUInt32(1, openTime_);
       }
       if (pos_ != null) {
-        output.writeMessage(6, getPos());
+        output.writeMessage(12, getPos());
       }
       if (curProgress_ != 0) {
-        output.writeUInt32(10, curProgress_);
+        output.writeUInt32(9, curProgress_);
       }
       unknownFields.writeTo(output);
     }
@@ -306,27 +306,27 @@ public final class WinterCampStageInfoOuterClass {
       size = 0;
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isFinished_);
+          .computeBoolSize(15, isFinished_);
       }
       if (totalProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, totalProgress_);
+          .computeUInt32Size(2, totalProgress_);
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, id_);
+          .computeUInt32Size(6, id_);
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, openTime_);
+          .computeUInt32Size(1, openTime_);
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getPos());
+          .computeMessageSize(12, getPos());
       }
       if (curProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, curProgress_);
+          .computeUInt32Size(9, curProgress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

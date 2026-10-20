@@ -76,7 +76,7 @@ public final class PlayerPropChangeNotifyOuterClass {
               propType_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 8: {
 
               propDelta_ = input.readUInt32();
               break;
@@ -121,7 +121,7 @@ public final class PlayerPropChangeNotifyOuterClass {
       return propType_;
     }
 
-    public static final int PROP_DELTA_FIELD_NUMBER = 8;
+    public static final int PROP_DELTA_FIELD_NUMBER = 1;
     private int propDelta_;
 
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class PlayerPropChangeNotifyOuterClass {
         output.writeUInt32(4, propType_);
       }
       if (propDelta_ != 0) {
-        output.writeUInt32(8, propDelta_);
+        output.writeUInt32(1, propDelta_);
       }
       unknownFields.writeTo(output);
     }
@@ -164,7 +164,7 @@ public final class PlayerPropChangeNotifyOuterClass {
       }
       if (propDelta_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, propDelta_);
+          .computeUInt32Size(1, propDelta_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

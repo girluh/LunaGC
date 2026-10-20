@@ -108,7 +108,7 @@ public final class NatlanRaceDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.KOPEFJNFCJGOuterClass.KOPEFJNFCJG.parser(), extensionRegistry));
               break;
             }
-            case 48: {
+            case 8: {
 
               isSpecialRewardTaken_ = input.readBool();
               break;
@@ -188,7 +188,7 @@ public final class NatlanRaceDetailInfoOuterClass {
       return gGOKKDEKPJM_.get(index);
     }
 
-    public static final int IS_SPECIAL_REWARD_TAKEN_FIELD_NUMBER = 6;
+    public static final int IS_SPECIAL_REWARD_TAKEN_FIELD_NUMBER = 1;
     private boolean isSpecialRewardTaken_;
     /**
      * <pre>
@@ -221,7 +221,7 @@ public final class NatlanRaceDetailInfoOuterClass {
         output.writeMessage(12, gGOKKDEKPJM_.get(i));
       }
       if (isSpecialRewardTaken_ != false) {
-        output.writeBool(6, isSpecialRewardTaken_);
+        output.writeBool(1, isSpecialRewardTaken_);
       }
       unknownFields.writeTo(output);
     }
@@ -238,7 +238,7 @@ public final class NatlanRaceDetailInfoOuterClass {
       }
       if (isSpecialRewardTaken_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isSpecialRewardTaken_);
+          .computeBoolSize(1, isSpecialRewardTaken_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

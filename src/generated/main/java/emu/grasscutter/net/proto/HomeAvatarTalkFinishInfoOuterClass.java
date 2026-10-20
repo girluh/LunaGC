@@ -92,7 +92,7 @@ public final class HomeAvatarTalkFinishInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 finishTalkIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -100,7 +100,7 @@ public final class HomeAvatarTalkFinishInfoOuterClass {
               finishTalkIdList_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -113,7 +113,7 @@ public final class HomeAvatarTalkFinishInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 96: {
+            case 120: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -153,7 +153,7 @@ public final class HomeAvatarTalkFinishInfoOuterClass {
               emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.class, emu.grasscutter.net.proto.HomeAvatarTalkFinishInfoOuterClass.HomeAvatarTalkFinishInfo.Builder.class);
     }
 
-    public static final int FINISH_TALK_ID_LIST_FIELD_NUMBER = 5;
+    public static final int FINISH_TALK_ID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList finishTalkIdList_;
     /**
      * <code>repeated uint32 finish_talk_id_list = 4;</code>
@@ -181,7 +181,7 @@ public final class HomeAvatarTalkFinishInfoOuterClass {
     }
     private int finishTalkIdListMemoizedSerializedSize = -1;
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 12;
+    public static final int AVATAR_ID_FIELD_NUMBER = 15;
     private int avatarId_;
     /**
      * <code>uint32 avatar_id = 8;</code>
@@ -208,14 +208,14 @@ public final class HomeAvatarTalkFinishInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getFinishTalkIdListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(finishTalkIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < finishTalkIdList_.size(); i++) {
         output.writeUInt32NoTag(finishTalkIdList_.getInt(i));
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(12, avatarId_);
+        output.writeUInt32(15, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -242,7 +242,7 @@ public final class HomeAvatarTalkFinishInfoOuterClass {
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, avatarId_);
+          .computeUInt32Size(15, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

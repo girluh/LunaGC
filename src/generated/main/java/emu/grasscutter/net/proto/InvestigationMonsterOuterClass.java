@@ -177,17 +177,17 @@ public final class InvestigationMonsterOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 72: {
 
               cityId_ = input.readUInt32();
               break;
             }
-            case 128008: {
+            case 128016: {
 
               isAlive_ = input.readBool();
               break;
             }
-            case 56: {
+            case 24: {
               int rawValue = input.readEnum();
 
               lockState_ = rawValue;
@@ -198,7 +198,7 @@ public final class InvestigationMonsterOuterClass {
               sceneId_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 120: {
 
               id_ = input.readUInt32();
               break;
@@ -229,7 +229,7 @@ public final class InvestigationMonsterOuterClass {
 
               break;
             }
-            case 72: {
+            case 128008: {
 
               refreshInterval_ = input.readUInt32();
               break;
@@ -244,7 +244,7 @@ public final class InvestigationMonsterOuterClass {
               resin_ = input.readUInt32();
               break;
             }
-            case 128016: {
+            case 128024: {
 
               level_ = input.readUInt32();
               break;
@@ -386,7 +386,7 @@ public final class InvestigationMonsterOuterClass {
       return resin_;
     }
 
-    public static final int REFRESH_INTERVAL_FIELD_NUMBER = 9;
+    public static final int REFRESH_INTERVAL_FIELD_NUMBER = 16001;
     private int refreshInterval_;
     /**
      * <code>uint32 refresh_interval = 9;</code>
@@ -397,7 +397,7 @@ public final class InvestigationMonsterOuterClass {
       return refreshInterval_;
     }
 
-    public static final int IS_ALIVE_FIELD_NUMBER = 16001;
+    public static final int IS_ALIVE_FIELD_NUMBER = 16002;
     private boolean isAlive_;
     /**
      * <code>bool is_alive = 2;</code>
@@ -430,7 +430,7 @@ public final class InvestigationMonsterOuterClass {
       return sceneId_;
     }
 
-    public static final int CITY_ID_FIELD_NUMBER = 13;
+    public static final int CITY_ID_FIELD_NUMBER = 9;
     private int cityId_;
     /**
      * <code>uint32 city_id = 1;</code>
@@ -441,7 +441,7 @@ public final class InvestigationMonsterOuterClass {
       return cityId_;
     }
 
-    public static final int LOCK_STATE_FIELD_NUMBER = 7;
+    public static final int LOCK_STATE_FIELD_NUMBER = 3;
     private int lockState_;
     /**
      * <code>.LockState lock_state = 4;</code>
@@ -460,7 +460,7 @@ public final class InvestigationMonsterOuterClass {
       return result == null ? emu.grasscutter.net.proto.LockStateOuterClass.LockState.UNRECOGNIZED : result;
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 16002;
+    public static final int LEVEL_FIELD_NUMBER = 16003;
     private int level_;
     /**
      * <code>uint32 level = 13;</code>
@@ -493,7 +493,7 @@ public final class InvestigationMonsterOuterClass {
       return groupId_;
     }
 
-    public static final int ID_FIELD_NUMBER = 2;
+    public static final int ID_FIELD_NUMBER = 15;
     private int id_;
     /**
      * <code>uint32 id = 6;</code>
@@ -519,19 +519,19 @@ public final class InvestigationMonsterOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cityId_ != 0) {
-        output.writeUInt32(13, cityId_);
+        output.writeUInt32(9, cityId_);
       }
       if (isAlive_ != false) {
-        output.writeBool(16001, isAlive_);
+        output.writeBool(16002, isAlive_);
       }
       if (lockState_ != emu.grasscutter.net.proto.LockStateOuterClass.LockState.LockState_LOCK_NONE.getNumber()) {
-        output.writeEnum(7, lockState_);
+        output.writeEnum(3, lockState_);
       }
       if (sceneId_ != 0) {
         output.writeUInt32(5, sceneId_);
       }
       if (id_ != 0) {
-        output.writeUInt32(2, id_);
+        output.writeUInt32(15, id_);
       }
       if (weeklyBossResinDiscountInfo_ != null) {
         output.writeMessage(16000, getWeeklyBossResinDiscountInfo());
@@ -540,7 +540,7 @@ public final class InvestigationMonsterOuterClass {
         output.writeMessage(8, getPos());
       }
       if (refreshInterval_ != 0) {
-        output.writeUInt32(9, refreshInterval_);
+        output.writeUInt32(16001, refreshInterval_);
       }
       if (nextRefreshTime_ != 0) {
         output.writeUInt32(10, nextRefreshTime_);
@@ -549,7 +549,7 @@ public final class InvestigationMonsterOuterClass {
         output.writeUInt32(12, resin_);
       }
       if (level_ != 0) {
-        output.writeUInt32(16002, level_);
+        output.writeUInt32(16003, level_);
       }
       if (mapLayerId_ != 0) {
         output.writeUInt32(425, mapLayerId_);
@@ -574,15 +574,15 @@ public final class InvestigationMonsterOuterClass {
       size = 0;
       if (cityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, cityId_);
+          .computeUInt32Size(9, cityId_);
       }
       if (isAlive_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(16001, isAlive_);
+          .computeBoolSize(16002, isAlive_);
       }
       if (lockState_ != emu.grasscutter.net.proto.LockStateOuterClass.LockState.LockState_LOCK_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, lockState_);
+          .computeEnumSize(3, lockState_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -590,7 +590,7 @@ public final class InvestigationMonsterOuterClass {
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, id_);
+          .computeUInt32Size(15, id_);
       }
       if (weeklyBossResinDiscountInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -602,7 +602,7 @@ public final class InvestigationMonsterOuterClass {
       }
       if (refreshInterval_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, refreshInterval_);
+          .computeUInt32Size(16001, refreshInterval_);
       }
       if (nextRefreshTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -614,7 +614,7 @@ public final class InvestigationMonsterOuterClass {
       }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16002, level_);
+          .computeUInt32Size(16003, level_);
       }
       if (mapLayerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

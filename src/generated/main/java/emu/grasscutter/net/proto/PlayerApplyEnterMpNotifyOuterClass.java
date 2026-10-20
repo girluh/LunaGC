@@ -79,7 +79,7 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 98: {
               emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
               if (srcPlayerInfo_ != null) {
                 subBuilder = srcPlayerInfo_.toBuilder();
@@ -92,12 +92,12 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
 
               break;
             }
-            case 88: {
+            case 120: {
 
               srcThreadIndex_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 32: {
 
               srcAppId_ = input.readUInt32();
               break;
@@ -139,7 +139,7 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotify.class, emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotify.Builder.class);
     }
 
-    public static final int SRC_PLAYER_INFO_FIELD_NUMBER = 4;
+    public static final int SRC_PLAYER_INFO_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo srcPlayerInfo_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
       return cHCHCMBDIOK_;
     }
 
-    public static final int SRC_APP_ID_FIELD_NUMBER = 8;
+    public static final int SRC_APP_ID_FIELD_NUMBER = 4;
     private int srcAppId_;
     /**
      * <code>uint32 src_app_id = 9;</code>
@@ -176,7 +176,7 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
       return srcAppId_;
     }
 
-    public static final int SRC_THREAD_INDEX_FIELD_NUMBER = 11;
+    public static final int SRC_THREAD_INDEX_FIELD_NUMBER = 15;
     private int srcThreadIndex_;
 
     @java.lang.Override
@@ -199,13 +199,13 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (srcPlayerInfo_ != null) {
-        output.writeMessage(4, getSrcPlayerInfo());
+        output.writeMessage(12, getSrcPlayerInfo());
       }
       if (srcThreadIndex_ != 0) {
-        output.writeUInt32(11, srcThreadIndex_);
+        output.writeUInt32(15, srcThreadIndex_);
       }
       if (srcAppId_ != 0) {
-        output.writeUInt32(8, srcAppId_);
+        output.writeUInt32(4, srcAppId_);
       }
       if (cHCHCMBDIOK_ != false) {
         output.writeBool(16000, cHCHCMBDIOK_);
@@ -221,15 +221,15 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
       size = 0;
       if (srcPlayerInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getSrcPlayerInfo());
+          .computeMessageSize(12, getSrcPlayerInfo());
       }
       if (srcThreadIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, srcThreadIndex_);
+          .computeUInt32Size(15, srcThreadIndex_);
       }
       if (srcAppId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, srcAppId_);
+          .computeUInt32Size(4, srcAppId_);
       }
       if (cHCHCMBDIOK_ != false) {
         size += com.google.protobuf.CodedOutputStream

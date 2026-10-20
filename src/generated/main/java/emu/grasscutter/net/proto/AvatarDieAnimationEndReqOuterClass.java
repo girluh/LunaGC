@@ -69,12 +69,12 @@ public final class AvatarDieAnimationEndReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 96: {
 
               dieGuid_ = input.readUInt64();
               break;
             }
-            case 82: {
+            case 106: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (rebornPos_ != null) {
                 subBuilder = rebornPos_.toBuilder();
@@ -87,7 +87,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
 
               break;
             }
-            case 24: {
+            case 16: {
 
               skillId_ = input.readUInt32();
               break;
@@ -124,7 +124,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
               emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReq.class, emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReq.Builder.class);
     }
 
-    public static final int REBORN_POS_FIELD_NUMBER = 10;
+    public static final int REBORN_POS_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector rebornPos_;
 
     @java.lang.Override
@@ -142,7 +142,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
       return getRebornPos();
     }
 
-    public static final int DIE_GUID_FIELD_NUMBER = 13;
+    public static final int DIE_GUID_FIELD_NUMBER = 12;
     private long dieGuid_;
 
     @java.lang.Override
@@ -150,7 +150,7 @@ public final class AvatarDieAnimationEndReqOuterClass {
       return dieGuid_;
     }
 
-    public static final int SKILL_ID_FIELD_NUMBER = 3;
+    public static final int SKILL_ID_FIELD_NUMBER = 2;
     private int skillId_;
 
     @java.lang.Override
@@ -173,13 +173,13 @@ public final class AvatarDieAnimationEndReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dieGuid_ != 0L) {
-        output.writeUInt64(13, dieGuid_);
+        output.writeUInt64(12, dieGuid_);
       }
       if (rebornPos_ != null) {
-        output.writeMessage(10, getRebornPos());
+        output.writeMessage(13, getRebornPos());
       }
       if (skillId_ != 0) {
-        output.writeUInt32(3, skillId_);
+        output.writeUInt32(2, skillId_);
       }
       unknownFields.writeTo(output);
     }
@@ -192,15 +192,15 @@ public final class AvatarDieAnimationEndReqOuterClass {
       size = 0;
       if (dieGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, dieGuid_);
+          .computeUInt64Size(12, dieGuid_);
       }
       if (rebornPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getRebornPos());
+          .computeMessageSize(13, getRebornPos());
       }
       if (skillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, skillId_);
+          .computeUInt32Size(2, skillId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

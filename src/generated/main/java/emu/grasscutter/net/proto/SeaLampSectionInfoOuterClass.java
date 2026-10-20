@@ -73,7 +73,7 @@ public final class SeaLampSectionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 56: {
 
               sectionId_ = input.readUInt32();
               break;
@@ -110,7 +110,7 @@ public final class SeaLampSectionInfoOuterClass {
               emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.class, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder.class);
     }
 
-    public static final int SECTION_ID_FIELD_NUMBER = 6;
+    public static final int SECTION_ID_FIELD_NUMBER = 7;
     private int sectionId_;
     /**
      * <code>uint32 section_id = 10;</code>
@@ -136,7 +136,7 @@ public final class SeaLampSectionInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sectionId_ != 0) {
-        output.writeUInt32(6, sectionId_);
+        output.writeUInt32(7, sectionId_);
       }
       unknownFields.writeTo(output);
     }
@@ -149,7 +149,7 @@ public final class SeaLampSectionInfoOuterClass {
       size = 0;
       if (sectionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, sectionId_);
+          .computeUInt32Size(7, sectionId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

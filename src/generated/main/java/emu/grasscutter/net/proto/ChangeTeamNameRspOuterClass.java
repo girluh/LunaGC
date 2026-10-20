@@ -99,12 +99,12 @@ public final class ChangeTeamNameRspOuterClass {
               teamName_ = s;
               break;
             }
-            case 40: {
+            case 112: {
 
               teamId_ = input.readInt32();
               break;
             }
-            case 56: {
+            case 96: {
 
               retcode_ = input.readInt32();
               break;
@@ -141,7 +141,7 @@ public final class ChangeTeamNameRspOuterClass {
               emu.grasscutter.net.proto.ChangeTeamNameRspOuterClass.ChangeTeamNameRsp.class, emu.grasscutter.net.proto.ChangeTeamNameRspOuterClass.ChangeTeamNameRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
      * <code>int32 retcode = 5;</code>
@@ -152,7 +152,7 @@ public final class ChangeTeamNameRspOuterClass {
       return retcode_;
     }
 
-    public static final int TEAM_ID_FIELD_NUMBER = 5;
+    public static final int TEAM_ID_FIELD_NUMBER = 14;
     private int teamId_;
     /**
      * <code>int32 team_id = 12;</code>
@@ -216,10 +216,10 @@ public final class ChangeTeamNameRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(12, retcode_);
       }
       if (teamId_ != 0) {
-        output.writeInt32(5, teamId_);
+        output.writeInt32(14, teamId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(teamName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, teamName_);
@@ -235,11 +235,11 @@ public final class ChangeTeamNameRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(12, retcode_);
       }
       if (teamId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, teamId_);
+          .computeInt32Size(14, teamId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(teamName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, teamName_);

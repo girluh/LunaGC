@@ -80,7 +80,7 @@ public final class HomeSceneJumpRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 104: {
 
               isEnterRoomScene_ = input.readBool();
               break;
@@ -133,7 +133,7 @@ public final class HomeSceneJumpRspOuterClass {
       return retcode_;
     }
 
-    public static final int IS_ENTER_ROOM_SCENE_FIELD_NUMBER = 6;
+    public static final int IS_ENTER_ROOM_SCENE_FIELD_NUMBER = 13;
     private boolean isEnterRoomScene_;
     /**
      * <code>bool is_enter_room_scene = 8;</code>
@@ -159,7 +159,7 @@ public final class HomeSceneJumpRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isEnterRoomScene_ != false) {
-        output.writeBool(6, isEnterRoomScene_);
+        output.writeBool(13, isEnterRoomScene_);
       }
       if (retcode_ != 0) {
         output.writeInt32(12, retcode_);
@@ -175,7 +175,7 @@ public final class HomeSceneJumpRspOuterClass {
       size = 0;
       if (isEnterRoomScene_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isEnterRoomScene_);
+          .computeBoolSize(13, isEnterRoomScene_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream

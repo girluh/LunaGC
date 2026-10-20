@@ -75,12 +75,12 @@ public final class AvatarAddNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 80: {
 
               isInTeam_ = input.readBool();
               break;
             }
-            case 42: {
+            case 90: {
               emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder subBuilder = null;
               if (avatar_ != null) {
                 subBuilder = avatar_.toBuilder();
@@ -125,7 +125,7 @@ public final class AvatarAddNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify.class, emu.grasscutter.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify.Builder.class);
     }
 
-    public static final int AVATAR_FIELD_NUMBER = 5;
+    public static final int AVATAR_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo avatar_;
 
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class AvatarAddNotifyOuterClass {
       return getAvatar();
     }
 
-    public static final int IS_IN_TEAM_FIELD_NUMBER = 2;
+    public static final int IS_IN_TEAM_FIELD_NUMBER = 10;
     private boolean isInTeam_;
 
     @java.lang.Override
@@ -166,10 +166,10 @@ public final class AvatarAddNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isInTeam_ != false) {
-        output.writeBool(2, isInTeam_);
+        output.writeBool(10, isInTeam_);
       }
       if (avatar_ != null) {
-        output.writeMessage(5, getAvatar());
+        output.writeMessage(11, getAvatar());
       }
       unknownFields.writeTo(output);
     }
@@ -182,11 +182,11 @@ public final class AvatarAddNotifyOuterClass {
       size = 0;
       if (isInTeam_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isInTeam_);
+          .computeBoolSize(10, isInTeam_);
       }
       if (avatar_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getAvatar());
+          .computeMessageSize(11, getAvatar());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

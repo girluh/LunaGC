@@ -86,17 +86,17 @@ public final class HomeAvatarSummonEventReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 56: {
 
               suitId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 48: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 88: {
 
               guid_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
               emu.grasscutter.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq.class, emu.grasscutter.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 5;
+    public static final int AVATAR_ID_FIELD_NUMBER = 6;
     private int avatarId_;
     /**
      * <code>uint32 avatar_id = 4;</code>
@@ -144,7 +144,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
       return avatarId_;
     }
 
-    public static final int SUIT_ID_FIELD_NUMBER = 4;
+    public static final int SUIT_ID_FIELD_NUMBER = 7;
     private int suitId_;
     /**
      * <code>uint32 suit_id = 1;</code>
@@ -155,7 +155,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
       return suitId_;
     }
 
-    public static final int GUID_FIELD_NUMBER = 8;
+    public static final int GUID_FIELD_NUMBER = 11;
     private int guid_;
     /**
      * <code>uint32 guid = 5;</code>
@@ -181,13 +181,13 @@ public final class HomeAvatarSummonEventReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (suitId_ != 0) {
-        output.writeUInt32(4, suitId_);
+        output.writeUInt32(7, suitId_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(5, avatarId_);
+        output.writeUInt32(6, avatarId_);
       }
       if (guid_ != 0) {
-        output.writeUInt32(8, guid_);
+        output.writeUInt32(11, guid_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class HomeAvatarSummonEventReqOuterClass {
       size = 0;
       if (suitId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, suitId_);
+          .computeUInt32Size(7, suitId_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, avatarId_);
+          .computeUInt32Size(6, avatarId_);
       }
       if (guid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, guid_);
+          .computeUInt32Size(11, guid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

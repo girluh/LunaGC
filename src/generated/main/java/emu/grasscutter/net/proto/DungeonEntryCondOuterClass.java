@@ -85,13 +85,13 @@ public final class DungeonEntryCondOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 48: {
               int rawValue = input.readEnum();
 
               condReason_ = rawValue;
               break;
             }
-            case 48: {
+            case 88: {
 
               param1_ = input.readUInt32();
               break;
@@ -128,7 +128,7 @@ public final class DungeonEntryCondOuterClass {
               emu.grasscutter.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.class, emu.grasscutter.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.Builder.class);
     }
 
-    public static final int COND_REASON_FIELD_NUMBER = 1;
+    public static final int COND_REASON_FIELD_NUMBER = 6;
     private int condReason_;
     /**
      * <code>.DungeonEntryBlockReason cond_reason = 4;</code>
@@ -147,7 +147,7 @@ public final class DungeonEntryCondOuterClass {
       return result == null ? emu.grasscutter.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.UNRECOGNIZED : result;
     }
 
-    public static final int PARAM1_FIELD_NUMBER = 6;
+    public static final int PARAM1_FIELD_NUMBER = 11;
     private int param1_;
     /**
      * <code>uint32 param1 = 12;</code>
@@ -173,10 +173,10 @@ public final class DungeonEntryCondOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (condReason_ != emu.grasscutter.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.DUNGEON_ENTRY_REASON_NONE.getNumber()) {
-        output.writeEnum(1, condReason_);
+        output.writeEnum(6, condReason_);
       }
       if (param1_ != 0) {
-        output.writeUInt32(6, param1_);
+        output.writeUInt32(11, param1_);
       }
       unknownFields.writeTo(output);
     }
@@ -189,11 +189,11 @@ public final class DungeonEntryCondOuterClass {
       size = 0;
       if (condReason_ != emu.grasscutter.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.DUNGEON_ENTRY_REASON_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, condReason_);
+          .computeEnumSize(6, condReason_);
       }
       if (param1_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, param1_);
+          .computeUInt32Size(11, param1_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

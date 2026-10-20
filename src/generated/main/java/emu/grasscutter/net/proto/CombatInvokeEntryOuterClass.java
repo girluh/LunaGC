@@ -76,18 +76,18 @@ public final class CombatInvokeEntryOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 122: {
 
               combatData_ = input.readBytes();
               break;
             }
-            case 32: {
+            case 48: {
               int rawValue = input.readEnum();
 
               argumentType_ = rawValue;
               break;
             }
-            case 40: {
+            case 32: {
               int rawValue = input.readEnum();
 
               forwardType_ = rawValue;
@@ -125,7 +125,7 @@ public final class CombatInvokeEntryOuterClass {
               emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry.class, emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry.Builder.class);
     }
 
-    public static final int COMBAT_DATA_FIELD_NUMBER = 6;
+    public static final int COMBAT_DATA_FIELD_NUMBER = 15;
     private com.google.protobuf.ByteString combatData_;
 
     @java.lang.Override
@@ -133,7 +133,7 @@ public final class CombatInvokeEntryOuterClass {
       return combatData_;
     }
 
-    public static final int ARGUMENT_TYPE_FIELD_NUMBER = 4;
+    public static final int ARGUMENT_TYPE_FIELD_NUMBER = 6;
     private int argumentType_;
 
     @java.lang.Override public int getArgumentTypeValue() {
@@ -146,7 +146,7 @@ public final class CombatInvokeEntryOuterClass {
       return result == null ? emu.grasscutter.net.proto.CombatTypeArgumentOuterClass.CombatTypeArgument.UNRECOGNIZED : result;
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 5;
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 4;
     private int forwardType_;
 
     @java.lang.Override public int getForwardTypeValue() {
@@ -174,13 +174,13 @@ public final class CombatInvokeEntryOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!combatData_.isEmpty()) {
-        output.writeBytes(6, combatData_);
+        output.writeBytes(15, combatData_);
       }
       if (argumentType_ != emu.grasscutter.net.proto.CombatTypeArgumentOuterClass.CombatTypeArgument.CombatTypeArgument_COMBAT_NONE.getNumber()) {
-        output.writeEnum(4, argumentType_);
+        output.writeEnum(6, argumentType_);
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.ForwardType_FORWARD_LOCAL.getNumber()) {
-        output.writeEnum(5, forwardType_);
+        output.writeEnum(4, forwardType_);
       }
       unknownFields.writeTo(output);
     }
@@ -193,15 +193,15 @@ public final class CombatInvokeEntryOuterClass {
       size = 0;
       if (!combatData_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, combatData_);
+          .computeBytesSize(15, combatData_);
       }
       if (argumentType_ != emu.grasscutter.net.proto.CombatTypeArgumentOuterClass.CombatTypeArgument.CombatTypeArgument_COMBAT_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, argumentType_);
+          .computeEnumSize(6, argumentType_);
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.ForwardType_FORWARD_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, forwardType_);
+          .computeEnumSize(4, forwardType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

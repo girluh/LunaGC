@@ -168,7 +168,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 82: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 expeditionInfoMap_ = com.google.protobuf.MapField.newMapField(
                     ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
@@ -181,7 +181,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                   expeditionInfoMap__.getKey(), expeditionInfoMap__.getValue());
               break;
             }
-            case 48: {
+            case 88: {
 
               retcode_ = input.readInt32();
               break;
@@ -285,7 +285,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       return extraItemList_.get(index);
     }
 
-    public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 10;
+    public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 1;
     private static final class ExpeditionInfoMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Long, emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry =
@@ -366,7 +366,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       return map.get(key);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 11;
     private int retcode_;
     /**
      * <code>int32 retcode = 12;</code>
@@ -439,9 +439,9 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
           output,
           internalGetExpeditionInfoMap(),
           ExpeditionInfoMapDefaultEntryHolder.defaultEntry,
-          10);
+          1);
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(11, retcode_);
       }
       for (int i = 0; i < extraItemList_.size(); i++) {
         output.writeMessage(13, extraItemList_.get(i));
@@ -467,11 +467,11 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(10, expeditionInfoMap__);
+            .computeMessageSize(1, expeditionInfoMap__);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(11, retcode_);
       }
       for (int i = 0; i < extraItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream

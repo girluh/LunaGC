@@ -88,7 +88,7 @@ public final class GetAllMailRspOuterClass {
             case 0:
               done = true;
               break;
-            case 114: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mailList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MailDataOuterClass.MailData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -97,17 +97,17 @@ public final class GetAllMailRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.MailDataOuterClass.MailData.parser(), extensionRegistry));
               break;
             }
-            case 72: {
+            case 8: {
 
               isCollected_ = input.readBool();
               break;
             }
-            case 104: {
+            case 56: {
 
               isTruncated_ = input.readBool();
               break;
             }
-            case 24: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -147,7 +147,7 @@ public final class GetAllMailRspOuterClass {
               emu.grasscutter.net.proto.GetAllMailRspOuterClass.GetAllMailRsp.class, emu.grasscutter.net.proto.GetAllMailRspOuterClass.GetAllMailRsp.Builder.class);
     }
 
-    public static final int MAIL_LIST_FIELD_NUMBER = 14;
+    public static final int MAIL_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.MailDataOuterClass.MailData> mailList_;
 
     @java.lang.Override
@@ -177,7 +177,7 @@ public final class GetAllMailRspOuterClass {
       return mailList_.get(index);
     }
 
-    public static final int IS_COLLECTED_FIELD_NUMBER = 9;
+    public static final int IS_COLLECTED_FIELD_NUMBER = 1;
     private boolean isCollected_;
 
     @java.lang.Override
@@ -185,7 +185,7 @@ public final class GetAllMailRspOuterClass {
       return isCollected_;
     }
 
-    public static final int IS_TRUNCATED_FIELD_NUMBER = 13;
+    public static final int IS_TRUNCATED_FIELD_NUMBER = 7;
     private boolean isTruncated_;
 
     @java.lang.Override
@@ -193,7 +193,7 @@ public final class GetAllMailRspOuterClass {
       return isTruncated_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
 
     @java.lang.Override
@@ -216,16 +216,16 @@ public final class GetAllMailRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < mailList_.size(); i++) {
-        output.writeMessage(14, mailList_.get(i));
+        output.writeMessage(15, mailList_.get(i));
       }
       if (isCollected_ != false) {
-        output.writeBool(9, isCollected_);
+        output.writeBool(1, isCollected_);
       }
       if (isTruncated_ != false) {
-        output.writeBool(13, isTruncated_);
+        output.writeBool(7, isTruncated_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -238,19 +238,19 @@ public final class GetAllMailRspOuterClass {
       size = 0;
       for (int i = 0; i < mailList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, mailList_.get(i));
+          .computeMessageSize(15, mailList_.get(i));
       }
       if (isCollected_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isCollected_);
+          .computeBoolSize(1, isCollected_);
       }
       if (isTruncated_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isTruncated_);
+          .computeBoolSize(7, isTruncated_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

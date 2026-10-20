@@ -80,12 +80,12 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 48: {
 
               costumeId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 32: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -122,7 +122,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
               emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.class, emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.Builder.class);
     }
 
-    public static final int COSTUME_ID_FIELD_NUMBER = 7;
+    public static final int COSTUME_ID_FIELD_NUMBER = 6;
     private int costumeId_;
     /**
      * <code>uint32 costume_id = 7;</code>
@@ -133,7 +133,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       return costumeId_;
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 5;
+    public static final int AVATAR_ID_FIELD_NUMBER = 4;
     private int avatarId_;
     /**
      * <code>uint32 avatar_id = 11;</code>
@@ -159,10 +159,10 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (costumeId_ != 0) {
-        output.writeUInt32(7, costumeId_);
+        output.writeUInt32(6, costumeId_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(5, avatarId_);
+        output.writeUInt32(4, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       size = 0;
       if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, costumeId_);
+          .computeUInt32Size(6, costumeId_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, avatarId_);
+          .computeUInt32Size(4, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

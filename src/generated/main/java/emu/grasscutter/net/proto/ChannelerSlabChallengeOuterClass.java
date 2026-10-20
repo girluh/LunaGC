@@ -99,12 +99,12 @@ public final class ChannelerSlabChallengeOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 96: {
 
               activeCampIndex_ = input.readUInt32();
               break;
             }
-            case 82: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 campList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ChannelerSlabCampOuterClass.ChannelerSlabCamp>();
                 mutable_bitField0_ |= 0x00000001;
@@ -148,7 +148,7 @@ public final class ChannelerSlabChallengeOuterClass {
               emu.grasscutter.net.proto.ChannelerSlabChallengeOuterClass.ChannelerSlabChallenge.class, emu.grasscutter.net.proto.ChannelerSlabChallengeOuterClass.ChannelerSlabChallenge.Builder.class);
     }
 
-    public static final int ACTIVE_CAMP_INDEX_FIELD_NUMBER = 6;
+    public static final int ACTIVE_CAMP_INDEX_FIELD_NUMBER = 12;
     private int activeCampIndex_;
     /**
      * <code>uint32 active_camp_index = 4;</code>
@@ -159,7 +159,7 @@ public final class ChannelerSlabChallengeOuterClass {
       return activeCampIndex_;
     }
 
-    public static final int CAMP_LIST_FIELD_NUMBER = 10;
+    public static final int CAMP_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.ChannelerSlabCampOuterClass.ChannelerSlabCamp> campList_;
     /**
      * <code>repeated .ChannelerSlabCamp camp_list = 6;</code>
@@ -214,10 +214,10 @@ public final class ChannelerSlabChallengeOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (activeCampIndex_ != 0) {
-        output.writeUInt32(6, activeCampIndex_);
+        output.writeUInt32(12, activeCampIndex_);
       }
       for (int i = 0; i < campList_.size(); i++) {
-        output.writeMessage(10, campList_.get(i));
+        output.writeMessage(14, campList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -230,11 +230,11 @@ public final class ChannelerSlabChallengeOuterClass {
       size = 0;
       if (activeCampIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, activeCampIndex_);
+          .computeUInt32Size(12, activeCampIndex_);
       }
       for (int i = 0; i < campList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, campList_.get(i));
+          .computeMessageSize(14, campList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

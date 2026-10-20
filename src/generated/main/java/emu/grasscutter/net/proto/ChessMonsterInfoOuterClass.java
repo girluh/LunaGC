@@ -98,7 +98,7 @@ public final class ChessMonsterInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 affixList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class ChessMonsterInfoOuterClass {
               affixList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -119,12 +119,12 @@ public final class ChessMonsterInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 8: {
+            case 96: {
 
               level_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 48: {
 
               monsterId_ = input.readUInt32();
               break;
@@ -164,7 +164,7 @@ public final class ChessMonsterInfoOuterClass {
               emu.grasscutter.net.proto.ChessMonsterInfoOuterClass.ChessMonsterInfo.class, emu.grasscutter.net.proto.ChessMonsterInfoOuterClass.ChessMonsterInfo.Builder.class);
     }
 
-    public static final int MONSTER_ID_FIELD_NUMBER = 8;
+    public static final int MONSTER_ID_FIELD_NUMBER = 6;
     private int monsterId_;
     /**
      * <code>uint32 monster_id = 11;</code>
@@ -175,7 +175,7 @@ public final class ChessMonsterInfoOuterClass {
       return monsterId_;
     }
 
-    public static final int AFFIX_LIST_FIELD_NUMBER = 12;
+    public static final int AFFIX_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList affixList_;
     /**
      * <code>repeated uint32 affix_list = 9;</code>
@@ -203,7 +203,7 @@ public final class ChessMonsterInfoOuterClass {
     }
     private int affixListMemoizedSerializedSize = -1;
 
-    public static final int LEVEL_FIELD_NUMBER = 1;
+    public static final int LEVEL_FIELD_NUMBER = 12;
     private int level_;
     /**
      * <code>uint32 level = 10;</code>
@@ -230,17 +230,17 @@ public final class ChessMonsterInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getAffixListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(affixListMemoizedSerializedSize);
       }
       for (int i = 0; i < affixList_.size(); i++) {
         output.writeUInt32NoTag(affixList_.getInt(i));
       }
       if (level_ != 0) {
-        output.writeUInt32(1, level_);
+        output.writeUInt32(12, level_);
       }
       if (monsterId_ != 0) {
-        output.writeUInt32(8, monsterId_);
+        output.writeUInt32(6, monsterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -267,11 +267,11 @@ public final class ChessMonsterInfoOuterClass {
       }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, level_);
+          .computeUInt32Size(12, level_);
       }
       if (monsterId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, monsterId_);
+          .computeUInt32Size(6, monsterId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

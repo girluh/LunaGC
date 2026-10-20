@@ -82,7 +82,7 @@ public final class ClientCollectorDataOuterClass {
               bAOBAHLOOFK_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 120: {
 
               materialId_ = input.readUInt32();
               break;
@@ -124,7 +124,7 @@ public final class ClientCollectorDataOuterClass {
               emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.class, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder.class);
     }
 
-    public static final int MATERIAL_ID_FIELD_NUMBER = 8;
+    public static final int MATERIAL_ID_FIELD_NUMBER = 15;
     private int materialId_;
 
     @java.lang.Override
@@ -172,7 +172,7 @@ public final class ClientCollectorDataOuterClass {
         output.writeUInt32(3, bAOBAHLOOFK_);
       }
       if (materialId_ != 0) {
-        output.writeUInt32(8, materialId_);
+        output.writeUInt32(15, materialId_);
       }
       if (fIODBOLAGKN_ != 0) {
         output.writeUInt32(16, fIODBOLAGKN_);
@@ -192,7 +192,7 @@ public final class ClientCollectorDataOuterClass {
       }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, materialId_);
+          .computeUInt32Size(15, materialId_);
       }
       if (fIODBOLAGKN_ != 0) {
         size += com.google.protobuf.CodedOutputStream

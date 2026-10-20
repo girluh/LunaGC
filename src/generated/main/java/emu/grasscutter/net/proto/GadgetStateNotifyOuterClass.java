@@ -73,7 +73,7 @@ public final class GadgetStateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 56: {
 
               gadgetState_ = input.readUInt32();
               break;
@@ -83,7 +83,7 @@ public final class GadgetStateNotifyOuterClass {
               gadgetEntityId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 40: {
 
               isEnableInteract_ = input.readBool();
               break;
@@ -120,7 +120,7 @@ public final class GadgetStateNotifyOuterClass {
               emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.class, emu.grasscutter.net.proto.GadgetStateNotifyOuterClass.GadgetStateNotify.Builder.class);
     }
 
-    public static final int IS_ENABLE_INTERACT_FIELD_NUMBER = 4;
+    public static final int IS_ENABLE_INTERACT_FIELD_NUMBER = 5;
     private boolean isEnableInteract_;
 
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class GadgetStateNotifyOuterClass {
       return gadgetEntityId_;
     }
 
-    public static final int GADGET_STATE_FIELD_NUMBER = 14;
+    public static final int GADGET_STATE_FIELD_NUMBER = 7;
     private int gadgetState_;
 
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class GadgetStateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isEnableInteract_ != false) {
-        output.writeBool(4, isEnableInteract_);
+        output.writeBool(5, isEnableInteract_);
       }
       if (gadgetState_ != 0) {
-        output.writeUInt32(14, gadgetState_);
+        output.writeUInt32(7, gadgetState_);
       }
       if (gadgetEntityId_ != 0) {
         output.writeUInt32(3, gadgetEntityId_);
@@ -178,11 +178,11 @@ public final class GadgetStateNotifyOuterClass {
       size = 0;
       if (isEnableInteract_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isEnableInteract_);
+          .computeBoolSize(5, isEnableInteract_);
       }
       if (gadgetState_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, gadgetState_);
+          .computeUInt32Size(7, gadgetState_);
       }
       if (gadgetEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

@@ -86,12 +86,12 @@ public final class QuestTransmitReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 24: {
 
               pointId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 56: {
 
               questId_ = input.readUInt32();
               break;
@@ -133,7 +133,7 @@ public final class QuestTransmitReqOuterClass {
               emu.grasscutter.net.proto.QuestTransmitReqOuterClass.QuestTransmitReq.class, emu.grasscutter.net.proto.QuestTransmitReqOuterClass.QuestTransmitReq.Builder.class);
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 13;
+    public static final int QUEST_ID_FIELD_NUMBER = 7;
     private int questId_;
     /**
      * <code>uint32 quest_id = 2;</code>
@@ -144,7 +144,7 @@ public final class QuestTransmitReqOuterClass {
       return questId_;
     }
 
-    public static final int POINT_ID_FIELD_NUMBER = 8;
+    public static final int POINT_ID_FIELD_NUMBER = 3;
     private int pointId_;
     /**
      * <code>uint32 point_id = 1;</code>
@@ -181,10 +181,10 @@ public final class QuestTransmitReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(8, pointId_);
+        output.writeUInt32(3, pointId_);
       }
       if (questId_ != 0) {
-        output.writeUInt32(13, questId_);
+        output.writeUInt32(7, questId_);
       }
       if (lAJGLCIFKCP_ != 0) {
         output.writeUInt32(10, lAJGLCIFKCP_);
@@ -200,11 +200,11 @@ public final class QuestTransmitReqOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, pointId_);
+          .computeUInt32Size(3, pointId_);
       }
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, questId_);
+          .computeUInt32Size(7, questId_);
       }
       if (lAJGLCIFKCP_ != 0) {
         size += com.google.protobuf.CodedOutputStream

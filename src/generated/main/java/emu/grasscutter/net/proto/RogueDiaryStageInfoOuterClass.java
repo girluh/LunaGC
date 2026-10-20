@@ -99,7 +99,7 @@ public final class RogueDiaryStageInfoOuterClass {
               stageId_ = input.readUInt32();
               break;
             }
-            case 82: {
+            case 34: {
               emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder subBuilder = null;
               if (bestRecord_ != null) {
                 subBuilder = bestRecord_.toBuilder();
@@ -112,7 +112,7 @@ public final class RogueDiaryStageInfoOuterClass {
 
               break;
             }
-            case 120: {
+            case 88: {
 
               isHaveTry_ = input.readBool();
               break;
@@ -160,7 +160,7 @@ public final class RogueDiaryStageInfoOuterClass {
       return stageId_;
     }
 
-    public static final int BEST_RECORD_FIELD_NUMBER = 10;
+    public static final int BEST_RECORD_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord bestRecord_;
     /**
      * <code>.RogueDiaryDungeonRecord best_record = 7;</code>
@@ -186,7 +186,7 @@ public final class RogueDiaryStageInfoOuterClass {
       return getBestRecord();
     }
 
-    public static final int IS_HAVE_TRY_FIELD_NUMBER = 15;
+    public static final int IS_HAVE_TRY_FIELD_NUMBER = 11;
     private boolean isHaveTry_;
     /**
      * <code>bool is_have_try = 13;</code>
@@ -215,10 +215,10 @@ public final class RogueDiaryStageInfoOuterClass {
         output.writeUInt32(7, stageId_);
       }
       if (bestRecord_ != null) {
-        output.writeMessage(10, getBestRecord());
+        output.writeMessage(4, getBestRecord());
       }
       if (isHaveTry_ != false) {
-        output.writeBool(15, isHaveTry_);
+        output.writeBool(11, isHaveTry_);
       }
       unknownFields.writeTo(output);
     }
@@ -235,11 +235,11 @@ public final class RogueDiaryStageInfoOuterClass {
       }
       if (bestRecord_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getBestRecord());
+          .computeMessageSize(4, getBestRecord());
       }
       if (isHaveTry_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isHaveTry_);
+          .computeBoolSize(11, isHaveTry_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

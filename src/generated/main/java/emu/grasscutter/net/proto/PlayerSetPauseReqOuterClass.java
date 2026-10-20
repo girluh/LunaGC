@@ -69,7 +69,7 @@ public final class PlayerSetPauseReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 88: {
 
               isPaused_ = input.readBool();
               break;
@@ -106,7 +106,7 @@ public final class PlayerSetPauseReqOuterClass {
               emu.grasscutter.net.proto.PlayerSetPauseReqOuterClass.PlayerSetPauseReq.class, emu.grasscutter.net.proto.PlayerSetPauseReqOuterClass.PlayerSetPauseReq.Builder.class);
     }
 
-    public static final int IS_PAUSED_FIELD_NUMBER = 3;
+    public static final int IS_PAUSED_FIELD_NUMBER = 11;
     private boolean isPaused_;
 
     @java.lang.Override
@@ -129,7 +129,7 @@ public final class PlayerSetPauseReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isPaused_ != false) {
-        output.writeBool(3, isPaused_);
+        output.writeBool(11, isPaused_);
       }
       unknownFields.writeTo(output);
     }
@@ -142,7 +142,7 @@ public final class PlayerSetPauseReqOuterClass {
       size = 0;
       if (isPaused_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isPaused_);
+          .computeBoolSize(11, isPaused_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

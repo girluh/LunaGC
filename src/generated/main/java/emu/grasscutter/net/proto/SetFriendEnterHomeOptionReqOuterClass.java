@@ -80,7 +80,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 104: {
               int rawValue = input.readEnum();
 
               option_ = rawValue;
@@ -118,7 +118,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
               emu.grasscutter.net.proto.SetFriendEnterHomeOptionReqOuterClass.SetFriendEnterHomeOptionReq.class, emu.grasscutter.net.proto.SetFriendEnterHomeOptionReqOuterClass.SetFriendEnterHomeOptionReq.Builder.class);
     }
 
-    public static final int OPTION_FIELD_NUMBER = 6;
+    public static final int OPTION_FIELD_NUMBER = 13;
     private int option_;
     /**
      * <code>.FriendEnterHomeOption option = 6;</code>
@@ -152,7 +152,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (option_ != emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FriendEnterHomeOption_NEED_CONFIRM.getNumber()) {
-        output.writeEnum(6, option_);
+        output.writeEnum(13, option_);
       }
       unknownFields.writeTo(output);
     }
@@ -165,7 +165,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
       size = 0;
       if (option_ != emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FriendEnterHomeOption_NEED_CONFIRM.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, option_);
+          .computeEnumSize(13, option_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

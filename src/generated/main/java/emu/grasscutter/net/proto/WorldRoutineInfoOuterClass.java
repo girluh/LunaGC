@@ -71,17 +71,17 @@ public final class WorldRoutineInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 8: {
 
               finishProgress_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 16: {
 
               progress_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 48: {
 
               isFinished_ = input.readBool();
               break;
@@ -123,7 +123,7 @@ public final class WorldRoutineInfoOuterClass {
               emu.grasscutter.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo.class, emu.grasscutter.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo.Builder.class);
     }
 
-    public static final int FINISH_PROGRESS_FIELD_NUMBER = 8;
+    public static final int FINISH_PROGRESS_FIELD_NUMBER = 1;
     private int finishProgress_;
 
     @java.lang.Override
@@ -131,7 +131,7 @@ public final class WorldRoutineInfoOuterClass {
       return finishProgress_;
     }
 
-    public static final int PROGRESS_FIELD_NUMBER = 12;
+    public static final int PROGRESS_FIELD_NUMBER = 2;
     private int progress_;
 
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class WorldRoutineInfoOuterClass {
       return routineId_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 1;
+    public static final int IS_FINISHED_FIELD_NUMBER = 6;
     private boolean isFinished_;
 
     @java.lang.Override
@@ -170,13 +170,13 @@ public final class WorldRoutineInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (finishProgress_ != 0) {
-        output.writeUInt32(8, finishProgress_);
+        output.writeUInt32(1, finishProgress_);
       }
       if (progress_ != 0) {
-        output.writeUInt32(12, progress_);
+        output.writeUInt32(2, progress_);
       }
       if (isFinished_ != false) {
-        output.writeBool(1, isFinished_);
+        output.writeBool(6, isFinished_);
       }
       if (routineId_ != 0) {
         output.writeUInt32(7, routineId_);
@@ -192,15 +192,15 @@ public final class WorldRoutineInfoOuterClass {
       size = 0;
       if (finishProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, finishProgress_);
+          .computeUInt32Size(1, finishProgress_);
       }
       if (progress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, progress_);
+          .computeUInt32Size(2, progress_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isFinished_);
+          .computeBoolSize(6, isFinished_);
       }
       if (routineId_ != 0) {
         size += com.google.protobuf.CodedOutputStream

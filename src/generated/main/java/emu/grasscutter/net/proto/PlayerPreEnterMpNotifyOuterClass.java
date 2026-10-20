@@ -98,18 +98,18 @@ public final class PlayerPreEnterMpNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               nickname_ = s;
               break;
             }
-            case 88: {
+            case 48: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 64: {
               int rawValue = input.readEnum();
 
               state_ = rawValue;
@@ -147,7 +147,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.class, emu.grasscutter.net.proto.PlayerPreEnterMpNotifyOuterClass.PlayerPreEnterMpNotify.Builder.class);
     }
 
-    public static final int NICKNAME_FIELD_NUMBER = 9;
+    public static final int NICKNAME_FIELD_NUMBER = 13;
     private volatile java.lang.Object nickname_;
     /**
      * <code>string nickname = 10;</code>
@@ -185,7 +185,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
       }
     }
 
-    public static final int UID_FIELD_NUMBER = 11;
+    public static final int UID_FIELD_NUMBER = 6;
     private int uid_;
     /**
      * <code>uint32 uid = 14;</code>
@@ -196,7 +196,7 @@ public final class PlayerPreEnterMpNotifyOuterClass {
       return uid_;
     }
 
-    public static final int STATE_FIELD_NUMBER = 7;
+    public static final int STATE_FIELD_NUMBER = 8;
     private int state_;
     /**
      * <code>.State state = 15;</code>
@@ -230,13 +230,13 @@ public final class PlayerPreEnterMpNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, nickname_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nickname_);
       }
       if (uid_ != 0) {
-        output.writeUInt32(11, uid_);
+        output.writeUInt32(6, uid_);
       }
       if (state_ != emu.grasscutter.net.proto.StateOuterClass.State.State_INVALID.getNumber()) {
-        output.writeEnum(7, state_);
+        output.writeEnum(8, state_);
       }
       unknownFields.writeTo(output);
     }
@@ -248,15 +248,15 @@ public final class PlayerPreEnterMpNotifyOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, nickname_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nickname_);
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, uid_);
+          .computeUInt32Size(6, uid_);
       }
       if (state_ != emu.grasscutter.net.proto.StateOuterClass.State.State_INVALID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, state_);
+          .computeEnumSize(8, state_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

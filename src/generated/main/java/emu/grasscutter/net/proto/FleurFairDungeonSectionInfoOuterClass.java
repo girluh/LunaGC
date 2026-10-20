@@ -85,7 +85,7 @@ public final class FleurFairDungeonSectionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 32: {
 
               sectionId_ = input.readUInt32();
               break;
@@ -95,7 +95,7 @@ public final class FleurFairDungeonSectionInfoOuterClass {
               openTime_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 112: {
 
               isOpen_ = input.readBool();
               break;
@@ -132,7 +132,7 @@ public final class FleurFairDungeonSectionInfoOuterClass {
               emu.grasscutter.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo.class, emu.grasscutter.net.proto.FleurFairDungeonSectionInfoOuterClass.FleurFairDungeonSectionInfo.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 2;
+    public static final int IS_OPEN_FIELD_NUMBER = 14;
     private boolean isOpen_;
     /**
      * <code>bool is_open = 14;</code>
@@ -143,7 +143,7 @@ public final class FleurFairDungeonSectionInfoOuterClass {
       return isOpen_;
     }
 
-    public static final int SECTION_ID_FIELD_NUMBER = 6;
+    public static final int SECTION_ID_FIELD_NUMBER = 4;
     private int sectionId_;
     /**
      * <code>uint32 section_id = 6;</code>
@@ -180,13 +180,13 @@ public final class FleurFairDungeonSectionInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sectionId_ != 0) {
-        output.writeUInt32(6, sectionId_);
+        output.writeUInt32(4, sectionId_);
       }
       if (openTime_ != 0) {
         output.writeUInt32(1, openTime_);
       }
       if (isOpen_ != false) {
-        output.writeBool(2, isOpen_);
+        output.writeBool(14, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,7 +199,7 @@ public final class FleurFairDungeonSectionInfoOuterClass {
       size = 0;
       if (sectionId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, sectionId_);
+          .computeUInt32Size(4, sectionId_);
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -207,7 +207,7 @@ public final class FleurFairDungeonSectionInfoOuterClass {
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isOpen_);
+          .computeBoolSize(14, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

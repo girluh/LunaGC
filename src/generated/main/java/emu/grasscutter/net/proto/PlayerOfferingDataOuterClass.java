@@ -117,22 +117,22 @@ public final class PlayerOfferingDataOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 80: {
 
               level_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 112: {
 
               isFirstInteract_ = input.readBool();
               break;
             }
-            case 112: {
+            case 8: {
 
               offeringId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 takenLevelRewardList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -140,7 +140,7 @@ public final class PlayerOfferingDataOuterClass {
               takenLevelRewardList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -218,7 +218,7 @@ public final class PlayerOfferingDataOuterClass {
               emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.class, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder.class);
     }
 
-    public static final int TAKEN_LEVEL_REWARD_LIST_FIELD_NUMBER = 12;
+    public static final int TAKEN_LEVEL_REWARD_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList takenLevelRewardList_;
 
     @java.lang.Override
@@ -317,7 +317,7 @@ public final class PlayerOfferingDataOuterClass {
       return map.get(key);
     }
 
-    public static final int OFFERING_ID_FIELD_NUMBER = 14;
+    public static final int OFFERING_ID_FIELD_NUMBER = 1;
     private int offeringId_;
 
     @java.lang.Override
@@ -325,7 +325,7 @@ public final class PlayerOfferingDataOuterClass {
       return offeringId_;
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 15;
+    public static final int LEVEL_FIELD_NUMBER = 10;
     private int level_;
 
     @java.lang.Override
@@ -333,7 +333,7 @@ public final class PlayerOfferingDataOuterClass {
       return level_;
     }
 
-    public static final int IS_FIRST_INTERACT_FIELD_NUMBER = 13;
+    public static final int IS_FIRST_INTERACT_FIELD_NUMBER = 14;
     private boolean isFirstInteract_;
 
     @java.lang.Override
@@ -368,16 +368,16 @@ public final class PlayerOfferingDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (level_ != 0) {
-        output.writeUInt32(15, level_);
+        output.writeUInt32(10, level_);
       }
       if (isFirstInteract_ != false) {
-        output.writeBool(13, isFirstInteract_);
+        output.writeBool(14, isFirstInteract_);
       }
       if (offeringId_ != 0) {
-        output.writeUInt32(14, offeringId_);
+        output.writeUInt32(1, offeringId_);
       }
       if (getTakenLevelRewardListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(takenLevelRewardListMemoizedSerializedSize);
       }
       for (int i = 0; i < takenLevelRewardList_.size(); i++) {
@@ -403,15 +403,15 @@ public final class PlayerOfferingDataOuterClass {
       size = 0;
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, level_);
+          .computeUInt32Size(10, level_);
       }
       if (isFirstInteract_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isFirstInteract_);
+          .computeBoolSize(14, isFirstInteract_);
       }
       if (offeringId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, offeringId_);
+          .computeUInt32Size(1, offeringId_);
       }
       {
         int dataSize = 0;

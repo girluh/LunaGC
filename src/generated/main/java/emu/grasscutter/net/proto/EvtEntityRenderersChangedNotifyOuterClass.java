@@ -102,18 +102,18 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 96: {
               int rawValue = input.readEnum();
 
               forwardType_ = rawValue;
               break;
             }
-            case 50: {
+            case 106: {
               emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder subBuilder = null;
               if (rendererChangedInfo_ != null) {
                 subBuilder = rendererChangedInfo_.toBuilder();
@@ -126,7 +126,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
 
               break;
             }
-            case 8: {
+            case 120: {
 
               isServerCache_ = input.readBool();
               break;
@@ -163,7 +163,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
               emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify.class, emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify.Builder.class);
     }
 
-    public static final int RENDERER_CHANGED_INFO_FIELD_NUMBER = 6;
+    public static final int RENDERER_CHANGED_INFO_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo rendererChangedInfo_;
     /**
      * <code>.EntityRendererChangedInfo renderer_changed_info = 14;</code>
@@ -189,7 +189,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       return getRendererChangedInfo();
     }
 
-    public static final int IS_SERVER_CACHE_FIELD_NUMBER = 1;
+    public static final int IS_SERVER_CACHE_FIELD_NUMBER = 15;
     private boolean isServerCache_;
     /**
      * <code>bool is_server_cache = 15;</code>
@@ -200,7 +200,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       return isServerCache_;
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 7;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
     /**
      * <code>uint32 entity_id = 5;</code>
@@ -211,7 +211,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 14;
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 12;
     private int forwardType_;
     /**
      * <code>.ForwardType forward_type = 6;</code>
@@ -245,16 +245,16 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(7, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.ForwardType_FORWARD_LOCAL.getNumber()) {
-        output.writeEnum(14, forwardType_);
+        output.writeEnum(12, forwardType_);
       }
       if (rendererChangedInfo_ != null) {
-        output.writeMessage(6, getRendererChangedInfo());
+        output.writeMessage(13, getRendererChangedInfo());
       }
       if (isServerCache_ != false) {
-        output.writeBool(1, isServerCache_);
+        output.writeBool(15, isServerCache_);
       }
       unknownFields.writeTo(output);
     }
@@ -267,19 +267,19 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.ForwardType_FORWARD_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, forwardType_);
+          .computeEnumSize(12, forwardType_);
       }
       if (rendererChangedInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getRendererChangedInfo());
+          .computeMessageSize(13, getRendererChangedInfo());
       }
       if (isServerCache_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isServerCache_);
+          .computeBoolSize(15, isServerCache_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

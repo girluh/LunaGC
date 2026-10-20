@@ -86,17 +86,17 @@ public final class ReceivedTrialAvatarActivityRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 64: {
 
               activityId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 80: {
 
               trialAvatarIndexId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
@@ -133,7 +133,7 @@ public final class ReceivedTrialAvatarActivityRewardRspOuterClass {
               emu.grasscutter.net.proto.ReceivedTrialAvatarActivityRewardRspOuterClass.ReceivedTrialAvatarActivityRewardRsp.class, emu.grasscutter.net.proto.ReceivedTrialAvatarActivityRewardRspOuterClass.ReceivedTrialAvatarActivityRewardRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
      * <code>int32 retcode = 8;</code>
@@ -144,7 +144,7 @@ public final class ReceivedTrialAvatarActivityRewardRspOuterClass {
       return retcode_;
     }
 
-    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 5;
+    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 10;
     private int trialAvatarIndexId_;
     /**
      * <code>uint32 trial_avatar_index_id = 2;</code>
@@ -155,7 +155,7 @@ public final class ReceivedTrialAvatarActivityRewardRspOuterClass {
       return trialAvatarIndexId_;
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 2;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 8;
     private int activityId_;
     /**
      * <code>uint32 activity_id = 1;</code>
@@ -181,13 +181,13 @@ public final class ReceivedTrialAvatarActivityRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (activityId_ != 0) {
-        output.writeUInt32(2, activityId_);
+        output.writeUInt32(8, activityId_);
       }
       if (trialAvatarIndexId_ != 0) {
-        output.writeUInt32(5, trialAvatarIndexId_);
+        output.writeUInt32(10, trialAvatarIndexId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(5, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class ReceivedTrialAvatarActivityRewardRspOuterClass {
       size = 0;
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, activityId_);
+          .computeUInt32Size(8, activityId_);
       }
       if (trialAvatarIndexId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, trialAvatarIndexId_);
+          .computeUInt32Size(10, trialAvatarIndexId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

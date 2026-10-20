@@ -125,7 +125,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 playerLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -134,7 +134,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
               break;
             }
-            case 90: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 vehicleLocList_ = new java.util.ArrayList<emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo>();
                 mutable_bitField0_ |= 0x00000002;
@@ -143,7 +143,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo.parser(), extensionRegistry));
               break;
             }
-            case 64: {
+            case 56: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -186,7 +186,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
               emu.grasscutter.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify.class, emu.grasscutter.net.proto.ScenePlayerLocationNotifyOuterClass.ScenePlayerLocationNotify.Builder.class);
     }
 
-    public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 10;
+    public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_;
     /**
      * <code>repeated .PlayerLocationInfo player_loc_list = 3;</code>
@@ -226,7 +226,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
       return playerLocList_.get(index);
     }
 
-    public static final int VEHICLE_LOC_LIST_FIELD_NUMBER = 11;
+    public static final int VEHICLE_LOC_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.VehicleLocationInfoOuterClass.VehicleLocationInfo> vehicleLocList_;
     /**
      * <code>repeated .VehicleLocationInfo vehicle_loc_list = 13;</code>
@@ -266,7 +266,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
       return vehicleLocList_.get(index);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 8;
+    public static final int SCENE_ID_FIELD_NUMBER = 7;
     private int sceneId_;
     /**
      * <code>uint32 scene_id = 14;</code>
@@ -292,13 +292,13 @@ public final class ScenePlayerLocationNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < playerLocList_.size(); i++) {
-        output.writeMessage(10, playerLocList_.get(i));
+        output.writeMessage(1, playerLocList_.get(i));
       }
       for (int i = 0; i < vehicleLocList_.size(); i++) {
-        output.writeMessage(11, vehicleLocList_.get(i));
+        output.writeMessage(8, vehicleLocList_.get(i));
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(8, sceneId_);
+        output.writeUInt32(7, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -311,15 +311,15 @@ public final class ScenePlayerLocationNotifyOuterClass {
       size = 0;
       for (int i = 0; i < playerLocList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, playerLocList_.get(i));
+          .computeMessageSize(1, playerLocList_.get(i));
       }
       for (int i = 0; i < vehicleLocList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, vehicleLocList_.get(i));
+          .computeMessageSize(8, vehicleLocList_.get(i));
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sceneId_);
+          .computeUInt32Size(7, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

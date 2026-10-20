@@ -75,7 +75,7 @@ public final class GetBlossomBriefInfoListReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -83,7 +83,7 @@ public final class GetBlossomBriefInfoListReqOuterClass {
               cityIdList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -131,7 +131,7 @@ public final class GetBlossomBriefInfoListReqOuterClass {
               emu.grasscutter.net.proto.GetBlossomBriefInfoListReqOuterClass.GetBlossomBriefInfoListReq.class, emu.grasscutter.net.proto.GetBlossomBriefInfoListReqOuterClass.GetBlossomBriefInfoListReq.Builder.class);
     }
 
-    public static final int CITY_ID_LIST_FIELD_NUMBER = 4;
+    public static final int CITY_ID_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList cityIdList_;
 
     @java.lang.Override
@@ -165,7 +165,7 @@ public final class GetBlossomBriefInfoListReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getCityIdListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(cityIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < cityIdList_.size(); i++) {

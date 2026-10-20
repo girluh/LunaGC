@@ -73,17 +73,17 @@ public final class QuestDestroyNpcRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 104: {
 
               parentQuestId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 72: {
 
               npcId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 120: {
 
               retcode_ = input.readInt32();
               break;
@@ -120,7 +120,7 @@ public final class QuestDestroyNpcRspOuterClass {
               emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.class, emu.grasscutter.net.proto.QuestDestroyNpcRspOuterClass.QuestDestroyNpcRsp.Builder.class);
     }
 
-    public static final int NPC_ID_FIELD_NUMBER = 13;
+    public static final int NPC_ID_FIELD_NUMBER = 9;
     private int npcId_;
 
     @java.lang.Override
@@ -128,7 +128,7 @@ public final class QuestDestroyNpcRspOuterClass {
       return npcId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
 
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class QuestDestroyNpcRspOuterClass {
       return retcode_;
     }
 
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 1;
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 13;
     private int parentQuestId_;
 
     @java.lang.Override
@@ -159,13 +159,13 @@ public final class QuestDestroyNpcRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (parentQuestId_ != 0) {
-        output.writeUInt32(1, parentQuestId_);
+        output.writeUInt32(13, parentQuestId_);
       }
       if (npcId_ != 0) {
-        output.writeUInt32(13, npcId_);
+        output.writeUInt32(9, npcId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,15 +178,15 @@ public final class QuestDestroyNpcRspOuterClass {
       size = 0;
       if (parentQuestId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, parentQuestId_);
+          .computeUInt32Size(13, parentQuestId_);
       }
       if (npcId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, npcId_);
+          .computeUInt32Size(9, npcId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

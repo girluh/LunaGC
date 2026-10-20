@@ -114,17 +114,17 @@ public final class StartCoopPointRspOuterClass {
 
               break;
             }
-            case 80: {
+            case 88: {
 
               isStart_ = input.readBool();
               break;
             }
-            case 120: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 8: {
+            case 32: {
 
               coopPoint_ = input.readUInt32();
               break;
@@ -187,7 +187,7 @@ public final class StartCoopPointRspOuterClass {
       return getStartMainCoop();
     }
 
-    public static final int COOP_POINT_FIELD_NUMBER = 1;
+    public static final int COOP_POINT_FIELD_NUMBER = 4;
     private int coopPoint_;
     /**
      * <code>uint32 coop_point = 2;</code>
@@ -198,7 +198,7 @@ public final class StartCoopPointRspOuterClass {
       return coopPoint_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
      * <code>int32 retcode = 14;</code>
@@ -209,7 +209,7 @@ public final class StartCoopPointRspOuterClass {
       return retcode_;
     }
 
-    public static final int IS_START_FIELD_NUMBER = 10;
+    public static final int IS_START_FIELD_NUMBER = 11;
     private boolean isStart_;
     /**
      * <code>bool is_start = 6;</code>
@@ -238,13 +238,13 @@ public final class StartCoopPointRspOuterClass {
         output.writeMessage(8, getStartMainCoop());
       }
       if (coopPoint_ != 0) {
-        output.writeUInt32(1, coopPoint_);
+        output.writeUInt32(4, coopPoint_);
       }
       if (isStart_ != false) {
-        output.writeBool(10, isStart_);
+        output.writeBool(11, isStart_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(5, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -261,15 +261,15 @@ public final class StartCoopPointRspOuterClass {
       }
       if (coopPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, coopPoint_);
+          .computeUInt32Size(4, coopPoint_);
       }
       if (isStart_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isStart_);
+          .computeBoolSize(11, isStart_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

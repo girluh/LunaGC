@@ -19,36 +19,36 @@ public final class ClientSetGameTimeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+     * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
      * @return A list containing the gameTimeLockedQuestList.
      */
     java.util.List<java.lang.Integer> getGameTimeLockedQuestListList();
     /**
-     * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+     * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
      * @return The count of gameTimeLockedQuestList.
      */
     int getGameTimeLockedQuestListCount();
     /**
-     * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+     * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
      * @param index The index of the element to return.
      * @return The gameTimeLockedQuestList at the given index.
      */
     int getGameTimeLockedQuestList(int index);
 
     /**
-     * <code>uint32 game_time = 5;</code>
+     * <code>uint32 game_time = 6;</code>
      * @return The gameTime.
      */
     int getGameTime();
 
     /**
-     * <code>uint32 client_game_time = 6;</code>
+     * <code>uint32 client_game_time = 4;</code>
      * @return The clientGameTime.
      */
     int getClientGameTime();
 
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -100,7 +100,22 @@ public final class ClientSetGameTimeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              clientGameTime_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              gameTime_ = input.readUInt32();
+              break;
+            }
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 gameTimeLockedQuestList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -108,7 +123,7 @@ public final class ClientSetGameTimeRspOuterClass {
               gameTimeLockedQuestList_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -119,21 +134,6 @@ public final class ClientSetGameTimeRspOuterClass {
                 gameTimeLockedQuestList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 40: {
-
-              gameTime_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              clientGameTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -171,10 +171,10 @@ public final class ClientSetGameTimeRspOuterClass {
               emu.grasscutter.net.proto.ClientSetGameTimeRspOuterClass.ClientSetGameTimeRsp.class, emu.grasscutter.net.proto.ClientSetGameTimeRspOuterClass.ClientSetGameTimeRsp.Builder.class);
     }
 
-    public static final int GAME_TIME_LOCKED_QUEST_LIST_FIELD_NUMBER = 3;
+    public static final int GAME_TIME_LOCKED_QUEST_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList gameTimeLockedQuestList_;
     /**
-     * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+     * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
      * @return A list containing the gameTimeLockedQuestList.
      */
     @java.lang.Override
@@ -183,14 +183,14 @@ public final class ClientSetGameTimeRspOuterClass {
       return gameTimeLockedQuestList_;
     }
     /**
-     * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+     * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
      * @return The count of gameTimeLockedQuestList.
      */
     public int getGameTimeLockedQuestListCount() {
       return gameTimeLockedQuestList_.size();
     }
     /**
-     * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+     * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
      * @param index The index of the element to return.
      * @return The gameTimeLockedQuestList at the given index.
      */
@@ -199,10 +199,10 @@ public final class ClientSetGameTimeRspOuterClass {
     }
     private int gameTimeLockedQuestListMemoizedSerializedSize = -1;
 
-    public static final int GAME_TIME_FIELD_NUMBER = 5;
+    public static final int GAME_TIME_FIELD_NUMBER = 6;
     private int gameTime_;
     /**
-     * <code>uint32 game_time = 5;</code>
+     * <code>uint32 game_time = 6;</code>
      * @return The gameTime.
      */
     @java.lang.Override
@@ -210,10 +210,10 @@ public final class ClientSetGameTimeRspOuterClass {
       return gameTime_;
     }
 
-    public static final int CLIENT_GAME_TIME_FIELD_NUMBER = 6;
+    public static final int CLIENT_GAME_TIME_FIELD_NUMBER = 4;
     private int clientGameTime_;
     /**
-     * <code>uint32 client_game_time = 6;</code>
+     * <code>uint32 client_game_time = 4;</code>
      * @return The clientGameTime.
      */
     @java.lang.Override
@@ -221,10 +221,10 @@ public final class ClientSetGameTimeRspOuterClass {
       return clientGameTime_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -247,21 +247,21 @@ public final class ClientSetGameTimeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (retcode_ != 0) {
+        output.writeInt32(2, retcode_);
+      }
+      if (clientGameTime_ != 0) {
+        output.writeUInt32(4, clientGameTime_);
+      }
+      if (gameTime_ != 0) {
+        output.writeUInt32(6, gameTime_);
+      }
       if (getGameTimeLockedQuestListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(gameTimeLockedQuestListMemoizedSerializedSize);
       }
       for (int i = 0; i < gameTimeLockedQuestList_.size(); i++) {
         output.writeUInt32NoTag(gameTimeLockedQuestList_.getInt(i));
-      }
-      if (gameTime_ != 0) {
-        output.writeUInt32(5, gameTime_);
-      }
-      if (clientGameTime_ != 0) {
-        output.writeUInt32(6, clientGameTime_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -272,6 +272,18 @@ public final class ClientSetGameTimeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, retcode_);
+      }
+      if (clientGameTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, clientGameTime_);
+      }
+      if (gameTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, gameTime_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < gameTimeLockedQuestList_.size(); i++) {
@@ -285,18 +297,6 @@ public final class ClientSetGameTimeRspOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         gameTimeLockedQuestListMemoizedSerializedSize = dataSize;
-      }
-      if (gameTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, gameTime_);
-      }
-      if (clientGameTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, clientGameTime_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -623,7 +623,7 @@ public final class ClientSetGameTimeRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+       * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
        * @return A list containing the gameTimeLockedQuestList.
        */
       public java.util.List<java.lang.Integer>
@@ -632,14 +632,14 @@ public final class ClientSetGameTimeRspOuterClass {
                  java.util.Collections.unmodifiableList(gameTimeLockedQuestList_) : gameTimeLockedQuestList_;
       }
       /**
-       * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+       * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
        * @return The count of gameTimeLockedQuestList.
        */
       public int getGameTimeLockedQuestListCount() {
         return gameTimeLockedQuestList_.size();
       }
       /**
-       * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+       * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
        * @param index The index of the element to return.
        * @return The gameTimeLockedQuestList at the given index.
        */
@@ -647,7 +647,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return gameTimeLockedQuestList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+       * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The gameTimeLockedQuestList to set.
        * @return This builder for chaining.
@@ -660,7 +660,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+       * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
        * @param value The gameTimeLockedQuestList to add.
        * @return This builder for chaining.
        */
@@ -671,7 +671,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+       * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
        * @param values The gameTimeLockedQuestList to add.
        * @return This builder for chaining.
        */
@@ -684,7 +684,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 game_time_locked_quest_list = 3;</code>
+       * <code>repeated uint32 game_time_locked_quest_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearGameTimeLockedQuestList() {
@@ -696,7 +696,7 @@ public final class ClientSetGameTimeRspOuterClass {
 
       private int gameTime_ ;
       /**
-       * <code>uint32 game_time = 5;</code>
+       * <code>uint32 game_time = 6;</code>
        * @return The gameTime.
        */
       @java.lang.Override
@@ -704,7 +704,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return gameTime_;
       }
       /**
-       * <code>uint32 game_time = 5;</code>
+       * <code>uint32 game_time = 6;</code>
        * @param value The gameTime to set.
        * @return This builder for chaining.
        */
@@ -715,7 +715,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 game_time = 5;</code>
+       * <code>uint32 game_time = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGameTime() {
@@ -727,7 +727,7 @@ public final class ClientSetGameTimeRspOuterClass {
 
       private int clientGameTime_ ;
       /**
-       * <code>uint32 client_game_time = 6;</code>
+       * <code>uint32 client_game_time = 4;</code>
        * @return The clientGameTime.
        */
       @java.lang.Override
@@ -735,7 +735,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return clientGameTime_;
       }
       /**
-       * <code>uint32 client_game_time = 6;</code>
+       * <code>uint32 client_game_time = 4;</code>
        * @param value The clientGameTime to set.
        * @return This builder for chaining.
        */
@@ -746,7 +746,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 client_game_time = 6;</code>
+       * <code>uint32 client_game_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientGameTime() {
@@ -758,7 +758,7 @@ public final class ClientSetGameTimeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -766,7 +766,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -777,7 +777,7 @@ public final class ClientSetGameTimeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -855,8 +855,8 @@ public final class ClientSetGameTimeRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032ClientSetGameTimeRsp.proto\"y\n\024ClientSe" +
       "tGameTimeRsp\022#\n\033game_time_locked_quest_l" +
-      "ist\030\003 \003(\r\022\021\n\tgame_time\030\005 \001(\r\022\030\n\020client_g" +
-      "ame_time\030\006 \001(\r\022\017\n\007retcode\030\n \001(\005B\033\n\031emu.g" +
+      "ist\030\007 \003(\r\022\021\n\tgame_time\030\006 \001(\r\022\030\n\020client_g" +
+      "ame_time\030\004 \001(\r\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

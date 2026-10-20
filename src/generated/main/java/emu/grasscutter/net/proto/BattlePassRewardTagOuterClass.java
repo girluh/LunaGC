@@ -78,12 +78,12 @@ public final class BattlePassRewardTagOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 64: {
 
               rewardId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 104: {
 
               level_ = input.readUInt32();
               break;
@@ -131,7 +131,7 @@ public final class BattlePassRewardTagOuterClass {
               emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag.class, emu.grasscutter.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag.Builder.class);
     }
 
-    public static final int REWARD_ID_FIELD_NUMBER = 7;
+    public static final int REWARD_ID_FIELD_NUMBER = 8;
     private int rewardId_;
 
     @java.lang.Override
@@ -163,7 +163,7 @@ public final class BattlePassRewardTagOuterClass {
       return result == null ? emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.UNRECOGNIZED : result;
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 15;
+    public static final int LEVEL_FIELD_NUMBER = 13;
     private int level_;
 
     @java.lang.Override
@@ -186,10 +186,10 @@ public final class BattlePassRewardTagOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rewardId_ != 0) {
-        output.writeUInt32(7, rewardId_);
+        output.writeUInt32(8, rewardId_);
       }
       if (level_ != 0) {
-        output.writeUInt32(15, level_);
+        output.writeUInt32(13, level_);
       }
       if (gAMKMJLJIND_ != 0) {
         output.writeUInt32(6, gAMKMJLJIND_);
@@ -208,11 +208,11 @@ public final class BattlePassRewardTagOuterClass {
       size = 0;
       if (rewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, rewardId_);
+          .computeUInt32Size(8, rewardId_);
       }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, level_);
+          .computeUInt32Size(13, level_);
       }
       if (gAMKMJLJIND_ != 0) {
         size += com.google.protobuf.CodedOutputStream

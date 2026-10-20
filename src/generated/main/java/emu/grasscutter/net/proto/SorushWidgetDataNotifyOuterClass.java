@@ -78,7 +78,7 @@ public final class SorushWidgetDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 98: {
               emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.Builder subBuilder = null;
               if (sorushWidgetData_ != null) {
                 subBuilder = sorushWidgetData_.toBuilder();
@@ -123,7 +123,7 @@ public final class SorushWidgetDataNotifyOuterClass {
               emu.grasscutter.net.proto.SorushWidgetDataNotifyOuterClass.SorushWidgetDataNotify.class, emu.grasscutter.net.proto.SorushWidgetDataNotifyOuterClass.SorushWidgetDataNotify.Builder.class);
     }
 
-    public static final int SORUSH_WIDGET_DATA_FIELD_NUMBER = 7;
+    public static final int SORUSH_WIDGET_DATA_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData sorushWidgetData_;
     /**
      * <code>.SorushWidgetData sorush_widget_data = 6;</code>
@@ -164,7 +164,7 @@ public final class SorushWidgetDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sorushWidgetData_ != null) {
-        output.writeMessage(7, getSorushWidgetData());
+        output.writeMessage(12, getSorushWidgetData());
       }
       unknownFields.writeTo(output);
     }
@@ -177,7 +177,7 @@ public final class SorushWidgetDataNotifyOuterClass {
       size = 0;
       if (sorushWidgetData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getSorushWidgetData());
+          .computeMessageSize(12, getSorushWidgetData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

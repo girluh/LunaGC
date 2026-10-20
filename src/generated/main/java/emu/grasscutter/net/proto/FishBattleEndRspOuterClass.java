@@ -188,7 +188,7 @@ public final class FishBattleEndRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 56: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
@@ -202,13 +202,13 @@ public final class FishBattleEndRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 88: {
+            case 40: {
               int rawValue = input.readEnum();
 
               battleResult_ = rawValue;
               break;
             }
-            case 104: {
+            case 120: {
 
               isGotReward_ = input.readBool();
               break;
@@ -222,7 +222,7 @@ public final class FishBattleEndRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 48: {
+            case 56: {
               int rawValue = input.readEnum();
 
               noRewardReason_ = rawValue;
@@ -389,7 +389,7 @@ public final class FishBattleEndRspOuterClass {
       return oAFHFLJPOOA_.get(index);
     }
 
-    public static final int NO_REWARD_REASON_FIELD_NUMBER = 6;
+    public static final int NO_REWARD_REASON_FIELD_NUMBER = 7;
     private int noRewardReason_;
     /**
      * <code>.FishNoRewardReason no_reward_reason = 13;</code>
@@ -408,7 +408,7 @@ public final class FishBattleEndRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.FishNoRewardReasonOuterClass.FishNoRewardReason.UNRECOGNIZED : result;
     }
 
-    public static final int BATTLE_RESULT_FIELD_NUMBER = 11;
+    public static final int BATTLE_RESULT_FIELD_NUMBER = 5;
     private int battleResult_;
     /**
      * <code>.FishBattleResult battle_result = 10;</code>
@@ -427,7 +427,7 @@ public final class FishBattleEndRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.FishBattleResultOuterClass.FishBattleResult.UNRECOGNIZED : result;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
      * <code>int32 retcode = 6;</code>
@@ -438,7 +438,7 @@ public final class FishBattleEndRspOuterClass {
       return retcode_;
     }
 
-    public static final int IS_GOT_REWARD_FIELD_NUMBER = 13;
+    public static final int IS_GOT_REWARD_FIELD_NUMBER = 15;
     private boolean isGotReward_;
     /**
      * <code>bool is_got_reward = 11;</code>
@@ -467,22 +467,22 @@ public final class FishBattleEndRspOuterClass {
         output.writeMessage(4, pPIONMHHHBK_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(9, retcode_);
       }
       for (int i = 0; i < oAFHFLJPOOA_.size(); i++) {
         output.writeMessage(16000, oAFHFLJPOOA_.get(i));
       }
       if (battleResult_ != emu.grasscutter.net.proto.FishBattleResultOuterClass.FishBattleResult.FishBattleResult_NONE.getNumber()) {
-        output.writeEnum(11, battleResult_);
+        output.writeEnum(5, battleResult_);
       }
       if (isGotReward_ != false) {
-        output.writeBool(13, isGotReward_);
+        output.writeBool(15, isGotReward_);
       }
       for (int i = 0; i < oNANGNJBFLN_.size(); i++) {
         output.writeMessage(12, oNANGNJBFLN_.get(i));
       }
       if (noRewardReason_ != emu.grasscutter.net.proto.FishNoRewardReasonOuterClass.FishNoRewardReason.FishNoRewardReason_FISH_NO_REWARD_NONE.getNumber()) {
-        output.writeEnum(6, noRewardReason_);
+        output.writeEnum(7, noRewardReason_);
       }
       unknownFields.writeTo(output);
     }
@@ -499,7 +499,7 @@ public final class FishBattleEndRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       for (int i = 0; i < oAFHFLJPOOA_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -507,11 +507,11 @@ public final class FishBattleEndRspOuterClass {
       }
       if (battleResult_ != emu.grasscutter.net.proto.FishBattleResultOuterClass.FishBattleResult.FishBattleResult_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, battleResult_);
+          .computeEnumSize(5, battleResult_);
       }
       if (isGotReward_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isGotReward_);
+          .computeBoolSize(15, isGotReward_);
       }
       for (int i = 0; i < oNANGNJBFLN_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -519,7 +519,7 @@ public final class FishBattleEndRspOuterClass {
       }
       if (noRewardReason_ != emu.grasscutter.net.proto.FishNoRewardReasonOuterClass.FishNoRewardReason.FishNoRewardReason_FISH_NO_REWARD_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, noRewardReason_);
+          .computeEnumSize(7, noRewardReason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

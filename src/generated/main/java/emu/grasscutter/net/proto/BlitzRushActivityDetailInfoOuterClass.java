@@ -82,7 +82,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stageList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LAGAFOGNLEKOuterClass.LAGAFOGNLEK>();
                 mutable_bitField0_ |= 0x00000001;
@@ -91,12 +91,12 @@ public final class BlitzRushActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.LAGAFOGNLEKOuterClass.LAGAFOGNLEK.parser(), extensionRegistry));
               break;
             }
-            case 56: {
+            case 96: {
 
               contentCloseTime_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 80: {
 
               isContentClosed_ = input.readBool();
               break;
@@ -136,7 +136,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo.class, emu.grasscutter.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo.Builder.class);
     }
 
-    public static final int STAGE_LIST_FIELD_NUMBER = 13;
+    public static final int STAGE_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.LAGAFOGNLEKOuterClass.LAGAFOGNLEK> stageList_;
 
     @java.lang.Override
@@ -166,7 +166,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       return stageList_.get(index);
     }
 
-    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 7;
+    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 12;
     private int contentCloseTime_;
 
     @java.lang.Override
@@ -174,7 +174,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       return contentCloseTime_;
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 15;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 10;
     private boolean isContentClosed_;
 
     @java.lang.Override
@@ -197,13 +197,13 @@ public final class BlitzRushActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < stageList_.size(); i++) {
-        output.writeMessage(13, stageList_.get(i));
+        output.writeMessage(1, stageList_.get(i));
       }
       if (contentCloseTime_ != 0) {
-        output.writeUInt32(7, contentCloseTime_);
+        output.writeUInt32(12, contentCloseTime_);
       }
       if (isContentClosed_ != false) {
-        output.writeBool(15, isContentClosed_);
+        output.writeBool(10, isContentClosed_);
       }
       unknownFields.writeTo(output);
     }
@@ -216,15 +216,15 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       size = 0;
       for (int i = 0; i < stageList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, stageList_.get(i));
+          .computeMessageSize(1, stageList_.get(i));
       }
       if (contentCloseTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, contentCloseTime_);
+          .computeUInt32Size(12, contentCloseTime_);
       }
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isContentClosed_);
+          .computeBoolSize(10, isContentClosed_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

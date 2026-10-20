@@ -100,7 +100,7 @@ public final class HomeGetOnlineStatusRspOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 playerInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -109,7 +109,7 @@ public final class HomeGetOnlineStatusRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry));
               break;
             }
-            case 40: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
@@ -149,7 +149,7 @@ public final class HomeGetOnlineStatusRspOuterClass {
               emu.grasscutter.net.proto.HomeGetOnlineStatusRspOuterClass.HomeGetOnlineStatusRsp.class, emu.grasscutter.net.proto.HomeGetOnlineStatusRspOuterClass.HomeGetOnlineStatusRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
      * <code>int32 retcode = 10;</code>
@@ -160,7 +160,7 @@ public final class HomeGetOnlineStatusRspOuterClass {
       return retcode_;
     }
 
-    public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 11;
+    public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo> playerInfoList_;
     /**
      * <code>repeated .OnlinePlayerInfo player_info_list = 6;</code>
@@ -215,10 +215,10 @@ public final class HomeGetOnlineStatusRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < playerInfoList_.size(); i++) {
-        output.writeMessage(11, playerInfoList_.get(i));
+        output.writeMessage(4, playerInfoList_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(7, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -231,11 +231,11 @@ public final class HomeGetOnlineStatusRspOuterClass {
       size = 0;
       for (int i = 0; i < playerInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, playerInfoList_.get(i));
+          .computeMessageSize(4, playerInfoList_.get(i));
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

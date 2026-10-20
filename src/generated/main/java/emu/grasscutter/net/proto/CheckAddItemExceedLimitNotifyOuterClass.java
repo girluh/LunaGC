@@ -110,7 +110,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 112: {
               int rawValue = input.readEnum();
 
               msgType_ = rawValue;
@@ -232,7 +232,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       return reason_;
     }
 
-    public static final int MSG_TYPE_FIELD_NUMBER = 11;
+    public static final int MSG_TYPE_FIELD_NUMBER = 14;
     private int msgType_;
     /**
      * <code>.ItemExceedLimitMsgType msg_type = 4;</code>
@@ -267,7 +267,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (msgType_ != emu.grasscutter.net.proto.ItemExceedLimitMsgTypeOuterClass.ItemExceedLimitMsgType.ItemExceedLimitMsgType_ITEM_EXCEED_LIMIT_MSG_DEFAULT.getNumber()) {
-        output.writeEnum(11, msgType_);
+        output.writeEnum(14, msgType_);
       }
       if (isDrop_ != false) {
         output.writeBool(5, isDrop_);
@@ -293,7 +293,7 @@ public final class CheckAddItemExceedLimitNotifyOuterClass {
       size = 0;
       if (msgType_ != emu.grasscutter.net.proto.ItemExceedLimitMsgTypeOuterClass.ItemExceedLimitMsgType.ItemExceedLimitMsgType_ITEM_EXCEED_LIMIT_MSG_DEFAULT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, msgType_);
+          .computeEnumSize(14, msgType_);
       }
       if (isDrop_ != false) {
         size += com.google.protobuf.CodedOutputStream

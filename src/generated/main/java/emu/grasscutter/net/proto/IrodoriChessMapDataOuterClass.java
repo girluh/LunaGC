@@ -113,7 +113,7 @@ public final class IrodoriChessMapDataOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 8: {
 
               mapId_ = input.readUInt32();
               break;
@@ -136,7 +136,7 @@ public final class IrodoriChessMapDataOuterClass {
               bestScore_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 equipedCardList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -144,7 +144,7 @@ public final class IrodoriChessMapDataOuterClass {
               equipedCardList_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -203,7 +203,7 @@ public final class IrodoriChessMapDataOuterClass {
       return bestScore_;
     }
 
-    public static final int EQUIPED_CARD_LIST_FIELD_NUMBER = 13;
+    public static final int EQUIPED_CARD_LIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList equipedCardList_;
     /**
      * <code>repeated uint32 equiped_card_list = 11;</code>
@@ -257,7 +257,7 @@ public final class IrodoriChessMapDataOuterClass {
       return getEntranceDetailInfo();
     }
 
-    public static final int MAP_ID_FIELD_NUMBER = 8;
+    public static final int MAP_ID_FIELD_NUMBER = 1;
     private int mapId_;
     /**
      * <code>uint32 map_id = 1;</code>
@@ -284,7 +284,7 @@ public final class IrodoriChessMapDataOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (mapId_ != 0) {
-        output.writeUInt32(8, mapId_);
+        output.writeUInt32(1, mapId_);
       }
       if (entranceDetailInfo_ != null) {
         output.writeMessage(5, getEntranceDetailInfo());
@@ -293,7 +293,7 @@ public final class IrodoriChessMapDataOuterClass {
         output.writeUInt32(12, bestScore_);
       }
       if (getEquipedCardListList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(equipedCardListMemoizedSerializedSize);
       }
       for (int i = 0; i < equipedCardList_.size(); i++) {
@@ -310,7 +310,7 @@ public final class IrodoriChessMapDataOuterClass {
       size = 0;
       if (mapId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, mapId_);
+          .computeUInt32Size(1, mapId_);
       }
       if (entranceDetailInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream

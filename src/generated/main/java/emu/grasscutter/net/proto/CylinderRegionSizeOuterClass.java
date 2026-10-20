@@ -67,12 +67,12 @@ public final class CylinderRegionSizeOuterClass {
             case 0:
               done = true;
               break;
-            case 13: {
+            case 77: {
 
               radius_ = input.readFloat();
               break;
             }
-            case 93: {
+            case 69: {
 
               height_ = input.readFloat();
               break;
@@ -109,7 +109,7 @@ public final class CylinderRegionSizeOuterClass {
               emu.grasscutter.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize.class, emu.grasscutter.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize.Builder.class);
     }
 
-    public static final int HEIGHT_FIELD_NUMBER = 11;
+    public static final int HEIGHT_FIELD_NUMBER = 8;
     private float height_;
 
     @java.lang.Override
@@ -117,7 +117,7 @@ public final class CylinderRegionSizeOuterClass {
       return height_;
     }
 
-    public static final int RADIUS_FIELD_NUMBER = 1;
+    public static final int RADIUS_FIELD_NUMBER = 9;
     private float radius_;
 
     @java.lang.Override
@@ -140,10 +140,10 @@ public final class CylinderRegionSizeOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (radius_ != 0F) {
-        output.writeFloat(1, radius_);
+        output.writeFloat(9, radius_);
       }
       if (height_ != 0F) {
-        output.writeFloat(11, height_);
+        output.writeFloat(8, height_);
       }
       unknownFields.writeTo(output);
     }
@@ -156,11 +156,11 @@ public final class CylinderRegionSizeOuterClass {
       size = 0;
       if (radius_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, radius_);
+          .computeFloatSize(9, radius_);
       }
       if (height_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(11, height_);
+          .computeFloatSize(8, height_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

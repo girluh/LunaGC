@@ -19,10 +19,10 @@ public class PacketEvtBeingHealedNotify extends BasePacket {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         CodedOutputStream out = CodedOutputStream.newInstance(bos);
         try {
-            out.writeFloat(4, healAmount);
-            out.writeUInt32(9, target.getId());
+            out.writeFloat(8, healAmount);
+            out.writeUInt32(5, target.getId());
             out.writeFloat(14, realHealAmount);
-            out.writeUInt32(15, source != null ? source.getId() : target.getId());
+            out.writeUInt32(3, source != null ? source.getId() : target.getId());
             out.flush();
         } catch (IOException e) {
         }

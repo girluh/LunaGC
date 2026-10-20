@@ -69,7 +69,7 @@ public final class GetAllMailReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 16: {
 
               isCollected_ = input.readBool();
               break;
@@ -106,7 +106,7 @@ public final class GetAllMailReqOuterClass {
               emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.class, emu.grasscutter.net.proto.GetAllMailReqOuterClass.GetAllMailReq.Builder.class);
     }
 
-    public static final int IS_COLLECTED_FIELD_NUMBER = 15;
+    public static final int IS_COLLECTED_FIELD_NUMBER = 2;
     private boolean isCollected_;
 
     @java.lang.Override
@@ -129,7 +129,7 @@ public final class GetAllMailReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isCollected_ != false) {
-        output.writeBool(15, isCollected_);
+        output.writeBool(2, isCollected_);
       }
       unknownFields.writeTo(output);
     }
@@ -142,7 +142,7 @@ public final class GetAllMailReqOuterClass {
       size = 0;
       if (isCollected_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isCollected_);
+          .computeBoolSize(2, isCollected_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

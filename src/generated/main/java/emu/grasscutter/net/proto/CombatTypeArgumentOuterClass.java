@@ -123,6 +123,10 @@ public final class CombatTypeArgumentOuterClass {
      * <code>CombatTypeArgument_COMBAT_AVATAR_TRANSFER_BY_SERVER = 26;</code>
      */
     CombatTypeArgument_COMBAT_AVATAR_TRANSFER_BY_SERVER(26),
+    /**
+     * <code>CombatTypeArgument_COMBAT_MONSTER_DISTURBER_SYNC_INFO = 27;</code>
+     */
+    CombatTypeArgument_COMBAT_MONSTER_DISTURBER_SYNC_INFO(27),
     UNRECOGNIZED(-1),
     ;
 
@@ -230,6 +234,10 @@ public final class CombatTypeArgumentOuterClass {
      * <code>CombatTypeArgument_COMBAT_AVATAR_TRANSFER_BY_SERVER = 26;</code>
      */
     public static final int CombatTypeArgument_COMBAT_AVATAR_TRANSFER_BY_SERVER_VALUE = 26;
+    /**
+     * <code>CombatTypeArgument_COMBAT_MONSTER_DISTURBER_SYNC_INFO = 27;</code>
+     */
+    public static final int CombatTypeArgument_COMBAT_MONSTER_DISTURBER_SYNC_INFO_VALUE = 27;
 
 
     public final int getNumber() {
@@ -282,6 +290,7 @@ public final class CombatTypeArgumentOuterClass {
         case 24: return CombatTypeArgument_ENTITY_INTERPOLATE_MOVE;
         case 25: return CombatTypeArgument_COMBAT_DIE_ANIMATOR_CHANGE;
         case 26: return CombatTypeArgument_COMBAT_AVATAR_TRANSFER_BY_SERVER;
+        case 27: return CombatTypeArgument_COMBAT_MONSTER_DISTURBER_SYNC_INFO;
         default: return null;
       }
     }

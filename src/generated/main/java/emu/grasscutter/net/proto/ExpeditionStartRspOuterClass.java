@@ -111,7 +111,7 @@ public final class ExpeditionStartRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 72: {
 
               pathId_ = input.readUInt32();
               break;
@@ -198,7 +198,7 @@ public final class ExpeditionStartRspOuterClass {
       return dDCIILLJCLH_;
     }
 
-    public static final int PATH_ID_FIELD_NUMBER = 3;
+    public static final int PATH_ID_FIELD_NUMBER = 9;
     private int pathId_;
     /**
      * <code>uint32 path_id = 3;</code>
@@ -275,7 +275,7 @@ public final class ExpeditionStartRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (pathId_ != 0) {
-        output.writeUInt32(3, pathId_);
+        output.writeUInt32(9, pathId_);
       }
       if (getAvatarIdListList().size() > 0) {
         output.writeUInt32NoTag(114);
@@ -304,7 +304,7 @@ public final class ExpeditionStartRspOuterClass {
       size = 0;
       if (pathId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, pathId_);
+          .computeUInt32Size(9, pathId_);
       }
       {
         int dataSize = 0;

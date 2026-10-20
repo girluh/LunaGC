@@ -71,12 +71,12 @@ public final class QuestCreateEntityReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 96: {
 
               questId_ = input.readUInt32();
               break;
             }
-            case 58: {
+            case 122: {
               emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder subBuilder = null;
               if (entity_ != null) {
                 subBuilder = entity_.toBuilder();
@@ -89,12 +89,12 @@ public final class QuestCreateEntityReqOuterClass {
 
               break;
             }
-            case 96: {
+            case 104: {
 
               isRewind_ = input.readBool();
               break;
             }
-            case 120: {
+            case 72: {
 
               parentQuestId_ = input.readUInt32();
               break;
@@ -131,7 +131,7 @@ public final class QuestCreateEntityReqOuterClass {
               emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq.class, emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq.Builder.class);
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 1;
+    public static final int QUEST_ID_FIELD_NUMBER = 12;
     private int questId_;
 
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class QuestCreateEntityReqOuterClass {
       return questId_;
     }
 
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 15;
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 9;
     private int parentQuestId_;
 
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class QuestCreateEntityReqOuterClass {
       return parentQuestId_;
     }
 
-    public static final int IS_REWIND_FIELD_NUMBER = 12;
+    public static final int IS_REWIND_FIELD_NUMBER = 13;
     private boolean isRewind_;
 
     @java.lang.Override
@@ -155,7 +155,7 @@ public final class QuestCreateEntityReqOuterClass {
       return isRewind_;
     }
 
-    public static final int ENTITY_FIELD_NUMBER = 7;
+    public static final int ENTITY_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo entity_;
 
     @java.lang.Override
@@ -188,16 +188,16 @@ public final class QuestCreateEntityReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (questId_ != 0) {
-        output.writeUInt32(1, questId_);
+        output.writeUInt32(12, questId_);
       }
       if (entity_ != null) {
-        output.writeMessage(7, getEntity());
+        output.writeMessage(15, getEntity());
       }
       if (isRewind_ != false) {
-        output.writeBool(12, isRewind_);
+        output.writeBool(13, isRewind_);
       }
       if (parentQuestId_ != 0) {
-        output.writeUInt32(15, parentQuestId_);
+        output.writeUInt32(9, parentQuestId_);
       }
       unknownFields.writeTo(output);
     }
@@ -210,19 +210,19 @@ public final class QuestCreateEntityReqOuterClass {
       size = 0;
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, questId_);
+          .computeUInt32Size(12, questId_);
       }
       if (entity_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getEntity());
+          .computeMessageSize(15, getEntity());
       }
       if (isRewind_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isRewind_);
+          .computeBoolSize(13, isRewind_);
       }
       if (parentQuestId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, parentQuestId_);
+          .computeUInt32Size(9, parentQuestId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

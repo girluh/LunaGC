@@ -43,6 +43,18 @@ public final class ResinCostTypeOuterClass {
      * <code>ResinCostType_MATERIAL = 5;</code>
      */
     ResinCostType_MATERIAL(5),
+    /**
+     * <code>ResinCostType_FRAGILE = 6;</code>
+     */
+    ResinCostType_FRAGILE(6),
+    /**
+     * <code>ResinCostType_TIMING = 7;</code>
+     */
+    ResinCostType_TIMING(7),
+    /**
+     * <code>ResinCostType_HCOIN = 8;</code>
+     */
+    ResinCostType_HCOIN(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -70,6 +82,18 @@ public final class ResinCostTypeOuterClass {
      * <code>ResinCostType_MATERIAL = 5;</code>
      */
     public static final int ResinCostType_MATERIAL_VALUE = 5;
+    /**
+     * <code>ResinCostType_FRAGILE = 6;</code>
+     */
+    public static final int ResinCostType_FRAGILE_VALUE = 6;
+    /**
+     * <code>ResinCostType_TIMING = 7;</code>
+     */
+    public static final int ResinCostType_TIMING_VALUE = 7;
+    /**
+     * <code>ResinCostType_HCOIN = 8;</code>
+     */
+    public static final int ResinCostType_HCOIN_VALUE = 8;
 
 
     public final int getNumber() {
@@ -102,6 +126,9 @@ public final class ResinCostTypeOuterClass {
         case 3: return ResinCostType_REUNION_PRIVILEGE;
         case 4: return ResinCostType_OP_ACTIVITY;
         case 5: return ResinCostType_MATERIAL;
+        case 6: return ResinCostType_FRAGILE;
+        case 7: return ResinCostType_TIMING;
+        case 8: return ResinCostType_HCOIN;
         default: return null;
       }
     }
