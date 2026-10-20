@@ -18,13 +18,17 @@ public final class PacketGetAllMailResultNotify extends BasePacket {
         var packet =
                 GetAllMailResultNotify.newBuilder()
                         .setTransaction(player.getUid() + "-" + Utils.getCurrentSeconds() + "-" + 0)
-                        .setIsCollected(gifts);
+                        .setIsCollected(gifts)
+                        // Official capture: both page fields are 1 (JNBNDEPLFHD/JJIOBHDAEFO).
+                        // Leaving page_index at 0 makes the client spin on "collecting mail".
+                        .setPageIndex(1)
+                        .setTotalPageCount(1);
 
         var inbox = player.getAllMail();
         if (!gifts && inbox.size() > 0) {
             packet.addAllMailList(
                     inbox.stream()
-                            .filter(mail -> mail.stateValue == 1)
+                            // stateValue 1=no attachment, 2=uncollected, 3=collected - all must be sent.
                             .filter(mail -> mail.expireTime > Instant.now().getEpochSecond())
                             .map(mail -> mail.toProto(player))
                             .toList());
@@ -34,6 +38,14 @@ public final class PacketGetAllMailResultNotify extends BasePacket {
             packet.addAllMailList(List.of());
         }
 
-        this.setData(packet.build());
+        var built = packet.build();
+        emu.grasscutter.Grasscutter.getLogger()
+                .info(
+                        "GetAllMailResultNotify: uid={} gifts={} mails={} hex={}",
+                        player.getUid(),
+                        gifts,
+                        built.getMailListCount(),
+                        emu.grasscutter.utils.Utils.bytesToHex(built.toByteArray()));
+        this.setData(built);
     }
 }

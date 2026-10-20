@@ -1,5 +1,7 @@
 # LunaGC-7.0.0 WIP
 
+> This project is no longer maintained. If you need it, please visit [AstaPS](https://github.com/Peruere-dev/AstaPS).
+
 ## Note from the maintainer
 Might update to latest occasionally, depends on how I'm feeling and my situation. Of course, I post the protocol buffer definitions on [GitLab](https://gitlab.com/kitkat-multiverse/genshin-protocol) and translations. Contact me at my [Discord](https://discord.gg/5Rfyjrt5aB)
 

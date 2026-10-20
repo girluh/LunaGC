@@ -10,6 +10,12 @@ public final class HandlerGetAllMailNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = GetAllMailNotify.parseFrom(payload);
+        emu.grasscutter.Grasscutter.getLogger()
+                .info(
+                        "GetAllMailNotify: uid={} isCollected={} inboxSize={}",
+                        session.getPlayer().getUid(),
+                        req.getIsCollected(),
+                        session.getPlayer().getAllMail().size());
         session.send(new PacketGetAllMailResultNotify(session.getPlayer(), req.getIsCollected()));
     }
 }

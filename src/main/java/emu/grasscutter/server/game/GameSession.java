@@ -104,6 +104,16 @@ public class GameSession implements GameSessionManager.KcpChannel {
         Grasscutter.getLogger()
                 .info(sendOrRecv + ": " + PacketOpcodesUtils.getOpcodeName(opcode) + " (" + opcode + ")");
         if (GAME_INFO.isShowPacketPayload) System.out.println(Utils.bytesToHex(payload));
+        try {
+            java.nio.file.Files.writeString(
+                    java.nio.file.Path.of("pkt.log"),
+                    java.time.LocalTime.now().withNano(0) + "." + String.format("%03d", java.time.LocalTime.now().getNano() / 1000000)
+                            + "\t" + sendOrRecv + "\t" + PacketOpcodesUtils.getOpcodeName(opcode)
+                            + "\t" + opcode + "\t" + Utils.bytesToHex(payload) + "\n",
+                    java.nio.file.StandardOpenOption.CREATE,
+                    java.nio.file.StandardOpenOption.APPEND);
+        } catch (Exception ignored) {
+        }
     }
 
     public void send(BasePacket packet) {

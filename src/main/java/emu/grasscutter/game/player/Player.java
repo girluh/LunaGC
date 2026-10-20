@@ -1033,7 +1033,8 @@ public class Player implements PlayerHook, FieldFetch {
     }
 
     public int getMailId(Mail message) {
-        return this.getMailHandler().getMailIndex(message);
+        // ids are 1-based so mail_id is never 0 (the client treats 0 as "no mail").
+        return this.getMailHandler().getMailIndex(message) + 1;
     }
 
     public boolean replaceMailByIndex(int index, Mail message) {
@@ -1410,6 +1411,9 @@ public class Player implements PlayerHook, FieldFetch {
         session.send(new PacketAvatarDataNotify(this));
         session.send(new PacketAvatarWeaponSkinDataNotify(this));
         session.send(new PacketIBIBOHHJJJB(this));
+        // Login-time mailbox sync. The official server sends the full list as
+        // GetAllMailResultNotify during login; MailChangeNotify is only for later changes.
+        session.send(new PacketGetAllMailResultNotify(this, false));
 
         this.getProgressManager().onPlayerLogin();
 

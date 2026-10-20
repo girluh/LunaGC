@@ -16,7 +16,9 @@ public class HandlerPlayerSetPauseReq extends PacketHandler {
         var world = player.getWorld();
 
         // Check if the player is in a multiplayer world.
-        if (player.isInMultiplayer()) {
+        if (player.isInMultiplayer() || world == null) {
+            // world is null e.g. while the client is still on the character-creation screen;
+            // still answer, otherwise the client hangs waiting for the pause response.
             session.send(new PacketPlayerSetPauseRsp(Retcode.RET_FAIL));
         } else {
             world.setPaused(req.getIsPaused());
